@@ -18,8 +18,8 @@ def main():
     filePaths = [
         "/app/testdata/0.html",
         "/app/testdata/1.html",
-        # "/app/testdata/2.html",
-        # "/app/testdata/3.html"
+        "/app/testdata/2.html",
+        "/app/testdata/3.html"
     ]
     pageSummaries = []
     for filePath in filePaths:
@@ -172,16 +172,16 @@ def combinePageSummaries(pageSummaries, modelToUse):
     instructionText = f"""
         Please summarize the following text. You are helping with market research, to help the user better understand the current state and future trends of a particular industry. 
 
-        The input text is a set of summaries of different articles describing the same industry. You should combine these individual article summaries into a combined summary of the industry. You should produce two outputs: 1) a paragraph, and 2) a list of 4-10 bullet points. The single paragraph should summarize the input text. The list of 4-10 bullet points should describe major trends, key challenges, and upcoming opportunities in the industry.
-
-        Please do your best to be complete and capture all the major trends/challenges/opportunities. But, if you have already mentioned a trend in a bullet point, you dont need to mention it again.
+        The input text is a set of summaries of different articles describing the same industry. 
+        
+        You should combine these individual article summaries into a list of 4-10 bullet points, which describe major trends, key challenges, and upcoming opportunities in the industry. Please do your best to be complete and capture all the major trends/challenges/opportunities. But, if you have already mentioned a trend in a bullet point, you dont need to mention it again.
 
         Make sure to include information from all pages, so that you produce a summary which is representative of the industry as a whole.
 
         Input text:
         """
     for index, pageSummary in enumerate(pageSummaries):
-        instructionText += f"\n\nPage {index} summary:\n{pageSummary}"
+        instructionText += f"\n\nArticle {index} summary:\n{pageSummary}"
 
     result = openai.ChatCompletion.create(
         model=modelToUse,
