@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+		<title>The Challenges and Rewards of Reshoring Manufacturing to the US - Universal Polymer &amp; Rubber Ltd., Inc.</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.universalpolymer.com/wp-content/cache/min/1/6c11ded3cbf10f911d9af8b62f77706e.css" media="all" data-minify="1" />
+						<!-- Google Tag Manager -->
+		<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-M2TT8D5');</script>
+		<!-- End Google Tag Manager -->
+						
+	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="pingback" href="https://www.universalpolymer.com/xmlrpc.php" />		
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+
+		<!-- <link rel="shortcut icon" href="/img/favicon.ico"/> -->
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="The Challenges and Rewards of Reshoring Manufacturing to the US - Universal Polymer &amp; Rubber Ltd., Inc." />
+	<meta property="og:description" content="The term “reshoring” refers to the process of returning offshore manufacturing operations to a company’s home country rather than outsourcing labor to overseas locales. Many statistics indicate that reshoring trends were already on the rise, even before a trade war and pandemic made the idea more appealing. In 2018, 1,389 companies reshored operations, ultimately returning [&hellip;]" />
+	<meta property="og:url" content="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/" />
+	<meta property="og:site_name" content="Universal Polymer &amp; Rubber Ltd., Inc." />
+	<meta property="article:published_time" content="2020-07-07T14:52:14+00:00" />
+	<meta property="article:modified_time" content="2020-07-07T14:52:52+00:00" />
+	<meta name="author" content="John Zielinski" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="John Zielinski" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="3 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/","url":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/","name":"The Challenges and Rewards of Reshoring Manufacturing to the US - Universal Polymer &amp; Rubber Ltd., Inc.","isPartOf":{"@id":"https://www.universalpolymer.com/#website"},"datePublished":"2020-07-07T14:52:14+00:00","dateModified":"2020-07-07T14:52:52+00:00","author":{"@id":"https://www.universalpolymer.com/#/schema/person/14124982a5c7c395aa10fafe7e33b398"},"breadcrumb":{"@id":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/"]}]},{"@type":"BreadcrumbList","@id":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.universalpolymer.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.universalpolymer.com/blog/"},{"@type":"ListItem","position":3,"name":"The Challenges and Rewards of Reshoring Manufacturing to the US"}]},{"@type":"WebSite","@id":"https://www.universalpolymer.com/#website","url":"https://www.universalpolymer.com/","name":"Universal Polymer &amp; Rubber Ltd., Inc.","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.universalpolymer.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.universalpolymer.com/#/schema/person/14124982a5c7c395aa10fafe7e33b398","name":"John Zielinski"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Universal Polymer &amp; Rubber Ltd., Inc. &raquo; The Challenges and Rewards of Reshoring Manufacturing to the US Comments Feed" href="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+<script type='text/javascript' src='https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/vendor/modernizr.min.js?ver=6.2.2' id='modernizr-js' defer></script>
+<link rel="https://api.w.org/" href="https://www.universalpolymer.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.universalpolymer.com/wp-json/wp/v2/posts/1519" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.universalpolymer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.universalpolymer.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://www.universalpolymer.com/?p=1519' />
+<link rel="alternate" type="application/json+oembed" href="https://www.universalpolymer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.universalpolymer.com%2Fblog%2Fpros-and-cons-of-reshoring-manufacturing%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.universalpolymer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.universalpolymer.com%2Fblog%2Fpros-and-cons-of-reshoring-manufacturing%2F&#038;format=xml" />
+<!-- HFCM by 99 Robots - Snippet # 4: Google Tag Manager Head -->
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2TT8D5');</script>
+<!-- End Google Tag Manager -->
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 7: Webtrax -->
+<!-- Begin WebTrax -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript"> var wto = wto || []; wto.push(['setWTID', 'universalpolymer']); wto.push(['webTraxs']);(function() { var wt = document.createElement('script'); wt.src = document.location.protocol + '//www.webtraxs.com/wt.php'; wt.type = 'text/javascript'; wt.async = true; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wt, s); })();</script><noscript><img src="https://www.webtraxs.com/webtraxs.php?id=universalpolymer&st=img" alt="" /></noscript>
+<!-- End WebTrax -->
+<!-- /end HFCM by 99 Robots -->
+<style>.post-thumbnail img[src$='.svg'] { width: 100%; height: auto; }</style><link rel="icon" href="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" sizes="32x32" />
+<link rel="icon" href="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" />
+<meta name="msapplication-TileImage" content="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			ul:not([class]) li:not([class]):after{
+	background-image:url(https://www.universalpolymer.com/wp-content/uploads/ico-bullet.svg)!important;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		<!--[if lt IE 9]>
+            <script src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/vendor/respond.min.js"></script> <script src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/vendor/selectivizr-min.js"></script>
+        <![endif]-->
+        	</head>
+	<body class="post-template-default single single-post postid-1519 single-format-standard pros-and-cons-of-reshoring-manufacturing">
+				<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2TT8D5"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+			        	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2TT8D5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->        		<!-- Site Wrap Start -->
+		<div class="site-wrap"><!--Site Header-->
+<!--Site Search -->
+    <div class="search-module">
+      <div class="inner-wrap">
+        <a href="#" target="_blank" class="search-link search-exit active"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Exit" data-lazy-src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/img/ico-exit.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/img/ico-exit.svg" alt="Exit"></noscript></a>
+        <form action="https://www.universalpolymer.com/" method="get" class="search-form">
+    <div class="search-table">
+      <div class="search-row">
+        <div class="search-cell1">
+          	<input type="text" id="search-site" value="" placeholder="Search Website..." name="s" class="search-text" title="Search Website...">    
+        </div>
+         <div class="search-cell2">
+        	<input class="search-submit" alt="Search" title="Search" value="" type="submit">
+        </div>
+      </div>
+    </div>
+</form> 
+            
+            
+      </div>
+    </div><!--Site Header Wrap Start -->
+        <div class="site-header-wrap">
+          <header class="site-header" role="banner">
+            <div class="utility-wrapper">
+              <div class="inner-wrap">
+                <div class="sh-utility-nav">
+                  <div class="sh-social-nav">
+                    <ul class="sh-social-list swap">
+                                            <li> <a  rel="noopener noreferrer"  href="https://www.linkedin.com/company/universal-polymer-&#038;-rubber-ltd-" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Linkedin" title="Linkedin" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off.svg" alt="Linkedin" title="Linkedin"></noscript></a></li>
+                                           <li> <a  rel="noopener noreferrer"  href="https://twitter.com/UPRltd" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Twitter" title="Twitter" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/twitter-off.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/twitter-off.svg" alt="Twitter" title="Twitter"></noscript></a></li>
+                                               <li class="tn-badge">
+                            <!-- Thomas Supplier Badge -->
+                              <a href="https://www.thomasnet.com/profile/00037480?src=tnbadge" target="_blank" class="tn-badge__link">
+                              <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-srcset="https://img.thomascdn.com/badges/shield-tier-v-sm-2x.png?cid=00037480 2x" alt="Thomas Supplier" class="tn-badge__img header-badge" data-lazy-src="https://img.thomascdn.com/badges/shield-tier-v-sm.png?cid=00037480" /><noscript><img src="https://img.thomascdn.com/badges/shield-tier-v-sm.png?cid=00037480" srcset="https://img.thomascdn.com/badges/shield-tier-v-sm-2x.png?cid=00037480 2x" alt="Thomas Supplier" class="tn-badge__img header-badge" /></noscript>
+                              </a>
+                            <!-- End Thomas Supplier Badge -->
+                          </li>
+                    </ul>                    
+                  </div> 
+                  <!-- sh-social End -->
+                  <span class="sh-icons">
+                    <a href="#menu" class="sh-ico-menu menu-link"><span>Menu</span></a>
+                    <!--                    <a href="mailto:info@universalpolymer.com" class="sh-email"><span>&nbsp;</span></a>-->
+                                        <a href="tel:4406321691" class="sh-ph"><span>440.632.1691</span></a>
+                    <a class="sh-ico-search search-link" target="_blank" href="#"><span></span></a>
+                                        <a href="/request-for-quote/" class="btn rfq-btn"><span>REQUEST FOR QUOTE</span></a> <!--  A new class show-rfq will add after page load-->
+                  </span> <!-- sh-icons End -->
+                </div> <!-- sh-utility-nav End -->
+              </div>
+            </div>
+            <!-- Utility Wrapper End -->
+            <!--sh-sticky-wrap Start-->
+            <div class="sh-sticky-wrap">
+                <!--Inner Wrap Start-->
+              <div class="inner-wrap">
+                <div class="si-content-wrap">
+                   <div class="site-logo-wrap"><a href="https://www.universalpolymer.com" class="site-logo"><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
+<source type="image/webp" data-lazy-srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E"/>
+<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E" alt="Universal Polymer &amp; Rubber Ltd., Inc." data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg"/>
+</picture>
+<noscript><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
+<source type="image/webp" srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp"/>
+<img src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg" alt="Universal Polymer &amp; Rubber Ltd., Inc."/>
+</picture>
+</noscript></a></div>
+    
+                 <!-- Site Nav Container Start-->
+                 <div class="site-nav-container">
+                  <div class="snc-header">
+                    <a href="#" class="close-menu menu-link">Close</a>
+                  </div>
+                  <!--Site Nav Start-->
+                <nav class="site-nav"><ul id="menu-primary-nav" class="sn-level-1"><li id="nav-menu-item-1270" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/capabilities/" class="sn-menu-link sn-main-menu-link"><span>CAPABILITIES</span></a>
+<ul class="sub-menu menu-even sub-sub-menu sn-level-2">
+	<li id="nav-menu-item-1223" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/rubber-extrusion/" class="sn-menu-link sn-sub-menu-link"><span>Rubber Extrusion</span></a></li>
+	<li id="nav-menu-item-1222" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/rubber-molding/" class="sn-menu-link sn-sub-menu-link"><span>Rubber Molding Services</span></a></li>
+	<li id="nav-menu-item-1221" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/die-cutting/" class="sn-menu-link sn-sub-menu-link"><span>Die Cutting</span></a></li>
+	<li id="nav-menu-item-1220" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/plastic-extrusion/" class="sn-menu-link sn-sub-menu-link"><span>Plastic Extrusion</span></a></li>
+</ul>
+</li>
+<li id="nav-menu-item-1271" class="main-menu-item  menu-item-even sn-li-l1 capablity-nav menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a class="sn-menu-link sn-main-menu-link"><span>MARKETS</span></a>
+<ul class="sub-menu menu-even sub-sub-menu sn-level-2">
+	<li id="nav-menu-item-1227" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/general-industrial/" class="sn-menu-link sn-sub-menu-link"><span>General Industrial</span></a></li>
+	<li id="nav-menu-item-1226" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/epdm-rubber-tarp-strap/" class="sn-menu-link sn-sub-menu-link"><span>Tarp Strap</span></a></li>
+	<li id="nav-menu-item-1242" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/automotive/" class="sn-menu-link sn-sub-menu-link"><span>Automotive</span></a></li>
+	<li id="nav-menu-item-1691" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="https://www.universalpolymer.com/markets/drainage-pipe-gasket/" class="sn-menu-link sn-sub-menu-link"><span>Drainage Pipe Gasket</span></a>
+	<ul class="sub-menu menu-odd sub-sub-menu sn-level-3">
+		<li id="nav-menu-item-1225" class="sub-menu-item sub-sub-menu-item menu-item-even sn-li-l3 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/concrete-pipe-gasket/" class="sn-menu-link sn-sub-menu-link"><span>Concrete Pipe Gasket</span></a></li>
+	</ul>
+</li>
+	<li id="nav-menu-item-1776" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/transformer-door-gaskets/" class="sn-menu-link sn-sub-menu-link"><span>Transformer Gaskets</span></a></li>
+</ul>
+</li>
+<li id="nav-menu-item-1228" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/about-us/" class="sn-menu-link sn-main-menu-link"><span>ABOUT US</span></a></li>
+<li id="nav-menu-item-1229" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/contact-us/" class="sn-menu-link sn-main-menu-link"><span>CONTACT US</span></a></li>
+<li id="nav-menu-item-1230" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/careers/" class="sn-menu-link sn-main-menu-link"><span>CAREERS</span></a></li>
+<li id="nav-menu-item-1231" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-custom menu-item-object-custom"><a href="/blog/" class="sn-menu-link sn-main-menu-link"><span>BLOG</span></a></li>
+</ul></nav>                  <!--Site Nav End-->                  
+                </div>
+                <!-- Site Nav Co ntainer End-->
+                </div><!--Inner Wrap End-->
+              </div>
+            </div><!--sh-sticky-wrap End-->
+          </header>
+          <!--page intro start-->    
+        <div class="page-intro">
+	<div data-bg="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/img/pattern-page-h1-bg-image.jpg" class="bg-img rocket-lazyload" style=""></div>
+	<div class="inner-wrap">
+    <h1 class="pi-header">The Challenges and Rewards of Reshoring Manufacturing to the US</h1>
+  </div>
+</div>
+
+
+    
+      <!--page intro end-->
+    </div>
+<!-- Site header wrap end-->
+<!--Site Content-->
+	<section class="site-content two-column" role="main">
+	    <div class="inner-wrap">
+	    	
+      <div id="breadcrumbs" class="breadcrumb-menu"><span><span><a href="https://www.universalpolymer.com/">Home</a></span> &gt; <span><a href="https://www.universalpolymer.com/blog/">Blog</a></span> &gt; <span class="breadcrumb_last" aria-current="page">The Challenges and Rewards of Reshoring Manufacturing to the US</span></span></div>
+       
+	        <article class="site-content-primary">
+				<div class="post-meta">Posted by John Zielinski on <time datetime="2020-07-07" pubdate>July 7, 2020 2:52 pm</time> | <a href="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/#respond">Leave a Comment</a> </div>
+				
+				<p><span style="font-weight: 400;">The term “reshoring” refers to the process of returning offshore manufacturing operations to a company’s home country rather than outsourcing labor to overseas locales. Many statistics indicate that reshoring trends were already on the rise, even before a trade war and pandemic made the idea more appealing. In 2018, 1,389 companies reshored operations, ultimately returning 145,000 jobs to the U.S., according to data from </span><a href="https://www.reshorenow.org/recent-data/"><span style="font-weight: 400;">The Reshoring Initiative</span></a><span style="font-weight: 400;">. </span></p>
+<p><span style="font-weight: 400;">Reshoring rubber manufacturing—and manufacturing in general—to the United States can improve product quality, reduce financial and business risks, and lower transport costs.</span></p>
+<h2><b>Reshoring Challenges</b></h2>
+<p><span style="font-weight: 400;">While reshoring offers a plethora of benefits, it’s important that businesses understand the main challenges they will face before proceeding with efforts to reshore. These challenges include:</span></p>
+<ul>
+<li style="font-weight: 400;"><b>Costs associated with reshoring.</b><span style="font-weight: 400;"> Increased production costs, higher labor costs, and supply chain restructuring all contribute to the high upfront costs of reshoring.</span></li>
+<li style="font-weight: 400;"><b>Lack of infrastructure and training.</b><span style="font-weight: 400;"> The United States suffers from a manufacturing skills gap after decades of offshoring. Factories in many locations may require companies to develop extensive training programs and educational partnerships. </span></li>
+<li style="font-weight: 400;"><b>Foreign contracts.</b><span style="font-weight: 400;"> The decision to reshore often results in the termination of contracts with previous outsourced suppliers. It’s critical to seek legal advice before reshoring to avoid lawsuits based on contract disputes. </span></li>
+</ul>
+<h2><b>Top Reasons to Reshore</b></h2>
+<p><span style="font-weight: 400;">While any major manufacturing change offers up its own unique set of challenges, reshoring largely provides companies with a long list of benefits. </span></p>
+<h3><b>Brand Image</b></h3>
+<p><span style="font-weight: 400;">Often, American consumers prefer to purchase products made in America. These customers appreciate knowing that an organization directly supports their local economy, provides fair wages to its employees, and reduces carbon emissions by manufacturing and shipping its products within the United States. Reshoring manufacturing can greatly improve a company’s brand image.</span></p>
+<h3><b>Ecosystem Synergies and Localization</b></h3>
+<p><span style="font-weight: 400;">Reshoring manufacturing drastically improves predictability, shipping speeds, and time to market. Products created in offshore factories can take weeks or months to reach the United States, with the unfortunate effect of more opportunities for error and delays.</span></p>
+<p><span style="font-weight: 400;">By reshoring and thus localizing manufacturing, manufacturers can provide rapid delivery of products to their distribution network. Reshoring can also allow companies to work more closely within their local ecosystem, improving local economies and enacting greater control over the supply chain.</span></p>
+<h3><b>Government Incentives</b></h3>
+<p><span style="font-weight: 400;">Recent corporate tax cuts and new tariffs have made reshoring more appealing. Companies which reshore manufacturing may also be eligible for other government incentives that may help mitigate some of the upfront costs of reshoring.</span></p>
+<h3><b>Logistics</b></h3>
+<p><span style="font-weight: 400;">Since reshoring manufacturing creates a shorter supply chain, organizations can more accurately forecast, reduce shipping times, eliminate complex overseas transportation, and respond rapidly to consumer demand. Manufacturers that have reshored are better able to control unforeseen circumstances, allowing them to be more flexible. </span></p>
+<h3><b>Lower Cost Gap</b></h3>
+<p><span style="font-weight: 400;">With more control over the supply chain and a greater ability to oversee the manufacturing process, reshoring makes it possible to reduce cost gaps. This opportunity enables manufacturers to more accurately make predictions and control their budgets.</span></p>
+<h3><b>More Oversight</b></h3>
+<p><span style="font-weight: 400;">With offshore manufacturing, companies may struggle to adequately oversee the production process. The long distance from the offshore facilities demands managers supervise outsourced manufacturing, often requiring them to travel excessively, costing the company both time and money. Reshoring allows management to easily oversee the entire manufacturing process. </span></p>
+<h3><b>Proximity to Customers</b></h3>
+<p><span style="font-weight: 400;">Modern customers are accustomed to receiving things quickly. Reshoring manufacturing makes it much simpler to rapidly put products into the hands of the customer, which increases overall satisfaction, earns money more quickly, and enables more accurate forecasting.</span></p>
+<h2><b>Reshoring With Universal Polymer &amp; Rubber</b></h2>
+<p><span style="font-weight: 400;">Since 1971, Universal Polymer has been producing sophisticated polymer parts from our facility in Northeast Ohio. We offer reliable, high-quality turnkey services to any organization looking to begin sourcing its rubber parts in the United States. Read </span><a href="https://www.universalpolymer.com/about-us/"><span style="font-weight: 400;">about us</span></a><span style="font-weight: 400;"> to learn more about our history and values. For additional pricing information, </span><a href="https://www.universalpolymer.com/request-for-quote/"><span style="font-weight: 400;">request your quote</span></a><span style="font-weight: 400;"> today.</span></p>
+ 
+				<!-- <hr>
+				<p></p>
+				<hr> -->
+				<div id="comments">
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/pros-and-cons-of-reshoring-manufacturing/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://www.universalpolymer.com/wp-comments-post.php?wpe-comment-post=universalpolym" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1519' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="dceaa6f8ff" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="117"/><script type="rocketlazyloadscript">document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+	        </article>
+	       	<!--Secondary Content-->
+<!-- <aside class="site-content-secondary">
+<h4>Recent Posts</h4>
+<ul>
+</ul>
+<h4></h4>
+<ul>
+</ul>
+<h4></h4>
+<ul>
+</ul>
+</aside> -->
+
+<aside class="site-content-secondary">
+	<div class="next-project">
+		<div class="inner-wrap">
+			<h2 class="title">Ready to start your next project ?</h2>
+		<p>UP&R manufactures sophisticated polymer parts through its core processes of molding, extrusion, and die-cutting. We have the experience to provide first-rate, timely service and quality every time.</p>
+		<a href="https://www.universalpolymer.com/contact-us/" class="btn np-btn">Contact Us</a>
+		<div class="side-infog">
+			<a class="lightbox" href="http://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png"><picture title="Why Should You Use Synthetic Rubber Over Natural Rubber">
+<source type="image/webp" data-lazy-srcset="http://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20250%200&#039;%3E%3C/svg%3E"/>
+<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20250%200&#039;%3E%3C/svg%3E" alt="Why Should You Use Synthetic Rubber Over Natural Rubber" width="250px" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png"/>
+</picture>
+<noscript><picture title="Why Should You Use Synthetic Rubber Over Natural Rubber">
+<source type="image/webp" srcset="http://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png.webp"/>
+<img src="https://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png" alt="Why Should You Use Synthetic Rubber Over Natural Rubber" width="250px"/>
+</picture>
+</noscript></a>
+		</div>
+				<a class="lightbox aligncenter blog-img"  href="http://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png"><picture title="Reshoring Manufacturing">
+<source type="image/webp" data-lazy-srcset="http://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E"/>
+<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E" alt="Reshoring Manufacturing" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png"/>
+</picture>
+<noscript><picture title="Reshoring Manufacturing">
+<source type="image/webp" srcset="http://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png.webp"/>
+<img src="https://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png" alt="Reshoring Manufacturing"/>
+</picture>
+</noscript></a>
+	
+		</div>
+		
+	</div>
+	</aside>
+	    </div>
+	</section>
+
+    <!--Site Footer Start -->
+    <footer class="site-footer site-footer-new dest" role="contentinfo">
+      <div class="inner-wrap">
+        <div class="sf-wrapper-new">
+          <div class="sf-logo-wrapper-new">
+                        <a href="https://www.universalpolymer.com"><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
+<source type="image/webp" data-lazy-srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E"/>
+<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E" alt="Universal Polymer &amp; Rubber Ltd., Inc." data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg"/>
+</picture>
+<noscript><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
+<source type="image/webp" srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp"/>
+<img src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg" alt="Universal Polymer &amp; Rubber Ltd., Inc."/>
+</picture>
+</noscript></a>          </div>
+          <div class="sf-links-wrapper-new">
+            <span class="sf-title-new">Capabilities</span>
+            <ul id="menu-footer-nav-capabilities" class="sf-links-new"><li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1639"><a href="https://www.universalpolymer.com/capabilities/die-cutting/">Die Cutting</a></li>
+<li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://www.universalpolymer.com/capabilities/plastic-extrusion/">Plastic Extrusion</a></li>
+<li id="menu-item-1641" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1641"><a href="https://www.universalpolymer.com/capabilities/rubber-extrusion/">Rubber Extrusion</a></li>
+<li id="menu-item-1642" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1642"><a href="https://www.universalpolymer.com/capabilities/rubber-molding/">Rubber Molding Services</a></li>
+</ul>          </div>
+          <div class="sf-links-wrapper-new">
+            <span class="sf-title-new">Markets</span>
+            <ul id="menu-footer-nav-markets" class="sf-links-new"><li id="menu-item-1643" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1643"><a href="https://www.universalpolymer.com/markets/automotive/">Automotive</a></li>
+<li id="menu-item-1644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1644"><a href="https://www.universalpolymer.com/markets/general-industrial/">General Industrial</a></li>
+<li id="menu-item-1645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1645"><a href="https://www.universalpolymer.com/markets/concrete-pipe-gasket/">Concrete Pipe Gasket</a></li>
+<li id="menu-item-1646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1646"><a href="https://www.universalpolymer.com/markets/epdm-rubber-tarp-strap/">Tarp Strap</a></li>
+</ul>          </div>
+          <div class="sf-links-wrapper-new">
+            <span class="sf-title-new">&nbsp;</span>
+            <ul id="menu-footer-nav-new" class="sf-links-new"><li id="menu-item-1634" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1634"><a href="https://www.universalpolymer.com/blog/">Blog</a></li>
+<li id="menu-item-1635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1635"><a href="https://www.universalpolymer.com/about-us/">About Us</a></li>
+<li id="menu-item-1636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1636"><a href="https://www.universalpolymer.com/careers/">Careers</a></li>
+<li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1637"><a href="https://www.universalpolymer.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-1638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1638"><a href="https://www.universalpolymer.com/sitemap/">Sitemap</a></li>
+</ul>          </div>
+          <div class="sf-address-new">
+            <span class="sf-title-new">Universal Polymer &amp; Rubber Ltd., Inc.</span>
+        <p>15730 S. Madison Road, P.O. Box 767 Middlefield, OH 44062  
+
+        <p><span class="sf-ph-wrap"><span>P: <a href="tel:4406321691">440.632.1691</a></span></span></p>
+
+        <div class="sf-social-nav">
+        <ul class="sf-social-list swap">
+                                            <li> <a  rel="noopener noreferrer"  href="https://www.linkedin.com/company/universal-polymer-&#038;-rubber-ltd-" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off-1.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off-1.svg" alt="" title=""></noscript></a></li>
+                                           <li> <a  rel="noopener noreferrer"  href="https://twitter.com/UPRltd" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/twitter-off-1.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/twitter-off-1.svg" alt="" title=""></noscript></a></li>
+                                         </ul>
+      </div> 
+      </div>
+      </div>
+    </div>
+    <div class="sf-small">
+      <p>
+        © 2023 <a href="https://www.universalpolymer.com">Universal Polymer &amp; Rubber Ltd., Inc.</a> All Rights Reserved <span>|</span> Site created by <a href="https://business.thomasnet.com/marketing-services" target="_blank" rel="noopener noreferrer">Thomas Marketing Services</a>
+      </p>
+    </div>      
+    </footer>
+    <!--Site Footer End -->
+		<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.universalpolymer.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script data-minify="1" type='text/javascript' src='https://www.universalpolymer.com/wp-content/cache/min/1/ajax/libs/jquery/1.10.2/jquery.min.js?ver=1623823908' id='jquery-js' defer></script>
+<script type='text/javascript' src='https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/production.min.js?ver=6.2.2' id='plugins-js' defer></script>
+<script data-minify="1" defer type='text/javascript' src='https://www.universalpolymer.com/wp-content/cache/min/1/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1658890781' id='akismet-frontend-js'></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.universalpolymer.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	</div>
+	<!-- Site Wrap End -->
+				<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+    $(function () {
+      $('.popup-modal').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        focus: '#username',
+        modal: true
+      });
+      $(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+      });
+    });
+  });</script>
+<!--webtraxs code start-->
+ 
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+         document.write(unescape("%3Cscript src='" + document.location.protocol + "//www.webtraxs.com/trxscript.php' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+         _trxid = "universalpolymer";
+         webTraxs();
+      </script><!--webtraxs code end-->	    </body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

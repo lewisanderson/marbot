@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-6adf6e76e4726cc884d",applicationID:"622066077"};;/*! For license information please see nr-loader-rum-1.238.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>T,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(632),i=n(567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(56);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(385),A=n(818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4,denyList:void 0},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function T(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.238.0",i="PROD",o="CDN"},385:(e,t,n)=>{n.d(t,{IF:()=>c,Nk:()=>u,Tt:()=>a,_A:()=>o,il:()=>r,pL:()=>s,v6:()=>i,w1:()=>d});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=(o?.location,/iPad|iPhone|iPod/.test(navigator.userAgent)),s=a&&"undefined"==typeof SharedWorker,c=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),d=Boolean(r&&window.document.documentMode),u=!!navigator.sendBeacon},711:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},0:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(148),i=n(284),o=n(322),a=n(325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},148:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>d});var r=n(632),i=n(210),o=n(763);class a{constructor(e){this.contextId=e}}var s=n(117);const c="nr@context:".concat(s.a),d=function e(t,n){var r={},s={},u={},f=!1;try{f=16===n.length&&(0,o.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,o){!1!==o&&(o=!0);if(d.aborted&&!i)return;t&&o&&t.emit(e,n,r);for(var a=p(r),c=v(e),u=c.length,l=0;l<u;l++)c[l].apply(a,n);var f=b()[s[e]];f&&f.push([g,e,n,a]);return a},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return u[t]=u[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),u=(0,r.fP)();function l(){d.aborted=!0,d.backlog={}}u.ee||(u.ee=d)},546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(148).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(402).Rl)()},402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},56:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(148),i=n(546),o=n(0),a=n(325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(148);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(894),i=n(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},81:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(325).D.pageViewTiming},938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(763),i=n(148);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(325),i=n(763),o=n(546),a=n(148),s=n(894),c=n(0),d=n(960),u=n(385),l=n(50),f=n(81),g=n(632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y);const j=(0,i.P_)(e);A.denyList=[...j.ajax?.deny_list||[],...j.ajax?.block_internal?[y.beacon,y.errorBeacon]:[]],(0,i.sU)(e,A),p();const E=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,E,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),E}},325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum.3709cb75-1.238.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.238.0.PROD:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=self["webpackChunk:NRBA-1.238.0.PROD"]=self["webpackChunk:NRBA-1.238.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(325),r=i(763);const o=Object.values(n.D);function a(e){const t={};return o.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(144);var c=i(546),d=i(385),u=i(0),l=i(938),f=i(960);class g extends l.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,u.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=d.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,u.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),o(!1)}};d.il?(0,f.b)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var p=i(633),h=i(894);class v extends g{static featureName=p.t9;constructor(e,t){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(e,t,p.t9,i),("undefined"==typeof PerformanceNavigationTiming||d.Tt)&&"undefined"!=typeof PerformanceTiming){const t=(0,r.OP)(e);t[p.Dz]=Math.max(Date.now()-t.offset,0),(0,f.K)((()=>t[p.qw]=Math.max((0,h.z)()-t[p.Dz],0))),(0,f.b)((()=>{const e=(0,h.z)();t[p.OJ]=Math.max(e-t[p.Dz],0),(0,c.p)("timing",["load",e],void 0,n.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var m=i(711),b=i(284);class y extends m.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,n){t[e]=w(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,b.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=w(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=A(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=w(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=x(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=A(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function A(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function x(e){return"object"!=typeof e?[]:(0,b.D)(e,D)}function D(e,t){return t}var j=i(632),E=i(402),T=i(351);var _=i(956),k=i(239),P=i(251);class C extends g{static featureName=P.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t,n),d.il&&((0,r.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,_.N)((()=>(0,c.p)("docHidden",[(0,h.z)()],void 0,P.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,c.p)("winPagehide",[(0,h.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(81);class N extends g{static featureName=I.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);super(),d._A?(this.agentIdentifier=n,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(v),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.start()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}start(){const t="features";try{const r=a(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,T.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,j.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,j.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[v,C,N],loaderType:"lite"})})()})();</script>
+<link rel="canonical" href="https://americanbakers.org/news/bakery-supply-chain-challenges-infographic" />
+<meta name="description" content="The baking industry is facing unprecedented supply chain hurdles and inflationary pressures. Here&#039;s what&#039;s happening and what it means for consumers." />
+<meta property="og:url" content="https://americanbakers.org/news/bakery-supply-chain-challenges-infographic" />
+<meta property="og:title" content="Bakery Supply Chain Challenges Infographic" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bakery Supply Chain Challenges Infographic" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0D234C} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<meta name="twitter:image" content="https://americanbakers.org/sites/default/files/styles/large/public/2021-08/Supply%20Chain%20Infographic%201500x1000%20%281%29.png?itok=CzjD6lrH" />
+<meta property="og:image" content="https://americanbakers.org/sites/default/files/styles/large/public/2021-08/Supply%20Chain%20Infographic%201500x1000%20%281%29.png?itok=CzjD6lrH" />
+<meta property="og:description" content="The baking industry is facing unprecedented supply chain hurdles and inflationary pressures across the board. Here&#039;s a look at what&#039;s happening and what it could mean for consumers." />
+<meta property="og:type" content="article" />
+<meta property="pubDate" content="Thu, 02/17/2022 - 00:00" />
+<meta property="creator" content="kjuhl" />
+<link rel="icon" href="/themes/aba/favicon.ico" type="image/vnd.microsoft.icon" />
+<script src="/sites/default/files/google_tag/aba/google_tag.script.js?rzr76b" defer></script>
+
+    <title>Bakery Supply Chain Challenges Infographic | American Bakers Association</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/themes/aba/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/themes/aba/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/themes/aba/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/themes/aba/site.webmanifest">
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- injected critical path styling -->
+    <style>
+      .visually-hidden{position:absolute !important;clip:rect(1px, 1px, 1px, 1px);overflow:hidden;height:1px;width:1px;word-wrap:normal;font-size:0.1px;color:transparent;background-color:transparent;margin:0;padding:0}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:16px;margin:0;padding:0;max-width:100vw;overflow-x:hidden}*,*::after,*::before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;padding:0;font-family:"Source Serif Pro",serif;color:#333132;background-color:#F6F5F3;font-weight:400;width:100%;max-width:100%}img{max-width:100%}.l-content{line-height:1.625;letter-spacing:0.16px}@media (max-width: 680px){.l-content{font-size:14px;line-height:1.538;letter-spacing:0.13px}}b,strong{font-weight:700}em{font-style:oblique}i{font-style:italic}small{font-size:0.8em}big{font-size:1.2em}dl dt{font-weight:700}abbr{text-transform:uppercase}.caption{font-family:"Source Serif Pro",serif;font-weight:500;font-size:0.875rem;line-height:1.2;color:#495A79}[data-whatintent='mouse'] *:focus,[data-whatintent='touch']{outline:none}[data-whatintent='keyboard'] *:focus{outline:2px dashed #D93E3E;outline-offset:2px}[data-whatintent='keyboard'] .form-radio:focus+label:before,[data-whatintent='keyboard'] .form-checkbox:focus+label:before{outline:2px dashed #D93E3E;outline-offset:2px}[data-whatintent='keyboard'] .decor--background-dark *:focus{outline:2px dashed #fff}body .focusable.skip-link:focus{position:fixed !important;top:0;z-index:900;font-size:20px;display:inline-block;background-color:#fff;padding:0.25rem}.decor--background-dark{background-color:#0D234C;color:#fff}.decor--background-sand-shade{background-color:#EBE7E3;color:#fff}h1{font-family:"Josefin Sans",sans-serif;color:#0D234C;letter-spacing:0;font-weight:700;font-size:3.125rem;line-height:1.2;text-transform:uppercase}@media (max-width: 990px){h1{font-size:2.125rem}}h2{font-family:"Josefin Sans",sans-serif;color:#0D234C;letter-spacing:0;font-weight:700;font-size:1.875rem;line-height:1.16667;text-transform:uppercase}@media (max-width: 990px){h2{font-size:1.25rem}}h3{font-family:"Josefin Sans",sans-serif;color:#0D234C;letter-spacing:0;font-weight:700;font-size:1.25rem;line-height:1.2;text-transform:uppercase}@media (max-width: 990px){h3{font-size:1rem}}h4{font-family:"Josefin Sans",sans-serif;color:#0D234C;letter-spacing:0;font-weight:600;font-size:1.375rem;line-height:1.22727}@media (max-width: 990px){h4{font-size:1.25rem}}h5{font-family:"Josefin Sans",sans-serif;color:#0D234C;letter-spacing:0;font-weight:600;font-size:1.125rem;line-height:1.22222}@media (max-width: 990px){h5{font-size:1.0625rem}}h6{font-family:"Josefin Sans",sans-serif;color:#0D234C;letter-spacing:0;font-weight:700;font-size:0.75rem;line-height:1.33333;text-transform:uppercase}.decor--background-dark h1,.decor--background-dark h2,.decor--background-dark h3,.decor--background-dark h4,.decor--background-dark h5,.decor--background-dark h6{color:#fff}.l-content-constrain.l-body-container{max-width:774px;margin-left:auto;margin-right:auto;padding:2rem}.l-content-constrain.l-paragraph-container>.paragraph{max-width:774px;margin-left:auto;margin-right:auto}.l-content-constrain.l-paragraph-container>.paragraph.paragraph--image,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--video,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--accordion{max-width:884px;margin-left:auto;margin-right:auto}.l-content-constrain.l-paragraph-container>.paragraph.paragraph--latest-news,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--multi-image,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--aligned-image-feature,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--aligned-video-feature,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--quote,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--contact-area,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--statistic,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--annual-events,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--iframe,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--impact-data{max-width:1054px;margin-left:auto;margin-right:auto}.l-content-constrain.l-paragraph-container>.paragraph.paragraph--featured-block,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--image-collage,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--media-center,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--specialized-events,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--view,.l-content-constrain.l-paragraph-container>.paragraph.paragraph--block{max-width:100%;margin-left:auto;margin-right:auto}.node--homepage .paragraph--homepage-events,.node--homepage .paragraph--latest-news{max-width:1320px;margin-left:auto;margin-right:auto}.landing-content .landing-preamble{max-width:774px;margin-left:auto;margin-right:auto}a{color:#D93E3E;text-decoration:none;-webkit-transition:color 0.2s linear;transition:color 0.2s linear}a:hover,a:focus{color:#D93E3E;text-decoration:underline}a:active{color:#D93E3E;text-decoration:none}.block--main svg{display:block;max-width:100%;height:auto;width:100%}
+    </style>
+    <!-- end critical path styling -->
+    
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_cRR2dd_gCwQFv9j7PSukkLTC4JfjVJULHfKPa2B_b_o.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_J5b8a_nfrTcmlwhZOzwpEBrxNot3TI8-ub4nwqKMC7U.css" />
+
+    
+  </head>
+
+  <body class="path-node page-node-type-article">
+    <script type="text/javascript"> _linkedin_partner_id = "4368428"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script><script type="text/javascript"> (function(l) { if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; window.lintrk.q=[]} var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(window.lintrk); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4368428&fmt=gif" /> </noscript>
+    <!-- Meta Pixel Code -->
+      <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1126599981555782&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZW3W86" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="l-page">
+
+      <header class="l-header">
+      
+
+<div class="l-header__content">
+	<div class="l-header__persistent-container">
+		<div class="header__logo block block-system block-system-branding-block">
+    <a href="/" rel="home" class="site-logo" title="Home">
+    <svg id="header-logo" width="100%" height="100%" viewBox="0 0 1125 286" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+      <title>American Bakers Association logo</title>
+      <g id="header-logo__container" serif:id="ABA Logo" transform="matrix(0.995818,0,0,0.975964,-33.7134,-94.2564)">
+        <rect x="33.855" y="96.578" width="1129.59" height="292.674" style="fill:none;"/>
+        <g id="header-logo__text" transform="matrix(1.0042,0,0,1.02463,-4.52504,-13.1493)">
+          <path d="M416.82,179L415.77,179L391.22,235.55L391,236L402.3,236L406.72,225.4L424.22,225.4L428.42,236L441.57,236L416.9,179.17L416.82,179ZM420.42,215.75L410.78,215.75L415.7,203.85L420.42,215.75Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M462.82,212.51L479.31,235.27L479.81,235.27L496.96,210.92L496.96,236.01L508.34,236.01L508.34,178.89L507.66,178.89L479.71,217.6L452.52,179.04L452.34,178.89L451.81,178.89L451.81,236.01L462.82,236.01L462.82,212.51Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M563.58,225L536.25,225L536.25,213.99L559.52,213.99L559.52,202.98L536.25,202.98L536.25,192.12L562.54,192.12L562.54,181.1L524.87,181.1L524.87,236.01L563.58,236.01L563.58,225Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M607.1,216.11C609.821,214.497 612.003,212.113 613.37,209.26C614.788,206.281 615.516,203.02 615.5,199.72C615.5,193.99 613.59,189.41 609.82,186.09C606.05,182.77 600.72,181.09 593.94,181.09L577.16,181.09L577.16,236L588.54,236L588.54,218.78L595.15,218.78L606.56,236L619.84,236L607.1,216.11ZM603.75,200.11C603.729,202.034 603.051,203.893 601.83,205.38C600.59,206.97 598.55,207.78 595.78,207.78L588.54,207.78L588.54,192.12L595.85,192.12C598.95,192.12 601.05,192.97 602.11,194.64C603.167,196.262 603.737,198.154 603.75,200.09L603.75,200.11Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <rect x="630.92" y="181.1" width="11.38" height="54.91" style="fill:#0d234c;"/>
+          <path d="M700.07,231.44L700.28,231.27L695.54,221L695.18,221.34C693.75,222.64 692.088,223.658 690.28,224.34C688.051,225.213 685.674,225.644 683.28,225.61C680.325,225.675 677.409,224.928 674.85,223.45C672.467,222.022 670.544,219.939 669.31,217.45C667.96,214.646 667.292,211.562 667.36,208.45C667.325,205.466 668.044,202.522 669.45,199.89C670.766,197.409 672.703,195.311 675.07,193.8C677.32,192.347 679.942,191.573 682.62,191.57C686.899,191.678 691.023,193.205 694.34,195.91L694.7,196.19L699.19,185.4L698.94,185.25C696.61,183.819 694.107,182.693 691.49,181.9C688.498,180.977 685.381,180.521 682.25,180.55C677.339,180.448 672.493,181.705 668.25,184.18C664.221,186.592 660.958,190.099 658.84,194.29C656.569,198.855 655.43,203.902 655.52,209C655.478,213.817 656.633,218.569 658.88,222.83C661.119,227.001 664.479,230.465 668.58,232.83C673.125,235.388 678.276,236.677 683.49,236.56C686.873,236.591 690.234,236.008 693.41,234.84C695.792,234.058 698.039,232.911 700.07,231.44Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M722.83,225.41L740.33,225.41L744.53,236.01L757.68,236.01L733,179.18L732.91,178.97L731.91,178.97L707.37,235.52L707.15,236.01L718.46,236.01L722.83,225.41ZM726.83,215.72L731.75,203.82L736.47,215.72L726.83,215.72Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M816.66,238.22L817.45,238.22L817.45,181.1L805.99,181.1L806.2,213.28L768.84,178.97L767.91,178.97L767.91,236.01L779.44,236.01L779.23,204.42L816.66,238.22Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M898.83,219.68C898.869,216.941 898.001,214.264 896.36,212.07C894.708,209.938 892.577,208.225 890.14,207.07C891.96,205.894 893.462,204.286 894.51,202.39C895.701,200.152 896.3,197.645 896.25,195.11C896.448,191.001 894.529,187.065 891.17,184.69C887.83,182.33 883.17,181.13 877.41,181.13L861.15,181.13L861.15,236L879.55,236C885,236 889.61,234.68 893.27,232.07C896.93,229.46 898.83,225.27 898.83,219.68ZM883,201.58C881.881,202.747 880.304,203.365 878.69,203.27L872.56,203.27L872.56,192.12L877.96,192.12C879.686,192.016 881.398,192.495 882.82,193.48C883.991,194.414 884.631,195.866 884.53,197.36C884.572,198.909 884.025,200.418 883,201.58ZM872.56,214.28L878.33,214.28C884.23,214.28 887.11,216.05 887.11,219.68C887.214,221.376 886.385,223 884.95,223.91C883.17,224.957 881.123,225.464 879.06,225.37L872.56,225.37L872.56,214.28Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M929.71,179L928.66,179L904.12,235.55L903.91,236.04L915.21,236.04L919.63,225.44L937.12,225.44L941.32,236.04L954.47,236.04L929.8,179.18L929.71,179ZM933.31,215.75L923.67,215.75L928.59,203.85L933.31,215.75Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M994.73,181.1L976.93,201.2L976.07,202.3L976.23,200.75L976.23,181.1L964.7,181.1L964.7,236.01L976.23,236.01L976.23,215.33L978.49,213.07L995.07,236.01L1009.5,236.01L986.8,205.78L1009.53,181.1L994.73,181.1Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M1031.17,213.99L1054.45,213.99L1054.45,202.98L1031.17,202.98L1031.17,192.12L1057.47,192.12L1057.47,181.1L1019.79,181.1L1019.79,236.01L1058.5,236.01L1058.5,225L1031.17,225L1031.17,213.99Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M1108.29,209.26C1109.71,206.281 1110.44,203.02 1110.42,199.72C1110.42,193.99 1108.51,189.41 1104.74,186.09C1100.97,182.77 1095.64,181.09 1088.86,181.09L1072.08,181.09L1072.08,236L1083.47,236L1083.47,218.78L1090.07,218.78L1101.49,236L1114.76,236L1102,216.11C1104.73,214.503 1106.92,212.117 1108.29,209.26ZM1098.67,200.09C1098.65,202.013 1097.98,203.873 1096.76,205.36C1095.51,206.95 1093.47,207.76 1090.7,207.76L1083.47,207.76L1083.47,192.12L1090.77,192.12C1093.87,192.12 1095.97,192.97 1097.03,194.64C1098.09,196.262 1098.66,198.154 1098.67,200.09Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M1152.54,207.42C1150.46,206.088 1148.24,205.001 1145.91,204.18C1143.28,203.252 1140.78,202.017 1138.44,200.5C1136.63,199.25 1135.76,197.87 1135.76,196.26C1135.65,194.733 1136.33,193.253 1137.56,192.34C1139.14,191.365 1140.99,190.901 1142.84,191.01C1146.25,191.01 1150.33,192.31 1154.97,194.87L1155.29,195.05L1159.65,186.26L1159.39,186.09C1156.9,184.458 1154.21,183.148 1151.39,182.19C1148.08,181.189 1144.63,180.723 1141.17,180.81C1136,181.06 1131.8,182.65 1128.68,185.54C1125.52,188.521 1123.8,192.729 1123.97,197.07C1123.86,199.962 1124.67,202.815 1126.28,205.22C1127.69,207.283 1129.55,208.994 1131.73,210.22C1134.25,211.561 1136.85,212.746 1139.51,213.77C1144.59,215.77 1147.17,218.11 1147.17,220.77C1147.3,222.552 1146.39,224.257 1144.84,225.14C1141.84,226.85 1137.84,227.14 1132.76,225.23C1130.51,224.415 1128.38,223.291 1126.44,221.89L1126.12,221.65L1121.06,230.59L1121.31,230.78C1124.05,232.739 1127.09,234.235 1130.31,235.21C1133.47,236.164 1136.76,236.653 1140.06,236.66C1143.57,236.747 1147.05,236.015 1150.23,234.52C1152.91,233.249 1155.17,231.236 1156.75,228.72C1158.21,226.327 1158.98,223.574 1158.97,220.77C1159.08,217.923 1158.44,215.096 1157.12,212.57C1156.02,210.518 1154.45,208.754 1152.54,207.42Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M416.82,261.85L415.77,261.85L391.22,318.41L391.01,318.9L402.31,318.9L406.73,308.29L424.23,308.29L428.43,318.9L441.58,318.9L416.91,262.06L416.82,261.85ZM420.42,298.6L410.78,298.6L415.7,286.71L420.42,298.6Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M463.52,275.23C465.105,274.256 466.952,273.791 468.81,273.9C472.21,273.9 476.3,275.2 480.94,277.76L481.26,277.94L485.61,269.15L485.35,268.98C482.861,267.344 480.172,266.033 477.35,265.08C474.039,264.079 470.588,263.613 467.13,263.7C461.96,263.94 457.76,265.54 454.64,268.43C451.497,271.434 449.803,275.657 450,280C449.896,282.894 450.704,285.75 452.31,288.16C453.722,290.224 455.59,291.935 457.77,293.16C460.286,294.499 462.881,295.684 465.54,296.71C470.62,298.71 473.2,301.05 473.2,303.71C473.338,305.493 472.427,307.201 470.87,308.08C467.87,309.79 463.87,310.08 458.79,308.16C456.535,307.354 454.407,306.229 452.47,304.82L452.15,304.59L447.09,313.53L447.35,313.71C450.087,315.673 453.127,317.173 456.35,318.15C459.512,319.104 462.797,319.593 466.1,319.6C469.61,319.689 473.093,318.956 476.27,317.46C478.952,316.189 481.215,314.176 482.79,311.66C484.268,309.234 485.034,306.441 485,303.6C485.104,300.75 484.466,297.92 483.15,295.39C482.024,293.353 480.434,291.61 478.51,290.3C476.435,288.97 474.214,287.883 471.89,287.06C469.259,286.136 466.747,284.901 464.41,283.38C462.61,282.14 461.73,280.76 461.73,279.14C461.618,277.618 462.294,276.14 463.52,275.23Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M509.7,275.23C511.287,274.251 513.139,273.787 515,273.9C518.41,273.9 522.49,275.2 527.13,277.76L527.46,277.94L531.81,269.15L531.55,268.98C529.061,267.344 526.372,266.033 523.55,265.08C520.239,264.079 516.788,263.613 513.33,263.7C508.16,263.94 503.96,265.54 500.84,268.43C497.671,271.42 495.958,275.647 496.15,280C496.041,282.895 496.85,285.752 498.46,288.16C499.868,290.223 501.733,291.934 503.91,293.16C506.43,294.499 509.028,295.684 511.69,296.71C516.77,298.71 519.35,301.05 519.35,303.71C519.447,305.468 518.534,307.136 517,308C514,309.71 510,310 504.92,308.08C502.665,307.274 500.537,306.149 498.6,304.74L498.28,304.51L493.22,313.45L493.47,313.63C496.207,315.592 499.248,317.092 502.47,318.07C505.632,319.024 508.917,319.513 512.22,319.52C515.73,319.607 519.213,318.875 522.39,317.38C525.072,316.109 527.335,314.096 528.91,311.58C530.372,309.187 531.141,306.434 531.13,303.63C531.234,300.78 530.596,297.95 529.28,295.42C528.149,293.386 526.56,291.644 524.64,290.33C522.562,288.998 520.338,287.911 518.01,287.09C515.383,286.164 512.875,284.929 510.54,283.41C508.73,282.17 507.86,280.79 507.86,279.17C507.748,277.628 508.446,276.134 509.7,275.23Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M582.81,267.24C574.193,262.118 563.427,262.118 554.81,267.24C550.576,269.749 547.059,273.307 544.6,277.57C539.567,286.212 539.567,296.928 544.6,305.57C547.056,309.786 550.564,313.294 554.78,315.75C563.427,320.766 574.133,320.766 582.78,315.75C587.022,313.29 590.564,309.785 593.07,305.57C598.194,296.954 598.194,286.186 593.07,277.57C590.578,273.315 587.048,269.761 582.81,267.24ZM577.33,306.24C574.883,307.742 572.061,308.525 569.19,308.5C566.235,308.531 563.328,307.745 560.79,306.23C558.285,304.738 556.215,302.614 554.79,300.07C553.328,297.47 552.569,294.533 552.59,291.55C552.555,288.522 553.303,285.535 554.76,282.88C556.144,280.343 558.172,278.214 560.64,276.71C565.717,273.688 572.063,273.688 577.14,276.71C579.603,278.217 581.627,280.345 583.01,282.88C584.467,285.535 585.215,288.522 585.18,291.55C585.208,294.533 584.489,297.476 583.09,300.11C581.739,302.614 579.752,304.718 577.33,306.21L577.33,306.24Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M646.5,304.23C645.068,305.526 643.406,306.544 641.6,307.23C639.37,308.099 636.993,308.526 634.6,308.49C631.642,308.559 628.721,307.811 626.16,306.33C623.779,304.903 621.859,302.819 620.63,300.33C619.265,297.529 618.579,294.445 618.63,291.33C618.598,288.346 619.321,285.401 620.73,282.77C622.049,280.288 623.984,278.187 626.35,276.67C628.6,275.217 631.222,274.443 633.9,274.44C638.18,274.553 642.303,276.084 645.62,278.79L645.98,279.07L650.47,268.28L650.21,268.12C647.88,266.697 645.38,265.572 642.77,264.77C639.776,263.855 636.66,263.403 633.53,263.43C628.652,263.33 623.838,264.564 619.61,267C615.582,269.421 612.316,272.929 610.19,277.12C607.905,281.696 606.755,286.756 606.84,291.87C606.795,296.684 607.95,301.434 610.2,305.69C612.43,309.881 615.791,313.363 619.9,315.74C624.445,318.298 629.596,319.587 634.81,319.47C638.193,319.501 641.554,318.918 644.73,317.75C647.109,316.95 649.352,315.79 651.38,314.31L651.59,314.13L646.85,303.86L646.5,304.23Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <rect x="664.73" y="263.99" width="11.38" height="54.91" style="fill:#0d234c;"/>
+          <path d="M712.15,261.85L711.15,261.85L686.61,318.41L686.39,318.9L697.7,318.9L702.11,308.29L719.61,308.29L723.81,318.9L736.96,318.9L712.29,262.06L712.15,261.85ZM715.75,298.6L706.11,298.6L711,286.71L715.75,298.6Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M739.04,275L751.71,275L751.71,318.9L763.09,318.9L763.09,275L776.27,275L776.27,263.99L739.04,263.99L739.04,275Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <rect x="789.12" y="263.99" width="11.38" height="54.91" style="fill:#0d234c;"/>
+          <path d="M855.68,267.24C847.063,262.118 836.297,262.118 827.68,267.24C823.446,269.749 819.929,273.307 817.47,277.57C812.437,286.212 812.437,296.928 817.47,305.57C819.926,309.786 823.434,313.294 827.65,315.75C836.297,320.766 847.003,320.766 855.65,315.75C859.917,313.289 863.482,309.773 866,305.54C871.124,296.924 871.124,286.156 866,277.54C863.487,273.289 859.936,269.745 855.68,267.24ZM850.2,306.24C847.753,307.742 844.931,308.525 842.06,308.5C839.105,308.531 836.198,307.745 833.66,306.23C831.155,304.738 829.085,302.614 827.66,300.07C826.198,297.47 825.439,294.533 825.46,291.55C825.425,288.522 826.173,285.535 827.63,282.88C829.014,280.343 831.042,278.214 833.51,276.71C838.587,273.688 844.933,273.688 850.01,276.71C852.473,278.217 854.497,280.345 855.88,282.88C857.337,285.535 858.085,288.522 858.05,291.55C858.078,294.533 857.359,297.476 855.96,300.11C854.609,302.614 852.622,304.718 850.2,306.21L850.2,306.24Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+          <path d="M921.32,296.16L883.96,261.85L883.02,261.85L883.02,318.9L894.56,318.9L894.34,287.3L931.78,321.11L932.56,321.11L932.56,263.99L921.1,263.99L921.32,296.16Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+        </g>
+        <g id="headder-logo__icon" transform="matrix(1.0042,0,0,1.02463,-4.52504,-13.1493)">
+          <path d="M159.46,388.87C94.825,378.917 45.262,325.104 40.65,259.87L109.65,328.87C110.142,335.586 111.871,342.153 114.75,348.24C122.569,364.977 136.023,378.449 152.75,386.29C154.935,387.278 157.176,388.14 159.46,388.87ZM182.75,386C183.117,378.888 184.874,371.917 187.92,365.48C195.756,348.715 209.239,335.225 226,327.38C232.089,324.506 238.655,322.777 245.37,322.28L321.29,246.36C320.938,231.623 318.266,217.034 313.37,203.13L251.96,264.54C251.468,271.256 249.739,277.823 246.86,283.91C239.013,300.633 225.543,314.085 208.81,321.91C202.373,324.956 195.402,326.713 188.29,327.08C186.16,327.19 183.73,327.14 183.22,326.64C182.71,326.14 182.67,323.7 182.78,321.57C183.148,314.455 184.905,307.481 187.95,301.04C195.797,284.317 209.267,270.865 226,263.04C232.087,260.161 238.654,258.432 245.37,257.94L309.64,193.67C304.64,182.25 298.143,171.546 290.32,161.84L251.96,200.2C251.468,206.916 249.739,213.483 246.86,219.57C239.019,236.297 225.547,249.751 208.81,257.57C202.375,260.623 195.403,262.383 188.29,262.75C186.16,262.85 183.73,262.81 183.22,262.31C182.71,261.81 182.67,259.37 182.78,257.24C183.148,250.125 184.905,243.151 187.95,236.71C195.797,219.987 209.267,206.535 226,198.71C232.087,195.831 238.654,194.102 245.37,193.61L284.22,154.75C258.743,127.023 223.136,110.702 185.5,109.5L185.5,130.07C189.902,135.165 193.323,141.03 195.59,147.37C201.883,164.747 201.883,183.793 195.59,201.17C193.193,207.879 189.507,214.055 184.74,219.35C183.3,220.92 181.56,222.62 180.84,222.62C180.12,222.62 178.37,220.92 176.94,219.35C172.166,214.06 168.479,207.883 166.09,201.17C159.785,183.795 159.785,164.745 166.09,147.37C168.357,141.03 171.778,135.165 176.18,130.07L176.18,109.51C138.541,110.709 102.93,127.03 77.45,154.76L116.31,193.62C123.026,194.112 129.593,195.841 135.68,198.72C152.397,206.551 165.849,220.003 173.68,236.72C176.732,243.159 178.492,250.134 178.86,257.25C178.96,259.38 178.92,261.81 178.42,262.32C177.92,262.83 175.48,262.86 173.35,262.76C166.234,262.392 159.259,260.632 152.82,257.58C136.103,249.749 122.651,236.297 114.82,219.58C111.941,213.493 110.212,206.926 109.72,200.21L71.33,161.85C63.504,171.556 57.003,182.26 52,193.68L116.28,258C122.996,258.492 129.563,260.221 135.65,263.1C152.367,270.931 165.819,284.383 173.65,301.1C176.702,307.539 178.462,314.514 178.83,321.63C178.93,323.76 178.89,326.19 178.39,326.7C177.89,327.21 175.45,327.25 173.32,327.14C166.221,326.776 159.26,325.03 152.83,322C136.116,314.165 122.665,300.714 114.83,284C111.951,277.913 110.222,271.346 109.73,264.63L48.28,203.13C43.377,217.032 40.701,231.623 40.35,246.36L116.28,322.28C122.995,322.777 129.561,324.506 135.65,327.38C152.377,335.221 165.831,348.693 173.65,365.43C176.723,371.877 178.497,378.867 178.87,386C178.992,387.496 178.925,389.001 178.67,390.48C179.39,390.48 180.09,390.54 180.81,390.54C181.53,390.54 182.23,390.49 182.94,390.48C182.689,389.001 182.625,387.495 182.75,386ZM251.93,328.92C251.438,335.636 249.709,342.203 246.83,348.29C239.001,365.037 225.527,378.511 208.78,386.34C206.625,387.327 204.415,388.189 202.16,388.92C266.834,378.965 316.418,325.105 321,259.83L251.93,328.92Z" style="fill:#0d234c;fill-rule:nonzero;"/>
+        </g>
+      </g>
+    </svg>
+  </a>
+  </div>
+
+		<nav role="navigation" aria-labelledby="block-utilitynavigation-menu" id="block-utilitynavigation" class="header__menu-utility block block-menu navigation menu--utility-navigation">
+            
+  <h2 class="visually-hidden" id="block-utilitynavigation-menu">Utility Navigation</h2>
+  
+
+                      <ul class="utility-menu">
+                    <li class="menu-item">
+        <a href="/research-and-data" data-drupal-link-system-path="node/296">Research</a>
+              </li>
+                <li class="menu-item">
+        <a href="/events" data-drupal-link-system-path="node/8">Events</a>
+              </li>
+                <li class="menu-item">
+        <a href="/professional-development" title="ABA&#039;s Professional Development Programs" data-drupal-link-system-path="node/28">Professional Development</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+		<nav role="navigation" aria-labelledby="block-useraccountmenu-menu" id="block-useraccountmenu" class="header__menu-account block block-menu navigation menu--account">
+            
+  <h2 class="visually-hidden" id="block-useraccountmenu-menu">User account menu</h2>
+  
+
+                      <ul class="account-menu">
+              <li>
+                  <a href="/news">
+                              News 
+            <svg fill="#495A79" xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12"><path d="M8.25-12H-5.5a1.5,1.5,0,0,0-1.414,1H-8.25a.75.75,0,0,0-.75.75v8.5A1.75,1.75,0,0,0-7.25,0H8.25A.75.75,0,0,0,9-.75v-10.5A.75.75,0,0,0,8.25-12ZM-7.5-1.75V-9.5H-7v7.75a.25.25,0,0,1-.25.25A.25.25,0,0,1-7.5-1.75Zm15,.25H-5.518A1.764,1.764,0,0,0-5.5-1.75V-10.5h13ZM-3.625-5.25H.625A.375.375,0,0,0,1-5.625v-3A.375.375,0,0,0,.625-9h-4.25A.375.375,0,0,0-4-8.625v3A.375.375,0,0,0-3.625-5.25Zm.875-2.5h2.5V-6.5h-2.5ZM-4-3.375A.375.375,0,0,0-3.625-3H.625A.375.375,0,0,0,1-3.375v-.75A.375.375,0,0,0,.625-4.5h-4.25A.375.375,0,0,0-4-4.125Zm6,0A.375.375,0,0,0,2.375-3h3.25A.375.375,0,0,0,6-3.375v-.75A.375.375,0,0,0,5.625-4.5H2.375A.375.375,0,0,0,2-4.125Zm0-4.5a.375.375,0,0,0,.375.375h3.25A.375.375,0,0,0,6-7.875v-.75A.375.375,0,0,0,5.625-9H2.375A.375.375,0,0,0,2-8.625Zm0,2.25a.375.375,0,0,0,.375.375h3.25A.375.375,0,0,0,6-5.625v-.75a.375.375,0,0,0-.375-.375H2.375A.375.375,0,0,0,2-6.375Z" transform="translate(9 12)"/></svg>
+                  </a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+		<div class="search-block-form block block-search container-inline header__search" data-drupal-selector="search-block-form" id="block-aba-search" role="search">
+      <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+      <label for="edit-keys" class="visually-hidden">Search</label>
+        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" placeholder="Search" class="form-search" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+  </div>
+
+
+		<button class="main-menu-toggle">
+			<div class="menu-icon" aria-hidden="true">
+				<div class="main-menu-toggle__row main-menu-toggle__row--first">
+					<div class="main-menu-toggle__row-dot"></div>
+					<div class="main-menu-toggle__row-line"></div>
+				</div>
+
+				<div class="main-menu-toggle__row main-menu-toggle__row--second">
+					<div class="main-menu-toggle__row-dot"></div>
+					<div class="main-menu-toggle__row-line"></div>
+				</div>
+
+				<div class="main-menu-toggle__row main-menu-toggle__row--third">
+					<div class="main-menu-toggle__row-dot"></div>
+					<div class="main-menu-toggle__row-line"></div>
+				</div>
+			</div>
+
+			<span class="main-menu-toggle__label__state-text"  aria-hidden="true">Menu</span>
+		</button>
+	</div>
+
+	<div class="l-header__menu-container">
+		<nav role="navigation" aria-labelledby="block-aba-main-menu-menu" id="block-aba-main-menu" class="header__menu-main block block-menu navigation menu--main">
+            
+  <h2 class="visually-hidden" id="block-aba-main-menu-menu">Main navigation</h2>
+  
+
+                      <div class="main-menu">
+    
+              
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/about" data-drupal-link-system-path="node/31">About us</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/about/board-of-directors" title="Board of Directors" data-drupal-link-system-path="node/240">Board of Directors</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/abas-2022-annual-report" data-drupal-link-system-path="node/1020">Annual Impact Report</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/about/industry-partners" data-drupal-link-system-path="node/29">Industry Partners</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/about/media-center" data-drupal-link-system-path="node/3">Media Center</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/about/staff" data-drupal-link-system-path="node/5">Staff</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/about/contact-us" data-drupal-link-system-path="node/30">Contact Us</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+          
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/events" data-drupal-link-system-path="node/8">Events</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/events/convention">Convention</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/events/bakers-fly-and-policy-summit-november-2023" data-drupal-link-system-path="node/913">Fly-In and Policy Summit</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/events/ibie" data-drupal-link-system-path="node/301">International Baking Industry Exposition (IBIE)</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="https://nexusofbaking.com/">NEXUS Powered by BEMA and ABA</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/events/professionals-groups-events" data-drupal-link-system-path="node/299">Professionals Groups Events</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="https://web.cvent.com/event/53d2206b-06f1-4e22-bcb3-b305f1906e37/summary">Webinars</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/events/sponsorships-and-exhibits" data-drupal-link-system-path="node/302">Sponsorships and Exhibits</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+          
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/issues" data-drupal-link-system-path="node/26">Top Issues</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/baking-business" data-drupal-link-system-path="node/230">Business Impact</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/commodities" data-drupal-link-system-path="node/231">Commodities</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/food-safety" data-drupal-link-system-path="node/9">Food Safety</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/logistics" data-drupal-link-system-path="node/16">Logistics</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/nutrition" data-drupal-link-system-path="node/224">Nutrition</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/state-affairs" data-drupal-link-system-path="node/15">State Affairs</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/sustainability" data-drupal-link-system-path="node/232">Sustainability</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/issues/workforce" data-drupal-link-system-path="node/233">Workforce</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+          
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/research-and-data" data-drupal-link-system-path="node/296">Research and Data</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/research-and-data/consumer-trends" data-drupal-link-system-path="node/297">Consumer Trends</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/research-and-data/economic-impact" data-drupal-link-system-path="node/295">Economic Impact</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/research-and-data/workforce-impact" data-drupal-link-system-path="node/298">Workforce Research</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+          
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/professional-development" data-drupal-link-system-path="node/28">Professional Development</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/professional-development/academy" data-drupal-link-system-path="node/276">Bakers Manufacturing Academy</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/professional-development/leadership-training" data-drupal-link-system-path="node/314">Leadership Development</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/professional-development/supervisor-training" data-drupal-link-system-path="node/315">Supervisor Training</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/professional-development/incubaker" data-drupal-link-system-path="node/305">IncuBAKER</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/professional-development/workforce-recruitment-resources" data-drupal-link-system-path="node/656">Workforce Recruitment Resources</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+          
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/membership" data-drupal-link-system-path="node/13">Membership</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/membership/benefits" data-drupal-link-system-path="node/306">Benefits</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/membership/member-resources" data-drupal-link-system-path="node/308">Member Resources</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/membership/professionals-groups" data-drupal-link-system-path="node/289">Professionals Groups</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/membership/member-committees" data-drupal-link-system-path="node/376">Member Committees</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/membership/join-aba" data-drupal-link-system-path="node/309">Join ABA</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+          
+      <div class="menu-item menu-item--level-0 menu-item--expanded">
+        <span class="menu-link-wrapper"><a href="/take-action" data-drupal-link-system-path="node/33">Take action</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+                  <button class="main-menu__submenu-toggle">
+            <div class="main-menu-submenu-toggle__bar"></div>
+            <div class="main-menu-submenu-toggle__bar"></div>
+          </button>
+                        <div class="menu sub-menu sub-menu--level-0 ">
+    
+              
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/take-action/american-bakers-pac" data-drupal-link-system-path="node/310">American Bakers PAC</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/take-action/grassroots-advocacy" data-drupal-link-system-path="node/311">Grassroots Advocacy</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+          
+      <div class="menu-item menu-item--level-1">
+        <span class="menu-link-wrapper"><a href="/take-action/political-education-fund" data-drupal-link-system-path="node/312">Political Education Fund</a> <span class="menu-item-arrow" aria-hidden="true"></span></span>
+      
+              </div>
+    
+    </div>
+  
+              </div>
+    
+    </div>
+  
+
+
+  </nav>
+
+	</div>
+</div>
+
+    </header>
+  
+
+      <main class="l-content">
+      <a id="main-content" tabindex="-1"></a>
+        <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-aba-content" class="block--main block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="655" role="article" class="node node--article node--article--full node--type-article node--promoted node--view-mode-full">
+
+  <div class="article-hero">
+    <div class="l-article-hero__columns">
+      <div class="l-article-hero__text">
+        <div class="l-article-hero__text-constrain">
+          <div class="article__breadcrumb">
+            <div id="block-breadcrumbs" class="block block-system block-system-breadcrumb-block block-breadcrumbs">
+        <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/news">news</a>
+              </li>
+        </ol>
+  </nav>
+
+  </div>
+
+          </div>
+
+          <div class="l-article-hero__text-middle">
+            <div class="l-article-hero__top-line">
+              <div class="article__news-type">
+                                  <svg class="article__news-type-icon"  fill="$color--navy" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                    <title>Pencil icon</title>
+                    <path d="M6.487-10.712,5.462-11.737a1.75,1.75,0,0,0-2.475,0L-6.649-2.1-7,1.021a.656.656,0,0,0,.725.725L-3.149,1.4,6.487-8.237A1.75,1.75,0,0,0,6.487-10.712Zm-2.6,3.84L-2.242-.745V-1.7H-3.555V-3.008H-4.5L1.622-9.134ZM-3.551.563-5.164.742l-.829-.829L-5.813-1.7l.543-.543h.95V-.93h1.312V.02ZM5.869-8.856,4.5-7.491,2.241-9.753l1.366-1.366a.875.875,0,0,1,1.237,0l1.025,1.025A.875.875,0,0,1,5.869-8.856Z" transform="translate(7 12.25)"/>
+                  </svg>
+                <div class="article__news-type-label">
+            <div class="field field--name-field-news-type field--type-entity-reference field--label-hidden field__item">Infographic</div>
+      </div>
+              </div>
+
+              <div class="article__date"><time datetime="2022-02-17T12:00:00Z" class="datetime">Feb 17, 2022</time>
+</div>
+              <div class="article__author"></div>
+            </div>
+
+            <h1 class="article__title">Bakery Supply Chain Challenges Infographic</h1>
+
+            <div class="article__tags">
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item">Commodities</div>
+              <div class="field__item">Logistics</div>
+              <div class="field__item">Business Impact</div>
+              <div class="field__item">Workforce</div>
+          </div>
+  </div>
+          </div>
+
+
+          <div class="l-article-hero__text-bottom">
+                          <div class="article-social social-addthis">
+                <div class="social-addthis__label">Share:</div>
+                
+<div class="addThis-container">
+ <div class="addthis_inline_share_toolbox" data-url="https://americanbakers.org/news/bakery-supply-chain-challenges-infographic" data-title="Bakery Supply Chain Challenges Infographic"></div>
+</div>
+              </div>
+                      </div>
+        </div>
+      </div>
+    
+      <div class="l-article-hero__image">
+        <div class="l-article-hero__image-constrain">
+              <img loading="lazy" src="/sites/default/files/2021-08/Supply%20Chain%20Infographic%201500x1000%20%281%29.png" width="1500" height="1000" alt="Supply chain infographic" />
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article__body l-content-constrain l-body-container">
+    <p>The food and beverage industry is facing unprecedented supply chain hurdles and inflationary pressures across the board. At best, there will be supply chain disruptions and inflated food costs just as the economy begins recovering from the COVID-19 pandemic's impacts. At worst, food supply and food security could be at risk. The baking industry and our other food sector partners must calmly and rationally explain the challenges and push for potential policy solutions. </p>
+
+<p>Here's a look at what's happening and what these challenges could mean to consumers.</p>
+  </div>
+
+  <div class="article__content l-content-constrain l-paragraph-container">
+      <div  class="paragraph paragraph--image paragraph--image--default paragraph--type--image paragraph--view-mode--default">
+              <img loading="lazy" src="/sites/default/files/2022-02/COMMODITY_INFOGRAPHIC_2022_0211.png" width="1275" height="3075" alt="American Bakers Association_COMMODITY_INFOGRAPHIC" />
+
+
+
+
+
+      
+      <div class="image__caption">
+        
+      </div>
+      </div>
+  <div  class="paragraph paragraph--content-embed paragraph--content-embed--default paragraph--type--content-embed paragraph--view-mode--default">
+          
+            <div class="clearfix text-formatted field field--name-field-wysiwyg field--type-text-long field--label-hidden field__item"><p><a href="https://americanbakers.org/sites/default/files/2022-02/COMMODITY_INFOGRAPHIC_2022_0211%281%29.pdf">Download the pdf of the infographic here.</a> Or right click above to save the image.</p></div>
+      
+      </div>
+
+  </div>
+
+  
+    <div class="clearfix"></div>
+
+  <section class="post-content">
+    <div class="post-content__latest-news">
+      <div class="block block-- block-aba-commons block-latest-news-block">
+  
+    
+      <div class="block block-- block-">
+  <div class="paragraph paragraph--latest-news">
+    <h2 class="latest-news__heading">Latest News</h2>
+    <div class="latest-news__articles">
+              
+
+<article data-history-node-id="1095" role="article" class="article-card node node--article node--article--teaser node--type-article node--promoted node--view-mode-teaser">
+		<div class="article-card__hero">
+			    <img loading="lazy" src="/sites/default/files/2020-09/American%20Bakers%20PAC%20Header.png" width="1500" height="1000" alt="American Bakers PAC" />
+
+
+
+
+
+			
+			<div class="article__news-type">
+									<svg class="article__news-type-icon"  fill="#fff" xmlns="http://www.w3.org/2000/svg" width="15.75" height="14" viewBox="0 0 15.75 14">
+						<title>Loudspeaker icon</title>
+						<path d="M7.014-7.195v-4.18a.884.884,0,0,0-.875-.875h0a.873.873,0,0,0-.546.192L3.267-10.2A6.637,6.637,0,0,1-.861-8.75h-5.25A1.75,1.75,0,0,0-7.861-7v2.625a1.75,1.75,0,0,0,1.75,1.75l-.013.875a6.927,6.927,0,0,0,.7,3.034.858.858,0,0,0,.777.466h2.906A.869.869,0,0,0-1.035.368,3.482,3.482,0,0,1-1.75-1.75a3.309,3.309,0,0,1,.121-.875h.768A6.635,6.635,0,0,1,3.267-1.177L5.592.683a1.019,1.019,0,0,0,.546.192A.878.878,0,0,0,7.013,0V-4.18a1.742,1.742,0,0,0,.875-1.507A1.742,1.742,0,0,0,7.014-7.195ZM-1.743.875h-2.9A5.9,5.9,0,0,1-5.25-1.737l.013-.875v-.013H-2.52a4.165,4.165,0,0,0-.1.875A4.284,4.284,0,0,0-1.743.875ZM-6.111-3.5a.876.876,0,0,1-.875-.875V-7a.876.876,0,0,1,.875-.875h5.25V-3.5ZM6.14-.029A.136.136,0,0,1,6.133,0L3.814-1.86a7.515,7.515,0,0,0-3.8-1.581V-7.933a7.515,7.515,0,0,0,3.8-1.582l2.321-1.857h0s0,0,0,0Z" transform="translate(7.861 12.25)"/>
+					</svg>
+				<div class="article__news-type-label">
+            <div class="field field--name-field-news-type field--type-entity-reference field--label-hidden field__item">Press Releases</div>
+      </div>
+			</div>
+		</div>
+
+		<div class="article-card__content">
+			<h3 class="article-card__heading">
+				<a href="/news/american-bakers-pac-selects-experienced-washington-dc-political-executive-lead-growth-plans" rel="bookmark">American Bakers PAC Selects Experienced Washington, DC Political Executive to Lead Growth Plans</a>
+			</h3>
+			
+			<div class="article-card__byline">	
+				<div class="article-card__date"><time datetime="2023-07-31T12:00:00Z" class="datetime">Jul 31, 2023</time>
+</div> | <div class="article-card__author"><a href="/about/staff/jennifer-colfelt" hreflang="en">Jennifer Colfelt</a></div>
+			</div>
+
+			<div class="article-card__body">As part of the American Bakers Political Action Committee’s (PAC) renewed focus on expanding its impact, increasing donor support and...</div>
+			
+			<div class="article__tags">
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item">American Bakers PAC</div>
+          </div>
+  </div>
+		</div>
+</article>
+              
+
+<article data-history-node-id="1094" role="article" class="article-card node node--article node--article--teaser node--type-article node--promoted node--view-mode-teaser">
+		<div class="article-card__hero">
+			    <img loading="lazy" src="/sites/default/files/2023-07/0726-AdobeStock.jpg" width="1001" height="667" alt="nexus stock photo" />
+
+
+
+
+
+			
+			<div class="article__news-type">
+									<svg class="article__news-type-icon"  fill="#fff" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+						<title>Pencil icon</title>
+						<path d="M6.487-10.712,5.462-11.737a1.75,1.75,0,0,0-2.475,0L-6.649-2.1-7,1.021a.656.656,0,0,0,.725.725L-3.149,1.4,6.487-8.237A1.75,1.75,0,0,0,6.487-10.712Zm-2.6,3.84L-2.242-.745V-1.7H-3.555V-3.008H-4.5L1.622-9.134ZM-3.551.563-5.164.742l-.829-.829L-5.813-1.7l.543-.543h.95V-.93h1.312V.02ZM5.869-8.856,4.5-7.491,2.241-9.753l1.366-1.366a.875.875,0,0,1,1.237,0l1.025,1.025A.875.875,0,0,1,5.869-8.856Z" transform="translate(7 12.25)"/>
+					</svg>
+				<div class="article__news-type-label">
+            <div class="field field--name-field-news-type field--type-entity-reference field--label-hidden field__item">Article</div>
+      </div>
+			</div>
+		</div>
+
+		<div class="article-card__content">
+			<h3 class="article-card__heading">
+				<a href="/news/nexus-brings-baking-industry-together-collaboration" rel="bookmark">Nexus brings baking industry together for collaboration</a>
+			</h3>
+			
+			<div class="article-card__byline">	
+				<div class="article-card__date"><time datetime="2023-07-26T12:00:00Z" class="datetime">Jul 26, 2023</time>
+</div> | <div class="article-card__author"><a href="/staff/bakingbusinesscom" hreflang="en">BakingBusiness.com</a></div>
+			</div>
+
+			<div class="article-card__body">BEMA, in partnership with the American Bakers Association (ABA), aims to foster connection and collaboration in the baking industry...</div>
+			
+			<div class="article__tags">
+      <div class="field field--name-field-tags field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item">NextGenBaker</div>
+              <div class="field__item">Industry Partners</div>
+          </div>
+  </div>
+		</div>
+</article>
+              
+
+<article data-history-node-id="1091" role="article" class="article-card node node--article node--article--teaser node--type-article node--promoted node--view-mode-teaser">
+		<div class="article-card__hero">
+			    <img loading="lazy" src="/sites/default/files/2023-07/ABAthree.jpg" width="1100" height="680" alt="aba staff" />
+
+
+
+
+
+			
+			<div class="article__news-type">
+									<svg class="article__news-type-icon"  fill="#fff" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+						<title>Pencil icon</title>
+						<path d="M6.487-10.712,5.462-11.737a1.75,1.75,0,0,0-2.475,0L-6.649-2.1-7,1.021a.656.656,0,0,0,.725.725L-3.149,1.4,6.487-8.237A1.75,1.75,0,0,0,6.487-10.712Zm-2.6,3.84L-2.242-.745V-1.7H-3.555V-3.008H-4.5L1.622-9.134ZM-3.551.563-5.164.742l-.829-.829L-5.813-1.7l.543-.543h.95V-.93h1.312V.02ZM5.869-8.856,4.5-7.491,2.241-9.753l1.366-1.366a.875.875,0,0,1,1.237,0l1.025,1.025A.875.875,0,0,1,5.869-8.856Z" transform="translate(7 12.25)"/>
+					</svg>
+				<div class="article__news-type-label">
+            <div class="field field--name-field-news-type field--type-entity-reference field--label-hidden field__item">Article</div>
+      </div>
+			</div>
+		</div>
+
+		<div class="article-card__content">
+			<h3 class="article-card__heading">
+				<a href="/news/american-bakers-association-announces-three-staff-updates" rel="bookmark">American Bakers Association announces three staff updates</a>
+			</h3>
+			
+			<div class="article-card__byline">	
+				<div class="article-card__date"><time datetime="2023-07-24T12:00:00Z" class="datetime">Jul 24, 2023</time>
+</div> | <div class="article-card__author"><a href="/staff/snack-food-wholesale-bakery" hreflang="en">Snack Food &amp; Wholesale Bakery</a></div>
+			</div>
+
+			<div class="article-card__body">The baking industry group has named three new managers to various association roles.</div>
+			
+			<div class="article__tags"></div>
+		</div>
+</article>
+          </div>
+    <div class="latest-news__link">
+      <a href="/news" class="button--round">View all news</a>
+    </div>
+    <div class="latest-news__section-name">Latest News</div>
+  </div>
+</div>
+
+  </div>
+
+    </div>
+  </section>
+    
+</article>
+
+  </div>
+
+  </div>
+
+    </main>
+  
+      <section class="l-prefooter">
+        <div class="region region-pre-footer">
+    <div id="block-webform" class="block--newsletter-subscribe block block-webform block-webform-block">
+  
+      <h2>Subscribe to our newsletter</h2>
+    
+      <form class="webform-submission-form webform-submission-add-form webform-submission-newsletter-form webform-submission-newsletter-add-form webform-submission-newsletter-node-655-form webform-submission-newsletter-node-655-add-form js-webform-details-toggle webform-details-toggle" data-drupal-selector="webform-submission-newsletter-node-655-add-form" action="/news/bakery-supply-chain-challenges-infographic" method="post" id="webform-submission-newsletter-node-655-add-form" accept-charset="UTF-8">
+  
+  <div class="js-form-item form-item js-form-type-email form-type-email js-form-item-email-address form-item-email-address form-no-label">
+      <label for="edit-email-address" class="visually-hidden js-form-required form-required">Email Address</label>
+        <input data-drupal-selector="edit-email-address" type="email" id="edit-email-address" name="email_address" value="" size="60" maxlength="254" placeholder="Email Address" class="form-email required" required="required" aria-required="true" />
+
+        </div>
+<input autocomplete="off" data-drupal-selector="form-ajxodlbmb52fszh7kin1bw37bfcauamagrh6k3h9b2u" type="hidden" name="form_build_id" value="form-AJxODlbmB52fSzH7kin1bW37bFcaUamAgrH6k3H9b2U" />
+<input data-drupal-selector="edit-webform-submission-newsletter-node-655-add-form" type="hidden" name="form_id" value="webform_submission_newsletter_node_655_add_form" />
+<input data-drupal-selector="edit-honeypot-time" type="hidden" name="honeypot_time" value="Rj4H15Av-aeZ5rGfIywxI5HoUllAwJR1-eYxNTtEYUA" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input class="webform-button--submit button button--primary js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Submit" />
+
+</div>
+<div class="province-textfield js-form-wrapper form-wrapper" style="display: none !important;"><div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-province form-item-province">
+      <label for="edit-province">Leave this field blank</label>
+        <input autocomplete="off" data-drupal-selector="edit-province" type="text" id="edit-province" name="province" value="" size="20" maxlength="128" class="form-text" />
+
+        </div>
+</div>
+
+
+  
+</form>
+
+  </div>
+
+  </div>
+
+    </section>
+  
+      <footer class="l-footer">
+      <div class="l-footer__content">
+  	<a href="/" rel="home" class="footer__logo">
+  		<img src="/themes/aba/img/logo--white.svg" alt="Home">
+  	</a>
+
+    <div class="footer__contact-us">
+    	<div id="block-contactus" class="block block--contact-us block-block-content block-block-content74675e03-697e-4703-9b89-9149ea3bc6e7">
+  
+      <h2>Contact Us:</h2>
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><ul><li class="address">American Bakers Association<br />
+	601 Pennsylvania Ave. NW<br />
+	Suite 230<br />
+	Washington, DC 20004<br /><a href="/directions">Directions</a></li>
+	<li class="mobile">202-789-0300</li>
+	<li class="phone">202-898-1164</li>
+	<li class="mail"><a href="mailto:info@AmericanBakers.org">info@AmericanBakers.org</a></li>
+</ul></div>
+      
+  </div>
+
+    </div>
+
+    <div class="footer__social">
+    	<nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer" class="block block-menu navigation menu--footer">
+            
+  <h2 class="visually-hidden" id="block-footer-menu">Footer</h2>
+  
+
+        
+              <ul class="footer-menu">
+                    <li class="menu-item">
+        <a href="https://www.baketothefuture.org">Bake to the Future Podcast</a>
+              </li>
+                <li class="menu-item">
+        <a href="/about/media-center" data-drupal-link-system-path="node/3">Media Center</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://bakingworks.org">Workforce Recruitment Resources</a>
+              </li>
+                <li class="menu-item">
+        <a href="/about/contact-us" data-drupal-link-system-path="node/30">Contact</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+    	<nav role="navigation" aria-labelledby="block-followus-menu" id="block-followus" class="block block-menu navigation menu--follow-us">
+      
+  <h2 id="block-followus-menu">Follow us:</h2>
+  
+
+        
+              <ul class="follow-us-menu">
+                    <li class="menu-item">
+        <a href="https://www.facebook.com/AmericanBakersAssoc">
+                      <svg fill="#fff" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M1579 128q35 0 60 25t25 60v1366q0 35-25 60t-60 25h-391v-595h199l30-232h-229v-148q0-56 23.5-84t91.5-28l122-1v-207q-63-9-178-9-136 0-217.5 80t-81.5 226v171h-200v232h200v595h-735q-35 0-60-25t-25-60v-1366q0-35 25-60t60-25h1366z"/></svg>
+                  </a>
+
+              </li>
+                <li class="menu-item">
+        <a href="https://www.instagram.com/americanbakers/">
+                      <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><title>Instagram</title><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                  </a>
+
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/company/americanbakers">
+                      <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><title>Linkedin</title><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                  </a>
+
+              </li>
+                <li class="menu-item">
+        <a href="https://twitter.com/AmericanBakers">
+                      <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Twitter</title><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                  </a>
+
+              </li>
+                <li class="menu-item">
+        <a href="https://www.youtube.com/channel/UCn77_VxsOiCRZ5tOiOEJxdw">
+                      <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><title>Youtube</title><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                  </a>
+
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+	  </div>
+  </div>
+</div>
+    </footer>
+  
+      <section class="l-postfooter">
+        <div class="region region-post-footer">
+    <nav role="navigation" aria-labelledby="block-privacy-menu" id="block-privacy" class="block block-menu navigation menu--privacy">
+            
+  <h2 class="visually-hidden" id="block-privacy-menu">Privacy</h2>
+  
+
+        
+              <ul class="privacy-menu">
+                    <li class="menu-item">
+        <a href="/antitrust-policy" data-drupal-link-system-path="node/282">ABA Antitrust Policy</a>
+              </li>
+                <li class="menu-item">
+        <a href="/privacy-policy-terms-conditions" data-drupal-link-system-path="node/281">Privacy Policy &amp; Terms &amp; Conditions</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+    </section>
+  
+</div>
+
+  </div>
+
+
+    
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/655","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"aba\/addthis,aba\/global,aba\/header,aba\/what-input,aba_commons\/mylib,classy\/base,classy\/messages,core\/normalize,eu_cookie_compliance\/eu_cookie_compliance_default,paragraphs\/drupal.paragraphs.unpublished,system\/base,webform\/webform.dialog,webform\/webform.element.details.save,webform\/webform.element.details.toggle,webform\/webform.element.message,webform\/webform.form,webform\/webform.theme.classy","theme":"aba","theme_token":null},"ajaxTrustedUrl":{"\/search\/node":true,"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"webform":{"dialog":{"options":{"narrow":{"title":"Narrow","width":600},"normal":{"title":"Normal","width":800},"wide":{"title":"Wide","width":1000}},"entity_type":"node","entity_id":"655"}},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Cp\u003ECookies enhance your life and your experience on our site. By using AmericanBakers.org, you accept our \u003Cstrong\u003E\u003Ca href=\u0022\/privacy-policy-terms-conditions\u0022\u003Euse of cookies\u003C\/a\u003E.\u003C\/strong\u003E\u003C\/p\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-policy-terms-conditions","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":false,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":null,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"9fd308c387f866e6baac5c6c231ea25a4709a4ffe1627c3e6b452a8911a3f550"}}</script>
+<script src="/sites/default/files/js/js_xc0Uu8oXGqhcnIY0BGij9NXr5AUZ_LQLngBj9V4k51U.js"></script>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ee77e044def6d7d"></script>
+<script src="/sites/default/files/js/js_3DSgCcmwdPmbsAd7iPUtmf4QRtyAmMpnVHysJxbGrH0.js"></script>
+<script src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.5.7" defer></script>
+<script src="/sites/default/files/js/js_7kfniZqIZIi0bAWBTNtg_NQpnVf-YNeshf4OLfpk4PA.js"></script>
+
+    <script>
+      !function(f,e,a,t,h,r){if(!f[h]){r=f[h]=function(){r.invoke?
+      r.invoke.apply(r,arguments):r.queue.push(arguments)},
+      r.queue=[],r.loaded=1*new Date,r.version="1.0.0",
+      f.FeathrBoomerang=r;var g=e.createElement(a),
+      h=e.getElementsByTagName("head")[0]||e.getElementsByTagName("script")[0].parentNode;
+      g.async=!0,g.src=t,h.appendChild(g)}
+      }(window,document,"script","https://cdn.feathr.co/js/boomerang.min.js","feathr");
+
+      feathr("fly", "5c5b50491f7d040d66a169c2");
+      feathr("sprinkle", "page_view");
+    </script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6adf6e76e4726cc884d","applicationID":"622066077","transactionName":"blQHZBcAC0JSBhBaXlceJFMRCApfHCEWRkFYXTleCgUAbXAKCkdDVl0JVRc9K15XADJaVE5yCl4REwpdXwAWHg9PWABH","queueTime":0,"applicationTime":352,"atts":"QhMEEl8aGEw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

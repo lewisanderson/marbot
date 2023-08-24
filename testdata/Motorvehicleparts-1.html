@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>2019 Presents Big Challenges for Auto Parts Manufacturers | GMB North America</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Bebas%20Neue%3A400&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas%20Neue%3A400&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas%20Neue%3A400&#038;display=swap" /></noscript><link rel="stylesheet" href="https://gmb.net/wp-content/cache/min/1/443a39f079ab2d62a55d9d760803e3f0.css" media="all" data-minify="1" />
+	<meta name="description" content="Auto parts Manufacturers will face some big Challenges in 2019. These are the Three main challenges you can Expect to see." />
+	<link rel="canonical" href="https://gmb.net/blog/parts-manufacturers-challenges/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="2019 Presents Big Challenges for Auto Parts Manufacturers | GMB North America" />
+	<meta property="og:description" content="Auto parts Manufacturers will face some big Challenges in 2019. These are the Three main challenges you can Expect to see." />
+	<meta property="og:url" content="https://gmb.net/blog/parts-manufacturers-challenges/" />
+	<meta property="og:site_name" content="GMB North America, Inc." />
+	<meta property="article:publisher" content="https://www.facebook.com/GMBNorthAmerica" />
+	<meta property="article:published_time" content="2019-03-19T19:00:53+00:00" />
+	<meta property="article:modified_time" content="2021-09-07T22:59:18+00:00" />
+	<meta property="og:image" content="https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg" />
+	<meta property="og:image:width" content="640" />
+	<meta property="og:image:height" content="427" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="jasonl" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@GMBNorthAmerica" />
+	<meta name="twitter:site" content="@GMBNorthAmerica" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://gmb.net/blog/parts-manufacturers-challenges/#article","isPartOf":{"@id":"https://gmb.net/blog/parts-manufacturers-challenges/"},"author":{"name":"jasonl","@id":"https://gmb.net/#/schema/person/9a227a80dcf8b4d3ae5853ca9075e3fe"},"headline":"2019 Presents Big Challenges for Auto Parts Manufacturers","datePublished":"2019-03-19T19:00:53+00:00","dateModified":"2021-09-07T22:59:18+00:00","mainEntityOfPage":{"@id":"https://gmb.net/blog/parts-manufacturers-challenges/"},"wordCount":503,"publisher":{"@id":"https://gmb.net/#organization"},"image":{"@id":"https://gmb.net/blog/parts-manufacturers-challenges/#primaryimage"},"thumbnailUrl":"https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg","keywords":["auto parts manufacturing"],"articleSection":["Auto Industry"],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://gmb.net/blog/parts-manufacturers-challenges/","url":"https://gmb.net/blog/parts-manufacturers-challenges/","name":"2019 Presents Big Challenges for Auto Parts Manufacturers | GMB North America","isPartOf":{"@id":"https://gmb.net/#website"},"primaryImageOfPage":{"@id":"https://gmb.net/blog/parts-manufacturers-challenges/#primaryimage"},"image":{"@id":"https://gmb.net/blog/parts-manufacturers-challenges/#primaryimage"},"thumbnailUrl":"https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg","datePublished":"2019-03-19T19:00:53+00:00","dateModified":"2021-09-07T22:59:18+00:00","description":"Auto parts Manufacturers will face some big Challenges in 2019. These are the Three main challenges you can Expect to see.","breadcrumb":{"@id":"https://gmb.net/blog/parts-manufacturers-challenges/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://gmb.net/blog/parts-manufacturers-challenges/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://gmb.net/blog/parts-manufacturers-challenges/#primaryimage","url":"https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg","contentUrl":"https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg","width":640,"height":427},{"@type":"BreadcrumbList","@id":"https://gmb.net/blog/parts-manufacturers-challenges/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gmb.net/"},{"@type":"ListItem","position":2,"name":"2019 Presents Big Challenges for Auto Parts Manufacturers"}]},{"@type":"WebSite","@id":"https://gmb.net/#website","url":"https://gmb.net/","name":"GMB North America, Inc.","description":"Your Success Is Our Future","publisher":{"@id":"https://gmb.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gmb.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://gmb.net/#organization","name":"GMB North America","url":"https://gmb.net/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://gmb.net/#/schema/logo/image/","url":"https://gmb.net/wp-content/uploads/2021/08/GMB-Logo-Small.png","contentUrl":"https://gmb.net/wp-content/uploads/2021/08/GMB-Logo-Small.png","width":250,"height":250,"caption":"GMB North America"},"image":{"@id":"https://gmb.net/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/GMBNorthAmerica","https://twitter.com/GMBNorthAmerica","https://www.youtube.com/user/GMBNorthAmerica","https://www.instagram.com/gmbnorthamerica/","https://www.linkedin.com/company/gmb-north-america-inc-"]},{"@type":"Person","@id":"https://gmb.net/#/schema/person/9a227a80dcf8b4d3ae5853ca9075e3fe","name":"jasonl","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://gmb.net/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/f583a5a9518352da62dfb0735ba9de99?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/f583a5a9518352da62dfb0735ba9de99?s=96&d=mm&r=g","caption":"jasonl"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="GMB North America, Inc. &raquo; Feed" href="https://gmb.net/feed/" />
+<link rel="alternate" type="application/rss+xml" title="GMB North America, Inc. &raquo; Comments Feed" href="https://gmb.net/comments/feed/" />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.woff" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://gmb.net/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://gmb.net/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://gmb.net/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=1692709927' media='only screen and (max-width: 767px)' />
+
+<style id='woocommerce-inline-inline-css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://gmb.net/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/jquery/jquery.min.js?ver=1692710552' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1692710552' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/imagesloaded.min.js?ver=1623353892' id='imagesloaded-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=1681988629' id='wp-polyfill-inert-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=1681988629' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=1692710552' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/hooks.min.js?ver=1692710552' id='wp-hooks-js'></script>
+<script id='wpm-js-extra'>
+var wpm = {"ajax_url":"https:\/\/gmb.net\/wp-admin\/admin-ajax.php","root":"https:\/\/gmb.net\/wp-json\/","nonce_wp_rest":"ac15da1775","nonce_ajax":"5b825e93c8"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/woocommerce-google-adwords-conversion-tracking-tag/js/public/wpm-public.p1.min.js?ver=1692709878' id='wpm-js' defer></script>
+<script id='wpstg-global-js-extra'>
+var wpstg = {"nonce":"8adf361951"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/wp-staging-pro/assets/js/dist/wpstg-blank-loader.js?ver=1692710834' id='wpstg-global-js' defer></script>
+<link rel="https://api.w.org/" href="https://gmb.net/wp-json/" /><link rel="alternate" type="application/json" href="https://gmb.net/wp-json/wp/v2/posts/5161" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://gmb.net/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.3" />
+<meta name="generator" content="WooCommerce 8.0.2" />
+<link rel='shortlink' href='https://gmb.net/?p=5161' />
+<link rel="alternate" type="application/json+oembed" href="https://gmb.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgmb.net%2Fblog%2Fparts-manufacturers-challenges%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://gmb.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgmb.net%2Fblog%2Fparts-manufacturers-challenges%2F&#038;format=xml" />
+		<script type="rocketlazyloadscript">
+			var bb_powerpack = {
+				search_term: '',
+				version: '2.32.3',
+				getAjaxUrl: function() { return atob( 'aHR0cHM6Ly9nbWIubmV0L3dwLWFkbWluL2FkbWluLWFqYXgucGhw' ); },
+				callback: function() {}
+			};
+		</script>
+				<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			var woopack_config = {"ajaxurl":"https:\/\/gmb.net\/wp-admin\/admin-ajax.php","page":0,"current_page":"https:\/\/gmb.net\/blog\/parts-manufacturers-challenges\/","woo_url":"https:\/\/gmb.net\/wp-content\/plugins\/woocommerce\/"};
+		</script>
+		<link rel="alternate" hreflang="es-ES" href="https://gmb.net/es/2019-presenta-grandes-desafios-para-los-fabricantes-de-piezas-de-automoviles/"><link rel="alternate" hreflang="en-US" href="https://gmb.net/blog/parts-manufacturers-challenges/">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<script type="rocketlazyloadscript" data-cfasync="false"> var dFlipLocation = "https://gmb.net/wp-content/plugins/3d-flipbook-dflip-lite/assets/"; var dFlipWPGlobal = {"text":{"toggleSound":"Turn on\/off Sound","toggleThumbnails":"Toggle Thumbnails","toggleOutline":"Toggle Outline\/Bookmark","previousPage":"Previous Page","nextPage":"Next Page","toggleFullscreen":"Toggle Fullscreen","zoomIn":"Zoom In","zoomOut":"Zoom Out","toggleHelp":"Toggle Help","singlePageMode":"Single Page Mode","doublePageMode":"Double Page Mode","downloadPDFFile":"Download PDF File","gotoFirstPage":"Goto First Page","gotoLastPage":"Goto Last Page","share":"Share","mailSubject":"I wanted you to see this FlipBook","mailBody":"Check out this site {{url}}","loading":"DearFlip: Loading "},"moreControls":"download,pageMode,startPage,endPage,sound","hideControls":"","scrollWheel":"true","backgroundColor":"#777","backgroundImage":"","height":"auto","paddingLeft":"20","paddingRight":"20","controlsPosition":"bottom","duration":800,"soundEnable":"true","enableDownload":"true","enableAnnotation":"false","enableAnalytics":"false","webgl":"true","hard":"none","maxTextureSize":"1600","rangeChunkSize":"524288","zoomRatio":1.5,"stiffness":3,"pageMode":"0","singlePageMode":"0","pageSize":"0","autoPlay":"false","autoPlayDuration":5000,"autoPlayStart":"false","linkTarget":"2","sharePrefix":"dearflip-"};</script>
+<!-- START Pixel Manager for WooCommerce -->
+
+		<script type="rocketlazyloadscript">
+
+			window.wpmDataLayer = window.wpmDataLayer || {}
+			window.wpmDataLayer = Object.assign(window.wpmDataLayer, {"cart":{},"cart_item_keys":{},"orderDeduplication":true,"position":1,"viewItemListTrigger":{"testMode":false,"backgroundColor":"green","opacity":0.5,"repeat":true,"timeout":1000,"threshold":0.8},"version":{"number":"1.33.0","pro":false,"eligibleForUpdates":false,"distro":"fms"},"pixels":{"google":{"linker":{"settings":null},"user_id":false,"analytics":{"ga4":{"measurement_id":"G-8JT5B0BN5S","parameters":{},"mp_active":false,"debug_mode":false,"page_load_time_tracking":false},"id_type":"post_id","eec":false}},"facebook":{"pixel_id":"1759552717450433","dynamic_remarketing":{"id_type":"post_id"},"capi":false,"advanced_matching":false,"exclusion_patterns":[],"fbevents_js_url":"https://connect.facebook.net/en_US/fbevents.js"}},"shop":{"list_name":"Blog Post | 2019 Presents Big Challenges for Auto Parts Manufacturers","list_id":"blog_post_2019-presents-big-challenges-for-auto-parts-manufacturers","page_type":"blog_post","currency":"USD","cookie_consent_mgmt":{"explicit_consent":false},"selectors":{"addToCart":[],"beginCheckout":[]}},"general":{"variationsOutput":true,"userLoggedIn":false,"scrollTrackingThresholds":[],"pageId":5161,"excludeDomains":[],"server2server":{"active":false,"ipExcludeList":[]}}})
+
+		</script>
+
+		
+<!-- END Pixel Manager for WooCommerce -->
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M6FGRR');</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" href="https://gmb.net/wp-content/uploads/2021/08/cropped-gmb-logo-transp-bg-512x-v2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://gmb.net/wp-content/uploads/2021/08/cropped-gmb-logo-transp-bg-512x-v2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://gmb.net/wp-content/uploads/2021/08/cropped-gmb-logo-transp-bg-512x-v2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://gmb.net/wp-content/uploads/2021/08/cropped-gmb-logo-transp-bg-512x-v2-270x270.png" />
+		<style id="wp-custom-css">
+			
+/* Header */
+
+/* Main Menu */
+header nav .menu a {
+	  color:#e6e6e6;
+    font-size: 14px;
+    padding: 20px;
+    transition: 0.2s;
+}
+header .fl-menu ul.sub-menu {
+    background-color: #ffffff !important;
+    border-radius: 0px 0px 0px 0px;
+}
+header .fl-menu ul.sub-menu li a {
+    color: #333333 !important;
+    padding:20px !important;
+    font-size:14px;
+}
+header .fl-menu ul.sub-menu li:hover>a {
+    color: #fff !important;
+    background-color: #c0373b !important;
+    transition: 0.2s;
+}
+header li.mega-menu ul li ul.sub-menu li.menu-item a {
+    display: flex;
+    align-items: center;
+    line-height:1.3;
+	  padding: 20px 12px !important;
+}
+header li.mega-menu ul li ul.sub-menu li.menu-item a img {
+    width: 65px;
+    height: 65px;
+	  margin-right: 5px;
+}
+
+/*Main Menu - Mobile*/
+header .fl-menu ul.sub-menu li a img {
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+}
+header .fl-menu fl-menu-responsive-toggle-mobile text {
+	overflow-wrap: break-word;
+}
+
+/* TEST Header */
+
+/* TEST Language menu */
+#menu-languages li a,
+#menu-idiomas li a {
+    padding:5px 10px;
+    color:#c0373b !important;
+    font-size:15px;
+}
+#test-header ul#menu-languages li:last-child,
+ul#menu-idiomas li:last-child {
+    display:none;
+}
+
+
+/* YMM Lookups All Pages */
+.search-section.col-xs-12.col-md-8 {
+    max-width: 100%;
+}
+.selectize-control {
+    width: 100% !important;
+	  text-align: left;
+}
+/* Home Page */
+/* YMM Lookup */
+body.home #year_make_model_part_engine .form-group {
+    flex-basis:20%;
+	  padding:0 8px 0 0;
+}
+body.home #year_make_model_part_engine .form-group select {
+    border-radius: 0 !important;
+}
+body.home #year_make_model_part_engine .buttwrap.form-group button {
+    background-color: #c0373b;
+    border: 1px solid #ffffff;
+		border-radius: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    height: 46px;
+	  font-size:15px;
+	  letter-spacing:1px;
+}
+body.home #year_make_model_part_engine .buttwrap.form-group button:hover {
+	background-color: #760205;
+}
+body.home #year_make_model_part_engine .buttwrap #clear-fitment-filter {
+    width: 60px;
+    text-align: center;
+    margin: 0 8px;
+    height: 46px;
+    line-height: 46px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 997px) {
+    body.home #year_make_model_part_engine .buttwrap.form-group button {
+			  font-size:13px;
+			  letter-spacing:0;
+			  padding:10px;
+    }
+	body.home #year_make_model_part_engine .buttwrap #clear-fitment-filter {
+		    width:auto;
+		    font-size:13px;
+		    letter-spacing:0;
+	  }
+}
+@media only screen and (max-width: 600px) {
+	body.home #year_make_model_part_engine .form-group {
+		    flex-basis:100%;
+			  padding: 0;
+        margin: 0 0 4px 0;
+    }
+}
+
+#gform_wrapper_5 {
+    max-width: 350px;
+}
+/* Shop Page YMM Lookup Sidebar */
+aside.widget_class_searchshop_widget .opticat-lookup.search-widget-sidebar .search-section {
+    background-color:#efefef;
+    padding:15px;
+	  text-align:center;
+	  border:1px solid #bdbdbd;
+}
+aside.widget_class_searchshop_widget .opticat-lookup.search-widget-sidebar .search-section.col-xs-12.col-md-8 {
+    width: 100%;
+	  max-width: 100%;
+}
+aside.widget_class_searchshop_widget .opticat-lookup.search-widget-sidebar .search-section.col-xs-12.col-md-8 .form-group {
+    width: 100%;
+    margin-bottom: 8px;
+}
+aside.widget_class_searchshop_widget .opticat-lookup.search-widget-sidebar .search-section.col-xs-12.col-md-8 .form-group select {
+	  text-transform:uppercase;
+}
+aside.widget_class_searchshop_widget .opticat-lookup.search-widget-sidebar .search-section.col-xs-12.col-md-8 .buttwrap.form-group button {
+    width: 80%;
+    margin: 0 auto 10px auto;
+	  color: #fff;
+	  background-color: #c0373b;
+}
+aside.widget_class_searchshop_widget .opticat-lookup.search-widget-sidebar .search-section.col-xs-12.col-md-8 .buttwrap.form-group button:hover {
+	  background-color: #000000;
+    border: 1px solid inherit;
+}
+aside.widget_class_searchshop_widget .alert.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding:15px;
+    margin:0 0 8px;
+}
+aside.widget_class_searchshop_widget #clear-fitment-filter {
+    text-transform: uppercase;
+    font-size: 13px;
+	  margin: 0 auto;
+}
+/* YMM Lookup Modal */
+.fitment-modal .modal-content {
+    background-color:#efefef;
+}
+.fitment-modal .modal-content .opticat-lookup .search-section.col-xs-12.col-md-8 {
+    width: 100%;
+}
+.fitment-modal .modal-content .opticat-lookup .search-section.col-xs-12.col-md-8 .form-group {
+    width: 100%;
+}
+.fitment-modal .modal-content .opticat-lookup .search-section.col-xs-12.col-md-8 .buttwrap.form-group {
+    text-align: center;
+    margin-top: 0;
+}
+.fitment-modal .modal-content .opticat-lookup .search-section.col-xs-12.col-md-8 .buttwrap.form-group button {
+    width: 80%;
+    font-size: inherit;
+}
+.fitment-modal .modal-content .opticat-lookup .search-section.col-xs-12.col-md-8 .buttwrap.form-group #clear-fitment-filter {
+    margin: 10px 0;
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+/* WooCommerce Base Rules */
+/* Hide prices everywhere */
+.woocommerce .price,
+.woocommerce .onsale {
+	  display:none !important;
+}
+.woocommerce-page ul.products li.product a.button, .woocommerce-page .woocommerce-message a.button, .woocommerce-page .woocommerce-message a.button.wc-forward, .woocommerce-page .woocommerce a.button.wc-forward, .woocommerce-page button.button, .woocommerce-page button.button.alt, .woocommerce-page a.button, .woocommerce-page a.button.alt, .woocommerce-page .woocommerce button[type=submit], .woocommerce-page button[type=submit].alt.disabled {
+	  background-color:#c0373b;
+}
+.woocommerce-page ul.products li.product a.button:hover, .woocommerce-page .woocommerce-message a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page a.button:hover, .woocommerce-page .woocommerce button[type=submit]:hover, .woocommerce-page button[type=submit].alt.disabled:hover {
+	  background-color:#000000;
+}
+/* WooCommerce Product Pages */
+.single-product.woocommerce div.product h1.product_title {
+    font-size: 26px;
+	  text-transform: none;
+}
+.single-product.woocommerce .choose-ymm.alert.alert-warning {
+    padding: 8px 12px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    margin: 0 0 5px 0;
+}
+.single-product.woocommerce .choose-ymm.alert.alert-warning a {
+    text-decoration: underline;
+    color: #000;
+}
+/* WooCommerce Shop Page */
+/* Shop Page Sidebar */
+h3#finder-heading, h3#cat-list-heading {
+    margin-bottom: -30px;
+}
+@media only screen and (max-width: 768px) {
+    #class_searchshop_widget-2::after {
+		    content: "\2193  Scroll Down To See Results \2193";
+		    color: #fff;
+		    background-color: #c0373b;
+		    padding: 8px;
+		    margin: 15px 0;
+		    display: block;
+		    text-align: center;
+    }
+}
+.fl-sidebar ul.wc-block-product-categories-list ul.wc-block-product-categories-list {
+    display: none;
+}
+.fl-sidebar .fl-widget:last-child {
+    margin-bottom: 0;
+}
+/* Shop Page Main */
+.woocommerce ul.products li.product h2.woocommerce-loop-product__title {
+    font-size: 16px !important;
+    text-transform: none;
+}
+.woocommerce ul.products li.product a.button {
+	  font-size:13px;
+	  text-transform: capitalize;
+}
+/* WooCommerce Cart Page */
+body.woocommerce-cart article header {
+    margin-bottom: 15px;
+    margin-top: -15px;
+}
+body.woocommerce-cart article header h1 {
+    font-size: 26px;
+    margin: 0;
+}
+body.woocommerce-cart .woocommerce .woocommerce-message {
+    font-weight: normal;
+    margin-bottom: 25px;
+    padding: 10px 15px !important;
+}
+body.woocommerce-cart .woocommerce .woocommerce-message a.button {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 30px;
+    line-height: 1.5;
+}
+.woocommerce table.cart td.actions .coupon .input-text,
+.woocommerce-page table.cart td.actions .coupon .input-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    height: 30px;
+}
+.woocommerce table.cart td.actions .button,
+.woocommerce-page table.cart td.actions .button {
+    font-size: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    background-color: #ddd !important;
+    border: 1px solid #bdbdbd;
+	height:30px;
+}
+body.woocommerce-cart .woocommerce table.shop_table {
+    margin-bottom: 10px;
+}
+body.woocommerce-cart .woocommerce a.checkout-button {
+    background-color: #1B7907 !important;
+}
+/* Add Red Dot to Cart Icon When Cart Has Items */
+body.cart-has-items i.fas.fa-shopping-cart::after {
+    content: " ";
+    height: 8px;
+    width: 8px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    left:-4px;
+    top:-8px
+}
+/* Content Pages */
+button.btn-large {
+    display:block;
+    width:85%;
+    border:none;
+    border-radius:0;
+    padding:15px;
+    margin:0 auto;
+}
+.area-heading-shape .fl-separator {
+    background: rgb(204,204,204);
+    background: linear-gradient(
+90deg
+, rgba(204,204,204,1) 34.99%, rgba(192,55,59,1) 35%, rgba(192,55,59,1) 49.99%, rgba(204,204,204,1) 50%) !important;
+    height: 10px;
+    border: none;
+}
+
+/* Gravity Forms */
+.button.gform_button_select_files {
+    background-color: #c0373b !important;
+}
+.button.gform_button_select_files:hover {
+    background-color: #8c2020 !important;
+}
+
+/* Blog Category */
+Category  {
+	text-align: center;
+}
+
+/* U-Joint Lookup Page Styling */
+
+.page-template-u-joint-lookup article .row{
+margin-top:10px;
+margin-bottom:10px;
+}
+.page-template-u-joint-lookup article .row.formreset button {
+margin-left: 28%;
+border: none;
+padding: 8px 16px;
+color: #333;
+font-size: 11px;
+text-transform: uppercase;
+border-radius: 5px;
+background-color: #efefef;
+}
+
+.page-template-u-joint-lookup article .unit-select{
+margin: 0;
+padding: 10px 20px;
+background-color: #efefef;
+font-size: 13px;
+font-style: italic;
+}
+
+.page-template-u-joint-lookup article .selection{
+margin-top:40px;
+}
+
+.page-template-u-joint-lookup article .selection label{
+margin-top:6px;
+text-align:right;
+width:100%;
+}
+
+.page-template-u-joint-lookup article .selection select{
+height:35px;
+}
+
+.page-template-u-joint-lookup article .results{
+margin-top:30px;
+background-color: #efefef;
+border-top: 3px solid #D02332;
+padding: 15px;
+}
+
+.page-template-u-joint-lookup article .results h2 {
+margin: 0 0 30px 0;
+padding: 0 0 15px 15px;
+}
+
+.page-template-u-joint-lookup article table td, table th{
+text-align:center
+}
+
+.page-template-u-joint-lookup article .image{
+display: flex;
+align-items: baseline;
+justify-content: baseline;
+width:100%;
+min-height:400px;
+background-image: url(/wp-content/themes/bb-theme-child/images/ujoint-start-here-arrow-bg.png);
+background-repeat: no-repeat;
+background-position: 50% 50%;
+}
+
+.page-template-u-joint-lookup article .image img{
+position:relative;
+top:20px;
+max-height:400px;
+max-width:400px;
+height:400px;
+width:auto;
+display:flex;
+margin:0 auto;
+}
+
+.page-template-u-joint-lookup article .form-control {
+color: #fff;
+background-color: #aaa;
+border: 1px solid #aaa;
+border-radius: 5px;
+}
+
+.page-template-u-joint-lookup article .u-joint-table-wrapper {
+overflow: hidden;
+}
+
+.u-joint-table-wrapper .dataTables_length label,
+.u-joint-table-wrapper .dataTables_filter label {
+font-weight:400;
+}
+
+.u-joint-table-wrapper .dataTables_filter label {
+	display: inline-flex;
+}
+
+.u-joint-table-wrapper .dataTables_length label,
+.u-joint-table-wrapper .dataTables_filter label {
+font-weight:400;
+}
+
+.page-template-u-joint-lookup .results .table {
+  width: unset!important;
+    padding: 5px;
+}
+
+/* Temp fix for empty 'where to buy' */
+.single-product a.where-to-buy {
+    display: none;
+}
+
+/* Hide Fitment Verification on Apparel Products */
+.product_cat-apparel .choose-ymm, .product_cat-apparel .part_applications_tab_tab, .product_tag-universal .part_applications_tab_tab {
+    display: none!important;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="post-template-default single single-post postid-5161 single-format-standard theme-bb-theme woocommerce-no-js fl-theme-builder-singular fl-theme-builder-singular-blog-post fl-theme-builder-header fl-theme-builder-header-standard-header-copy-2 fl-theme-builder-footer fl-theme-builder-footer-standard-footer-copy-2 fl-framework-base-4 fl-preset-default fl-full-width fl-search-active" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><div class="fl-page">
+	<header class="fl-builder-content fl-builder-content-35889 fl-builder-global-templates-locked" data-post-id="35889" data-type="header" data-sticky="0" data-sticky-on="" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div id="test-header" class="fl-row fl-row-full-width fl-row-bg-photo fl-node-dn03jgw9h5fu fl-row-default-height fl-row-align-center fl-row-bg-overlay" data-node="dn03jgw9h5fu">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-pjyt0m352daw fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="pjyt0m352daw">
+			<div class="fl-col fl-node-4tgoqhi6mzrc fl-col-small fl-col-small-custom-width" data-node="4tgoqhi6mzrc">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-25z8iogdcmta" data-node="25z8iogdcmta">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="/" target="_self" itemprop="url">
+				<img decoding="async" class="fl-photo-img wp-image-174 size-full" src="https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future.png" alt="GMB Your Success is our Future" itemprop="image" height="388" width="1316" title="GMB Your Success is our Future"  data-no-lazy="1" srcset="https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future.png 1316w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-450x133.png 450w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-1024x302.png 1024w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-768x226.png 768w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-600x177.png 600w" sizes="(max-width: 1316px) 100vw, 1316px" />
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-3c1gmu9ilen7 fl-col-small-custom-width fl-col-has-cols" data-node="3c1gmu9ilen7">
+	<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-fdhn437r5v9a fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="fdhn437r5v9a">
+			<div class="fl-col fl-node-6gp7kzfh4as2 fl-col-small-custom-width" data-node="6gp7kzfh4as2">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-search fl-node-mfc41l83wqpo" data-node="mfc41l83wqpo">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-search-form fl-search-form-inline fl-search-form-width-full"
+	>
+	<div class="fl-search-form-wrap">
+		<div class="fl-search-form-fields">
+			<div class="fl-search-form-input-wrap">
+				<form role="search" aria-label="Search form" method="get" action="https://gmb.net/">
+	<div class="fl-form-field">
+		<input type="search" aria-label="Search input" class="fl-search-text" placeholder="Search" value="" name="s" />
+
+			</div>
+	</form>
+			</div>
+			<div class="fl-button-wrap fl-button-width-auto fl-button-center">
+			<a href="#" target="_self" class="fl-button">
+							<span class="fl-button-text">GO</span>
+					</a>
+</div>
+		</div>
+	</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-cx5j9ehvqm0s fl-col-small fl-col-small-custom-width" data-node="cx5j9ehvqm0s">
+	<div class="fl-col-content fl-node-content"><div id="language-button" class="fl-module fl-module-pp-advanced-menu fl-node-t7g1zenyslhd" data-node="t7g1zenyslhd">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-advanced-menu pp-advanced-menu-accordion-collapse pp-menu-default pp-menu-align-center">
+   	   	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav" aria-label="Languages" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		
+		<ul id="menu-languages" class="menu pp-advanced-menu-vertical pp-toggle-none"><li id="menu-item-4940" class="site-id-2 mlp-language-nav-item menu-item menu-item-type-mlp_language menu-item-object-mlp_language"><a rel="alternate" href="https://gmb.net/es/2019-presenta-grandes-desafios-para-los-fabricantes-de-piezas-de-automoviles/" lang="es-ES" hreflang="es-ES" tabindex="0" role="link"><span class="menu-item-text">Español</span></a></li><li id="menu-item-4939" class="site-id-1 mlp-language-nav-item menu-item menu-item-type-mlp_language menu-item-object-mlp_language mlp-current-language-item"><a rel="alternate" href="https://gmb.net/blog/parts-manufacturers-challenges/" lang="en-US" hreflang="en-US" tabindex="0" role="link"><span class="menu-item-text">English</span></a></li></ul>
+			</nav>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-rmlyzvu4apcj fl-col-small fl-col-small-custom-width" data-node="rmlyzvu4apcj">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-68ztomkgrb3f" data-node="68ztomkgrb3f">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;"><a href="/contact/"><strong>Contact Us</strong></a></p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div id="test-header" class="fl-row fl-row-full-width fl-row-bg-color fl-node-ck7m4q850t1n fl-row-default-height fl-row-align-center" data-node="ck7m4q850t1n">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-fs15bit0cojw" data-node="fs15bit0cojw">
+			<div class="fl-col fl-node-bkluz476y05f" data-node="bkluz476y05f">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-menu fl-node-40j5qtnr6bms fl-visible-desktop fl-visible-large fl-visible-medium" data-node="40j5qtnr6bms">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger-label" aria-label="Main Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span><span class="fl-menu-mobile-toggle-label">Main Menu</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Main Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-main-menu" class="menu fl-menu-horizontal fl-toggle-arrows"><li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://gmb.net/">Home</a></li><li id="menu-item-39773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="https://gmb.net/about/">About</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39774" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/about/">About Us</a></li>	<li id="menu-item-39775" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/global-network/">Global Network</a></li>	<li id="menu-item-39781" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/gmb-logo/">GMB Logo</a></li>	<li id="menu-item-39780" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/events-closing-calendar/">Events/Closing Calendar</a></li>	<li id="menu-item-39776" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/faqs/">Frequently Asked Questions</a></li></ul></li><li id="menu-item-39777" class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="https://gmb.net/products/">Products</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39782" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 1</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39834" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/batteries/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/08/GMB_FloodedBattery_2023.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/08/GMB_FloodedBattery_2023.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/08/GMB_FloodedBattery_2023.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/08/GMB_FloodedBattery_2023.png"/>
+</picture>
+</noscript>Batteries</a></li>		<li id="menu-item-39877" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/electric-water-pump/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_Electric-Water-Pump_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_Electric-Water-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_Electric-Water-Pump_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_Electric-Water-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Electric Water Pumps</a></li>		<li id="menu-item-39878" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/fan-clutch/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_Fan-Clutch_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_Fan-Clutch_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_Fan-Clutch_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_Fan-Clutch_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Fan Clutches</a></li></ul></li>	<li id="menu-item-39813" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 2</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39936" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/oil-filters/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/08/GMB_Oil-Filter_2023.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/08/GMB_Oil-Filter_2023.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/08/GMB_Oil-Filter_2023.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/08/GMB_Oil-Filter_2023.png"/>
+</picture>
+</noscript>Filters</a></li>		<li id="menu-item-39879" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/fuel-pump/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_Fuel-Pump_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_Fuel-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_Fuel-Pump_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_Fuel-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Fuel Pumps</a></li>		<li id="menu-item-39796" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/heavy-duty-parts/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_HD-Water-Pump_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_HD-Water-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_HD-Water-Pump_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_HD-Water-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Heavy Duty Parts</a></li></ul></li>	<li id="menu-item-39814" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 3</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39935" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/motor-oil/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/08/GMB_5QT-Oil_2023.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/08/GMB_5QT-Oil_2023.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/08/GMB_5QT-Oil_2023.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/08/GMB_5QT-Oil_2023.png"/>
+</picture>
+</noscript>Lubricants</a></li>		<li id="menu-item-39880" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/tensioner-idler-bearing/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_Tensioner-Idle-Bearing_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_Tensioner-Idle-Bearing_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_Tensioner-Idle-Bearing_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_Tensioner-Idle-Bearing_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Tensioner &#038; Idler Bearings</a></li>		<li id="menu-item-39799" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/timing-belt-kit-w-water-pump/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_Timing-Belt-Kit_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_Timing-Belt-Kit_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_Timing-Belt-Kit_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_Timing-Belt-Kit_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Timing Belt Kit With Water Pump</a></li></ul></li>	<li id="menu-item-39815" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 4</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39881" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/universal-joint/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_U-Joint_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_U-Joint_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_U-Joint_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_U-Joint_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Universal Joints</a></li>		<li id="menu-item-39882" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/water-pump/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_Water-Pump_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_Water-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_Water-Pump_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_Water-Pump_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Water Pumps</a></li>		<li id="menu-item-39883" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/hub-assemblies-wheel-bearings/"><picture decoding="async">
+<source type="image/webp" data-lazy-srcset="/wp-content/uploads/2023/05/GMB_HubAssembly_150x150-scaled_MenuImage.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E"/>
+<img width="150" height="150" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20150%20150&#039;%3E%3C/svg%3E" data-lazy-src="/wp-content/uploads/2023/05/GMB_HubAssembly_150x150-scaled_MenuImage.png"/>
+</picture>
+<noscript><picture decoding="async">
+<source type="image/webp" srcset="/wp-content/uploads/2023/05/GMB_HubAssembly_150x150-scaled_MenuImage.png.webp"/>
+<img width="150" height="150" decoding="async" src="/wp-content/uploads/2023/05/GMB_HubAssembly_150x150-scaled_MenuImage.png"/>
+</picture>
+</noscript> Wheel Bearings and Hub Assemblies</a></li></ul></li></ul></li><li id="menu-item-39804" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/autoparts-catalog/">Part Search</a></li><li id="menu-item-39792" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="#">Tech Info</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39793" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/tech-bulletins/">Product Bulletins</a></li>	<li id="menu-item-39975" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/the-gmb-insider/">The GMB Insider</a></li>	<li id="menu-item-39806" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/blog/">Blog</a></li>	<li id="menu-item-39808" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/product-flyers/">Product Flyers</a></li>	<li id="menu-item-39809" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/universal-joint-lookup-tool/">Universal Joint Lookup Tool</a></li>	<li id="menu-item-39795" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/wp-content/uploads/2021/06/GMB-Heavy-Duty-Water-Pump-Buyers-Guide-2018.pdf">HD Water Pump Buyer&#8217;s Guide</a></li>	<li id="menu-item-39794" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/resources/">Tech Sheets</a></li>	<li id="menu-item-39805" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/videos/">Videos</a></li></ul></li><li id="menu-item-39807" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="#">Shop</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39843" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/gmb-swag/">GMB Swag</a></li>	<li id="menu-item-39803" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/where-to-buy/">Where To Buy GMB Brand Auto Parts</a></li></ul></li></ul></nav></div>
+	</div>
+</div>
+<div class="fl-module fl-module-menu fl-node-fmkn8d3c4wjb fl-visible-mobile" data-node="fmkn8d3c4wjb">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger-label" aria-label="Main Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span><span class="fl-menu-mobile-toggle-label">Main Menu</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Main Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-main-menu-mobile-no-images" class="menu fl-menu-horizontal fl-toggle-arrows"><li id="menu-item-39744" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://gmb.net/">Home</a></li><li id="menu-item-39745" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="https://gmb.net/about/">About</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39746" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/about/">About Us</a></li>	<li id="menu-item-39747" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/global-network/">Global Network</a></li>	<li id="menu-item-39748" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/gmb-logo/">GMB Logo</a></li>	<li id="menu-item-39749" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/events-closing-calendar/">Events/Closing Calendar</a></li>	<li id="menu-item-39750" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/faqs/">Frequently Asked Questions</a></li></ul></li><li id="menu-item-39751" class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="https://gmb.net/products/">Products</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39752" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 1</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39891" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/batteries/">Batteries</a></li>		<li id="menu-item-39892" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/electric-water-pump/">Electric Water Pumps</a></li>		<li id="menu-item-39893" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/fan-clutch/">Fan Clutches</a></li></ul></li>	<li id="menu-item-39756" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 2</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39977" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/oil-filters/">Filters</a></li>		<li id="menu-item-39894" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/fuel-pump/">Fuel Pumps</a></li>		<li id="menu-item-39759" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/heavy-duty-parts/">Heavy Duty Parts</a></li></ul></li>	<li id="menu-item-39760" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 3</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39976" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/motor-oil/">Lubricants</a></li>		<li id="menu-item-39895" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/tensioner-idler-bearing/">Tensioner &#038; Idler Bearings</a></li>		<li id="menu-item-39763" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/timing-belt-kit-w-water-pump/">Timing Belt Kit With Water Pump</a></li></ul></li>	<li id="menu-item-39764" class="hide-heading menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a>Column 4</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">		<li id="menu-item-39896" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/universal-joint/">Universal Joints</a></li>		<li id="menu-item-39897" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/water-pump/">Water Pumps</a></li>		<li id="menu-item-39898" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/hub-assemblies-wheel-bearings/">Wheel Bearings and Hub Assemblies</a></li></ul></li></ul></li><li id="menu-item-39768" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/autoparts-catalog/">Part Search</a></li><li id="menu-item-39769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="#">Tech Info</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39771" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/tech-bulletins/">Product Bulletins</a></li>	<li id="menu-item-39905" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/the-gmb-insider/">The GMB Insider</a></li>	<li id="menu-item-39783" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/blog/">Blog</a></li>	<li id="menu-item-39785" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/product-flyers/">Product Flyers</a></li>	<li id="menu-item-39784" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/universal-joint-lookup-tool/">Universal Joint Lookup Tool</a></li>	<li id="menu-item-39786" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/wp-content/uploads/2021/06/GMB-Heavy-Duty-Water-Pump-Buyers-Guide-2018.pdf">HD Water Pump Buyer&#8217;s Guide</a></li>	<li id="menu-item-39787" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/resources/">Tech Sheets</a></li>	<li id="menu-item-39788" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/videos/">Videos</a></li></ul></li><li id="menu-item-39789" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children fl-has-submenu"><div class="fl-has-submenu-container"><a href="#">Shop</a><span class="fl-menu-toggle"></span></div><ul class="sub-menu">	<li id="menu-item-39790" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://dev.gmb.net/product-category/apparel/">GMB Swag</a></li>	<li id="menu-item-39791" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/where-to-buy/">Where To Buy GMB Brand Auto Parts</a></li></ul></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header>	<div id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
+
+		<div class="fl-builder-content fl-builder-content-5397 fl-builder-global-templates-locked" data-post-id="5397"><div class="fl-row fl-row-fixed-width fl-row-bg-photo fl-node-60f9f87653922 fl-row-default-height fl-row-align-center fl-row-bg-overlay fl-row-bg-fixed" data-node="60f9f87653922">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-60f9f87653923" data-node="60f9f87653923">
+			<div class="fl-col fl-node-60f9f87653924" data-node="60f9f87653924">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-60fa30d7eac9a fl-row-default-height fl-row-align-center" data-node="60fa30d7eac9a">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-60fa30d8021fd" data-node="60fa30d8021fd">
+			<div class="fl-col fl-node-60fa30d802365" data-node="60fa30d802365">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-60f9f87653918" data-node="60f9f87653918">
+	<div class="fl-module-content fl-node-content">
+		<h1 class="fl-heading">
+		<span class="fl-heading-text">2019 Presents Big Challenges for Auto Parts Manufacturers</span>
+	</h1>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-social-share fl-node-60fa365e55adc" data-node="60fa365e55adc">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-social-share-content pp-share-buttons-view-icon pp-share-buttons-skin-flat pp-share-buttons-shape-rounded pp-social-share-col-0 pp-share-buttons-align-center pp-share-buttons-color-custom">
+	<div class="pp-social-share-inner">
+			<div class="pp-share-grid-item">
+			<div class="pp-share-button pp-share-button-facebook">
+				<a class="pp-share-button-link" href="https://www.facebook.com/sharer.php?u=https://gmb.net/blog/parts-manufacturers-challenges/&title=2019+Presents+Big+Challenges+for+Auto+Parts+Manufacturers">
+										<span class="pp-share-button-icon">
+													<i class="fab fa-facebook-square" aria-hidden="true"></i>
+												<span class="pp-screen-only">Share on Facebook</span>
+					</span>
+					
+									</a>
+			</div>
+		</div>
+			<div class="pp-share-grid-item">
+			<div class="pp-share-button pp-share-button-twitter">
+				<a class="pp-share-button-link" href="https://twitter.com/intent/tweet?url=https://gmb.net/blog/parts-manufacturers-challenges/&text=2019+Presents+Big+Challenges+for+Auto+Parts+Manufacturers">
+										<span class="pp-share-button-icon">
+													<i class="fab fa-twitter" aria-hidden="true"></i>
+												<span class="pp-screen-only">Share on Twitter</span>
+					</span>
+					
+									</a>
+			</div>
+		</div>
+			<div class="pp-share-grid-item">
+			<div class="pp-share-button pp-share-button-reddit">
+				<a class="pp-share-button-link" href="https://reddit.com/submit?url=https://gmb.net/blog/parts-manufacturers-challenges/&title=2019+Presents+Big+Challenges+for+Auto+Parts+Manufacturers">
+										<span class="pp-share-button-icon">
+													<i class="fab fa-reddit-alien" aria-hidden="true"></i>
+												<span class="pp-screen-only">Share on Reddit</span>
+					</span>
+					
+									</a>
+			</div>
+		</div>
+			<div class="pp-share-grid-item">
+			<div class="pp-share-button pp-share-button-email">
+				<a class="pp-share-button-link" href="/cdn-cgi/l/email-protection#3d025f525944005549494d4e0712125a505f13535849125f51525a124d5c4f494e10505c53485b5c5e49484f584f4e105e555c515158535a584e12">
+										<span class="pp-share-button-icon">
+													<i class="fi-mail" aria-hidden="true"></i>
+												<span class="pp-screen-only">Share on Email</span>
+					</span>
+					
+									</a>
+			</div>
+		</div>
+		</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-60f9f87653906 fl-row-default-height fl-row-align-center" data-node="60f9f87653906">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-60f9f87653914" data-node="60f9f87653914">
+			<div class="fl-col fl-node-60f9f87653916 fl-col-has-cols" data-node="60f9f87653916">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-fl-post-content fl-node-60f9f87653917" data-node="60f9f87653917">
+	<div class="fl-module-content fl-node-content">
+		<p><em>This article was originally published on <a href="https://www.aftermarketnews.com/talk-to-your-customers-about-holiday-road-trips-this-season/" target="_blank" rel="noopener">AftermarketNews</a></em></p>
+<p>Every year brings new challenges for manufacturers, but 2019 will present some really big challenges. As we head deeper into the new year, it becomes clear what the three main challenges are going to be for auto parts manufacturers. Let&#8217;s explore each one.</p>
+<p><span id="more-5161"></span></p>
+<p><img decoding="async" class="alignnone wp-image-3313 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20427'%3E%3C/svg%3E" alt="Auto Parts" width="640" height="427" data-lazy-src="https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg" /><noscript><img decoding="async" class="alignnone wp-image-3313 size-full" src="https://gmb.net/wp-content/uploads/2021/07/auto-parts.jpg" alt="Auto Parts" width="640" height="427" /></noscript></p>
+<h2>1. Keeping Up With Technological Advances</h2>
+<p>The pace of technological change is faster than ever, especially in the automobile industry. Nearly all automakers have announced plans for electrification this year or next year. It&#8217;s unclear what electrification strategy will succeed. But imagine for a moment that in 10-20 years most cars are battery powered. They won&#8217;t need air filters, oil filters, spark plugs, or engine oil. So manufacturers that make these items need to be ready to adapt quickly to keep up with the times. Auto parts stores will also have to adapt. Many of today&#8217;s routine maintenance items generate a lot of revenue for a typical auto parts store. What will that retailer do if those items are no longer needed? The transition to electrified vehicles won&#8217;t happen overnight, but now is definitely the time to start preparing for it.</p>
+<h2>2. Preparing for an Upcoming Recession</h2>
+<p>Many experts believe that we&#8217;re going to enter a recession by the time 2020 rolls around. It has been 11 years since the last recession, and many signs point to another one happening in the near future.</p>
+<p>The good news is that people keep their vehicles longer in a recession. They will maintain their older car rather than buying a new one. For this reason, auto parts companies typically survive or thrive in a recession. But not without careful planning. This year, auto parts manufacturers should focus on preparing for the upcoming recession that&#8217;s likely to happen. This involves:</p>
+<ul>
+<li>Watching the cash flow like a hawk</li>
+<li>Cutting back on unnecessary expenses</li>
+<li>Making conservative budget forecasts</li>
+</ul>
+<p>The challenge with the timing of the upcoming recession is that some companies may need to start investing in R&amp;D to deal with the coming transition to electrified vehicles.</p>
+<h2>3. Dealing With Trade Uncertainty</h2>
+<p>The trade war with China and the possibility of NAFTA being replaced (or terminated) bring a lot of uncertainty to the auto parts industry. The outcome of the trade war with China is unclear at this point. The USMCA is supposed to replace NAFTA if congress ratifies it. If congress refuses to ratify USMCA, Trump has stated he will cancel NAFTA. Obviously, auto parts manufacturers rely heavily on imported raw materials and assemblies. With all the uncertainty, it&#8217;s a good idea for auto parts manufacturers to come up with a back up plan for everything related to sourcing materials and components.</p>
+<p>In many ways, 2019 is going to be the most challenging year the auto parts manufacturing industry has seen in a long time. In situations like this, preparation is key. Your manufacturing company needs to be aware of the three challenges listed above and have a good plan in place to combat each one.</p>
+	</div>
+</div>
+<div class="fl-module fl-module-separator fl-node-60f9f87653920" data-node="60f9f87653920">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-separator"></div>
+	</div>
+</div>
+<div class="fl-module fl-module-heading fl-node-60fa4a0138a22" data-node="60fa4a0138a22">
+	<div class="fl-module-content fl-node-content">
+		<h2 class="fl-heading">
+		<span class="fl-heading-text">MORE CONTENT</span>
+	</h2>
+	</div>
+</div>
+<div class="fl-module fl-module-fl-post-navigation fl-node-60f9f8765391f" data-node="60f9f8765391f">
+	<div class="fl-module-content fl-node-content">
+		
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://gmb.net/blog/when-its-cold-consumers-might-add-the-wrong-coolant/" rel="prev">&larr; When It&#8217;s Cold, Consumers Might Add The Wrong Coolant</a></div><div class="nav-next"><a href="https://gmb.net/blog/cooling-1930s-ford-engines/" rel="next">3 Surprising Ways Ford Model A Owners Cooled Their Engines in the 1930s &rarr;</a></div></div>
+	</nav>	</div>
+</div>
+
+<div class="fl-col-group fl-node-60fa4a37b0eee fl-col-group-nested" data-node="60fa4a37b0eee">
+			<div class="fl-col fl-node-60fa4a37b0fd5 fl-col-small" data-node="60fa4a37b0fd5">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-60fa4a37b0fd9 fl-col-small" data-node="60fa4a37b0fd9">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-html fl-node-60f9f87653921" data-node="60f9f87653921">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-html">
+	Posted in <a href="https://gmb.net/blog/category/auto-industry/" rel="tag" class="auto-industry">Auto Industry</a></div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-60fa4a37b0fdb fl-col-small" data-node="60fa4a37b0fdb">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+	</div>
+<div class="fl-module fl-module-separator fl-node-60fa4a95af5aa" data-node="60fa4a95af5aa">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-separator"></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-60fa3eaf1d48d fl-row-default-height fl-row-align-center" data-node="60fa3eaf1d48d">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-60fa3eaf24684 fl-col-group-equal-height fl-col-group-align-center" data-node="60fa3eaf24684">
+			<div class="fl-col fl-node-60fa3eaf248b7 fl-col-small" data-node="60fa3eaf248b7">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-gravity-form fl-node-60fa3ebb13266" data-node="60fa3ebb13266">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-gf-content">
+	<div class="pp-gf-inner">
+			<h3 class="form-title">Stay current!</h3>
+		<p class="form-description">Sign up here to get the latest news<br> 
+and updates on all things GMB.</p>
+		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" data-rocket-type="text/javascript"></script>
+                <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_5' ><div id='gf_5' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+                            <h3 class="gform_title">Sign Up To Receive GMB News & Updates!</h3>
+                            <p class='gform_description'></p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_5' id='gform_5'  action='/blog/parts-manufacturers-challenges/#gf_5' data-formid='5' >
+                        <div class='gform-body gform_body'><ul id='gform_fields_5' class='gform_fields top_label form_sublabel_below description_below'><li id="field_5_2"  class="gfield gfield--type-email gfield--width-half field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_5_2"><label class='gfield_label gform-field-label' for='input_5_2' >Email</label><div class='ginput_container ginput_container_email'>
+                            <input name='input_2' id='input_5_2' type='text' value='' class='large' tabindex='100'    aria-invalid="false"  />
+                        </div></li><li id="field_submit"  class="gfield gfield--type-submit gfield--width-half field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-field-class="gform_editor_submit_container" data-field-position="inline" data-js-reload="true"><input type='submit' id='gform_submit_button_5' class='gform-button gform-button--white  button' value='Subscribe' tabindex='101' onclick='if(window["gf_submitting_5"]){return false;}  window["gf_submitting_5"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_5"]){return false;} window["gf_submitting_5"]=true;  jQuery("#gform_5").trigger("submit",[true]); }' /></li><li id="field_5_3"  class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below gfield_visibility_visible"  data-js-reload="field_5_3"><label class='gfield_label gform-field-label' for='input_5_3' >Phone</label><div class='ginput_container'><input name='input_3' id='input_5_3' type='text' value='' /></div><div class='gfield_description' id='gfield_description_5_3'>This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+        <div class='gform_footer top_label'>  <input type='hidden' name='gform_ajax' value='form_id=5&amp;title=1&amp;description=1&amp;tabindex=100' />
+            <input type='hidden' class='gform_hidden' name='is_submit_5' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='5' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_5' value='WyJbXSIsIjk4ZWE0N2Y3YTQ4ODIzNTE5YzU4OWU4M2NjMjIxNDJjIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_5' id='gform_target_page_number_5' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_5' id='gform_source_page_number_5' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_5' id='gform_ajax_frame_5' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 5, 'https://gmb.net/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_5').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_5');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_5').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_5').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_5').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_5').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_5').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_5').val();gformInitSpinner( 5, 'https://gmb.net/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [5, current_page]);window['gf_submitting_5'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_5').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_5').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [5]);window['gf_submitting_5'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_5').text());}, 50);}else{jQuery('#gform_5').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [5, current_page]);gform.utils.trigger({ event: 'gform/postRender', native: false, data: { formId: 5, currentPage: current_page } });} );} );
+</script>
+	</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-60fa43b9abfee" data-node="60fa43b9abfee">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-full">
+	<a href="/blog/" target="_self" class="pp-button" role="button" aria-label="READ THE LATEST BLOG POST">
+						<span class="pp-button-text">READ THE LATEST BLOG POST</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-60fa3eaf248bd fl-visible-desktop fl-visible-large fl-visible-medium" data-node="60fa3eaf248bd">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-60fa3f309b5fc" data-node="60fa3f309b5fc">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-jpg">
+				<picture decoding="async" class="fl-photo-img wp-image-30403 size-full" itemprop="image" title="blog-footer-subscribe-image">
+<source type="image/webp" data-lazy-srcset="https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image.jpg.webp 800w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-450x321.jpg.webp 450w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-768x548.jpg.webp 768w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-600x428.jpg.webp 600w" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20800%20571&#039;%3E%3C/svg%3E" data-lazy-sizes="(max-width: 800px) 100vw, 800px"/>
+<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20800%20571&#039;%3E%3C/svg%3E" alt="blog-footer-subscribe-image" itemprop="image" height="571" width="800" data-lazy-srcset="https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image.jpg 800w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-450x321.jpg 450w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-768x548.jpg 768w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-600x428.jpg 600w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image.jpg"/>
+</picture>
+<noscript><picture decoding="async" class="fl-photo-img wp-image-30403 size-full" itemprop="image" title="blog-footer-subscribe-image">
+<source type="image/webp" srcset="https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image.jpg.webp 800w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-450x321.jpg.webp 450w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-768x548.jpg.webp 768w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-600x428.jpg.webp 600w" sizes="(max-width: 800px) 100vw, 800px"/>
+<img decoding="async" src="https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image.jpg" alt="blog-footer-subscribe-image" itemprop="image" height="571" width="800" srcset="https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image.jpg 800w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-450x321.jpg 450w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-768x548.jpg 768w, https://gmb.net/wp-content/uploads/2021/07/blog-footer-subscribe-image-600x428.jpg 600w" sizes="(max-width: 800px) 100vw, 800px"/>
+</picture>
+</noscript>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div>
+	</div><!-- .fl-page-content -->
+	<footer class="fl-builder-content fl-builder-content-36582 fl-builder-global-templates-locked" data-post-id="36582" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-m9racp64eb58 fl-row-default-height fl-row-align-center" data-node="m9racp64eb58">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-28yzkvouxs3e" data-node="28yzkvouxs3e">
+			<div class="fl-col fl-node-ao0yi7w8rgsu fl-col-small" data-node="ao0yi7w8rgsu">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-76yjzq8cpkgv" data-node="76yjzq8cpkgv">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">NAVIGATION</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-advanced-menu fl-node-wyasqj17tnmg" data-node="wyasqj17tnmg">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-advanced-menu pp-advanced-menu-accordion-collapse pp-menu-default pp-menu-align-left">
+   	   	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav" aria-label="Footer Menu - Navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		
+		<ul id="menu-footer-menu-navigation" class="menu pp-advanced-menu-vertical pp-toggle-none"><li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="https://gmb.net/" tabindex="0" role="link"><span class="menu-item-text">Home</span></a></li><li id="menu-item-218" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/about/" tabindex="0" role="link"><span class="menu-item-text">About GMB</span></a></li><li id="menu-item-219" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/" tabindex="0" role="link"><span class="menu-item-text">Products</span></a></li><li id="menu-item-5654" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/autoparts-catalog/" tabindex="0" role="link"><span class="menu-item-text">Search Products</span></a></li></ul>
+			</nav>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-dyuatoj26sc5 fl-col-small" data-node="dyuatoj26sc5">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-yfozrj8stcgk" data-node="yfozrj8stcgk">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">PRODUCTS</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-advanced-menu fl-node-16aiv2pg53sn" data-node="16aiv2pg53sn">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-advanced-menu pp-advanced-menu-accordion-collapse pp-menu-default pp-menu-align-left">
+   	   	<div class="pp-clear"></div>
+	<nav class="pp-menu-nav" aria-label="Footer Menu - Our Products" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		
+		<ul id="menu-footer-menu-our-products" class="menu pp-advanced-menu-vertical pp-toggle-none"><li id="menu-item-39856" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/batteries/" tabindex="0" role="link"><span class="menu-item-text">Batteries</span></a></li><li id="menu-item-39857" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/electric-water-pump/" tabindex="0" role="link"><span class="menu-item-text">Electric Water Pumps</span></a></li><li id="menu-item-39858" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/fan-clutch/" tabindex="0" role="link"><span class="menu-item-text">Fan Clutches</span></a></li><li id="menu-item-39863" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/oil-filters/" tabindex="0" role="link"><span class="menu-item-text">Filters</span></a></li><li id="menu-item-39860" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/fuel-pump/" tabindex="0" role="link"><span class="menu-item-text">Fuel Pumps</span></a></li><li id="menu-item-39862" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/motor-oil/" tabindex="0" role="link"><span class="menu-item-text">Lubricants</span></a></li><li id="menu-item-39864" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/tensioner-idler-bearing/" tabindex="0" role="link"><span class="menu-item-text">Tensioner &#038; Idler Bearings</span></a></li><li id="menu-item-39865" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/timing-belt-kit-w-water-pump/" tabindex="0" role="link"><span class="menu-item-text">Timing Belt Kits With Water Pumps</span></a></li><li id="menu-item-39866" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/universal-joint/" tabindex="0" role="link"><span class="menu-item-text">Universal Joints</span></a></li><li id="menu-item-39867" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/water-pump/" tabindex="0" role="link"><span class="menu-item-text">Water Pumps</span></a></li><li id="menu-item-39868" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://gmb.net/products/hub-assemblies-wheel-bearings/" tabindex="0" role="link"><span class="menu-item-text">Wheel Bearings and Hub Assemblies</span></a></li></ul>
+			</nav>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-0cv9uprw8abf fl-col-small" data-node="0cv9uprw8abf">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-zsohk4n89cur" data-node="zsohk4n89cur">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">HEADQUARTERS</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-n2f7thed3ukq" data-node="n2f7thed3ukq">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>100 Herrod Blvd<br />
+Dayton, NJ 08810<br />
+<a href="tel:18004215019">1-800-421-5019<br />
+</a></p>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-heading fl-node-hciw6t4ux813" data-node="hciw6t4ux813">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+		<span class="fl-heading-text">CA SALES OFFICE</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-4hdxlpszj2oy" data-node="4hdxlpszj2oy">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>14911 Valley View Avenue,<br />
+Santa Fe Springs, CA 90670</p>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon-group fl-node-v2h71j9mfk5l" data-node="v2h71j9mfk5l">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-group">
+	<span class="fl-icon">
+								<a href="https://www.facebook.com/GMBNorthAmerica" target="_blank" rel="noopener" >
+							<i class="fab fa-facebook-square" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://twitter.com/GMBNorthAmerica" target="_blank" rel="noopener" >
+							<i class="fab fa-twitter" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://www.linkedin.com/company/gmb-north-america-inc-" target="_blank" rel="noopener" >
+							<i class="fab fa-linkedin" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://www.youtube.com/user/GMBNorthAmerica" target="_blank" rel="noopener" >
+							<i class="fab fa-youtube" aria-hidden="true"></i>
+						</a>
+			</span>
+		<span class="fl-icon">
+								<a href="https://www.instagram.com/gmbnorthamerica/" target="_blank" rel="noopener" >
+							<i class="fab fa-instagram" aria-hidden="true"></i>
+						</a>
+			</span>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-jf4hquindx0z fl-col-small" data-node="jf4hquindx0z">
+	<div class="fl-col-content fl-node-content"><div id="footer-gmb-logo" class="fl-module fl-module-photo fl-node-nuipfe8zom7j" data-node="nuipfe8zom7j">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="/" target="_self" itemprop="url">
+				<img decoding="async" class="fl-photo-img wp-image-174 size-medium" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20133'%3E%3C/svg%3E" alt="GMB Your Success is our Future" itemprop="image" height="133" width="450" title="GMB Your Success is our Future" data-lazy-srcset="https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-450x133.png 450w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-1024x302.png 1024w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-768x226.png 768w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-600x177.png 600w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future.png 1316w" data-lazy-sizes="(max-width: 450px) 100vw, 450px" data-lazy-src="https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-450x133.png" /><noscript><img decoding="async" class="fl-photo-img wp-image-174 size-medium" src="https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-450x133.png" alt="GMB Your Success is our Future" itemprop="image" height="133" width="450" title="GMB Your Success is our Future" srcset="https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-450x133.png 450w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-1024x302.png 1024w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-768x226.png 768w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future-600x177.png 600w, https://gmb.net/wp-content/uploads/2021/02/GMB-Your-Success-is-our-Future.png 1316w" sizes="(max-width: 450px) 100vw, 450px" /></noscript>
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-photo fl-node-oqhv043rkuc9" data-node="oqhv043rkuc9">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<img decoding="async" width="450" height="122" class="fl-photo-img wp-image-4542" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20450%20122'%3E%3C/svg%3E" alt="GMB_OE-Autocare_Footer" itemprop="image" title="GMB_OE-Autocare_Footer" data-lazy-srcset="https://gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer-450x122.png 450w, https://gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer-600x162.png 600w, https://gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer.png 636w" data-lazy-sizes="(max-width: 450px) 100vw, 450px" data-lazy-src="https://dev.gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer-450x122.png" /><noscript><img decoding="async" width="450" height="122" class="fl-photo-img wp-image-4542" src="https://dev.gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer-450x122.png" alt="GMB_OE-Autocare_Footer" itemprop="image" title="GMB_OE-Autocare_Footer" srcset="https://gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer-450x122.png 450w, https://gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer-600x162.png 600w, https://gmb.net/wp-content/uploads/2021/02/GMB_OE-Autocare_Footer.png 636w" sizes="(max-width: 450px) 100vw, 450px" /></noscript>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-kzdsr5hf4ucp fl-row-default-height fl-row-align-center" data-node="kzdsr5hf4ucp">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-la25nph01jm8" data-node="la25nph01jm8">
+			<div class="fl-col fl-node-2xp46lzwycbf" data-node="2xp46lzwycbf">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-mv24ufrb9ygs" data-node="mv24ufrb9ygs">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p style="text-align: center;">©2023 GMB North America, Inc.. All Rights Reserved.</p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer>	</div><!-- .fl-page -->
+<div class="woopack-modal" style="display: none;">
+    <div data-bg="https://gmb.net/wp-content/plugins/woopack/assets/images/loader.gif" class="woopack-modal-overlay rocket-lazyload" style=""></div>
+    <div class="woopack-modal-inner">
+        <div class="woopack-modal-close">×</div>
+        <div class="woopack-modal-content"></div>
+    </div>
+</div>
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	
+
+
+
+
+
+
+
+
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=1692709927' id='jquery-blockui-js' defer></script>
+<script id='wc-add-to-cart-js-extra'>
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/gmb.net\/cart\/","is_cart":"","cart_redirect_after_add":"yes"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=1692709927' id='wc-add-to-cart-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=1692709927' id='js-cookie-js' defer></script>
+<script id='woocommerce-js-extra'>
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=1692709927' id='woocommerce-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/woopack/assets/js/frontend.js?ver=1692710654' id='woopack-frontend-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=1692710608' id='jquery-throttle-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/bb-plugin/js/jquery.fitvids.min.js?ver=1692710608' id='jquery-fitvids-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/uploads/bb-plugin/cache/3ddbeae97821091ddef755f429ffb9fd-layout-bundle.js?ver=1692710657' id='fl-builder-layout-bundle-3ddbeae97821091ddef755f429ffb9fd-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/3d-flipbook-dflip-lite/assets/js/dflip.min.js?ver=1682056007' id='dflip-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js' id='selectize_script_online-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/opticat-catalog-lookup-main/js/jquery.dataTables.min.js' id='datatables_js-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=1692710608' id='jquery-magnificpopup-js' defer></script>
+<script id='fl-automator-js-extra'>
+var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"767","scrollTopPosition":"800"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-content/themes/bb-theme/js/theme.min.js?ver=1679662183' id='fl-automator-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/dom-ready.min.js?ver=1660727879' id='wp-dom-ready-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/i18n.min.js?ver=1692710552' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://gmb.net/wp-includes/js/dist/a11y.min.js?ver=1692710552' id='wp-a11y-js' defer></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://gmb.net/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=1692709866' id='gform_json-js'></script>
+<script id='gform_gravityforms-js-extra'>
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":0,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/gmb.net\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/gmb.net\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/gmb.net\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"474b424aecdedc9b51f06fc5c3f8f599","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://gmb.net/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=1692709866' id='gform_gravityforms-js'></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://gmb.net/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=1692709866' id='gform_gravityforms_utils-js'></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://gmb.net/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=1692709866' id='gform_gravityforms_theme_vendors-js'></script>
+<script id='gform_gravityforms_theme-js-extra'>
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"474b424aecdedc9b51f06fc5c3f8f599"}}},"hmr_dev":"","public_path":"https:\/\/gmb.net\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/"};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://gmb.net/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=1692709866' id='gform_gravityforms_theme-js'></script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 5) {} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {jQuery(document).trigger('gform_post_render', [5, 1]);gform.utils.trigger({ event: 'gform/postRender', native: false, data: { formId: 5, currentPage: 1 } });} );
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://gmb.net/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1692897150 -->

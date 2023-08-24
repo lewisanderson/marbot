@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"be507b18e4",applicationID:"857311757"};;/*! For license information please see nr-loader-rum-1.238.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>T,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(632),i=n(567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(56);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(385),A=n(818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4,denyList:void 0},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function T(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.238.0",i="PROD",o="CDN"},385:(e,t,n)=>{n.d(t,{IF:()=>c,Nk:()=>u,Tt:()=>a,_A:()=>o,il:()=>r,pL:()=>s,v6:()=>i,w1:()=>d});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=(o?.location,/iPad|iPhone|iPod/.test(navigator.userAgent)),s=a&&"undefined"==typeof SharedWorker,c=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),d=Boolean(r&&window.document.documentMode),u=!!navigator.sendBeacon},711:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},0:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(148),i=n(284),o=n(322),a=n(325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},148:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>d});var r=n(632),i=n(210),o=n(763);class a{constructor(e){this.contextId=e}}var s=n(117);const c="nr@context:".concat(s.a),d=function e(t,n){var r={},s={},u={},f=!1;try{f=16===n.length&&(0,o.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,o){!1!==o&&(o=!0);if(d.aborted&&!i)return;t&&o&&t.emit(e,n,r);for(var a=p(r),c=v(e),u=c.length,l=0;l<u;l++)c[l].apply(a,n);var f=b()[s[e]];f&&f.push([g,e,n,a]);return a},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return u[t]=u[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),u=(0,r.fP)();function l(){d.aborted=!0,d.backlog={}}u.ee||(u.ee=d)},546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(148).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(402).Rl)()},402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},56:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(148),i=n(546),o=n(0),a=n(325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(148);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(894),i=n(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},81:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(325).D.pageViewTiming},938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(763),i=n(148);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(325),i=n(763),o=n(546),a=n(148),s=n(894),c=n(0),d=n(960),u=n(385),l=n(50),f=n(81),g=n(632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y);const j=(0,i.P_)(e);A.denyList=[...j.ajax?.deny_list||[],...j.ajax?.block_internal?[y.beacon,y.errorBeacon]:[]],(0,i.sU)(e,A),p();const E=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,E,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),E}},325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum.3709cb75-1.238.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.238.0.PROD:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=self["webpackChunk:NRBA-1.238.0.PROD"]=self["webpackChunk:NRBA-1.238.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(325),r=i(763);const o=Object.values(n.D);function a(e){const t={};return o.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(144);var c=i(546),d=i(385),u=i(0),l=i(938),f=i(960);class g extends l.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,u.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=d.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,u.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),o(!1)}};d.il?(0,f.b)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var p=i(633),h=i(894);class v extends g{static featureName=p.t9;constructor(e,t){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(e,t,p.t9,i),("undefined"==typeof PerformanceNavigationTiming||d.Tt)&&"undefined"!=typeof PerformanceTiming){const t=(0,r.OP)(e);t[p.Dz]=Math.max(Date.now()-t.offset,0),(0,f.K)((()=>t[p.qw]=Math.max((0,h.z)()-t[p.Dz],0))),(0,f.b)((()=>{const e=(0,h.z)();t[p.OJ]=Math.max(e-t[p.Dz],0),(0,c.p)("timing",["load",e],void 0,n.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var m=i(711),b=i(284);class y extends m.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,n){t[e]=w(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,b.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=w(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=A(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=w(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=x(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=A(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function A(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function x(e){return"object"!=typeof e?[]:(0,b.D)(e,D)}function D(e,t){return t}var j=i(632),E=i(402),T=i(351);var _=i(956),k=i(239),P=i(251);class C extends g{static featureName=P.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t,n),d.il&&((0,r.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,_.N)((()=>(0,c.p)("docHidden",[(0,h.z)()],void 0,P.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,c.p)("winPagehide",[(0,h.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(81);class N extends g{static featureName=I.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);super(),d._A?(this.agentIdentifier=n,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(v),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.start()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}start(){const t="features";try{const r=a(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,T.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,j.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,j.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[v,C,N],loaderType:"lite"})})()})();</script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=6.0">
+				<title>New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing - American Chemistry Council</title>
+								<link rel="canonical" href="https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing">
+							<link rel="stylesheet" href="https://assets.americanchemistry.com/acc-frontend/1.5.28/dist/css/main.css">
+
+<link rel="icon" href="/assets/images/favico-acc.svg">
+<link rel="icon" href="/assets/images/favico-acc.ico">
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js" integrity="sha512-dnvR4Aebv5bAtJxDunq3eE8puKAJrY9GBJYl9GC6lTOEC76s1dbDfJFcL9GyzpaDW4vlI/UjR8sKbc1j6Ynx6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+							
+																									    					
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="American Chemistry Council"/>
+<meta property="og:image" content="https://www.americanchemistry.com/var/site/storage/images/9/6/5/1/171569-1-eng-US/532fc1117734-ACC-Supply-Chain-Survey-Report-Q1-2023.png">
+<meta property="twitter:image" content="https://www.americanchemistry.com/var/site/storage/images/9/6/5/1/171569-1-eng-US/532fc1117734-ACC-Supply-Chain-Survey-Report-Q1-2023.png">
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing - American Chemistry Council"/>
+	<meta property="og:title" content="New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing - American Chemistry Council"/>
+	<meta name="description" content="Chemical manufacturers report that despite improving conditions, supply chain challenges and freight transportation disruptions continue to be a major problem for the U.S. business of chemistry and the broader economy."/>
+	<meta property="og:description" content="Chemical manufacturers report that despite improving conditions, supply chain challenges and freight transportation disruptions continue to be a major problem for the U.S. business of chemistry and the broader economy."/>
+	<meta name="twitter:description" content="Chemical manufacturers report that despite improving conditions, supply chain challenges and freight transportation disruptions continue to be a major problem for the U.S. business of chemistry and the broader economy."/>
+	
+<script>
+    var dataLayer = dataLayer || [];
+		
+            dataLayer.push({
+				'type': 'press_release',
+				'name': "New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing - American Chemistry Council",
+				'title': "New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing - American Chemistry Council"
+			});
+            dataLayer.push({'creationDate': '2021-01-18' });
+                    dataLayer.push({'modifiedDate': '2023-04-13' });
+                    dataLayer.push({'publishDate': '2023-04-13' });
+        					        																																													
+														;
+                    				
+            	dataLayer.push({'tags': {"Issues":{"Transportation & Infrastructure":{"tags":["Rail","Truck"]},"tags":["Transportation & Infrastructure"]}} });
+			    dataLayer.push({"userStatus":"unauthenticated"});
+	
+    		dataLayer.push({ 'attributes': {"articleType":"press_release","organization":["American Chemistry Council"],"contactRoles":["Transportation"]} });
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+		var blocksElhc = document.getElementsByClassName('landing-page__block');
+		var blocksElArr = Array.prototype.slice.call(blocksElhc);
+		var blocksNames = [];
+		blocksElArr.forEach(function(el) {
+			var classes = el.className.split(/\s+/);
+			for (var i = 0; i < classes.length; i++) {
+				if (classes[i].match(/^block_*/ig)) {
+					blocksNames.push(classes[i].replace('block_',''));
+				}
+			}
+		});
+		blocksNames = blocksNames.filter(function(value, index, self) {
+			// only unique block types
+			return (value != 'block') && (self.indexOf(value) === index);
+		})
+		if (blocksNames.length > 0) {
+			dataLayer.push({'blockTypes': blocksNames})
+		}
+	});
+</script>
+
+					<script type="application/ld+json">
+	[{
+			"mainEntityOfPage": "https:\/\/www.americanchemistry.com\/",
+			"name": "New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing - American Chemistry Council",
+			"description": "Chemical manufacturers report that despite improving conditions, supply chain challenges and freight transportation disruptions continue to be a major problem for the U.S. business of chemistry and the broader economy.",
+			"image": ["https:\/\/www.americanchemistry.com\/var\/site\/storage\/images\/9\/6\/5\/1\/171569-1-eng-US\/532fc1117734-ACC-Supply-Chain-Survey-Report-Q1-2023.png"],
+			"url": "https:\/\/www.americanchemistry.com\/chemistry-in-america\/news-trends\/press-release\/2023\/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing",
+				"headline": "New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing",
+				"datePublished": "April 13, 2023 00:00",
+				"dateModified": "April 13, 2023 09:26",
+				"publisher": {
+					"@type": "Organization",
+					"name": "American Chemistry Council",
+					"logo": "https:\/\/www.americanchemistry.com\/assets\/images\/ACC_Logo.png"
+				},
+				"author": "Not Available",
+		"@context": "https://schema.org",
+		"@type": "NewsArticle"
+	}
+	    ,{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+                            {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Chemistry in America"
+                    ,"item": "https://www.americanchemistry.com/chemistry-in-america"                },                            {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "News &amp; Trends"
+                    ,"item": "https://www.americanchemistry.com/chemistry-in-america/news-trends"                },                            {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing"
+                                    }                    ]
+    }
+ 
+	]
+</script>
+
+			</head>
+	<body>
+					<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM5NHVF" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->				<div id="app">
+							
+
+<header id="header">
+	<div class="navbar-top is-flex is-justify-content-flex-end is-hidden-touch">
+		<div class="container">
+			<a
+				href="#"
+				role="button"
+				class="add-menu-burger hide-for-print"
+				aria-label="menu"
+				aria-expanded="false"
+				data-target="navbarAdd"
+				@click="toogleAddMenu($event)"
+				ref="buttonMenuBurguer"
+				>
+					<i class="icon icon-burger-dots"></i>
+					<span class="is-sr-only">Open add nav</span>
+			</a>
+			<div class="is-flex pr-4">
+				<div
+					id="navbarAdd"
+					class="add-menu navbar-menu"
+					:class="{ 'is-active' : isOpenAddMenu }"
+					>
+					<div class="navbar-end is-justify-content-flex-end">
+													<a 
+								href="/about-acc" 
+								class="navbar-item" 
+								:class="{ 'triangle-feature': showSecondaryNavbar }" 
+								@click="toogleSecondaryNavbar($event)"
+								>
+							About ACC
+							</a>
+																				<a href="/oauth2/acc-connect/auth0?redirect_path=/my-acc" class="navbar-item">
+		Member Login
+	</a>
+
+											</div>
+				</div>
+				<div
+					class="search-dropdown-wrap navbar-item has-dropdown hide-for-print"
+					:class="classForToogleSearchForm.desktop"
+					v-closable="{exclude: ['btnToogleSearchForm'], handler: 'closeSearchFormDesktop'}"
+					>
+					<a
+						href="#"
+						@click="openAndCloseSearchForm($event)"
+						class="navbar-link is-arrowless search-opener"
+						:class="classForToogleSearchForm.desktop"
+						accesskey="4"
+						ref="btnToogleSearchForm"
+						>
+							<i class="icon icon-search-thick"></i>
+							<i class="icon icon-close"></i>
+							<span class="is-sr-only">Open Search drop</span>
+					</a>
+											<div class="navbar-dropdown has-background-primary-light has-text-info is-right">
+							<div class="navbar-item">
+								<form action="/content/search" class="search-form" method="GET" @submit="searchIsDone($event)">
+																			<label class="label" for="search-in-acc">Search ACC</label>
+																		<div class="control">
+										<input name="keyword" type="search" class="input" placeholder="Search" id="search-in-acc">
+										<button type="submit" class="btn-search">
+										<i class="icon icon-search-thick"></i>
+										<span class="is-sr-only">Search</span>
+										</button>
+									</div>
+								</form>
+							</div>
+															<div class="navbar-item">
+									<h6>Quick links</h6>
+								</div>
+								<div class="options-links-header-search">
+																			    <a href="/industry-groups" class="navbar-item" >
+            Industry Groups
+        </a>
+																			    <a href="/about-acc/membership" class="navbar-item" >
+            Membership
+        </a>
+																			    <a href="/chemistry-in-america/responsible-care-driving-safety-industry-performance" class="navbar-item" >
+            Responsible Care®
+        </a>
+																			    <a href="/the-science-behind-sustainability" class="navbar-item" >
+            The Science Behind Sustainability
+        </a>
+																	</div>
+													</div>
+									</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-secondary-navbar is-flex mt-0 is-hidden-touch" :class="[ showSecondaryNavbar ? 'h-60' : 'h-0' ]" v-cloak>
+		<div class="container">
+			<div class="secondary-navbar">
+				<ul class="list-unstyled has-text-blue is-flex is-justify-content-flex-end">
+																				<li>    <a href="/about-acc" class="" >
+            About ACC
+        </a></li>
+											<li>    <a href="/about-acc/membership" class="" >
+            Membership
+        </a></li>
+											<li>    <a href="/about-acc/acc-leadership" class="" >
+            ACC Leadership
+        </a></li>
+											<li>    <a href="/industry-groups" class="" >
+            Industry Groups
+        </a></li>
+											<li>    <a href="/about-acc/careers" class="" >
+            Careers
+        </a></li>
+											<li>    <a href="/about-acc/conferences-events" class="" >
+            Conferences &amp; Events
+        </a></li>
+											<li>    <a href="/about-acc/chemtrec" class="" >
+            CHEMTREC®
+        </a></li>
+											<li>    <a href="/about-acc/transcaer" class="" >
+            TRANSCAER®
+        </a></li>
+													</ul>
+  			</div>
+		</div>
+		<a class="navbar-item mr-4">
+			<i class="icon icon-close" @click="showSecondaryNavbar = false"></i>
+		</a>
+	</div>
+	<div class="container">
+		<nav class="navbar is-spaced is-transparent" role="navigation" aria-label="main navigation">
+			<div class="container pt-0">
+				<div class="navbar-brand">
+					<a href="/" class="navbar-item logo" accesskey="1">
+																																						<img
+							src="/asset/download/3021/brand_logo_file/ACC_Logo.svg"
+							width="250"
+							height="128"
+							alt="American Chemistry Council"
+						/>
+					</a>
+				</div>
+				<div class="navbar-menu-holder is-flex-desktop">
+					<div class="navbar-top is-flex is-justify-content-flex-end is-hidden-desktop">
+						<a
+						href="#"
+						role="button"
+						class="add-menu-burger hide-for-print"
+						aria-label="menu"
+						aria-expanded="false"
+					 	data-target="navbarAdd"
+  		      			@click="toogleAddMenu($event)"
+						ref="buttonMenuBurguer"
+						>
+							<i class="icon icon-burger-dots"></i>
+							<span class="is-sr-only">Open add nav</span>
+						</a>
+						<div
+							id="navbarAdd"
+							class="add-menu navbar-menu"
+							:class="{ 'is-active' : isOpenAddMenu }"
+							v-closable="{exclude: ['buttonMenuBurguer'], handler: 'closeAddMenu' }"
+							>
+								<div class="navbar-end is-justify-content-flex-end">
+																			<a 
+											href="/about-acc" 
+											class="navbar-item"
+											>
+										About ACC
+										</a>
+																										<a href="/oauth2/acc-connect/auth0?redirect_path=/my-acc" class="navbar-item">
+		Member Login
+	</a>
+
+						
+								</div>
+						</div>
+						<div
+							class="search-dropdown-wrap navbar-item has-dropdown"
+							:class="classForToogleSearchForm.touchScreen"
+							v-closable="{exclude: ['btnToogleSearchFormTouchScreen'], handler: 'closeSearchFormTouchScreen'}"
+							>
+								<a
+									href="#"
+									@click="openAndCloseSearchForm($event)"
+									class="navbar-link is-arrowless search-opener"
+									:class="classForToogleSearchForm.touchScreen"
+									accesskey="4"
+									ref="btnToogleSearchFormTouchScreen"
+									>
+										<i class="icon icon-search-thick"></i>
+										<i class="icon icon-close"></i>
+										<span class="is-sr-only">Open Search drop</span>
+								</a>
+													<div class="navbar-dropdown has-background-primary-light has-text-info is-right">
+							<div class="navbar-item">
+								<form action="/content/search" class="search-form" method="GET" @submit="searchIsDone($event)">
+																			<label class="label" for="search-in-acc">Search ACC</label>
+																		<div class="control">
+										<input name="keyword" type="search" class="input" placeholder="Search" id="search-in-acc">
+										<button type="submit" class="btn-search">
+										<i class="icon icon-search-thick"></i>
+										<span class="is-sr-only">Search</span>
+										</button>
+									</div>
+								</form>
+							</div>
+															<div class="navbar-item">
+									<h6>Quick links</h6>
+								</div>
+								<div class="options-links-header-search">
+																			    <a href="/industry-groups" class="navbar-item" >
+            Industry Groups
+        </a>
+																			    <a href="/about-acc/membership" class="navbar-item" >
+            Membership
+        </a>
+																			    <a href="/chemistry-in-america/responsible-care-driving-safety-industry-performance" class="navbar-item" >
+            Responsible Care®
+        </a>
+																			    <a href="/the-science-behind-sustainability" class="navbar-item" >
+            The Science Behind Sustainability
+        </a>
+																	</div>
+													</div>
+					
+						</div>
+					</div>
+					<div class="navbar-bottom main-menu-header" @mouseover="closeSearchForm">
+																																																															<menu-item title="Chemistry in America"
+									:active-item="true"
+									link="/chemistry-in-america">
+									<div class="navbar-dropdown">
+										<div class="navbar-item is-hidden-tablet">
+											<h6 class="mb-0">
+												<a href="/chemistry-in-america" >
+													Chemistry in America
+													<i class="icon icon-arrow-right"></i>
+												</a>
+											</h6>
+										</div>
+										<hr class="navbar-divider is-block-mobile is-hidden-tablet"/>
+																																																																																															
+												<a class="navbar-item is-active"
+													 href="/chemistry-in-america/news-trends" 													>News &amp; Trends</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/data-industry-statistics" 													>Data &amp; Industry Statistics</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/responsible-care-driving-safety-industry-performance" 													>Responsible Care®: Driving Safety &amp; Performance</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability" 													>Chemistry &amp; Sustainability</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-in-everyday-products" 													>Chemistry in Everyday Products</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-in-your-community" 													>Chemistry in Your Community</a>
+												
+																														</div>
+								</menu-item>	
+																																																									<menu-item title="Better Policy &amp; Regulation"
+									:active-item="false"
+									link="/better-policy-regulation">
+									<div class="navbar-dropdown">
+										<div class="navbar-item is-hidden-tablet">
+											<h6 class="mb-0">
+												<a href="/better-policy-regulation" >
+													Better Policy &amp; Regulation
+													<i class="icon icon-arrow-right"></i>
+												</a>
+											</h6>
+										</div>
+										<hr class="navbar-divider is-block-mobile is-hidden-tablet"/>
+																																																																																															
+												<a class="navbar-item "
+													 href="/better-policy-regulation/chemical-management" 													>Chemical Management</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/plastics" 													>Plastics</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/energy" 													>Energy</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/climate-change" 													>Climate Change</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/transportation-infrastructure" 													>Transportation &amp; Infrastructure</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/safety-security" 													>Safety &amp; Security</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/tax" 													>Tax</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/trade" 													>Trade</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/better-policy-regulation/research" 													>Research</a>
+												
+																														</div>
+								</menu-item>	
+																																																									<menu-item title="The Science Behind Sustainability"
+									:active-item="false"
+									link="/the-science-behind-sustainability">
+									<div class="navbar-dropdown">
+										<div class="navbar-item is-hidden-tablet">
+											<h6 class="mb-0">
+												<a href="/the-science-behind-sustainability" >
+													The Science Behind Sustainability
+													<i class="icon icon-arrow-right"></i>
+												</a>
+											</h6>
+										</div>
+										<hr class="navbar-divider is-block-mobile is-hidden-tablet"/>
+																																																																																															
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/climate" 													>Climate</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/water" 													>Water</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/circularity" 													>Circularity</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/product-safety-innovation" 													>Product Safety</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/air-quality" 													>Air</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/diversity-inclusion" 													>Diversity &amp; Inclusion</a>
+												
+																																																																																					
+												<a class="navbar-item "
+													 href="/chemistry-in-america/chemistry-sustainability/sustainability-leadership-awards" 													>Sustainability Leadership Awards</a>
+												
+																														</div>
+								</menu-item>	
+																		</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+ 
+						<main id="main">
+				<article>
+    <div class="section">
+        <div class="container">
+            <div class="page-heading has-text-dark">
+                <div class="columns is-desktop mb-0">
+                    <div class="column is-6-desktop is-7-widescreen pb-0">
+                        <ul class="meta-info list-unstyled">
+                            <li>
+                                <time datetime="2023-04-13">Apr 13, 2023</time>
+                            </li>
+                            <li>Read time:             4 minutes<script>
+                var dataLayer = dataLayer || [];
+        dataLayer.push({ 'readTime': "4 minutes" });
+    </script>
+</li>
+                            <li>
+                                                            Press Release
+                                                        </li>
+                        </ul>
+                    </div>
+                    <div class="column is-6-desktop is-5-widescreen pb-0">
+						<div class="social-media">
+    <span class="title-social-media">Follow us</span>
+    <ul class="social-networks social-networks-md list-unstyled is-flex is-flex-wrap-wrap is-align-items-center is-justify-content-flex-end">
+                                    <li>
+                    <a href="https://twitter.com/AmChemistry"  target="_blank">
+                        <i class="icon icon-twitter"></i>
+                        <span class="is-sr-only">Twitter</span>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://www.facebook.com/AmericanChemistry/"  target="_blank">
+                        <i class="icon icon-facebook"></i>
+                        <span class="is-sr-only">Facebook</span>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://www.linkedin.com/company/american-chemistry-council/"  target="_blank">
+                        <i class="icon icon-linkedin"></i>
+                        <span class="is-sr-only">Linkedin</span>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://www.youtube.com/user/AmericanChemistry"  target="_blank">
+                        <i class="icon icon-youtube"></i>
+                        <span class="is-sr-only">Youtube</span>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://www.americanchemistry.com/api/rss/press-releases.rss"  target="_blank">
+                        <i class="icon icon-rss"></i>
+                        <span class="is-sr-only">RSS</span>
+                    </a>
+                </li>
+                            <li class="is-separated"><a onclick="window.print()"><i class="icon icon-print"></i></a></li>
+    </ul>
+</div>
+
+                    </div>
+                </div>
+                <h1 class="h2">New Report Finds Major Supply Chain Problems Continue to Impact Chemical Manufacturing</h1>
+                                                    
+<section v-if="showFloatingBox" class="card card-contact has-background-white has-text-dark" :class="{ 'exapand-effect' : showFloatingBox }" v-cloak>
+    <div class="card-content">
+        <div class="content">
+            <div class="is-flex">
+                <span class="category-label has-text-primary">CONTACT US</span>
+                <a href="#" class="ml-auto toggle-arrow" @click="closeContactBox($event)">
+                    <span class="icon icon-transparent-fill" v-icon:head-arrow></span>
+                </a>
+            </div>
+                                                <address class="contacts-block mb-3">
+                                                <strong class="contacts-title">Scott Jensen</strong>
+                        <ul class="contacts-list list-unstyled">
+                                                            <li>
+                                    <i class="icon icon-phone"></i>
+                                    <a href="tel:202-249-6511">202-249-6511</a>
+                                </li>
+                                                                                        <li>
+                                    <i class="icon icon-mail"></i>
+                                    <a href="mailto:scott_jensen@americanchemistry.com">Email</a>
+                                </li>
+                                                    </ul>
+                    </address>
+                                                                            </div>
+    </div>
+</section>
+<section v-else class="card card-contact closed-mode has-background-white has-text-dark" :class="{ 'shrink-effect' : !showFloatingBox }" v-cloak>
+    <div class="card-content">
+        <div class="content">
+            <a href="#" class="ml-auto toggle-arrow" @click="closeContactBox($event)">
+                <span class="icon icon-transparent-fill" v-icon:medium-arrow-left></span>
+            </a>
+            <span class="category-label has-text-primary text-orientation-up-right mt-2 pb-2">CONTACT US</span>
+        </div>
+    </div>
+</section>
+                            </div>
+            <div class="content">
+                <div class="is-clearfix">
+                    <div class="tags tags--wrapping">
+                                                                                                                                                            <a href="/tags/view/Issues/Transportation+%26+Infrastructure/Rail" class="tag button is-primary is-outlined is-uppercase">Rail</a>
+                                                            <a href="/tags/view/Issues/Transportation+%26+Infrastructure/Truck" class="tag button is-primary is-outlined is-uppercase">Truck</a>
+                                                            <a href="/tags/view/Issues/Transportation+%26+Infrastructure" class="tag button is-primary is-outlined is-uppercase">Transportation &amp; Infrastructure</a>
+                                                                                                                        </div>
+                                    </div>
+                <div class="columns is-centered my-0">
+                    <div class="column is-10-desktop is-9-widescreen is-clearfix">
+                                                <div class="page-content-bullets">
+                                                                                <p>WASHINGTON (April 13, 2023) &mdash; Chemical manufacturers report that despite improving conditions, supply chain challenges and freight transportation disruptions continue to be a major problem for the U.S. business of chemistry and the broader economy.</p><p>According to the results of a <a href="/better-policy-regulation/transportation-infrastructure/resources/acc-member-supply-chain-report-h2-2022" target="_blank">new survey released by the American Chemistry Council (ACC),</a> transportation-related supply chain issues moderated during the second half of 2022 but continue to be worse than conditions prior to the pandemic.</p><section class="section"><div class="container"><div class="content"><div class="blockquote has-text-info"><blockquote><footer class="has-text-info"><strong>Emily Sanchez, </strong><span>Director, Economics and Data Analysis<span></footer><q>There are signs that conditions have improved, but the transportation problems plaguing our members are far from resolved. Marine and truck transportation have improved while poor rail service continues to be a major concern.</q></blockquote><div class="social-media is-justify-content-flex-start"><span class="title-social-media"><span class="has-text-info">Share:</span></span><ul class="social-networks list-unstyled is-flex is-align-items-center hidden-bullets"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing&quote=There%20are%20signs%20that%20conditions%20have%20improved%2C%20but%20the%20transportation%20problems%20plaguing%20our%20members%20are%20far%20from%20resolved.%20Marine%20and%20truck%20transportation%20have%20improved%20while%20poor%20rail%20service%20continues%20to%20be%20a%20major%20concern." target="_blank"><i class="icon icon-facebook has-text-primary"></i><span class="is-sr-only">Facebook</span></a></li><li><a href="https://twitter.com/intent/tweet?text=There%20are%20signs%20that%20conditions%20have%20improved%2C%20but%20the%20transportation%20problems%20plaguing%20our%20members%20are%20far%20from%20resolved.%20Marine%20and%20truck%20transportation%20have%20improved%20while%20poor%20rail%20service%20continues%20to%20be%20a%20major%20concern....&url=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing" target="_blank"><i class="icon icon-twitter has-text-primary"></i><span class="is-sr-only">Twitter</span></a></li><li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing" target="_blank"><i class="icon icon-linkedin has-text-primary"></i><span class="is-sr-only">Linkedin</span></a></li><li><a href="mailto:?subject=American Chemistry Council&amp;body=Check out this site https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing %0AThere%20are%20signs%20that%20conditions%20have%20improved%2C%20but%20the%20transportation%20problems%20plaguing%20our%20members%20are%20far%20from%20resolved.%20Marine%20and%20truck%20transportation%20have%20improved%20while%20poor%20rail%20service%20continues%20to%20be%20a%20major%20concern." target="_blank"><i class="icon icon-mail has-text-primary"></i><span class="is-sr-only">Mail</span></a></li></ul></div></div></div></div></section><p>For two years, ACC member companies have reported that supply chain and freight transportation problems are disrupting their U.S. manufacturing operations. In addition to lost manufacturing and customer orders, companies once again reported that higher shipping rates were compounded by costly workarounds, including increased inventories.&nbsp; &nbsp;</p><h5>Key Findings</h5><p>ACC has surveyed chemical companies <a href="/better-policy-regulation/transportation-infrastructure" target="_blank">four times since late 2021</a> to better understand the persistent challenges to moving freight in the U.S. by rail, truck, and water. The latest survey focused on business impacts through the second half of 2022 (H2) compared to conditions in the first half of 2022 and compared to conditions prior to the pandemic.</p><p>Chemical manufacturers observed some unwinding in supply chain kinks, but they report that conditions remain worse compared to pre-pandemic:</p><ul><li>Nearly all (93%) of companies say supply chain and freight transportation disruptions are impacting their US chemicals manufacturing business.</li><li>Compared to conditions in the first half of 2022, 67% of companies reported supply chain and freight transportation disruptions were generally better in the second half of the year. Compared to conditions prior to the pandemic, however, 83% of companies say they are worse.</li><li>Among respondents, a majority (86%) reported they modified operations because of supply chain issues and/or transportation disruptions and delays in H2.</li><li>In both the first and second half of 2022, about 36% of companies experienced customers canceling orders because they were concerned their order would not arrive or would not arrive on time.</li><li>Supply chain issues and transportation disruptions continue to push up transportation costs. More than half (62%) of chemical manufacturers saw costs rise over H2.</li></ul><h5>Policymakers Must Act</h5><p>The latest survey findings provide further evidence that the problems within the U.S. transportation supply chain are entrenched and that companies believe that further action by policymakers on solutions would help. Regarding specific policy reforms, the survey found:</p><ul><li>Most companies said that standardized first mile/last mile service reporting by railroads (73%) and access to reciprocal switching (77%) would help mitigate freight rail problems.</li><li>Many companies (75%) also said that increasing gross vehicle weight limits for interstate highways would help alleviate trucking capacity constraints.</li></ul><section class="section"><div class="container"><div class="content"><div class="blockquote has-text-info"><blockquote><footer class="has-text-info"><strong>Jeff Sloan, </strong><span>Senior Director, Regulatory and Scientific Affairs<span></footer><q>Hoping things will improve on their own is not a strategy. There are several sensible policy reforms that are ready to go that could help address these major transportation problems now and into the future.</q></blockquote><div class="social-media is-justify-content-flex-start"><span class="title-social-media"><span class="has-text-info">Share:</span></span><ul class="social-networks list-unstyled is-flex is-align-items-center hidden-bullets"><li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing&quote=Hoping%20things%20will%20improve%20on%20their%20own%20is%20not%20a%20strategy.%20There%20are%20several%20sensible%20policy%20reforms%20that%20are%20ready%20to%20go%20that%20could%20help%20address%20these%20major%20transportation%20problems%20now%20and%20into%20the%20future." target="_blank"><i class="icon icon-facebook has-text-primary"></i><span class="is-sr-only">Facebook</span></a></li><li><a href="https://twitter.com/intent/tweet?text=Hoping%20things%20will%20improve%20on%20their%20own%20is%20not%20a%20strategy.%20There%20are%20several%20sensible%20policy%20reforms%20that%20are%20ready%20to%20go%20that%20could%20help%20address%20these%20major%20transportation%20problems%20now%20and%20into%20the%20future....&url=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing" target="_blank"><i class="icon icon-twitter has-text-primary"></i><span class="is-sr-only">Twitter</span></a></li><li><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing" target="_blank"><i class="icon icon-linkedin has-text-primary"></i><span class="is-sr-only">Linkedin</span></a></li><li><a href="mailto:?subject=American Chemistry Council&amp;body=Check out this site https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing %0AHoping%20things%20will%20improve%20on%20their%20own%20is%20not%20a%20strategy.%20There%20are%20several%20sensible%20policy%20reforms%20that%20are%20ready%20to%20go%20that%20could%20help%20address%20these%20major%20transportation%20problems%20now%20and%20into%20the%20future." target="_blank"><i class="icon icon-mail has-text-primary"></i><span class="is-sr-only">Mail</span></a></li></ul></div></div></div></div></section><p>Specifically, ACC is calling on the Surface Transportation Board to increase competition in the rail industry through <a href="/better-policy-regulation/transportation-infrastructure/rail/reciprocal-switching" target="_blank">reciprocal switching</a> and to hold railroads accountable for <a href="https://www.freightrailreform.com/rail-service-failures" target="_blank" title="">service failures</a> by establishing minimum service standards. Furthermore, we urge Congress to pass the bipartisan <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-bipartisan-trucking-reform-bill" target="_blank">Safer Highways and Increased Performance for Interstate Trucking (SHIP IT) Act</a>, which among other things will improve truck capacity by increasing the Gross Vehicle Weight (GVW).</p>
+                                                </div>
+
+                        <div class="content-section">
+	<div class="columns is-multiline ml-0 mr-0">
+				<div class="column is-tablet pl-0">
+			<div>
+				<section class="card card-author is-shadowless is-outlined-primary-lighter mt-4 mb-4">
+																<div class="card-content">
+							<div class="content">
+																	<h6>American Chemistry Council</h6>
+									<p>The American Chemistry Council&rsquo;s mission is to advocate for the people, policy, and products of chemistry that make the United States the global leader in innovation and manufacturing. To achieve this, we: Champion science-based policy solutions across all levels of government; Drive continuous performance improvement to protect employees and communities through Responsible Care&reg;; Foster the development of sustainability practices throughout ACC member companies; and Communicate authentically with communities about challenges and solutions for a safer, healthier and more sustainable way of life.&nbsp;Our vision is a world made better by chemistry, where people live happier, healthier, and more prosperous lives, safety and sustainably&mdash;for generations to come.</p>
+								          
+							</div>
+						</div>
+									</section>
+			</div>
+		</div>
+				
+		<div class="column is-4-tablet pr-0 mt-4 hide-for-print">
+			
+    
+<div class="social-media share-article-media ">
+    <h5 class="title-social-media" style="white-space:normal">Share this Press Release</h5>
+    <div class="content">
+        <p>Stay up-to-date and engaged with the latest industry-related news.</p>
+    </div>
+    <ul class="social-networks list-unstyled has-text-primary">
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=New%20Report%20Finds%20Major%20Supply%20Chain%20Problems%20Continue%20to%20Impact%20Chemical%20Manufacturing&url=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing" target="_blank">
+                <i class="icon icon-twitter"></i>
+                <span>Tweet</span>
+            </a>
+        </li>    
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.americanchemistry.com%2Fchemistry-in-america%2Fnews-trends%2Fpress-release%2F2023%2Fnew-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing&quote=New%20Report%20Finds%20Major%20Supply%20Chain%20Problems%20Continue%20to%20Impact%20Chemical%20Manufacturing" target="_blank">
+                <i class="icon icon-facebook"></i>
+                <span>Share</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing" target="_blank">
+                <i class="icon icon-linkedin"></i>
+                <span>Post</span>
+            </a>
+        </li>
+        <li>
+            <a href="mailto:?subject=American Chemistry Council&amp;body=Check out this site https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing %0ANew%20Report%20Finds%20Major%20Supply%20Chain%20Problems%20Continue%20to%20Impact%20Chemical%20Manufacturing" target="_blank">
+                <i class="icon icon-mail"></i>
+                <span>Email</span>
+            </a>
+        </li>
+    </ul>
+</div>		</div>
+		
+	</div>
+</div>
+                        
+                                                    <div class="content-section my-6 hide-for-print">
+                                <h3>Related Content</h3>
+                                <div class="columns is-multiline is-desktop">
+                                                                        <div class="column is-6-desktop is-6-tablet ">
+                                        <article>
+                                            <section class="card card-news is-horizontal is-small is-shadowless px-0">
+                                                                                                                                                    <div class="card-image">
+                                                        <figure class="image is-3by2">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-senate-bill-to-solve-freight-rail-problems">
+                                                                <img loading="lazy" src="/var/site/storage/images/1/2/2/3/153221-1-eng-US/4e54b8f1d055-Railroad-Tracks-with-Stop-Motion.png" alt="image description">
+                                                            </a>
+                                                        </figure>
+                                                    </div>
+                                                                                                <div class="card-content">
+                                                    <div class="content">
+                                                        <div class="meta">
+                                                            <span class="category-label is-uppercase has-text-primary">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-senate-bill-to-solve-freight-rail-problems">ACC Welcomes Senate Bill to Solve Freight Rail Problems</a>
+                                                            </span>
+                                                                                                                        <time class="date" datetime="2023-06-29">Jun 29, 2023</time>
+                                                        </div>
+                                                        <h5>
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-senate-bill-to-solve-freight-rail-problems">ACC Welcomes Senate Bill to Solve Freight Rail Problems</a>
+                                                        </h5>
+                                                        <p></p>
+                                                        <div class="tags">
+                                                                    
+                        
+                
+                                                                <a href="/tags/view/Issues/Transportation+%26+Infrastructure/Rail" class="tag button is-primary is-outlined is-uppercase">Rail</a>
+            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </div>
+                                                                        <div class="column is-6-desktop is-6-tablet ">
+                                        <article>
+                                            <section class="card card-news is-horizontal is-small is-shadowless px-0">
+                                                                                                                                                    <div class="card-image">
+                                                        <figure class="image is-3by2">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-urges-congress-to-address-rail-supply-chain-challenges">
+                                                                <img loading="lazy" src="/var/site/storage/images/3/8/9/2/2983-2-eng-US/Government-Capitol-Dome-Close-Up.png" alt="image description">
+                                                            </a>
+                                                        </figure>
+                                                    </div>
+                                                                                                <div class="card-content">
+                                                    <div class="content">
+                                                        <div class="meta">
+                                                            <span class="category-label is-uppercase has-text-primary">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-urges-congress-to-address-rail-supply-chain-challenges">ACC Urges Congress to Address Rail Supply Chain Challenges</a>
+                                                            </span>
+                                                                                                                        <time class="date" datetime="2023-05-11">May 11, 2023</time>
+                                                        </div>
+                                                        <h5>
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-urges-congress-to-address-rail-supply-chain-challenges">ACC Urges Congress to Address Rail Supply Chain Challenges</a>
+                                                        </h5>
+                                                        <p></p>
+                                                        <div class="tags">
+                                                                    
+                        
+                
+                                                                <a href="/tags/view/Issues/Transportation+%26+Infrastructure/Rail" class="tag button is-primary is-outlined is-uppercase">Rail</a>
+            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </div>
+                                                                        <div class="column is-6-desktop is-6-tablet ">
+                                        <article>
+                                            <section class="card card-news is-horizontal is-small is-shadowless px-0">
+                                                                                                                                                    <div class="card-image">
+                                                        <figure class="image is-3by2">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-improvements-to-railway-safety-act">
+                                                                <img loading="lazy" src="/var/site/storage/images/9/6/9/6/6969-2-eng-US/Transportation-Railway-Signal-Green.png" alt="image description">
+                                                            </a>
+                                                        </figure>
+                                                    </div>
+                                                                                                <div class="card-content">
+                                                    <div class="content">
+                                                        <div class="meta">
+                                                            <span class="category-label is-uppercase has-text-primary">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-improvements-to-railway-safety-act">ACC Welcomes Improvements to Railway Safety Act</a>
+                                                            </span>
+                                                                                                                        <time class="date" datetime="2023-05-09">May 09, 2023</time>
+                                                        </div>
+                                                        <h5>
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-welcomes-improvements-to-railway-safety-act">ACC Welcomes Improvements to Railway Safety Act</a>
+                                                        </h5>
+                                                        <p></p>
+                                                        <div class="tags">
+                                                                    
+                        
+                
+                                                                <a href="/tags/view/Issues/Transportation+%26+Infrastructure/Rail" class="tag button is-primary is-outlined is-uppercase">Rail</a>
+            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </div>
+                                                                        <div class="column is-6-desktop is-6-tablet ">
+                                        <article>
+                                            <section class="card card-news is-horizontal is-small is-shadowless px-0">
+                                                                                                                                                    <div class="card-image">
+                                                        <figure class="image is-3by2">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-comments-on-senate-rail-safety-hearing">
+                                                                <img loading="lazy" src="/var/site/storage/images/1/9/0/9/19091-1-eng-US/Government-Capitol-Dome-On-Blue-Sky.png" alt="image description">
+                                                            </a>
+                                                        </figure>
+                                                    </div>
+                                                                                                <div class="card-content">
+                                                    <div class="content">
+                                                        <div class="meta">
+                                                            <span class="category-label is-uppercase has-text-primary">
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-comments-on-senate-rail-safety-hearing">ACC Comments on Senate Rail Safety Hearing</a>
+                                                            </span>
+                                                                                                                        <time class="date" datetime="2023-03-22">Mar 22, 2023</time>
+                                                        </div>
+                                                        <h5>
+                                                            <a href="/chemistry-in-america/news-trends/press-release/2023/acc-comments-on-senate-rail-safety-hearing">ACC Comments on Senate Rail Safety Hearing</a>
+                                                        </h5>
+                                                        <p></p>
+                                                        <div class="tags">
+                                                                    
+                        
+                
+                                                                <a href="/tags/view/Issues/Transportation+%26+Infrastructure/Rail" class="tag button is-primary is-outlined is-uppercase">Rail</a>
+            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </div>
+                                                                    </div>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+			</main>
+							
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="columns is-desktop is-multiline">
+            <div class="column is-8-desktop pb-0">
+                <div class="columns add-nav-columns is-hidden-mobile hide-for-print">
+                                            <div class="column is-3-tablet">
+                            <nav class="add-nav">
+                                                                                                                                                        <h6 class="has-text-weight-semibold">
+                                                    <a href="/chemistry-in-america" class="" >
+            Chemistry in America
+        </a>
+                                            </h6>
+                                                                                                                                                                                                                <ul class="list-unstyled has-text-primary">
+                                                                                                <li>
+                                                            <a href="/chemistry-in-america/news-trends" class="" >
+            News &amp; Trends
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/data-industry-statistics" class="" >
+            Data &amp; Industry Statistics
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/responsible-care-driving-safety-industry-performance" class="" >
+            Responsible Care®
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability" class="" >
+            Chemistry &amp; Sustainability
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-in-everyday-products" class="" >
+            Chemistry in Everyday Products
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-in-your-community" class="" >
+            Chemistry in Your Community
+        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                                                                                                                                    </nav>
+                        </div>
+                                            <div class="column is-3-tablet">
+                            <nav class="add-nav">
+                                                                                                                                                        <h6 class="has-text-weight-semibold">
+                                                    <a href="/better-policy-regulation" class="" >
+            Better Policy &amp; Regulation
+        </a>
+                                            </h6>
+                                                                                                                                                                                                                <ul class="list-unstyled has-text-primary">
+                                                                                                <li>
+                                                            <a href="/better-policy-regulation/chemical-management" class="" >
+            Chemical Management
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/plastics" class="" >
+            Plastics
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/energy" class="" >
+            Energy
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/climate-change" class="" >
+            Climate Change
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/transportation-infrastructure" class="" >
+            Transportation &amp; Infrastructure
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/safety-security" class="" >
+            Safety &amp; Security
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/tax" class="" >
+            Tax
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/trade" class="" >
+            Trade
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/better-policy-regulation/research" class="" >
+            Research
+        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                                                                                                                                    </nav>
+                        </div>
+                                            <div class="column is-3-tablet">
+                            <nav class="add-nav">
+                                                                                                                                                        <h6 class="has-text-weight-semibold">
+                                                    <a href="/the-science-behind-sustainability" class="" >
+            The Science Behind Sustainability
+        </a>
+                                            </h6>
+                                                                                                                                                                                                                <ul class="list-unstyled has-text-primary">
+                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/climate" class="" >
+            Climate
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/water" class="" >
+            Water
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/circularity" class="" >
+            Circularity
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/product-safety-innovation" class="" >
+            Product Safety &amp; Innovation
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/air-quality" class="" >
+            Air Quality
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/diversity-inclusion" class="" >
+            Diversity &amp; Inclusion
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/chemistry-in-america/chemistry-sustainability/sustainability-leadership-awards" class="" >
+            Sustainability Leadership Awards
+        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                                                                                                                                    </nav>
+                        </div>
+                                            <div class="column is-3-tablet">
+                            <nav class="add-nav">
+                                                                                                                                                        <h6 class="has-text-weight-semibold">
+                                                    <a href="/about-acc" class="" >
+            About ACC
+        </a>
+                                            </h6>
+                                                                                                                                                                                                                <ul class="list-unstyled has-text-primary">
+                                                                                                <li>
+                                                            <a href="/about-acc/acc-leadership" class="" >
+            ACC Leadership
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/industry-groups" class="" >
+            Industry Groups
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/about-acc/membership" class="" >
+            Membership
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/about-acc/careers" class="" >
+            Careers
+        </a>
+                                                    </li>
+                                                                                                                                                                                                                                                                <li>
+                                                            <a href="/about-acc/conferences-events" class="" >
+            Conferences &amp; Events
+        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                                                                                                                                    </nav>
+                        </div>
+                                    </div>
+                <nav class="add-sub-nav hide-for-print">
+                                            <ul class="list-unstyled is-flex-tablet is-flex-wrap-wrap has-text-primary">
+                                                            <li>
+                                        <a href="/privacy-policy" class="" >
+            Privacy Policy
+        </a>
+                                </li>
+
+                                                            <li>
+                                        <a href="/terms-conditions" class="" >
+            Terms &amp; Conditions
+        </a>
+                                </li>
+
+                                                            <li>
+                                        <a href="https://americhempac.com/" class="" target="_blank">
+            AmeriChem PAC
+        </a>
+                                </li>
+
+                                                            <li>
+                                        <a href="https://store.americanchemistry.com/" class="" target="_blank">
+            ACC Store
+        </a>
+                                </li>
+
+                                                            <li>
+                                        <a href="https://accexchange.americanchemistry.com/" class="" target="_blank">
+            ACCexchange
+        </a>
+                                </li>
+
+                                                            <li>
+                                        <a href="/chemistry-in-america/american-chemistry-matters" class="" >
+            Blog
+        </a>
+                                </li>
+
+                                                    </ul>
+                                    </nav>
+                <div class="copyright has-text-weight-normal is-hidden-mobile">
+                                            <p>
+                            ©2005-2023 
+                            American Chemistry Council, Inc. The ACC mark, Responsible Care&reg;, the hands logo trademark, CHEMTREC&reg;, TRANSCAER&reg;, and&nbsp;americanchemistry.com&nbsp;are registered service marks of the American Chemistry Council, Inc.
+                        </p>
+                                    </div>
+            </div>
+            <div class="column is-4-desktop pb-0 hide-for-print">
+                <div class="box is-shadowless has-background-primary-light has-text-weight-semibold">
+                    <smart-brief-subscription
+                        end-point="/api/subscription_smart_brief"
+                    />
+                </div>
+                <div class="columns is-mobile is-multiline">
+                    <div class="column is-narrow-mobile is-12-desktop is-flex-shrink-0 has-text-right-desktop btn-holder">
+                                                    <a href="/about-acc/membership" class="button is-primary">Membership</a>
+                                            </div>
+                    <div class="column is-12-desktop is-flex-grow-1 has-text-right">
+                        <div class="social-media">
+                                                            <span class="title-social-media">Follow us</span>
+                                <ul class="social-networks list-unstyled is-flex is-flex-wrap-wrap is-align-items-center is-justify-content-flex-end">
+                                                                            <li>
+                                            <a href="https://twitter.com/AmChemistry" target="_blank">
+                                                <i class="icon icon-twitter"></i>
+                                                <span class="is-sr-only">Twitter</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://www.facebook.com/AmericanChemistry/" target="_blank">
+                                                <i class="icon icon-facebook"></i>
+                                                <span class="is-sr-only">Facebook</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://www.linkedin.com/company/american-chemistry-council/" target="_blank">
+                                                <i class="icon icon-linkedin"></i>
+                                                <span class="is-sr-only">Linkedin</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://www.youtube.com/user/AmericanChemistry" target="_blank">
+                                                <i class="icon icon-youtube"></i>
+                                                <span class="is-sr-only">Youtube</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://www.americanchemistry.com/api/rss/press-releases.rss" target="_blank">
+                                                <i class="icon icon-rss"></i>
+                                                <span class="is-sr-only">RSS</span>
+                                            </a>
+                                        </li>
+                                                                    </ul>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="show-on-focus" href="#wrapper">Back to top</a>
+    </div>
+</footer>
+	<cookies-notification button-text="Accept" v-cloak>
+   	<p>We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising and analytics partners.</p><p><a href="/privacy-policy">Privacy Policy</a>&nbsp;-&nbsp;<a href="/terms-conditions">Terms &amp; Conditions</a></p>
+</cookies-notification>
+
+ 
+					</div>
+					<script src="https://public.flourish.studio/resources/embed.js"></script>
+<script async src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://assets.americanchemistry.com/acc-frontend/1.5.28/dist/js/vendors.js"></script>
+<script src="https://assets.americanchemistry.com/acc-frontend/1.5.28/dist/js/main.js"></script>
+
+<script>
+    // Google Tag Manager
+    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KM5NHVF');
+
+    /* Automatic iframe resizer 
+     * note: use this format when embedding iframe in code block: 
+     * <iframe id="iframe-resize-0" src="/iframe-test" scrolling="yes"  width="100%"></iframe>
+     * For each additional iframe to be automatically resized, change the 0 to a unique number
+     */
+    var iframesToResize = document.getElementsByTagName('iframe');
+    for (let item of iframesToResize) {
+        if (item.id.includes('iframe-resize')) {
+            iFrameResize({log: false, enablePublicMethods: true,}, '#' + item.id);
+        }
+    }
+</script>
+
+			<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"be507b18e4","applicationID":"857311757","transactionName":"YFEHbBYEXhVSURJaWVkbJFsQDF8IHFccbFVYWhFdChEKXEVbA0R3VEAMVwo=","queueTime":0,"applicationTime":4359,"atts":"TBYEGl4eTRs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
