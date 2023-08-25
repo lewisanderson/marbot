@@ -7,7 +7,10 @@ import bs4
 import traceback
 from bs4 import BeautifulSoup
 from itertools import islice
+from joblib import Memory
 
+
+memory = Memory("/app/cachedata", verbose=0)
 
 def main():
     openai.organization = "org-RfxFQjm7zizJjdQRALbJZaZB"
@@ -132,7 +135,7 @@ def loadUrls():
             "https://www.rdoequipment.com/resources/blogs/3-unexpected-challenges-the-equipment-industry-is-facing-in-2021-and-what-to-do-now",
             "https://www.designnews.com/automation/ongoing-manufacturing-challenges-uptime-materials-and-workers",
             "https://www2.deloitte.com/us/en/pages/energy-and-resources/articles/manufacturing-industry-outlook.html",
-            "https://www2.deloitte.com/content/dam/Deloitte/us/Documents/energy-resources/us-2023-outlook-manufacturing.pdf",
+            "https://global.hitachi-solutions.com/blog/top-manufacturing-trends/",
             "https://www.servicepower.com/blog/top-5-manufacturing-challenges",
             "https://www.aem.org/news/5-equipment-manufacturing-trends-to-watch-in-2022",
             "https://www.dynaway.com/blog/5-current-challenges-to-overcome-for-the-manufacturing-industry",
@@ -142,7 +145,6 @@ def loadUrls():
             "https://www.weidert.com/blog/key-manufacturing-challenges",
             "https://www.ibaset.com/six-common-challenges-for-industrial-manufacturers/",
             "https://www.aem.org/news/5-equipment-manufacturing-trends-to-watch-in-2023",
-            "https://global.hitachi-solutions.com/blog/top-manufacturing-trends/",
             ],
         "Food": [
             "https://www.fmi.org/blog/view/fmi-blog/2023/02/28/six-imperative-issues-facing-the-food-industry-in-2023",
@@ -232,6 +234,7 @@ def loadUrls():
         print(f"WARNING: Failed to fetch {len(failedUrls)} pages: {failedUrls}")
 
 
+@memory.cache
 def fetchHtmlForPage(url, outputPath):
     print(f"Fetching {url}")
     headers = {
@@ -243,7 +246,7 @@ def fetchHtmlForPage(url, outputPath):
         print(f"ERROR: Failed to fetch {url}")
         return False
 
-    with open(outputPath, 'w') as outputFile:
+    with open(outputPath, "w") as outputFile:
         outputFile.write(response.text)
     
     print(f"Saved {len(response.text)} chars to {outputPath}")
@@ -260,6 +263,7 @@ def scanFiles(inputDirectory):
     return filePaths
 
 
+@memory.cache
 def loadAndSummarizePage(filePath, modelToUse):
     print(f"Loading {filePath}")
     humanText = preprocessHtmlFile(filePath)
@@ -378,6 +382,7 @@ def summarizePage(summaries, modelToUse):
     return summary
 
 
+@memory.cache
 def combinePageSummaries(pageSummaries, modelToUse):
     instructionText = f"""
         Please summarize the following text. You are helping with market research, to help the user better understand the current state and future trends of a particular industry. 
@@ -404,7 +409,7 @@ def combinePageSummaries(pageSummaries, modelToUse):
         ]
     )
     combinedSummary = result["choices"][0]["message"]["content"]
-    print(f"\n\nCombined page summaries:\n{combinedSummary}")
+    # print(f"\n\nCombined page summaries:\n{combinedSummary}")
     return combinedSummary
 
 

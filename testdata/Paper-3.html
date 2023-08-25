@@ -957,99 +957,7 @@ googletag.pubads().addEventListener('slotRenderEnded', function(event) {if (dfp_
     <!-- ============================= ASIDE ============================ -->
             <div role="complementary" id="right-rail" class="col-md-4">
         <div class="gutter-sizer"></div>
-        <aside id="napco-webinars-11" class="napco-webinars-carousel_single bgcolor-outer rail-container napco-webinars-11 widget_napco-webinars bg-color"><div class="row">
-          <div class="col-sm-12">
-              <div class="section-head">
-                  <span class="h2">Happening Today</span>
-              </div>
-          </div>
-      </div>
-      <div class="widget">
-      <div class="clearfix">
-  <div id="napco-webinars-11" class="list"><div id="rail-carousel-napco-webinars-11" class="rail-carousel single-only bgcolor"><div class="inner-pad" style="padding-bottom:16px;"><div class="swiper-outter-conttainer bucket-carousel webinars"><div class="swiper-container" id="bucket-carousel-napco-webinars-11"><div class="swiper-wrapper" style=" transition: 0s; -webkit-transition: 0s; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px);"><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/a-picture-is-worth-a-thousand-words-and-profitable-for-production-inkjet-printers/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/1124250578-GettyImages.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/a-picture-is-worth-a-thousand-words-and-profitable-for-production-inkjet-printers/">A Picture is Worth a Thousand Words</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/a-picture-is-worth-a-thousand-words-and-profitable-for-production-inkjet-printers/" class="pull-right">Learn More</a></div></article></div></div></div></div></div></div></div></div></aside><script>
-	var imgHeight;
-	(function($) {
-		var bucketCarouselNapcoWebinars11 = function() {
-			var self, resizeTimer;
-			return{
-				init: function(){
-					self = this;
-					$(window).on('resize', function() {
-						clearTimeout(resizeTimer);
-						resizeTimer = setTimeout(function(){
-							$(window).trigger('resizeend');
-						},1000);
-					});
-					$(window).on('resizeend', self.resizeEnd);
-					$(window).trigger('resizeEnd');
-					self.pickSize();
-				},
-				resizeEnd: function(){
-					self.pickSize();
-				},
-				pickSize: function(){
-					if ( $(window).width() > 480 ) {
-						var bucketCarouselNapcoWebinars11 = $('#bucket-carousel-napco-webinars-11').swiper({
-							mode:'horizontal',
-							loop: false,
-							slidesPerView: 1,
-							roundLengths: true,
-							calculateHeight: true,
-							onInit : function() {								
-								imgHeight = $('#bucket-carousel-napco-webinars-11 article img').height();
-								$('#bucket-carousel-napco-webinars-11 ~ .bc-next, #bucket-carousel-napco-webinars-11 ~ .bc-prev').height(imgHeight);
-								$('#bucket-carousel-napco-webinars-11 ~ .bc-prev').addClass('disabled');
-								
-								//allow templates to set overrides to the heights and margins, etc.
-								if (typeof bucketCarouselNapcoWebinars11_Adjustment == 'function') { 
-									bucketCarouselNapcoWebinars11_Adjustment(imgHeight);
-								}
-							},
-							onSlideChangeEnd: function() {
-								if ( bucketCarouselNapcoWebinars11.activeIndex === ( bucketCarouselNapcoWebinars11.slides.length - 1 ) ) {
-									$('#bucket-carousel-napco-webinars-11 ~ .bc-next').addClass('disabled');
-								} else {
-									$('#bucket-carousel-napco-webinars-11 ~ .bc-next').removeClass('disabled');
-								}
-								if ( bucketCarouselNapcoWebinars11.activeIndex === 0 ) {
-									$('#bucket-carousel-napco-webinars-11 ~ .bc-prev').addClass('disabled');
-								} else {
-									$('#bucket-carousel-napco-webinars-11 ~ .bc-prev').removeClass('disabled');
-								}
-							}
-						});
-						bucketCarouselNapcoWebinars11.reInit();
-						$('#bucket-carousel-napco-webinars-11 ~ .bc-prev').on('click', function(e){
-							e.preventDefault();
-							bucketCarouselNapcoWebinars11.swipePrev();
-						});
-						$('#bucket-carousel-napco-webinars-11 ~ .bc-next').on('click', function(e){
-							e.preventDefault();
-							bucketCarouselNapcoWebinars11.swipeNext();
-						});
-					} else {
-						var bucketCarouselNapcoWebinars11 = $('#bucket-carousel-napco-webinars-11').swiper({
-							mode:'horizontal',
-							loop: false,
-							calculateHeight: true,
-							freeMode: true,
-							freeModeFluid: true
-						});
-						bucketCarouselNapcoWebinars11.reInit();
-					}
-				}
-			};
-		}();
-		jQuery(function() {
-			bucketCarouselNapcoWebinars11.init();
-		});
-	})(jQuery);
-</script><script>
-	function bucketCarouselNapcoWebinars11_Adjustment(imgHeight) {
-		jQuery('#rail-carousel-napco-webinars-11 .bc-next, #rail-carousel-napco-webinars-11 .bc-prev').height((imgHeight / 3) * 2);
-		jQuery('#rail-carousel-napco-webinars-11 .bc-next, #rail-carousel-napco-webinars-11 .bc-prev').css('margin-top', ((imgHeight / 3) / 2) + 'px');
-	}
-</script>		<!--style tye="text/css">aside[id^='napco-newsletters'] { display:none; }</style-->
+        		<!--style tye="text/css">aside[id^='napco-newsletters'] { display:none; }</style-->
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
         if ( getHashParameterByName('ne') ) {
@@ -1248,7 +1156,7 @@ googletag.pubads().addEventListener('slotRenderEnded', function(event) {if (dfp_
       </div>
       <div class="widget">
       <div class="clearfix">
-  <div id="napco-webinars-10" class="list"><div id="rail-carousel-napco-webinars-10" class="rail-carousel single-only bgcolor"><div class="inner-pad" style="padding-bottom:16px;"><div class="swiper-outter-conttainer bucket-carousel webinars"><div class="swiper-container" id="bucket-carousel-napco-webinars-10"><div class="swiper-wrapper" style=" transition: 0s; -webkit-transition: 0s; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px);"><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/a-picture-is-worth-a-thousand-words-and-profitable-for-production-inkjet-printers/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/1124250578-GettyImages.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/a-picture-is-worth-a-thousand-words-and-profitable-for-production-inkjet-printers/">A Picture is Worth a Thousand Words</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/a-picture-is-worth-a-thousand-words-and-profitable-for-production-inkjet-printers/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/how-specialty-print-add-value-boost-revenue/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/GettyImages-1440311801.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/how-specialty-print-add-value-boost-revenue/">How Specialty Print Can Add Value & Boost Revenue</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/how-specialty-print-add-value-boost-revenue/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/the-state-of-our-industry-whats-happening-whats-ahead-and-how-to-create-opportunity/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/1456963060-GettyImages.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/the-state-of-our-industry-whats-happening-whats-ahead-and-how-to-create-opportunity/">The State of Our Industry</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/the-state-of-our-industry-whats-happening-whats-ahead-and-how-to-create-opportunity/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/automatic-job-onboarding-without-the-hassle/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/GettyImages-1135581256.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/automatic-job-onboarding-without-the-hassle/">Automatic Job Onboarding Without the Hassle</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/automatic-job-onboarding-without-the-hassle/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/inkjet-innovation-new-business-opportunities/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/1403846937-Getty-Images.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/inkjet-innovation-new-business-opportunities/">Inkjet Innovation: New Business Opportunities</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/inkjet-innovation-new-business-opportunities/" class="pull-right">Learn More</a></div></article></div></div><span class="bc-prev disabled"><em></em></span><span class="bc-next"><em></em></span></div></div></div></div></div></div></aside><script>
+  <div id="napco-webinars-10" class="list"><div id="rail-carousel-napco-webinars-10" class="rail-carousel single-only bgcolor"><div class="inner-pad" style="padding-bottom:16px;"><div class="swiper-outter-conttainer bucket-carousel webinars"><div class="swiper-container" id="bucket-carousel-napco-webinars-10"><div class="swiper-wrapper" style=" transition: 0s; -webkit-transition: 0s; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px);"><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/how-specialty-print-add-value-boost-revenue/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/GettyImages-1440311801.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/how-specialty-print-add-value-boost-revenue/">How Specialty Print Can Add Value & Boost Revenue</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/how-specialty-print-add-value-boost-revenue/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/the-state-of-our-industry-whats-happening-whats-ahead-and-how-to-create-opportunity/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/1456963060-GettyImages.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/the-state-of-our-industry-whats-happening-whats-ahead-and-how-to-create-opportunity/">The State of Our Industry</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/the-state-of-our-industry-whats-happening-whats-ahead-and-how-to-create-opportunity/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/automatic-job-onboarding-without-the-hassle/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/GettyImages-1135581256.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/automatic-job-onboarding-without-the-hassle/">Automatic Job Onboarding Without the Hassle</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/automatic-job-onboarding-without-the-hassle/" class="pull-right">Learn More</a></div></article><article class="swiper-slide swiper-slide-visible swiper-slide-active"><figure><a href="https://www.piworld.com/webinar/inkjet-innovation-new-business-opportunities/"><img src="https://www.piworld.com/thumb/?src=/wp-content/uploads/sites/2/2023/08/1403846937-Getty-Images.jpg&w=327&h=187" alt=""></a></figure><span class="title h5b"><a href="https://www.piworld.com/webinar/inkjet-innovation-new-business-opportunities/">Inkjet Innovation: New Business Opportunities</a></span><div class="webinar-button"><a href="https://www.piworld.com/webinar/inkjet-innovation-new-business-opportunities/" class="pull-right">Learn More</a></div></article></div></div><span class="bc-prev disabled"><em></em></span><span class="bc-next"><em></em></span></div></div></div></div></div></div></aside><script>
 	var imgHeight;
 	(function($) {
 		var bucketCarouselNapcoWebinars10 = function() {
@@ -1493,6 +1401,14 @@ googletag.pubads().addEventListener('slotRenderEnded', function(event) {if (dfp_
   <div class="inner-pad clearfix">
         <div class="post-preview">
       <div class="label">Portland, Oregon</div>
+      <p><strong><a href="https://jobs.piworld.com/search?q=59185">Outside Sales Rep.-Graphics and Color Printing</a></strong></p>
+    </div>
+        <div class="post-preview">
+      <div class="label">Saint Louis Park, Minnesota</div>
+      <p><strong><a href="https://jobs.piworld.com/search?q=59183">Printer Service Technician</a></strong></p>
+    </div>
+        <div class="post-preview">
+      <div class="label">Portland, Oregon</div>
       <p><strong><a href="https://jobs.piworld.com/search?q=59178">Outside Sales Rep.-Graphics and Color Printing</a></strong></p>
     </div>
         <div class="post-preview">
@@ -1502,14 +1418,6 @@ googletag.pubads().addEventListener('slotRenderEnded', function(event) {if (dfp_
         <div class="post-preview">
       <div class="label">San Francisco, California</div>
       <p><strong><a href="https://jobs.piworld.com/search?q=59175">Customer Service Representative - Print Shop</a></strong></p>
-    </div>
-        <div class="post-preview">
-      <div class="label">Sacramento, California</div>
-      <p><strong><a href="https://jobs.piworld.com/search?q=59174">Print Production Staff - Large Format Color</a></strong></p>
-    </div>
-        <div class="post-preview">
-      <div class="label">Portland, Oregon</div>
-      <p><strong><a href="https://jobs.piworld.com/search?q=59167">Outside Sales Rep.-Graphics and Color Printing</a></strong></p>
     </div>
       </div>
 </div></div></div></aside><aside id="napco-block-content-5" class="rail-container napco-block-content-5 widget_napco-block-content bg-color"><div class="row"><div class="col-sm-12"><div class="section-head"><span class="h2">2022 PRINTING IMPRESSIONS 300</span></div></div></div><div class="widget"><div class="clearfix"><div class="col-sm-6 col-block pad-up-down bgcolor"><div class="feed-col"><article class="post-preview lead-post" style="padding-top:10px;"><p>&nbsp;</p>
