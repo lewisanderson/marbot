@@ -4,6 +4,7 @@ import openai
 import os
 import requests
 import bs4
+import traceback
 from bs4 import BeautifulSoup
 from itertools import islice
 
@@ -17,14 +18,18 @@ def main():
 
     filePaths = scanFiles("/app/testdata")
 
+    industryPageSummaries = {}
+    industrySummaries = {}
     for industry in filePaths:
         thisIndustryFilePaths = filePaths[industry]
         pageSummaries = []
         for filePath in thisIndustryFilePaths:
             pageSummary = loadAndSummarizePage(filePath, modelToUse)
             pageSummaries.append(pageSummary)
+        industryPageSummaries[industry] = pageSummaries
     
-    combinePageSummaries(pageSummaries, modelToUse)
+        combinedSummary = combinePageSummaries(pageSummaries, "gpt-4")
+        industrySummaries[industry] = combinedSummary
 
 
 def loadUrls():
@@ -300,7 +305,7 @@ def batched(iterable, n):
 
 
 def computeSummariesForBatchesInParallel(batches, modelToUse):
-    if len(batches) > 10:
+    if len(batches) > 100:
         print(f"ERROR: Too many batches ({len(batches)}). If this is expected, feel free to remove this code. Exiting.")
         raise Exception("Too many batches")
     summaries = []
