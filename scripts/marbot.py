@@ -295,5 +295,35 @@ def combinePageSummaries(pageSummaries, modelToUse):
     return combinedSummary
 
 
+def combineIndustrySummaries(subindustrySummaries, modelToUse):
+    instructionText = f"""
+        Please summarize the following text. You are helping with market research, to help the user better understand the current state and future trends of a particular industry. 
+
+        The input text is a set of summaries of different subindustries within the same industry. 
+        
+        You should combine these individual summaries into a list of 10-20 bullet points, which describe major trends, key challenges, and upcoming opportunities in the industry. Please do your best to be complete and capture all the major trends/challenges/opportunities. But, if you have already mentioned a trend in a bullet point, you dont need to mention it again.
+
+        Each bullet point should start with a key phrase of 1-3 words (in quotes), and a number which says how many subindustry summaries contained that concept. The bullet point should then have a short description of it. For example, "plastic recycling" (3): Plastic recycling is a major trend in the industry. Companies are increasingly looking for ways to recycle plastic, and to use recycled plastic in their products."
+
+        The bullet points should be sorted by the number of subindustry summaries that mention the concept, from most to least.
+
+        Make sure to include information from all subindustries, so that you produce a summary which is representative of the industry as a whole.
+
+        Input text:
+        """
+    for index, subindustrySummary in enumerate(subindustrySummaries):
+        instructionText += f"\n\nArticle {index} summary:\n{subindustrySummary}"
+
+    result = openai.ChatCompletion.create(
+        model=modelToUse,
+        messages=[
+            {"role": "user", "content": instructionText}
+        ]
+    )
+    combinedSummary = result["choices"][0]["message"]["content"]
+    # print(f"\n\nCombined page summaries:\n{combinedSummary}")
+    return combinedSummary
+
+
 if __name__ == '__main__':
     main()
