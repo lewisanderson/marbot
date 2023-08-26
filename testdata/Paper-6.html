@@ -1,503 +1,139 @@
-<!DOCTYPE html>
-<html lang="en-US" prefix="og: https://ogp.me/ns#">
-<head itemscope="itemscope" itemtype="http://schema.org/WebSite"><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<meta name="msvalidate.01" content="CBD3602AD1E7045F3356425D8D696D9E" />
-	<meta name="google-site-verification" content="eeKvRU7PAlYrDf5ROjuVBGwqSt0-QGkjOIH3-Xl38kc" />
-
-	
-	<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Linchpin SEO - We believe you deserve a better digital agency experience.">
-<link rel="pingback" href="https://linchpinseo.com/xmlrpc.php" />
-<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-
-	<!-- This site is optimized with the Yoast SEO Premium plugin v21.0 (Yoast SEO v21.0) - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Trends Shaping The Pulp and Paper Industry Outlook | Linchpin SEO</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Inter%3A400%7CRed%20Hat%20Display%3A700%2C500%2C400&#038;subset=latin&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%7CRed%20Hat%20Display%3A700%2C500%2C400&#038;subset=latin&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400%7CRed%20Hat%20Display%3A700%2C500%2C400&#038;subset=latin&#038;display=swap" /></noscript><link rel="stylesheet" href="https://linchpinseo.com/wp-content/cache/min/1/c1efd798976969fde0342048de3d382d.css" media="all" data-minify="1" />
-	<meta name="description" content="Linchpin SEO : Trends Shaping The Pulp and Paper Industry Outlook" />
-	<link rel="canonical" href="https://linchpinseo.com/trends-pulp-and-paper-industry/" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Linchpin SEO : Trends Shaping The Pulp and Paper Industry Outlook" />
-	<meta property="og:description" content="Linchpin SEO : Trends Shaping The Pulp and Paper Industry Outlook" />
-	<meta property="og:url" content="https://linchpinseo.com/trends-pulp-and-paper-industry/" />
-	<meta property="og:site_name" content="Linchpin SEO" />
-	<meta property="article:publisher" content="https://www.facebook.com/linchpinseo" />
-	<meta property="article:published_time" content="2019-12-26T20:32:51+00:00" />
-	<meta property="article:modified_time" content="2023-07-30T10:53:26+00:00" />
-	<meta property="og:image" content="https://linchpinseo.com/wp-content/uploads/social-wall-scaled.jpg" />
-	<meta property="og:image:width" content="2048" />
-	<meta property="og:image:height" content="1072" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta name="author" content="Bill Ross" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:creator" content="@linchpinseo" />
-	<meta name="twitter:site" content="@linchpinseo" />
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":["Article","BlogPosting"],"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#article","isPartOf":{"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/"},"author":{"name":"Bill Ross","@id":"https://linchpinseo.com/#/schema/person/16d00bc112ecc11a15040bdcb35e7324"},"headline":"Trends Shaping The Pulp and Paper Industry Outlook","datePublished":"2019-12-26T20:32:51+00:00","dateModified":"2023-07-30T10:53:26+00:00","mainEntityOfPage":{"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/"},"wordCount":1264,"publisher":{"@id":"https://linchpinseo.com/#organization"},"image":{"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#primaryimage"},"thumbnailUrl":"https://linchpinseo.com/wp-content/uploads/social-wall-scaled.jpg","articleSection":["Industry Trends"],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/","url":"https://linchpinseo.com/trends-pulp-and-paper-industry/","name":"Trends Shaping The Pulp and Paper Industry Outlook | Linchpin SEO","isPartOf":{"@id":"https://linchpinseo.com/#website"},"primaryImageOfPage":{"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#primaryimage"},"image":{"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#primaryimage"},"thumbnailUrl":"https://linchpinseo.com/wp-content/uploads/social-wall-scaled.jpg","datePublished":"2019-12-26T20:32:51+00:00","dateModified":"2023-07-30T10:53:26+00:00","description":"Linchpin SEO : Trends Shaping The Pulp and Paper Industry Outlook","breadcrumb":{"@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://linchpinseo.com/trends-pulp-and-paper-industry/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#primaryimage","url":"https://linchpinseo.com/wp-content/uploads/social-wall-scaled.jpg","contentUrl":"https://linchpinseo.com/wp-content/uploads/social-wall-scaled.jpg","width":2048,"height":1072},{"@type":"BreadcrumbList","@id":"https://linchpinseo.com/trends-pulp-and-paper-industry/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://linchpinseo.com/"},{"@type":"ListItem","position":2,"name":"Trends Shaping The Pulp and Paper Industry Outlook"}]},{"@type":"WebSite","@id":"https://linchpinseo.com/#website","url":"https://linchpinseo.com/","name":"Linchpin SEO","description":"We believe you deserve a better digital agency experience.","publisher":{"@id":"https://linchpinseo.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://linchpinseo.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://linchpinseo.com/#organization","name":"Linchpin SEO","url":"https://linchpinseo.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://linchpinseo.com/#/schema/logo/image/","url":"https://linchpinseo.com/wp-content/uploads/wallpaper.png","contentUrl":"https://linchpinseo.com/wp-content/uploads/wallpaper.png","width":2048,"height":1072,"caption":"Linchpin SEO"},"image":{"@id":"https://linchpinseo.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/linchpinseo","https://twitter.com/linchpinseo","https://www.linkedin.com/company/linchpin-seo/","https://www.instagram.com/thelinchpinseo/"]},{"@type":"Person","@id":"https://linchpinseo.com/#/schema/person/16d00bc112ecc11a15040bdcb35e7324","name":"Bill Ross","sameAs":["http://linchpinseo.com"]}]}</script>
-	<!-- / Yoast SEO Premium plugin. -->
-
-
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
-<style id='classic-theme-styles-inline-css' type='text/css'>
-/*! This file is auto-generated */
-.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
-</style>
-<style id='global-styles-inline-css' type='text/css'>
-body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
-:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
-:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
-.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-<script type='text/javascript' src='https://linchpinseo.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/inline.js?ver=1.0' id='color-variable-js' defer></script>
-<script id="color-variable-js-after" type="text/javascript">
-function testCSSVariables(){var e="rgb(255, 198, 0)",o=document.createElement("span");o.style.setProperty("--color",e),o.style.setProperty("background","var(--color)"),document.body.appendChild(o);var r=getComputedStyle(o).backgroundColor===e;return document.body.removeChild(o),r};
-</script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/plugins/ave-core/shortcodes/blog/script.min.js?ver=6.3' id='ld_blog_script-js' defer></script>
-<script type="rocketlazyloadscript"></script>
-	<link rel="shortcut icon" href="https://linchpinseo.com/wp-content/uploads/mark.jpg" />
-			<!-- For iPhone -->
-		<link rel="apple-touch-icon-precomposed" href="https://linchpinseo.com/wp-content/uploads/mark.jpg">
-			<!-- For iPhone 4 Retina display -->
-		<link rel="apple-touch-icon" sizes="114x114" href="https://linchpinseo.com/wp-content/uploads/mark.jpg">
-			<!-- For iPad -->
-		<link rel="apple-touch-icon" sizes="72x72" href="https://linchpinseo.com/wp-content/uploads/mark.jpg">
-			<!-- For iPad Retina display -->
-		<link rel="apple-touch-icon" sizes="144x144" href="https://linchpinseo.com/wp-content/uploads/mark.jpg">
-		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
-				window.liquidParams = {tat:0,mobileNavBreakpoint:1199
-				}	
-			  </script><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
-<style id='liquid-stylesheet-inline-css' type='text/css'>:root{--color-primary:#12084a;--color-secondary:#2811a6;--color-gradient-start:#00a1d0;--color-link:#190b6a;--color-link-hover:#00a1d0;}.woocommerce ul.products, .woocommerce-page ul.products{margin-left:-15px;margin-right:-15px;}.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{padding-left:15px;padding-right:15px;}body{font-family:Inter;font-weight:400;line-height:1.8;font-size:14pt;color:#190b6a;}body.single-post .blog-single-title{font-family:inherit;}body.single-post .content{font-family:inherit;color:#190b6a;}.h1,h1{font-family:Red Hat Display;font-weight:700;line-height:1.25em;letter-spacing:1px;font-size:44pt;color:#ffffff;}.h2,h2{font-family:Red Hat Display;font-weight:700;line-height:1.3em;font-size:30pt;color:#190b6a;}.h3,h3{font-family:Red Hat Display;font-weight:500;line-height:1.5em;font-size:20pt;color:#190b6a;}.h4,h4{font-family:Red Hat Display;font-weight:400;line-height:1.5em;font-size:16pt;color:#190b6a;}.h5,h5{font-family:Red Hat Display;font-weight:500;line-height:1.6em;font-size:17pt;color:#190b6a;}.h6,h6{font-family:Inter;font-weight:400;line-height:1.5em;font-size:16pt;color:#190b6a;}.main-header .navbar-brand{max-width:200px !important;}.titlebar-inner h1{font-size:7em;line-height:1.2em;color:#f9f8ff !important;}.titlebar-inner p{font-size:2em;line-height:1.2;color:#f9f8ff !important;}#content{background-repeat:no-repeat;background-size:inherit;background-position:left top;}@media ( min-width: 1200px ){.main-header .is-stuck{background:rgb(25, 11, 106) !important;}.mainbar-wrap.is-stuck .social-icon:not(.branded):not(.branded-text) a, .mainbar-wrap.is-stuck .header-module .ld-module-trigger, .mainbar-wrap.is-stuck .main-nav > li > a, .mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input, .mainbar-wrap.is-stuck .header-module .lqd-custom-menu > li > a{color:rgb(255, 255, 255) !important;}.mainbar-wrap.is-stuck .mainbar-wrap.is-stuck .header-module .nav-trigger .bar{background-color:rgb(255, 255, 255) !important;}.mainbar-wrap.is-stuck .header-module .ld-module-trigger-icon, .mainbar-wrap.is-stuck .header-module .ld-module-trigger-txt{color:inherit !important;}.mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input{border-color:rgb(255, 255, 255) !important;}.mainbar-wrap.is-stuck .social-icon:not(.branded):not(.branded-text) a:hover, .mainbar-wrap.is-stuck .main-nav > li > a:hover, .mainbar-wrap.is-stuck .header-module .lqd-custom-menu > li > a:hover{color:rgba(255, 255, 255, 0.6) !important;}.header-fullscreen .navbar-fullscreen{background:rgb(255, 255, 255)!important;}}@media screen and (max-width: 1199px){.main-header .navbar-header{background:rgb(25, 11, 106);}.main-header .ld-module-trigger, .main-header .ld-search-form .input-icon{color:rgb(255, 255, 255);}.main-header .nav-trigger .bar{background-color:rgb(255, 255, 255);}body[data-mobile-nav-style=classic] .navbar-collapse, body[data-mobile-nav-style=minimal] .navbar-collapse{background:rgba(255, 255, 255, 0.6);color:rgb(255, 255, 255);}ul.nav.main-nav > li > a, ul.nav.main-nav > li > a:hover, .main-nav .children > li.active > a, .main-nav .children > li.current-menu-item > a, .main-nav .children > li.current-menu-ancestor > a, .main-nav .children > li:hover > a, .nav-item-children > li.active > a, .nav-item-children > li.current-menu-item > a, .nav-item-children > li.current-menu-ancestor > a, .nav-item-children > li:hover > a{color:inherit !important;}}@media only screen and (max-width: 1199.9px) { h1 { font-size:26pt !important;  padding-top:.2em;line-height:1.15em; }}
-@media only screen and (max-width: 1199.9px) { h2 { font-size:20pt !important;line-height:1.3em;}}
-@media only screen and (max-width: 1199.9px) {h3 { font-size:18pt; line-height:1.6em; }}
-@media only screen and (max-width: 1199.9px) {h4 { font-size:15pt !important; line-height:1.6em; }}
-@media only screen and (max-width: 1199.9px) {p { font-size:14pt !important; line-height:1.8em; }}
-@media only screen and (max-width: 1199.9px) {.main-nav .menu-item-has-children a:after {display:none;}}
-.lqd-modal-inner {background: transparent !important;}
-@media only screen and (max-width: 1199.9px) {.lqd-modal-inner {padding: 5px;}}
-
-@media screen and (min-width:1200px) {.mainbar {padding-left: 70px !important;padding-right: 70px !important;}}
-@media screen and (max-width:1199.99px) {.mainbar {padding-left: 0px !important;padding-right: 0px !important;}}
-.btn-txt:hover {color:#190b6a;background-color: transparent;}
-.btn-txt {font-weight: 600;}
-.mainbar-container .btn-txt {text-transform:capitalize; border-bottom: 0px;box-shadow: none;}
-.navbar-collapse ~ .header-module {margin-left: 10px;}
-.lqd-module-search-slide-top .ld-search-form input{padding: 0.125em .25em !important;
-    margin-bottom: 0.3em !important;
-    border-bottom: 4px solid #190b6a !important;
-    background: none !important;
-    font-size: 40px !important;
-    font-weight: 600 !important;
-    color: #190b6a !important;
-}
-
-@media screen and (max-width: 1199px){.main-nav .link-txt .txt {color: #190b6a !important;}}
-@media screen and (max-width: 1199px){[data-mobile-nav-style=minimal] .nav-item-children {font-size: 14px;color: #190b6a;}}
-.input::placeholder {color: #190b6a !important;}
-.input-icon{color: #190b6a !important;}
-@media screen and (max-width: 1199px){.navbar-header > * {flex: 0;}}
-@media screen and (min-width: 1199.99px){.hid {display:none !important;}}
-@media screen and (max-width: 1199.98px){.hid {margin-bottom:30px;}}
-.testimo h4{margin: 1em 0 0em 0 !important;font-size:16pt;}
-.testimo h5{margin: -.1em 0 .5em 0 !important; font-size:13pt !important}
-.navbar-header .navbar-toggle {padding-right: 0px !important;}
-.navbar-brand img {max-width:190px !important;}
-.navbar-brand-inner {max-width:160px !important; min-width:0px;}
-.lwptoc_item {margin-top: 10px !important;}
-.liquid-lp-title a { text-transform: capitalize;}
-a[href^=tel]{color: #fff;text-decoration: none;}
-a[href^=tel]:hover{color: #fff;text-decoration: underline;}
-#content p a {color:#190b6a;  border-bottom: 1px solid #2811A6 ;box-shadow: inset 0 -1px 0 #2811A6 ; padding-left:4px; padding-right:4px;}
-#content p a:hover {  color:#ffffff;background-color:#2811A6; padding:8px;}
-#content li a {color:#190b6a;  border-bottom: 1px solid #2811A6 ;box-shadow: inset 0 -1px 0 #2811A6 ; padding-left:4px; padding-right:4px;}
-#content li a:hover { color:#ffffff;background-color:#2811A6; padding:8px;}
-@media only screen and (max-width: 699.99px) {.vc_toggle_size_md.vc_toggle_simple .vc_toggle_content,.vc_toggle_title {text-align:left !important;}}
-.vc_icon_element.vc_icon_element-outer .vc_icon_element-inner .vc_icon_element-icon { color:#190b6a;}
-.mainbar-wrap.is-stuck .main-nav > li > a{margin-top:12px;}
-.vc_tta-color-white.vc_tta-style-flat .vc_tta-panel.vc_active .vc_tta-panel-title>a {color: #2811A6 !important;background-color: #fff !important;}
-.leftnav {padding-left: 10px;}
-.main-nav>li, .main-nav>li>a {flex-flow: inherit;display: inherit;}
-
-.main-nav .menu-item-has-children a:after{ content: '▾'; padding-left:8px;}
-.relate h3 {font-weight:900;}
-.relate {background-color:#efedfd; padding:40px; margin-top:50px;}
-.vc_custom_heading a:hover {color:rgba(255,255,255, .7) !important;}
-.btn-solid .btn-txt:hover { color: #ffffff;}
-
-.entry-content {background: #FFFFFF;box-shadow: 0px 3px 20px rgba(25,11,106,.05);border-radius: 5px;}
-@media screen and (max-width: 1199.99px){.nf-field-container .nf-field-label label {margin-top: 25px;}}
-
-.vc_tta-color-white.vc_tta-style-flat .vc_tta-panel .vc_tta-panel-title>a {color: #2811A6 !important;background-color: #fff !important;}
-.vc_tta-color-white.vc_tta-style-flat .vc_tta-controls-icon::after, .vc_tta-color-white.vc_tta-style-flat .vc_tta-controls-icon::before {color: #2811A6 !important;}
-@media screen and (max-width: 1199.99px){ul.nav.main-nav > li > a, ul.nav.main-nav > li > a:hover, ul.nav.main-nav > li > a:active{color:#190b6a !important;}}
-.mainbar-wrap.is-stuck .nav.main-nav > li > a {margin-top:8px;}
-.nav.main-nav > li > a { flex:none; margin-top:2px;}
-.main-nav .link-txt .txt {margin-left: 15px;}
-.nav.main-nav > li > a:active {color:#2811A6 !important;}
-@media only screen and (max-width: 1199.9px) {.nav.main-nav > li > a:not(.butn) {color:#190b6a !important;line-height: 1em;padding-top:25px !important; padding-bottom:5px!important; height:100%;}}
-@media only screen and (max-width: 1199.9px) { ul.nav.main-nav > li > a {font-size: 16pt !important;color:#190b6a !important; font-weight: 500 !important; padding-top:25px !important; padding-bottom:5px!important;}}
-.testimonial {margin-bottom: 0;}
-.testimonial h3 {font-size:18pt; font-weight:500;}
-
-.post-meta .block{font-weight: 500;line-height: 1.6em;font-size: 8pt !important;color: #ffffff;background-color: rgb(40, 17, 166, 0.5);padding: 9px 18px 9px 18px;display: table;border-radius: 5px; margin-left:2px;}
-.post-meta .block a  {text-decoration: none; border-bottom:1px solid #fff; }
-.post-meta .block a:hover  {text-decoration: none; border-bottom:0px; }
-
-.page-404 {padding-top: 0px;padding-bottom: 100px;}
-.content ol, .content ul {margin-bottom:30px; padding-left:30px !important;}
-.content ol li {list-style-position: outside; margin-top:12px; margin-left:0px;}
-.content ul li {list-style-position: outside;margin-top:12px; margin-left:0px;}
-@media only screen and (max-width: 699.99px) {blockquote { margin:60px 10px 60px 10px;}}
-@media only screen and (max-width:1199.9px) { .lwptoc  {width:100% !important;}}
-
-/* Post Meta */
-.post-meta {margin-top: 2em; margin-bottom: 10em; }
-.post-meta a {text-decoration:unerline; }
-
-/* Blog Single Post */
-@media only screen and (min-width: 1200px) {.blog-single-cover[data-fullheight=true] {height: 50vh; min-height: 740px;}}
-@media (max-width:1199.9px) and (min-width:700px) {.blog-single-cover[data-fullheight=true] {height: 60vh; min-height: 650px;}}
-@media only screen and (max-width: 699.99px)  {.blog-single-cover [data-fullheight=true] {height: 45vh;min-height: 555px;}}
-@media only screen and (max-width: 1199.9px) {.blog-single-content.expanded{ margin-right: auto !important; margin-left: auto!important;padding-left: calc(5%)!important;padding-right: calc(5%) !important;}}
-@media only screen and (min-width: 1200px) {.blog-single-content.pull-up {margin-bottom: 5em !important;padding-bottom:2em; margin-top: -7em !important;}}
-@media only screen and (max-width: 1199.9px) {.blog-single-content.pull-up {margin-top: -5em;}}
-@media (max-width:1199.9px) and (min-width:699.99px) { .blog-single-default .blog-single-details {margin: 2em 0 0em 0;}} 
-@media only screen and (max-width: 699.99px){.blog-single-default .blog-single-details {padding: 10em 0 0 0;}}
-@media only screen and (min-width: 700px){.blog-single-cover .blog-single-details {top: 59%;}}
-.blog-single-content.expanded {padding-left: calc(12%);padding-right: calc(12%);margin-right: calc(-25%); margin-left: calc(-25%);}
-
-.testimonial .testimonial-details h5 {color:#190b6a; font-size: 14pt !important;}
-.testimonial .testimonial-details h6 {color:#190b6a;font-size: 14pt !important;}
-
-.lqd-module-search-slide-top.lqd-module-search-dark .ld-search-form input {border-color: rgba(255, 255, 255, 0.6) !important;}
-body[data-mobile-nav-style=minimal] .navbar-collapse { background:none;}
-.submenu-expander {background:none;}
-h1 {text-transform: capitalize;}
-
-@media only screen and (max-width: 1199.9px){.main-header .main-nav {background-color:#fff;}}
-@media only screen and (max-width: 699.99px) {.blog-single-content {text-align:left; padding-top:5px;}}
-.blog-single-content blockquote { text-align:left !important; padding:25px; margin-right:25px;margin-left:25px; border-left: 4px solid #190b6a; font-size:14pt !important; line-height:2em;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style type="text/css" data-type="vc_custom-css">@media screen and (max-width: 1199px){.main-nav .children>li>a, .nav-item-children>li>a {
-    font-size:1.2em !important;
-    color: #12084a!important;
-}}
-
-@media screen and (max-width: 1199px){
-.main-nav .children>li>a, .nav-item-children>li>a {
-    font-size: 1.2em !important;
-    color: #12084a !important;
-}}
-
-
-@media screen and (max-width: 1199px){.main-nav .children > li > a:hover, .nav-item-children > li > a:hover 
-{
-    color: #190b6a !important;
-}}
-
-@media only screen and (max-width: 1199.9px) { ul.nav.main-nav > li > a:hover, a:active{color:#190b6a !important;}}
-.secondarybar-wrap {
-    position: relative;
-    z-index: 11;
-    padding-right: 130px;
-}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1692027672321{margin-right: 10px !important;}</style><style type="text/css" data-type="vc_custom-css">.footer p a {
-    color: #fff;
-    border-bottom: 1px solid #2811A6;
-    box-shadow: inset 0 -1px 0 #2811A6;
-    padding-left: 4px;
-    padding-right: 4px;
-}
-.footer p a:hover {
-color:#ffffff;background-color:#2811A6; padding:8px;
-}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1684859115751{padding-top: 50px !important;padding-bottom: 30px !important;background-color: #190b6a !important;}.vc_custom_1646838202658{margin-bottom: 25px !important;}</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
-
-<body class="post-template-default single single-post postid-70477 single-format-standard wp-embed-responsive blog-single-default blog-single-post-has-thumbnail site-wide-layout wpb-js-composer js-comp-ver-7.0 vc_responsive" dir="ltr" itemscope="itemscope" itemtype="http://schema.org/Blog" data-mobile-nav-style="minimal" data-mobile-nav-scheme="custom" data-mobile-nav-trigger-alignment="right" data-mobile-header-scheme="custom" data-mobile-secondary-bar="false" data-mobile-logo-alignment="default" data-overlay-onmobile="true">
-
-
-
-	<div id="wrap">
-
-		<header class="header site-header main-header main-header-overlay" data-sticky-header="true" id="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-<div  class="mainbar-wrap   " ><span class="megamenu-hover-bg"></span>	<div class="container-fluid mainbar-container">		<div class="mainbar">			<div class="row mainbar-row align-items-lg-stretch"><div  class="col vc_col-sm-3  ">
-<div id="ld_header_image_64e8af07e64c9" class="navbar-header ld_header_image_64e8af07e64c9">
-
-	<a class="navbar-brand" href="https://linchpinseo.com/" rel="home"><span class="navbar-brand-inner">    <picture class="logo-default">
-<source type="image/webp" data-lazy-srcset="https://linchpinseo.com/wp-content/uploads/linchpin-logo-op.png.webp 2x" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20500%2097&#039;%3E%3C/svg%3E"/>
-<img width="500" height="97" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20500%2097&#039;%3E%3C/svg%3E" alt="Linchpin SEO" data-lazy-srcset="https://linchpinseo.com/wp-content/uploads/linchpin-logo-op.png 2x" data-lazy-src="https://linchpinseo.com/wp-content/uploads/linchpin-logo-op.png"/>
-</picture>
-<noscript><picture class="logo-default">
-<source type="image/webp" srcset="https://linchpinseo.com/wp-content/uploads/linchpin-logo-op.png.webp 2x"/>
-<img width="500" height="97" src="https://linchpinseo.com/wp-content/uploads/linchpin-logo-op.png" alt="Linchpin SEO" srcset="https://linchpinseo.com/wp-content/uploads/linchpin-logo-op.png 2x"/>
-</picture>
-</noscript></span></a>	<button type="button" class="navbar-toggle collapsed nav-trigger style-mobile" data-toggle="collapse" data-target="#main-header-collapse" aria-expanded="false" data-changeclassnames='{ "html": "mobile-nav-activated overflow-hidden" }'>
-				<span class="sr-only">Toggle navigation</span>
-				<span class="bars">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
-				</span>
-			</button>	
-</div><!-- /.navbar-header --></div><div  class="col vc_col-sm-9  "><div class="collapse navbar-collapse ld_header_collapsed_64e8af07e69c5" id="main-header-collapse">
-	<style>.ld_header_menu_64e8af07e6b3d.main-nav > li > a{font-size:17px;font-weight:600;color:rgb(255, 255, 255);text-transform:capitalize;}.ld_header_menu_64e8af07e6b3d.main-nav > li > a:hover{color:rgba(255, 255, 255, 0.6);}</style><ul id="primary-nav" class="main-nav ld_header_menu_64e8af07e6b3d nav align-items-lg-stretch justify-content-lg-end" data-submenu-options='{"toggleType":"fade","handler":"mouse-in-out"}' ><li id="menu-item-85243" class="menu-item menu-item-type-custom menu-item-object-custom megamenu menu-item-has-children menu-item-85243"><a><span class="link-icon"></span><span class="link-txt"><span class="link-ext"></span><span class="txt">Marketing Strategies<span class="submenu-expander"> <i class="fa fa-angle-down"></i> </span></span></span></a><style type="text/css" data-type="vc_custom-css">.megamenu h6 a:after{content: '' !important;}
-.megamenu p a:after{content: '' !important;}
-.megamenu .btn:after{content: '' !important;}
-.megamenu h6 a {font-size:14pt !important; color:#190B6A !important;text-decoration:underline;}
-.megamenu h6 a:hover {color:#dfdafb !important; text-decoration:underline;}
-.megamenu p {color: #190B6A!important;font-size:12pt!important;
-margin-top: 0px;}
-.megamenu p {margin-top: -12px;}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1692201355425{padding-top: 10px !important;padding-bottom: 10px !important;background-color: #ffffff !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1692027411499{padding-right: 0px !important;padding-bottom: 40px !important;padding-left: 0px !important;}.vc_custom_1692017488665{margin-top: 25px !important;}.vc_custom_1692026786238{margin-top: 15px !important;}.vc_custom_1692026794511{margin-top: 15px !important;}</style><div class="nav-item-children"><div class="lqd-megamenu-rows-wrap megamenu-container container" ><style>@media (min-width: 1200px) { .liquid-row-responsive-64e8af07ee0b4 {padding-top:10px !important; padding-bottom:0px !important;  }  }   </style><section data-bg-image="url" class="vc_row wpb_row vc_row-fluid megamenu-inner-row vc_custom_1692201355425 row-contains-padding-top row-contains-padding-bottom liquid-row-responsive-64e8af07ee0b4 liquid-row-shadowbox-64e8af07ee0dc vc_row-has-fill vc_row-has-bg vc_column-gap-0"><div class="ld-container container"><div class="row ld-row"><style>@media (min-width: 768px) { .liquid-column-responsive-64e8af0802759 > .vc_column-inner > .wpb_wrapper {margin-bottom:50px !important; padding-bottom:0px !important;  }  } @media (min-width: 992px) { .liquid-column-responsive-64e8af0802759 > .vc_column-inner > .wpb_wrapper {margin-bottom:50px !important; padding-right:70px !important; padding-bottom:0px !important; padding-left:70px !important;  }  } @media (min-width: 1200px) { .liquid-column-responsive-64e8af0802759 > .vc_column-inner > .wpb_wrapper {margin-bottom:0px !important; padding-top:20px !important; padding-bottom:40px !important;  }  } </style><div class="megamenu-column wpb_column vc_column_container vc_col-sm-12 text-left liquid-column-64e8af0802755 liquid-column-responsive-64e8af0802759"><div class="vc_column-inner"><div class="wpb_wrapper vc_custom_1692027411499"   ><div class="wpb_wrapper-inner"><style>@media (min-width: 1200px) { .liquid-row-responsive-64e8af08035a5 {margin-top:25px !important;  }  }  </style><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1692017488665 liquid-row-responsive-64e8af08035a5 liquid-row-shadowbox-64e8af08035c5 vc_column-gap-25"><div class="wpb_column vc_column_container vc_col-sm-6 liquid-column-64e8af080a40d"><div class="vc_column-inner"><div class="wpb_wrapper "  ><div class="wpb_wrapper-inner">
-	<div class="wpb_text_column wpb_content_element " >
-		<div class="wpb_wrapper">
-			<h6><strong><a href="https://linchpinseo.com/services/seo-website-audit/">Audits &amp; Competitive Research</a></strong></h6>
-<p>Uncover why your website isn't performing or lost Google traffic.</p>
-<h6><strong><a href="https://linchpinseo.com/services/enterprise-seo/">Enterprise SEO</a></strong></h6>
-<p>Grow Google traffic, sales, and leads nationally or internationally.</p>
-<h6><strong><a href="https://linchpinseo.com/services/local-seo-services/">Local SEO</a></strong></h6>
-<p>Grow your business in a local market and rank in Google Maps.</p>
-<h6><strong><a href="https://linchpinseo.com/services/content-strategy/">Content Strategy</a></strong></h6>
-<p>Create a strategic approach to website content and architecture.</p>
-
-		</div>
-	</div>
-<div class="vc_empty_space"   style="height: 20px"><span class="vc_empty_space_inner"></span></div></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6 liquid-column-64e8af080a78a"><div class="vc_column-inner"><div class="wpb_wrapper "  ><div class="wpb_wrapper-inner">
-	<div class="wpb_text_column wpb_content_element " >
-		<div class="wpb_wrapper">
-			<h6><strong><a href="https://linchpinseo.com/services/content-creation-agency/">Content Creation</a></strong></h6>
-<p>Build your brand value and grow organic traffic, leads, and sales.</p>
-<h6><strong><a href="https://linchpinseo.com/services/website-design/">Website Design</a></strong></h6>
-<p>Design a website that ranks well, and increases leads and sales.</p>
-<h6><strong><a href="https://linchpinseo.com/services/website-redesign-seo/">Website Redesign SEO</a></strong></h6>
-<p>Maintain rankings and Google traffic during a website relaunch.</p>
-<h6><strong><a href="https://linchpinseo.com/services/branding-agency/">Brand Strategy</a></strong></h6>
-<p>Create a brand strategy or update brand messaging and identity.</p>
-
-		</div>
-	</div>
-</div></div></div></div></div><div class="vc_empty_space"   style="height: 20px"><span class="vc_empty_space_inner"></span></div><div class="vc_row wpb_row vc_inner vc_row-fluid liquid-row-shadowbox-64e8af080a9cd vc_column-gap-0 vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-12 text-center text-xs-left liquid-column-64e8af080ab15"><div class="vc_column-inner"><div class="wpb_wrapper "  ><div class="wpb_wrapper-inner"><style>.ld_button_64e8af080ac22.btn-icon-solid .btn-icon{background:rgb(255, 255, 255);}.ld_button_64e8af080ac22.btn-icon-circle.btn-icon-ripple .btn-icon:before{border-color:rgb(255, 255, 255);}.ld_button_64e8af080ac22.btn-icon-solid:hover .btn-icon{background:rgb(25, 11, 106);}.ld_button_64e8af080ac22{background-color:rgb(255, 255, 255);border-color:rgb(255, 255, 255);color:rgb(25, 11, 106);font-size:12pt !important;font-weight:600 !important;}.ld_button_64e8af080ac22:hover{background-color:rgb(25, 11, 106);border-color:rgb(25, 11, 106);color:rgb(255, 255, 255);}.ld_button_64e8af080ac22 .btn-gradient-bg-hover{background:-webkit-linear-gradient(to right, rgb(25, 11, 106) 0%, rgb(25, 11, 106) 100%);background:linear-gradient(to right, rgb(25, 11, 106) 0%, rgb(25, 11, 106) 100%);}.ld_button_64e8af080ac22 .btn-gradient-border defs stop:first-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ac22 .btn-gradient-border defs stop:last-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ac22:hover .btn-gradient-border defs stop:first-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ac22:hover .btn-gradient-border defs stop:last-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ac22.btn-bordered{border-color:rgb(25, 11, 106);}.ld_button_64e8af080ac22.btn-bordered:hover{border-color:rgb(25, 11, 106);}</style><a href="https://linchpinseo.com/contact/" title="Contact" class="btn btn-solid btn-md semi-round btn-bordered border-thin ld_button_64e8af080ac22 vc_custom_1692026786238">
-	<span>
-		
-					<span class="btn-txt">I Have A Unique Problem</span>
-			
-				</span>
-</a>
-<style>.ld_button_64e8af080ae78.btn-icon-solid .btn-icon{background:rgb(25, 11, 106);}.ld_button_64e8af080ae78.btn-icon-circle.btn-icon-ripple .btn-icon:before{border-color:rgb(25, 11, 106);}.ld_button_64e8af080ae78.btn-icon-solid:hover .btn-icon{background:rgb(25, 11, 106);}.ld_button_64e8af080ae78{background-color:rgb(25, 11, 106);border-color:rgb(25, 11, 106);color:rgb(255, 255, 255);font-size:12pt !important;font-weight:600 !important;}.ld_button_64e8af080ae78:hover{background-color:rgb(25, 11, 106);border-color:rgb(25, 11, 106);color:rgb(255, 255, 255);}.ld_button_64e8af080ae78 .btn-gradient-bg-hover{background:-webkit-linear-gradient(to right, rgb(25, 11, 106) 0%, rgb(25, 11, 106) 100%);background:linear-gradient(to right, rgb(25, 11, 106) 0%, rgb(25, 11, 106) 100%);}.ld_button_64e8af080ae78 .btn-gradient-border defs stop:first-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ae78 .btn-gradient-border defs stop:last-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ae78:hover .btn-gradient-border defs stop:first-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ae78:hover .btn-gradient-border defs stop:last-child{stop-color:rgb(25, 11, 106);}.ld_button_64e8af080ae78.btn-bordered{border-color:rgb(25, 11, 106);}.ld_button_64e8af080ae78.btn-bordered:hover{border-color:rgb(25, 11, 106);}</style><a href="https://linchpinseo.com/services/" title="services" class="btn btn-solid btn-md semi-round btn-bordered border-thin ld_button_64e8af080ae78 vc_custom_1692026794511">
-	<span>
-		
-					<span class="btn-txt">View All Our Capabilities</span>
-			
-				</span>
-</a>
-</div></div></div></div></div></div></div></div></div></div></div></section></div></div></li>
-<li id="menu-item-83752" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83752"><a href="https://linchpinseo.com/gallery/"><span class="link-icon"></span><span class="link-txt"><span class="link-ext"></span><span class="txt">Client Stories<span class="submenu-expander"> <i class="fa fa-angle-down"></i> </span></span></span></a></li>
-<li id="menu-item-85541" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85541"><a href="https://linchpinseo.com/our-story/"><span class="link-icon"></span><span class="link-txt"><span class="link-ext"></span><span class="txt">Our Story<span class="submenu-expander"> <i class="fa fa-angle-down"></i> </span></span></span></a></li>
-<li id="menu-item-84102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84102"><a href="https://linchpinseo.com/marketing-resources/"><span class="link-icon"></span><span class="link-txt"><span class="link-ext"></span><span class="txt">Blog<span class="submenu-expander"> <i class="fa fa-angle-down"></i> </span></span></span></a></li>
-<li id="menu-item-83632" class="hid menu-item menu-item-type-post_type menu-item-object-page menu-item-83632"><a href="https://linchpinseo.com/contact/"><span class="link-icon"></span><span class="link-txt"><span class="link-ext"></span><span class="txt">Contact Us<span class="submenu-expander"> <i class="fa fa-angle-down"></i> </span></span></span></a></li>
-</ul>
-	
-</div><!-- /.navbar-collapse --><div class="header-module">
-	<style>.ld_button_64e8af080b918.btn-icon-solid .btn-icon{background:rgb(255, 255, 255);}.ld_button_64e8af080b918.btn-icon-circle.btn-icon-ripple .btn-icon:before{border-color:rgb(255, 255, 255);}.ld_button_64e8af080b918.btn-icon-solid:hover .btn-icon{background:rgb(255, 255, 255);}.ld_button_64e8af080b918{color:rgb(255, 255, 255);border-color:rgb(255, 255, 255);font-size:12pt !important;font-weight:600 !important;}.ld_button_64e8af080b918:hover{background-color:rgb(255, 255, 255);border-color:rgb(255, 255, 255);color:rgb(25, 11, 106);}.ld_button_64e8af080b918 .btn-gradient-bg-hover{background:-webkit-linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);background:linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);}.ld_button_64e8af080b918:hover .btn-gradient-border defs stop:first-child{stop-color:rgb(255, 255, 255);}.ld_button_64e8af080b918:hover .btn-gradient-border defs stop:last-child{stop-color:rgb(255, 255, 255);}</style><a href="https://linchpinseo.com/contact/" title="Contact" class="btn btn-default text-uppercase btn-xsm semi-round btn-bordered border-thin ld_header_button_64e8af080b55d ld_button_64e8af080b918 vc_custom_1692027672321">
-	<span>
-		
-					<span class="btn-txt">Contact Us</span>
-			
-				</span>
-</a>
-</div></div>			</div><!-- /.row mainbar-row -->		</div><!-- /.mainbar -->	</div><!-- /.container --></div><!-- /.mainbar-wrap --></header>
-		<main class="content" id="content">
-			
-
-<div class="blog-single-cover scheme-light" data-fullheight="true" data-inview="false" style="background-color: #190b6a;">
-		
-	<div class="blog-single-details">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
-								<header class="entry-header blog-single-header"">
-						
-						<h1>Trends Shaping The Pulp and Paper Industry Outlook</h1>
-
-					
-<div class="post-meta">
-
-
-	
-	<span class="byline">
-		<span class="block text-uppercase ltr-sp-1"><strong>Author: </strong> Linchpin Marketing Team</span> 
-		
-	</span>	
-	
-
-
-		<span class="posted-on">
-	<span class="block text-uppercase ltr-sp-1"><strong>Updated: </strong> July 30, 2023</span> 
-	
-		
-		
-	</span>	
-
-</div><!-- /.post-meta -->
-
-					</header>
-					<!-- /.blog-single-header -->
-
-
-				</div><!-- /.col-md-6 -->
-			</div><!-- /.row -->
-		</div><!-- /.container -->
-	</div><!-- /.blog-single-details -->
-	
-</div><!-- /.blog-single-cover -->
-
-<article >
-	<div class="container ">
-		
-		<div class="row col-md-12 col-md-offset-0 col-lg-8 col-lg-offset-2">
-
-				<div class="blog-single-content entry-content pull-up expanded ">
-		
-				
-				<div class="lwptoc lwptoc-right lwptoc-inherit" data-smooth-scroll="1" data-smooth-scroll-offset="130" style="width:38%"><div class="lwptoc_i">    <div class="lwptoc_header" style="font-size:1.1em;">
-        <b class="lwptoc_title">Jump to a section:</b>            </div>
-<div class="lwptoc_items lwptoc_items-visible" style="font-size:11pt;">
-    <div class="lwptoc_itemWrap"><div class="lwptoc_item">    <a href="#pulp-and-paper-industry-trends">
-                    <span class="lwptoc_item_number">1)</span>
-                <span class="lwptoc_item_label">Pulp and Paper Industry Trends</span>
-    </a>
-    </div><div class="lwptoc_item">    <a href="#pulp-and-paper-industry-stats-and-growth-projections-in-2023">
-                    <span class="lwptoc_item_number">2)</span>
-                <span class="lwptoc_item_label">Pulp and Paper Industry Stats and Growth Projections in 2023</span>
-    </a>
-    </div></div></div>
-</div></div><p>Some people think the pulp and paper industry will eventually be hindered by the current digital age in which we live. While it sounds logical, that’s not the reality of what’s happening. The pulp and paper industry has been thriving and will continue in 2023. Notably, leaders in the industry must continually innovate to meet the changing demands. Pulp and paper have adapted to the changes that have occurred in recent years and are continuing to thrive. However, there are also exciting trends that have disrupted the industry.</p>
-<p>Technology has contributed to developing a global market of consumers committed to sustainability worldwide. As a result, manufacturers have sought alternatives to petroleum-based products and have identified biodegradable and environmentally-friendly options. These are just some of the changes occurring. Check out the many trends below that will transform the pulp and paper industry in 2023.</p>
-<h2><span id="pulp-and-paper-industry-trends">Pulp and Paper Industry Trends</span></h2>
-<h3>1. Increased Online Sales</h3>
-<p>The online sales of pulp and paper products are growing in the United States and China, the most important markets. This is a trend that is expected to continue in 2023. It’s partly due to online shopping that has required packaging innovation to optimize product display on shelves. The growth encompasses a higher demand for raw materials and corrugated boxes. There is also an increased number of required products immediately with very little lead time. This includes both same-day and next-day product delivery services. From a production standpoint, the goal is to provide services faster without sacrificing quality.</p>
-<h3>2. Higher Packaging Demand</h3>
-<p>In 2023, the global demand for various packaging products will either remain stable or increase. This includes production in Japan, China, European countries, and the United States. One of the pulp and paper industry’s strengths is that the demand for packaging products constantly expands. This is spurred by the boost in online shopping and the explosion of e-commerce entrepreneurial endeavors in recent years.</p>
-<h3>3. Use of Big Data</h3>
-<p>Another trend that’s in play in the pulp and paper industry is the use of big data. This is to analyze industry trends and needs to optimize the results of production, marketing, and sales. New technologies, including intelligent systems and connected devices, are also used during the production process for improved outcomes. The capabilities will continue to develop, such as intelligent systems that assess pulp and paper products’ condition and quality. Analytics are even used to determine the volume and growth of trees that can be harvested for raw materials. The use of big data is expected to expand in 2023 and subsequent years, with companies such as <a href="https://pulmac.com">Pulmac</a> leading the way with its automation platform.</p>
-<h3>4. Digital Revolution</h3>
-<p>Although the digital revolution did not destroy the pulp and paper industry, it required a strategy pivot. For instance, there was a clear shift to packaging materials from print paper for obvious reasons, given the tremendous demands of shipping online products. Many in the industry have made tactical moves that involved leveraging capabilities to meet the changing needs in the market. There has also been the implementation of new technologies to optimize productivity. The result is often faster speed and improved quality.</p>
-<h3>5. Lightweight Packaging</h3>
-<p>If you’re a consumer, you may have noticed a change in the weight of specific packaging. To those that are attentive, this becomes obvious to particular products. It’s because lightweight packaging was introduced, as many benefits were discovered. This is true for packaging products at all levels, including luxury brands. One of the benefits of lightweight packaging is that it can support the growth of a business by cutting expenses. Lightweight packaging lowers pulp expenses, reduces CO2 emissions, and slashes shipping costs, just some of the many benefits.</p>
-<h3>6. Recyclable Products</h3>
-<p>The ability to recycle pulp and paper products is non-negotiable for some consumers. As a result, there is an increase in recyclable products. This has been a challenge because some products contained waterproof coatings that were problematic for recycling. There is a push to use recyclable protective layers, a trend that will further develop in 2023 and beyond. The growing concern over the amount of packaging that could not be recycled has resulted in the European Union’s involvement in plastic packaging. This offers many future opportunities for pulp and paper.</p>
-<h3>7. Hygiene Products Packaging</h3>
-<p>Another trend that will continue in the pulp and paper industry is the increasing growth of hygiene products and the subsequent need for packaging. This includes toilet paper, wipes, tissues, and paper towels, to name a few. The growth is partly due to the increased purchase of these items by the middle class. In some regions of the world, this is attributed to an actual increase in the middle-class population and, thus, an increase in the consumption of these products. Manufacturers in the pulp and paper industry have exploited this growth in socioeconomic status by producing packaging that accommodates an increasing demand.</p>
-<h3>8. Thermal Market Growth</h3>
-<p>There is growth in the thermal market that’s linked to the increase in food delivery services. Specifically, there is an increase in the number of restaurants offering delivery options and an explosion of third-party delivery services providers, such as GrubHub and Uber Eats. This has created a need for thermal packaging that is expected to grow. As long as consumers expect to have hot food delivered to their homes expeditiously, there will be a thriving thermal market in pulp and paper. Many possibilities and opportunities in this area will emerge as e-commerce continues to evolve.</p>
-<h3>9. Packaging for Food</h3>
-<p>Packaging for food seems to be in constant development. In recent years, there has been an increasing interest in packaging products resistant to grease. This product is currently used for various packaged goods and in restaurants. The materials used to produce packaging resistant to oil are changing to eliminate fluorochemicals and replace them with a realistic option that doesn’t contain any chemicals. Manufacturers will continue to innovate and evolve to accommodate regulations and meet industry demands.</p>
-<h3>10. Anti-Plastic Sentiments</h3>
-<p>Ongoing efforts are to reduce or eliminate the use of plastic for packaging. This anti-plastic sentiment is beneficial to the pulp and paper industry in that it encourages biodegradable alternatives. The use of plant-based raw materials is being explored. This is driven by governmental agencies and health-conscious consumers committed to finding eco-friendly options. The problems associated with plastic result in tremendous opportunities in the pulp and paper industry. The development of alternative products will continue into 2023 and beyond, especially as it relates to the banning of single-use plastic products.</p>
-<p>Pulp and paper will continue to play a significant role in the world. Despite the changes that have occurred because of technological advancements, this industry has thrived and will continue to do so in 2023. The digital revolution of recent years has led to an expansion in the pulp and paper industry. As the world continues to evolve, so will the industry. Check out the information below, where you’ll find pulp and paper industry trends statistics.</p>
-<h2><span id="pulp-and-paper-industry-stats-and-growth-projections-in-2023">Pulp and Paper Industry Stats and Growth Projections in 2023</span></h2>
-<ol>
-<li>In 2023, global pulp and paper production will reach 490 million tons.</li>
-<li>According to projections by Pitney Bowes, global shipping volume is expected to surpass 100 billion parcels in 2023.</li>
-<li>Over 15% of pulp and paper sales in the United States will occur online by 2023.</li>
-<li>For the past 20 years, China has been the largest producer of pulp and paper, followed by the United States.</li>
-<li>A goal of collecting and recycling 55% of all plastic packages has been set by the European Union and is expected to be reached by 2030. So naturally, this will impact the pulp and paper industry.</li>
-</ol>
-
-
-								</div><!-- /.blog-single-content entry-content -->
-						</div><!-- /.row -->
-
-	</div><!-- /.container -->
-	
-
-</article><!-- /.blog-single -->
-		
-		</main><!-- #content -->
-		<style>.main-footer {background-repeat: no-repeat;color: #ffffff}.main-footer a:not(.btn):active { color: #ffffff }</style><footer class="main-footer site-footer footer" id="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-	<style>@media (min-width: 1200px) { .liquid-row-responsive-64e8af080dcdf {padding-top:75px !important; padding-bottom:50px !important;  }  }   </style><section data-bg-image="url" class="vc_row wpb_row vc_row-fluid foot vc_custom_1684859115751 row-contains-padding-top row-contains-padding-bottom liquid-row-responsive-64e8af080dcdf liquid-row-shadowbox-64e8af080dd01 vc_row-has-fill vc_row-has-bg vc_row-o-content-middle vc_row-flex"><div class="ld-container container"><div class="row ld-row"><div class="wpb_column vc_column_container vc_col-sm-12 text-center liquid-column-64e8af080decc"><div class="vc_column-inner"><div class="wpb_wrapper vc_custom_1646838202658"   ><div class="wpb_wrapper-inner">
-	<div class="wpb_text_column wpb_content_element " >
-		<div class="wpb_wrapper">
-			<h3><span style="color: #ffffff;">Who is Linchpin SEO?</span></h3>
-<p>We are taking linchpin theory to the next level. Based in North Carolina and Michigan, our teams are a new species of digital marketing strategists and creatives who use the latest strategies to help your business identify and solve the digital marketing and website experience problems limiting your business growth.</p>
-
-		</div>
-	</div>
-<div class="vc_empty_space"   style="height: 75px"><span class="vc_empty_space_inner"></span></div>
-	<div class="wpb_text_column wpb_content_element " >
-		<div class="wpb_wrapper">
-			<p style="text-align: center;">© 2023 Linchpin SEO, LLC. All Rights Reserved | <a href="https://linchpinseo.com/sitemap/">Sitemap</a></p>
-
-		</div>
-	</div>
-</div></div></div></div></div></div></section></footer>		
-		
-
-	</div><!-- .site-container -->
-
-
-
-	<script type="text/html" id="wpb-modifications"> window.wpbCustomElement = 1; </script>
-<script id="rocket-browser-checker-js-after" type="text/javascript">
-"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
-</script>
-<script type='text/javascript' id='rocket-preload-links-js-extra'>
-/* <![CDATA[ */
-var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/linchpinseo.com","onHoverDelay":"100","rateThrottle":"3"};
-/* ]]> */
-</script>
-<script id="rocket-preload-links-js-after" type="text/javascript">
-(function() {
-"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
-}());
-</script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=7.0' id='wpb_composer_front_js-js' defer></script>
-<script data-minify="1" type='text/javascript' src='https://linchpinseo.com/wp-content/cache/min/1/wp-content/themes/ave/assets/vendors/fresco/js/fresco.js?ver=1692811178' id='jquery-fresco-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/lity/lity.min.js' id='lity-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/bootstrap/js/bootstrap.min.js' id='bootstrap-js' defer></script>
-<script data-minify="1" type='text/javascript' src='https://linchpinseo.com/wp-content/cache/min/1/wp-content/themes/ave/assets/vendors/intersection-observer.js?ver=1692811178' id='intersection-observer-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/jquery-ui/jquery-ui.min.js' id='jquery-ui-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/anime.min.js' id='jquery-anime-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/scrollmagic/ScrollMagic.min.js' id='scrollmagic-js' defer></script>
-<script data-minify="1" type='text/javascript' src='https://linchpinseo.com/wp-content/cache/min/1/wp-content/themes/ave/assets/vendors/fontfaceobserver.js?ver=1692811178' id='jquery-fontfaceobserver-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/tinycolor-min.js' id='jquery-tinycolor-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/flickity/flickity.pkgd.min.js' id='flickity-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/vendors/greensock/utils/SplitText.min.js' id='splittext-js' defer></script>
-<script type='text/javascript' id='liquid-theme-js-extra'>
-/* <![CDATA[ */
-var liquidTheme = {"uris":{"ajax":"\/wp-admin\/admin-ajax.php"}};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/themes/ave/assets/js/theme.min.js' id='liquid-theme-js' defer></script>
-<script type='text/javascript' src='https://linchpinseo.com/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.4' id='lwptoc-main-js' defer></script>
-<script type="rocketlazyloadscript"></script><style>.lwptoc .lwptoc_i{background-color:#f5f4fc;}.lwptoc_header{color:#12084a;}.lwptoc .lwptoc_i A{color:#12084a;}.lwptoc .lwptoc_i A:hover,.lwptoc .lwptoc_i A:focus,.lwptoc .lwptoc_i A:active{color:#2811a6;border-color:#2811a6;}</style><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
-if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
-images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
-if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://linchpinseo.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-DWQVJ6YY5R"></script>
-<script type="rocketlazyloadscript">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DWQVJ6YY5R')
-</script>
-
-</body>
-</html>
-<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>The World Counts</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-41650508-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-41650508-1');
+  </script>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> -->
+  <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxFIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxMIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxEIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxLIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxHIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxGIzIXKMnyrYk.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:100;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxIIzIXKMny.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}@font-face{font-family:'Material Icons Outlined';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialiconsoutlined/v109/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUcel5euIg.woff2) format('woff2');}@font-face{font-family:'Material Icons Round';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialiconsround/v108/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmPq_HTTw.woff2) format('woff2');}@font-face{font-family:'Material Icons Sharp';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialiconssharp/v109/oPWQ_lt5nv4pWNJpghLP75WiFR4kLh3kvmvRImcycg.woff2) format('woff2');}@font-face{font-family:'Material Icons Two Tone';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialiconstwotone/v112/hESh6WRmNCxEqUmNyh3JDeGxjVVyMg4tHGctNCu0NjbrHg.woff2) format('woff2');}body{--google-font-color-materialiconstwotone:none;}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}.material-icons-outlined{font-family:'Material Icons Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}.material-icons-round{font-family:'Material Icons Round';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}.material-icons-sharp{font-family:'Material Icons Sharp';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}.material-icons-two-tone{font-family:'Material Icons Two Tone';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+
+  <!-- google adsense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2130448322277013"
+    crossorigin="anonymous"></script> -->
+
+  <!-- cookie stylesheets -->
+  <!-- <link rel="stylesheet" href="/assets/cookie/cookieconsent.css" media="print" onload="this.media='all'"> -->
+<style>:root{--fa-style-family-brands:"Font Awesome 6 Brands";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(fa-brands-400.87a84e7a754d3ea3.woff2) format("woff2"),url(fa-brands-400.8f295425e00606a5.ttf) format("truetype")}:root{--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url(fa-regular-400.561c7c94e0bcd512.woff2) format("woff2"),url(fa-regular-400.e9092185220128b0.ttf) format("truetype")}:root{--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url(fa-solid-900.3cfeed05c6462b50.woff2) format("woff2"),url(fa-solid-900.ab3a31afd1611597.ttf) format("truetype")}:root{--swiper-theme-color:#007aff}:root{--swiper-navigation-size:44px}html,body,p{margin:0;padding:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}html{background-color:#fff;font-size:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif}body{color:#4a4a4a;font-size:1em;font-weight:400;line-height:1.5}@charset "UTF-8";html,body,p{margin:0;padding:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}html{background-color:#fff;font-size:16px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{font-family:BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif}body{color:#4a4a4a;font-size:1em;font-weight:400;line-height:1.5}</style><link rel="stylesheet" href="styles.53457e239c71195e.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.53457e239c71195e.css"></noscript></head>
+
+<body>
+  <app-root></app-root>
+
+  <!-- cookie scripts -->
+  <!-- <script defer type="module" src="/assets/cookie/cookieconsent.js"></script>
+  <script defer src="/assets/cookie/cookieconsent-init.js"></script> -->
+
+  <div id="load-page">
+    <style>
+      .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    </style>
+    <div class="center">
+
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="170.000000pt" height="65.000000pt" viewBox="0 0 1064.000000 405.000000" preserveAspectRatio="xMidYMid meet">
+
+        <g transform="translate(0.000000,405.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+          <path d="M10 2035 l0 -2015 2015 0 2015 0 -2 2013 -3 2012 -2012 3 -2013 2 0
+-2015z m3200 1274 c0 -11 -443 -823 -462 -846 -12 -15 -488 -19 -488 -4 0 4
+50 99 111 210 61 111 109 204 107 207 -3 2 -210 3 -462 2 l-457 -3 234 -422
+235 -422 -235 -422 c-128 -232 -232 -423 -230 -425 2 -2 211 -3 464 -2 l460 3
+-114 205 c-62 113 -113 208 -113 213 0 4 109 7 243 7 l242 0 145 -262 c79
+-145 186 -338 236 -430 l92 -168 -1198 0 -1198 0 340 613 c187 336 347 626
+355 642 15 31 15 31 -336 662 -193 348 -351 637 -351 642 0 8 358 11 1190 11
+866 0 1190 -3 1190 -11z"></path>
+          <path d="M4486 4018 c-9 -41 -26 -178 -26 -203 l0 -24 138 -3 138 -3 -56 -400
+-56 -400 130 -3 c71 -1 130 -1 132 1 4 3 114 779 114 798 0 5 65 9 144 9 l143
+0 12 93 c6 50 14 107 17 125 l6 32 -416 0 -416 0 -4 -22z"></path>
+          <path d="M5446 4013 c-3 -16 -35 -239 -71 -498 -36 -258 -68 -485 -71 -502
+l-6 -33 134 0 134 0 18 133 c10 72 22 165 28 205 l10 72 189 0 c104 0 189 -4
+189 -8 0 -5 -11 -89 -25 -188 -14 -98 -25 -187 -25 -196 0 -16 13 -18 129 -18
+l129 0 6 28 c3 15 35 239 71 497 36 259 68 485 71 503 l6 32 -134 0 -134 0
+-18 -127 c-9 -71 -22 -161 -28 -200 l-10 -73 -189 0 c-107 0 -189 4 -189 9 0
+5 11 86 25 181 14 95 25 180 25 191 0 18 -9 19 -129 19 l-129 0 -6 -27z"></path>
+          <path d="M6546 4013 c-3 -16 -35 -239 -71 -498 -36 -258 -68 -485 -71 -503
+l-6 -32 368 2 369 3 11 80 c6 44 14 99 17 123 l5 42 -235 0 -235 0 6 28 c3 15
+8 51 11 79 l7 53 206 2 207 3 12 85 c6 47 14 102 17 123 l6 37 -206 0 -206 0
+6 48 c4 26 9 59 12 75 l6 27 229 0 c126 0 229 3 229 8 0 4 7 50 15 102 8 52
+15 105 15 118 l0 22 -359 0 -359 0 -6 -27z"></path>
+          <path d="M6390 2565 c-175 -38 -349 -173 -429 -335 -214 -435 87 -834 554
+-735 267 57 471 276 505 543 33 255 -111 470 -352 527 -77 18 -192 18 -278 0z
+m225 -269 c95 -44 141 -129 133 -243 -13 -178 -159 -314 -334 -314 -302 0
+-338 413 -49 552 79 38 175 40 250 5z"></path>
+          <path d="M4465 2538 c3 -13 41 -241 85 -508 44 -267 82 -495 85 -507 5 -22 9
+-23 138 -23 l132 0 124 308 c68 169 127 310 130 314 4 4 22 -119 40 -275 18
+-155 36 -297 39 -314 l5 -33 132 0 132 0 223 498 c122 273 229 512 236 530
+l14 32 -137 0 -138 0 -135 -335 c-74 -184 -137 -335 -140 -335 -3 0 -23 141
+-44 313 -21 171 -40 322 -43 335 -5 22 -8 23 -121 20 l-115 -3 -136 -332 c-74
+-183 -137 -330 -139 -328 -3 2 -23 152 -46 332 l-42 328 -142 3 -143 3 6 -23z"></path>
+          <path d="M7226 2538 c-3 -13 -35 -237 -71 -498 -36 -261 -68 -490 -72 -507
+l-5 -33 134 0 134 0 24 175 23 175 52 0 52 0 70 -172 69 -173 162 -3 161 -2
+-85 186 c-46 103 -84 191 -84 195 0 5 14 16 32 25 46 24 124 100 153 149 36
+62 58 158 52 226 -10 112 -71 199 -176 248 -56 26 -58 26 -338 29 l-282 3 -5
+-23z m495 -256 c37 -33 42 -83 12 -134 -31 -54 -72 -68 -195 -68 -88 0 -108 3
+-108 15 0 17 19 160 26 193 4 21 8 22 119 22 111 0 116 -1 146 -28z"></path>
+          <path d="M8215 2538 c-2 -13 -34 -237 -70 -498 -36 -261 -68 -490 -71 -507
+l-6 -33 344 0 345 0 12 93 c7 50 15 107 18 125 l5 32 -211 0 -212 0 6 33 c10
+60 105 750 105 763 0 11 -27 14 -130 14 -126 0 -130 -1 -135 -22z"></path>
+          <path d="M9025 2538 c-2 -13 -34 -237 -70 -498 -36 -261 -68 -490 -72 -508
+l-6 -34 274 4 c248 4 280 6 339 26 187 62 340 211 402 390 19 56 23 87 23 193
+0 124 0 126 -37 200 -45 91 -112 158 -201 199 -92 43 -145 50 -408 50 l-239 0
+-5 -22z m495 -252 c49 -26 79 -55 102 -99 69 -136 -7 -329 -160 -404 -50 -25
+-71 -28 -170 -32 l-113 -3 5 33 c3 19 20 135 36 259 17 124 33 236 36 249 5
+23 6 23 117 19 83 -3 121 -9 147 -22z"></path>
+          <path d="M4920 1084 c-111 -23 -224 -86 -310 -173 -278 -279 -246 -713 64
+-860 210 -101 508 -44 687 130 28 27 47 54 44 59 -4 6 -50 40 -102 75 l-96 64
+-45 -39 c-119 -105 -304 -109 -399 -9 -47 49 -66 103 -66 180 0 124 79 243
+198 300 115 55 263 31 331 -55 l28 -35 56 31 c194 109 191 106 176 136 -23 44
+-104 118 -165 151 -110 58 -261 76 -401 45z"></path>
+          <path d="M5990 1085 c-175 -38 -349 -173 -429 -335 -214 -435 87 -834 554
+-735 267 57 471 276 505 543 33 255 -111 470 -352 527 -77 18 -192 18 -278 0z
+m225 -269 c95 -44 141 -129 133 -243 -13 -178 -159 -314 -334 -314 -302 0
+-338 413 -49 552 79 38 175 40 250 5z"></path>
+          <path d="M10122 1080 c-133 -36 -221 -101 -273 -202 -34 -65 -39 -191 -10
+-252 44 -90 147 -155 320 -201 145 -39 182 -66 158 -115 -26 -51 -61 -65 -165
+-65 -85 0 -104 3 -156 28 -33 15 -79 43 -102 62 l-42 35 -82 -102 -82 -103 34
+-28 c52 -44 109 -74 194 -104 69 -24 94 -27 204 -27 106 -1 135 3 193 22 171
+60 274 176 285 325 3 49 0 79 -12 111 -33 87 -132 161 -271 201 -149 44 -184
+57 -206 81 -22 23 -22 27 -9 52 9 14 30 34 47 45 69 40 238 13 312 -49 16 -13
+31 -24 34 -24 2 0 37 43 77 97 83 110 83 110 -1 161 -78 47 -140 63 -264 68
+-88 3 -124 0 -183 -16z"></path>
+          <path d="M6806 1053 c-3 -16 -26 -174 -52 -353 -43 -299 -46 -330 -35 -394 30
+-179 160 -291 356 -303 203 -13 395 97 485 281 40 80 41 85 90 436 28 195 50
+356 50 358 0 1 -60 2 -133 2 l-133 0 -43 -317 c-23 -175 -49 -339 -57 -365
+-16 -49 -73 -111 -120 -128 -14 -6 -49 -10 -77 -10 -81 0 -136 42 -151 115 -4
+17 13 173 39 355 25 179 45 331 45 338 0 9 -33 12 -129 12 l-129 0 -6 -27z"></path>
+          <path d="M7876 1058 c-3 -13 -35 -237 -71 -498 -36 -261 -68 -490 -72 -507
+l-5 -33 134 0 134 0 39 290 c22 160 42 290 45 290 3 0 73 -129 157 -288 l151
+-287 134 -3 135 -3 72 513 c39 282 71 521 71 531 0 15 -13 17 -130 17 -71 0
+-130 -1 -130 -2 0 -19 -81 -572 -84 -575 -4 -5 -42 63 -197 359 l-114 218
+-132 0 c-129 0 -133 -1 -137 -22z"></path>
+          <path d="M8936 1058 c-9 -41 -26 -178 -26 -203 l0 -24 138 -3 138 -3 -56 -400
+-56 -400 130 -3 c71 -1 130 -1 132 1 4 3 114 779 114 798 0 5 65 9 144 9 l143
+0 12 93 c6 50 14 107 17 125 l6 32 -416 0 -416 0 -4 -22z"></path>
+        </g>
+      </svg>
+
+      <p style="margin-top: 16px;">Loading...</p>
+    </div>
+  </div>
+<script src="runtime.bf3f11223f52cb5f.js" type="module"></script><script src="polyfills.cee9141f73a969bf.js" type="module"></script><script src="scripts.e3ce901171f96f6b.js" defer></script><script src="vendor.b8ee5e28bc4add23.js" type="module"></script><script src="main.28eee7fe478beb6b.js" type="module"></script>
+
+</body></html>

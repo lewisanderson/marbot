@@ -1,433 +1,1685 @@
-<!DOCTYPE HTML>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
-		<title>The Challenges and Rewards of Reshoring Manufacturing to the US - Universal Polymer &amp; Rubber Ltd., Inc.</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.universalpolymer.com/wp-content/cache/min/1/6c11ded3cbf10f911d9af8b62f77706e.css" media="all" data-minify="1" />
-						<!-- Google Tag Manager -->
-		<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-M2TT8D5');</script>
-		<!-- End Google Tag Manager -->
-						
-	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="pingback" href="https://www.universalpolymer.com/xmlrpc.php" />		
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-
-		<!-- <link rel="shortcut icon" href="/img/favicon.ico"/> -->
-		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-
-	<!-- This site is optimized with the Yoast SEO plugin v21.0 - https://yoast.com/wordpress/plugins/seo/ -->
-	<link rel="canonical" href="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="The Challenges and Rewards of Reshoring Manufacturing to the US - Universal Polymer &amp; Rubber Ltd., Inc." />
-	<meta property="og:description" content="The term “reshoring” refers to the process of returning offshore manufacturing operations to a company’s home country rather than outsourcing labor to overseas locales. Many statistics indicate that reshoring trends were already on the rise, even before a trade war and pandemic made the idea more appealing. In 2018, 1,389 companies reshored operations, ultimately returning [&hellip;]" />
-	<meta property="og:url" content="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/" />
-	<meta property="og:site_name" content="Universal Polymer &amp; Rubber Ltd., Inc." />
-	<meta property="article:published_time" content="2020-07-07T14:52:14+00:00" />
-	<meta property="article:modified_time" content="2020-07-07T14:52:52+00:00" />
-	<meta name="author" content="John Zielinski" />
-	<meta name="twitter:label1" content="Written by" />
-	<meta name="twitter:data1" content="John Zielinski" />
-	<meta name="twitter:label2" content="Est. reading time" />
-	<meta name="twitter:data2" content="3 minutes" />
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/","url":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/","name":"The Challenges and Rewards of Reshoring Manufacturing to the US - Universal Polymer &amp; Rubber Ltd., Inc.","isPartOf":{"@id":"https://www.universalpolymer.com/#website"},"datePublished":"2020-07-07T14:52:14+00:00","dateModified":"2020-07-07T14:52:52+00:00","author":{"@id":"https://www.universalpolymer.com/#/schema/person/14124982a5c7c395aa10fafe7e33b398"},"breadcrumb":{"@id":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/"]}]},{"@type":"BreadcrumbList","@id":"https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.universalpolymer.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.universalpolymer.com/blog/"},{"@type":"ListItem","position":3,"name":"The Challenges and Rewards of Reshoring Manufacturing to the US"}]},{"@type":"WebSite","@id":"https://www.universalpolymer.com/#website","url":"https://www.universalpolymer.com/","name":"Universal Polymer &amp; Rubber Ltd., Inc.","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.universalpolymer.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.universalpolymer.com/#/schema/person/14124982a5c7c395aa10fafe7e33b398","name":"John Zielinski"}]}</script>
-	<!-- / Yoast SEO plugin. -->
-
-
-<link rel='dns-prefetch' href='//ajax.googleapis.com' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
-<link rel="alternate" type="application/rss+xml" title="Universal Polymer &amp; Rubber Ltd., Inc. &raquo; The Challenges and Rewards of Reshoring Manufacturing to the US Comments Feed" href="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/feed/" />
-<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 0.07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
+         
+		
+		
 	
+            	
+				
+								    	
+				
+		    		        	        	
 
-<style id='global-styles-inline-css' type='text/css'>
-body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
-:where(.wp-block-columns.is-layout-flex){gap: 2em;}
-.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
-</style>
 
-<script type='text/javascript' src='https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/vendor/modernizr.min.js?ver=6.2.2' id='modernizr-js' defer></script>
-<link rel="https://api.w.org/" href="https://www.universalpolymer.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.universalpolymer.com/wp-json/wp/v2/posts/1519" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.universalpolymer.com/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.universalpolymer.com/wp-includes/wlwmanifest.xml" />
-<link rel='shortlink' href='https://www.universalpolymer.com/?p=1519' />
-<link rel="alternate" type="application/json+oembed" href="https://www.universalpolymer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.universalpolymer.com%2Fblog%2Fpros-and-cons-of-reshoring-manufacturing%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://www.universalpolymer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.universalpolymer.com%2Fblog%2Fpros-and-cons-of-reshoring-manufacturing%2F&#038;format=xml" />
-<!-- HFCM by 99 Robots - Snippet # 4: Google Tag Manager Head -->
-<!-- Google Tag Manager -->
-<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M2TT8D5');</script>
-<!-- End Google Tag Manager -->
-<!-- /end HFCM by 99 Robots -->
-<!-- HFCM by 99 Robots - Snippet # 7: Webtrax -->
-<!-- Begin WebTrax -->
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript"> var wto = wto || []; wto.push(['setWTID', 'universalpolymer']); wto.push(['webTraxs']);(function() { var wt = document.createElement('script'); wt.src = document.location.protocol + '//www.webtraxs.com/wt.php'; wt.type = 'text/javascript'; wt.async = true; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wt, s); })();</script><noscript><img src="https://www.webtraxs.com/webtraxs.php?id=universalpolymer&st=img" alt="" /></noscript>
-<!-- End WebTrax -->
-<!-- /end HFCM by 99 Robots -->
-<style>.post-thumbnail img[src$='.svg'] { width: 100%; height: auto; }</style><link rel="icon" href="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" sizes="32x32" />
-<link rel="icon" href="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" />
-<meta name="msapplication-TileImage" content="https://www.universalpolymer.com/wp-content/uploads/logo-300x110.jpg" />
-		<style type="text/css" id="wp-custom-css">
-			ul:not([class]) li:not([class]):after{
-	background-image:url(https://www.universalpolymer.com/wp-content/uploads/ico-bullet.svg)!important;
-}		</style>
-		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		<!--[if lt IE 9]>
-            <script src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/vendor/respond.min.js"></script> <script src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/vendor/selectivizr-min.js"></script>
-        <![endif]-->
-        	</head>
-	<body class="post-template-default single single-post postid-1519 single-format-standard pros-and-cons-of-reshoring-manufacturing">
-				<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2TT8D5"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-			        	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2TT8D5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->        		<!-- Site Wrap Start -->
-		<div class="site-wrap"><!--Site Header-->
-<!--Site Search -->
-    <div class="search-module">
-      <div class="inner-wrap">
-        <a href="#" target="_blank" class="search-link search-exit active"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Exit" data-lazy-src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/img/ico-exit.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/img/ico-exit.svg" alt="Exit"></noscript></a>
-        <form action="https://www.universalpolymer.com/" method="get" class="search-form">
-    <div class="search-table">
-      <div class="search-row">
-        <div class="search-cell1">
-          	<input type="text" id="search-site" value="" placeholder="Search Website..." name="s" class="search-text" title="Search Website...">    
-        </div>
-         <div class="search-cell2">
-        	<input class="search-submit" alt="Search" title="Search" value="" type="submit">
-        </div>
-      </div>
-    </div>
-</form> 
-            
-            
-      </div>
-    </div><!--Site Header Wrap Start -->
-        <div class="site-header-wrap">
-          <header class="site-header" role="banner">
-            <div class="utility-wrapper">
-              <div class="inner-wrap">
-                <div class="sh-utility-nav">
-                  <div class="sh-social-nav">
-                    <ul class="sh-social-list swap">
-                                            <li> <a  rel="noopener noreferrer"  href="https://www.linkedin.com/company/universal-polymer-&#038;-rubber-ltd-" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Linkedin" title="Linkedin" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off.svg" alt="Linkedin" title="Linkedin"></noscript></a></li>
-                                           <li> <a  rel="noopener noreferrer"  href="https://twitter.com/UPRltd" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Twitter" title="Twitter" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/twitter-off.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/twitter-off.svg" alt="Twitter" title="Twitter"></noscript></a></li>
-                                               <li class="tn-badge">
-                            <!-- Thomas Supplier Badge -->
-                              <a href="https://www.thomasnet.com/profile/00037480?src=tnbadge" target="_blank" class="tn-badge__link">
-                              <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-srcset="https://img.thomascdn.com/badges/shield-tier-v-sm-2x.png?cid=00037480 2x" alt="Thomas Supplier" class="tn-badge__img header-badge" data-lazy-src="https://img.thomascdn.com/badges/shield-tier-v-sm.png?cid=00037480" /><noscript><img src="https://img.thomascdn.com/badges/shield-tier-v-sm.png?cid=00037480" srcset="https://img.thomascdn.com/badges/shield-tier-v-sm-2x.png?cid=00037480 2x" alt="Thomas Supplier" class="tn-badge__img header-badge" /></noscript>
-                              </a>
-                            <!-- End Thomas Supplier Badge -->
-                          </li>
-                    </ul>                    
-                  </div> 
-                  <!-- sh-social End -->
-                  <span class="sh-icons">
-                    <a href="#menu" class="sh-ico-menu menu-link"><span>Menu</span></a>
-                    <!--                    <a href="mailto:info@universalpolymer.com" class="sh-email"><span>&nbsp;</span></a>-->
-                                        <a href="tel:4406321691" class="sh-ph"><span>440.632.1691</span></a>
-                    <a class="sh-ico-search search-link" target="_blank" href="#"><span></span></a>
-                                        <a href="/request-for-quote/" class="btn rfq-btn"><span>REQUEST FOR QUOTE</span></a> <!--  A new class show-rfq will add after page load-->
-                  </span> <!-- sh-icons End -->
-                </div> <!-- sh-utility-nav End -->
-              </div>
-            </div>
-            <!-- Utility Wrapper End -->
-            <!--sh-sticky-wrap Start-->
-            <div class="sh-sticky-wrap">
-                <!--Inner Wrap Start-->
-              <div class="inner-wrap">
-                <div class="si-content-wrap">
-                   <div class="site-logo-wrap"><a href="https://www.universalpolymer.com" class="site-logo"><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
-<source type="image/webp" data-lazy-srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E"/>
-<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E" alt="Universal Polymer &amp; Rubber Ltd., Inc." data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg"/>
-</picture>
-<noscript><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
-<source type="image/webp" srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp"/>
-<img src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg" alt="Universal Polymer &amp; Rubber Ltd., Inc."/>
-</picture>
-</noscript></a></div>
-    
-                 <!-- Site Nav Container Start-->
-                 <div class="site-nav-container">
-                  <div class="snc-header">
-                    <a href="#" class="close-menu menu-link">Close</a>
-                  </div>
-                  <!--Site Nav Start-->
-                <nav class="site-nav"><ul id="menu-primary-nav" class="sn-level-1"><li id="nav-menu-item-1270" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/capabilities/" class="sn-menu-link sn-main-menu-link"><span>CAPABILITIES</span></a>
-<ul class="sub-menu menu-even sub-sub-menu sn-level-2">
-	<li id="nav-menu-item-1223" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/rubber-extrusion/" class="sn-menu-link sn-sub-menu-link"><span>Rubber Extrusion</span></a></li>
-	<li id="nav-menu-item-1222" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/rubber-molding/" class="sn-menu-link sn-sub-menu-link"><span>Rubber Molding Services</span></a></li>
-	<li id="nav-menu-item-1221" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/die-cutting/" class="sn-menu-link sn-sub-menu-link"><span>Die Cutting</span></a></li>
-	<li id="nav-menu-item-1220" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/capabilities/plastic-extrusion/" class="sn-menu-link sn-sub-menu-link"><span>Plastic Extrusion</span></a></li>
-</ul>
-</li>
-<li id="nav-menu-item-1271" class="main-menu-item  menu-item-even sn-li-l1 capablity-nav menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a class="sn-menu-link sn-main-menu-link"><span>MARKETS</span></a>
-<ul class="sub-menu menu-even sub-sub-menu sn-level-2">
-	<li id="nav-menu-item-1227" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/general-industrial/" class="sn-menu-link sn-sub-menu-link"><span>General Industrial</span></a></li>
-	<li id="nav-menu-item-1226" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/epdm-rubber-tarp-strap/" class="sn-menu-link sn-sub-menu-link"><span>Tarp Strap</span></a></li>
-	<li id="nav-menu-item-1242" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/automotive/" class="sn-menu-link sn-sub-menu-link"><span>Automotive</span></a></li>
-	<li id="nav-menu-item-1691" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="https://www.universalpolymer.com/markets/drainage-pipe-gasket/" class="sn-menu-link sn-sub-menu-link"><span>Drainage Pipe Gasket</span></a>
-	<ul class="sub-menu menu-odd sub-sub-menu sn-level-3">
-		<li id="nav-menu-item-1225" class="sub-menu-item sub-sub-menu-item menu-item-even sn-li-l3 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/concrete-pipe-gasket/" class="sn-menu-link sn-sub-menu-link"><span>Concrete Pipe Gasket</span></a></li>
-	</ul>
-</li>
-	<li id="nav-menu-item-1776" class="sub-menu-item  menu-item-odd sn-li-l2 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/markets/transformer-door-gaskets/" class="sn-menu-link sn-sub-menu-link"><span>Transformer Gaskets</span></a></li>
-</ul>
-</li>
-<li id="nav-menu-item-1228" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/about-us/" class="sn-menu-link sn-main-menu-link"><span>ABOUT US</span></a></li>
-<li id="nav-menu-item-1229" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/contact-us/" class="sn-menu-link sn-main-menu-link"><span>CONTACT US</span></a></li>
-<li id="nav-menu-item-1230" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-post_type menu-item-object-page"><a href="https://www.universalpolymer.com/careers/" class="sn-menu-link sn-main-menu-link"><span>CAREERS</span></a></li>
-<li id="nav-menu-item-1231" class="main-menu-item  menu-item-even sn-li-l1 menu-item menu-item-type-custom menu-item-object-custom"><a href="/blog/" class="sn-menu-link sn-main-menu-link"><span>BLOG</span></a></li>
-</ul></nav>                  <!--Site Nav End-->                  
-                </div>
-                <!-- Site Nav Co ntainer End-->
-                </div><!--Inner Wrap End-->
-              </div>
-            </div><!--sh-sticky-wrap End-->
-          </header>
-          <!--page intro start-->    
-        <div class="page-intro">
-	<div data-bg="https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/img/pattern-page-h1-bg-image.jpg" class="bg-img rocket-lazyload" style=""></div>
-	<div class="inner-wrap">
-    <h1 class="pi-header">The Challenges and Rewards of Reshoring Manufacturing to the US</h1>
-  </div>
+
+<!DOCTYPE HTML>
+<html lang="en-us">	
+	
+<head>
+<!-- P1 -->
+
+			                                <title>Industries at a Glance: Plastics and Rubber Products Manufacturing: NAICS 326 :  U.S. Bureau of Labor Statistics</title>
+							<meta charset="UTF-8">
+		
+		
+					<meta name="description" content="Industries at a Glance: Plastics and Rubber Products Manufacturing: NAICS 326" />
+		
+				
+
+								<meta name="date" content="2022-10-05" />
+				
+						
+		                        				<meta name="keywords" content="" />
+				
+		                        					<meta name="surveys" content="" />
+				
+		                        					<meta name="programs" content="" />
+		
+		
+				
+				        	<meta name="search-priority" content="0.5" />
+        						
+		
+						  		  		  
+										<!-- START include/global/head_cms.stm -->
+	<script language="javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOL&subagency=BLS&yt=true"></script>
+
+	<script src="/javascripts/jquery-latest.js"></script>
+	<link rel="stylesheet" href="/assets/bootstrap/latest/bootstrap.min.css">
+	<script src="/assets/bootstrap/latest/popper.min.js"></script>
+	<script src="/assets/bootstrap/latest/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_combined.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_content.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_tables.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/jquery-tools.css">
+				
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--[if lt IE 9]>
+		<link href="/stylesheets/ie8-styles.css" media="all" rel="Stylesheet"> 
+	<![endif]-->
+	<!--[if lt IE 8]>
+		<link href="/stylesheets/ie7-styles.css" media="all" rel="Stylesheet"> 
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<link href="/stylesheets/ie6-styles.css" media="all" rel="Stylesheet"> 
+		<style>
+		body {
+			behavior:url(/stylesheets/csshover2.htc);
+		}
+		</style>			
+	<![endif]-->
+	<!--[if IE]>
+		<style>
+		body {
+			font-size: expression(1 / (screen.deviceXDPI / 96) * 84 + '%');
+		}
+		</style>	
+	<![endif]-->
+	<noscript>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_noscript.css">
+	</noscript>
+	<!-----This means that the browser will (probably) render the width of the page at the width of its own screen. ------>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!----------->
+	<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta property="og:image" content="https://www.bls.gov/images/bls_emblem.png" />
+	<style type="text/css">
+		td.gsc-table-cell-thumbnail{
+		display:none !important;
+		}
+	</style>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+	<meta name="theme-color" content="#ffffff" />
+    <!-- END include/global/head_cms.stm -->
+
+			
+			
+			<script type="text/javascript" src="/javascripts/bls-latest.js"></script>
+			<script src="/javascripts/jquery-tools.js"></script>
+			<script type="text/javascript" src="/javascripts/jquery-migrate-1.2.1.min.js"></script>
+		  		
+
+
+				
+	</head>
+
+	<body class="layout-fixed">
+				<section aria-label="content">
+
+<!-- PERCUSSION INNER START -->
+																																																																						 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    											 
+						
+				
+									
+    								
+    					    																								    	    
+			    
+
+<!-- OneColHeadBasic Begin: Name -->
+
+<!-- Header Filename: "/include/iag/iag_header_cms.txt" -->
+
+<!--no_index_start-->
+
+<!-- DOL BANNER BEGIN -->
+<!-- DOL BANNER START -->
+<header aria-label="global-header"> <!-- Header is closed at the end of BLS banner -->
+		<a class="skiplink" href="#startcontent">Skip to Content</a>
+
+		<div id="usa-banner-wrapper">
+<div id="usa-banner" class="bootstrap standard-width">
+	<div class="content">
+	<div class="USA-flag-link">
+	<img src="https://www.dol.gov/themes/opa_theme/img/flag-favicon-57.png" alt="U.S. flag">
+	<p>An official website of the United States government 
+	  
+	<button type="button" data-toggle="collapse" data-target="#usaBanner" aria-expanded="false" aria-controls="usaBanner">Here is how you know <span class="oi" data-glyph="chevron-bottom"></span></button>
+	</p>
+	</div>
+		<a href="https://www.dol.gov/" id="dolHolder" class="dolHolder" target="_blank"><img src="https://www.dol.gov/themes/opa_theme/img/logo-primary.svg" alt="Department of Labor Logo"/>  United States Department of Labor</a>
+	</div>
+	
+	<div class="collapse " id="usaBanner">	
+	<div class="row">
+	<div class="col-md-6">
+		<img src="https://www.dol.gov/themes/opa_theme/img/icon-dot-gov.svg" alt="Dot gov">
+
+		<p>
+			<strong>The .gov means it's official.</strong>
+			<br> Federal government websites often end in .gov or .mil. Before sharing sensitive information,
+			make sure you're on a federal government site.
+		</p>
+	</div>
+
+	<div class="col-md-6">
+	<img class="usa-banner-icon usa-media_block-img" src="https://www.dol.gov/themes/opa_theme/img/icon-https.svg" alt="Https">
+	
+		<p>
+			<strong>The site is secure.</strong>
+			<br> The
+			<strong>https://</strong> ensures that you are connecting to the official website and that any
+			information you provide is encrypted and transmitted securely.
+		</p>
+	</div>
+	</div>
+	</div>		
+</div>
 </div>
 
 
-    
-      <!--page intro end-->
-    </div>
-<!-- Site header wrap end-->
-<!--Site Content-->
-	<section class="site-content two-column" role="main">
-	    <div class="inner-wrap">
-	    	
-      <div id="breadcrumbs" class="breadcrumb-menu"><span><span><a href="https://www.universalpolymer.com/">Home</a></span> &gt; <span><a href="https://www.universalpolymer.com/blog/">Blog</a></span> &gt; <span class="breadcrumb_last" aria-current="page">The Challenges and Rewards of Reshoring Manufacturing to the US</span></span></div>
-       
-	        <article class="site-content-primary">
-				<div class="post-meta">Posted by John Zielinski on <time datetime="2020-07-07" pubdate>July 7, 2020 2:52 pm</time> | <a href="https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/#respond">Leave a Comment</a> </div>
-				
-				<p><span style="font-weight: 400;">The term “reshoring” refers to the process of returning offshore manufacturing operations to a company’s home country rather than outsourcing labor to overseas locales. Many statistics indicate that reshoring trends were already on the rise, even before a trade war and pandemic made the idea more appealing. In 2018, 1,389 companies reshored operations, ultimately returning 145,000 jobs to the U.S., according to data from </span><a href="https://www.reshorenow.org/recent-data/"><span style="font-weight: 400;">The Reshoring Initiative</span></a><span style="font-weight: 400;">. </span></p>
-<p><span style="font-weight: 400;">Reshoring rubber manufacturing—and manufacturing in general—to the United States can improve product quality, reduce financial and business risks, and lower transport costs.</span></p>
-<h2><b>Reshoring Challenges</b></h2>
-<p><span style="font-weight: 400;">While reshoring offers a plethora of benefits, it’s important that businesses understand the main challenges they will face before proceeding with efforts to reshore. These challenges include:</span></p>
-<ul>
-<li style="font-weight: 400;"><b>Costs associated with reshoring.</b><span style="font-weight: 400;"> Increased production costs, higher labor costs, and supply chain restructuring all contribute to the high upfront costs of reshoring.</span></li>
-<li style="font-weight: 400;"><b>Lack of infrastructure and training.</b><span style="font-weight: 400;"> The United States suffers from a manufacturing skills gap after decades of offshoring. Factories in many locations may require companies to develop extensive training programs and educational partnerships. </span></li>
-<li style="font-weight: 400;"><b>Foreign contracts.</b><span style="font-weight: 400;"> The decision to reshore often results in the termination of contracts with previous outsourced suppliers. It’s critical to seek legal advice before reshoring to avoid lawsuits based on contract disputes. </span></li>
-</ul>
-<h2><b>Top Reasons to Reshore</b></h2>
-<p><span style="font-weight: 400;">While any major manufacturing change offers up its own unique set of challenges, reshoring largely provides companies with a long list of benefits. </span></p>
-<h3><b>Brand Image</b></h3>
-<p><span style="font-weight: 400;">Often, American consumers prefer to purchase products made in America. These customers appreciate knowing that an organization directly supports their local economy, provides fair wages to its employees, and reduces carbon emissions by manufacturing and shipping its products within the United States. Reshoring manufacturing can greatly improve a company’s brand image.</span></p>
-<h3><b>Ecosystem Synergies and Localization</b></h3>
-<p><span style="font-weight: 400;">Reshoring manufacturing drastically improves predictability, shipping speeds, and time to market. Products created in offshore factories can take weeks or months to reach the United States, with the unfortunate effect of more opportunities for error and delays.</span></p>
-<p><span style="font-weight: 400;">By reshoring and thus localizing manufacturing, manufacturers can provide rapid delivery of products to their distribution network. Reshoring can also allow companies to work more closely within their local ecosystem, improving local economies and enacting greater control over the supply chain.</span></p>
-<h3><b>Government Incentives</b></h3>
-<p><span style="font-weight: 400;">Recent corporate tax cuts and new tariffs have made reshoring more appealing. Companies which reshore manufacturing may also be eligible for other government incentives that may help mitigate some of the upfront costs of reshoring.</span></p>
-<h3><b>Logistics</b></h3>
-<p><span style="font-weight: 400;">Since reshoring manufacturing creates a shorter supply chain, organizations can more accurately forecast, reduce shipping times, eliminate complex overseas transportation, and respond rapidly to consumer demand. Manufacturers that have reshored are better able to control unforeseen circumstances, allowing them to be more flexible. </span></p>
-<h3><b>Lower Cost Gap</b></h3>
-<p><span style="font-weight: 400;">With more control over the supply chain and a greater ability to oversee the manufacturing process, reshoring makes it possible to reduce cost gaps. This opportunity enables manufacturers to more accurately make predictions and control their budgets.</span></p>
-<h3><b>More Oversight</b></h3>
-<p><span style="font-weight: 400;">With offshore manufacturing, companies may struggle to adequately oversee the production process. The long distance from the offshore facilities demands managers supervise outsourced manufacturing, often requiring them to travel excessively, costing the company both time and money. Reshoring allows management to easily oversee the entire manufacturing process. </span></p>
-<h3><b>Proximity to Customers</b></h3>
-<p><span style="font-weight: 400;">Modern customers are accustomed to receiving things quickly. Reshoring manufacturing makes it much simpler to rapidly put products into the hands of the customer, which increases overall satisfaction, earns money more quickly, and enables more accurate forecasting.</span></p>
-<h2><b>Reshoring With Universal Polymer &amp; Rubber</b></h2>
-<p><span style="font-weight: 400;">Since 1971, Universal Polymer has been producing sophisticated polymer parts from our facility in Northeast Ohio. We offer reliable, high-quality turnkey services to any organization looking to begin sourcing its rubber parts in the United States. Read </span><a href="https://www.universalpolymer.com/about-us/"><span style="font-weight: 400;">about us</span></a><span style="font-weight: 400;"> to learn more about our history and values. For additional pricing information, </span><a href="https://www.universalpolymer.com/request-for-quote/"><span style="font-weight: 400;">request your quote</span></a><span style="font-weight: 400;"> today.</span></p>
- 
-				<!-- <hr>
-				<p></p>
-				<hr> -->
-				<div id="comments">
-	
-	
-	
-		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/pros-and-cons-of-reshoring-manufacturing/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://www.universalpolymer.com/wp-comments-post.php?wpe-comment-post=universalpolym" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required" /></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required" /></p>
-<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1519' id='comment_post_ID' />
-<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c37db0a11e" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="161"/><script type="rocketlazyloadscript">document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
-	
-</div><!-- #comments -->
-	        </article>
-	       	<!--Secondary Content-->
-<!-- <aside class="site-content-secondary">
-<h4>Recent Posts</h4>
-<ul>
-</ul>
-<h4></h4>
-<ul>
-</ul>
-<h4></h4>
-<ul>
-</ul>
-</aside> -->
 
-<aside class="site-content-secondary">
-	<div class="next-project">
-		<div class="inner-wrap">
-			<h2 class="title">Ready to start your next project ?</h2>
-		<p>UP&R manufactures sophisticated polymer parts through its core processes of molding, extrusion, and die-cutting. We have the experience to provide first-rate, timely service and quality every time.</p>
-		<a href="https://www.universalpolymer.com/contact-us/" class="btn np-btn">Contact Us</a>
-		<div class="side-infog">
-			<a class="lightbox" href="http://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png"><picture title="Why Should You Use Synthetic Rubber Over Natural Rubber">
-<source type="image/webp" data-lazy-srcset="http://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20250%200&#039;%3E%3C/svg%3E"/>
-<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20250%200&#039;%3E%3C/svg%3E" alt="Why Should You Use Synthetic Rubber Over Natural Rubber" width="250px" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png"/>
-</picture>
-<noscript><picture title="Why Should You Use Synthetic Rubber Over Natural Rubber">
-<source type="image/webp" srcset="http://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png.webp"/>
-<img src="https://www.universalpolymer.com/wp-content/uploads/Why-Should-You-Use-Synthetic-Rubber-Over-Natural-Rubber.png" alt="Why Should You Use Synthetic Rubber Over Natural Rubber" width="250px"/>
-</picture>
-</noscript></a>
-		</div>
-				<a class="lightbox aligncenter blog-img"  href="http://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png"><picture title="Reshoring Manufacturing">
-<source type="image/webp" data-lazy-srcset="http://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E"/>
-<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E" alt="Reshoring Manufacturing" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png"/>
-</picture>
-<noscript><picture title="Reshoring Manufacturing">
-<source type="image/webp" srcset="http://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png.webp"/>
-<img src="https://www.universalpolymer.com/wp-content/uploads/Reshoring-Manufacturing-to-the-US.png" alt="Reshoring Manufacturing"/>
-</picture>
-</noscript></a>
+<!-- DOL BANNER END -->
+
+
+<!-- DOL BANNER END -->
+<!-- BLS BANNER BEGIN -->
+
+<div id="bls-banner-wrapper">
+<div id="top"></div>
+		<div class="bootstrap standard-width">
+<div>
+  <div id="bls-banner" class="row">
+    <div id="bls-banner-emblem" class="col-sm-12 col-md-7">
+      <a href="https://www.bls.gov/">U.S. Bureau of Labor Statistics</a>
+    </div>
+    <div id="bls-banner-right" class="col-sm-12 col-md-5 d-none d-md-block">
+      <div id="bls-banner-links"><span class="social-follow"><a title="Follow BLS on Twitter" target="_blank" href="http://twitter.com/BLS_gov" aria-label="Follow Us on the Bureau of Labor Statistics Twitter">Follow Us</a> </span><span class="social-follow-links"> 
+        <!-- <img src="/images/icons/facebook.png"/>--> 
+        <a target="_blank" href="http://twitter.com/BLS_gov" aria-label="Bureau of Labor Statistics Twitter"><img style="margin-top:-10px;" alt="Follow BLS on Twitter" src="/images/icons/twitter.png"/></a> 
+        <!--<img src="/images/icons/linkedin.png"/>--> 
+        </span> | <a href="/schedule/news_release/">Release Calendar</a> | <a href="/blog/" aria-label="Blog page">Blog</a></div>
+      <div id="bls-banner-search1" class="bls-banner-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit1" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_16.png" name="term" id="bls-banner-search-submit1" alt="BLS Search Submit" title="Submit" >
+		  <label for="bls-banner-search-input1" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input1" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+    </div>
+    <div class="clearfloat"></div>
+  </div>
+</div>
+</div>
+</div>
+</header> <!-- Header is opened at the begining of DOL banner -->
+
+<!-- BLS BANNER END -->
+<!-- MAIN NAV BEGIN -->
+
+<div id="main-nav-wrapper">
+	<div id="main-nav-container">
+		<div>
+			<div class="bootstrap standard-width">
+<nav aria-label="top-level navigation menu" class="navbar navbar-expand-md">
+  
+  
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+    <span class="navbar-toggler-icon">Menu</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+
+
+<ul class="nojs navbar-nav mr-auto">
+     <li class="dropdownSearch"><div id="bls-banner-search" class="dropdown-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_20.png" name="term" id="bls-banner-search-submit" alt="BLS Search Submit" title="Submit">
+		  <label for="bls-banner-search-input" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
 	
-		</div>
+	  <div class="bls-banner-links-mob"><span class="social-follow"><a title="Follow BLS on Twitter" target="_blank" href="http://twitter.com/BLS_gov" aria-label="Follow Us on the Bureau of Labor Statistics Twitter">Follow Us <img  alt="Follow BLS on Twitter" src="/images/icons/twitter.png"></a> </span>| <a href="/schedule/news_release/">Release Calendar</a> | <a href="/blog/" aria-label="Blog page">Blog</a></div>
+	</li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://www.bls.gov/" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"><!-- ********************************************** Begin Home Tab LIST ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-home">
+	<ul class="main-nav-submenu-inn">
+	
+		<li class="heading"><a href="/bls/about-bls.htm" aria-label="About BLS">About BLS</a></li>
+		<li><a href="/bls/history/home.htm" aria-label="BLS History">History</a></li>	
+		<li><a href="/bls/senior_staff/home.htm" aria-label="Our Leadership">Our Leadership</a></li>
+		<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>		
+		<li><a href="/bls/faqs.htm" aria-label="Questions and Answers">Questions and Answers</a></li>	
+		<li><a href="/bls/topicsaz.htm" aria-label="A-Z Index">A-Z Index</a></li>	
+		<li><a href="/bls/glossary.htm" aria-label="Glossary">Glossary</a></li>	
+		<li><a href="/jobs/" aria-label="Careers at BLS">Careers at BLS </a></li>	
+		<li><a href="/bls/bls-speakers/" aria-label="BLS Speakers Available">BLS Speakers Available</a></li>
+		<li><a href="/errata/" aria-label="Errata">Errata</a></li>  				
+		<li><a href="/bls/contact.htm" aria-label="Contact BLS">Contact BLS</a></li>	
+
+	</ul>	
+	<!-- 2nd column -->	
+<ul class="main-nav-submenu-inn">	
+		<li class="heading"><a href="/bls/overview.htm" aria-label="Overview of BLS Statistics">Overview of BLS Statistics</a></li>
+		<li><a href="/bls/demographics.htm" aria-label="Demographics Data">Demographics</a></li>
+		<li><a href="/bls/industry.htm" aria-label="Statistics by Industries">Industries</a></li>
+		<li><a href="/bls/business.htm" aria-label="Statistics on Business Costs">Business Costs</a></li>
+		<li><a href="/bls/occupation.htm" aria-label="Statistics by Occupations">Occupations</a></li>
+		<li><a href="/bls/geography.htm" aria-label="Statistics by Geography">Geography</a></li>	
+	
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/audience/" aria-label="Resources For">Resources For</a></li>
+		<li><a href="/audience/business.htm" aria-label="Resources for Business Leaders">Business Leaders</a></li>
+		<li><a href="/audience/consumers.htm" aria-label="Resources for Consumers">Consumers</a></li>
+		<li><a href="/audience/developers.htm" aria-label="Developers site">Developers</a></li>
+		<li><a href="/audience/economists.htm" aria-label="Economists or Economic Analyst">Economists</a></li>
+		<li><a href="/audience/investors.htm" aria-label="Resources for Financial Investors">Investors</a></li>
+		<li><a href="/audience/jobseekers.htm" aria-label="Resources for Jobseekers">Jobseekers</a></li>
+		<li><a href="/audience/media.htm" aria-label="Media">Media</a></li>
+		<li><a href="/audience/policy.htm" aria-label="Resources for Public Policymakers">Public Policymakers</a></li>
+		<li><a href="/audience/researcher.htm" aria-label="Researcher">Researcher</a></li>		
+		<li><a href="/audience/students.htm" aria-label="Resources for Students & Teachers">Students &amp; Teachers</a></li>
+		<li><a href="/respondents/" aria-label="Survey Respondents">Survey Respondents</a></li>
+	</ul>
+</div>
+
+<!-- ***********************************************End Home Tab LIST ******************************************** --> 
+
+</div>
+    </li>
+    <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="/bls/proghome.htm" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subjects <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown2"><!-- ************************************* Begin SUBJECTS TAB list ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-programs">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/inflation.htm" aria-label="Statistics on Inflation & Prices">Inflation &amp; Prices</a></li>
+		<li><a href="/cpi/" aria-label="Consumer Price Index ">Consumer Price Index</a></li>
+		<li><a href="/ppi/" aria-label="Producer Price Indexes">Producer Price Indexes</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li><a href="/bls/escalation.htm" aria-label="Contract Escalation">Contract Escalation</a></li>
+		<li><a href="/pir/" aria-label="Price Index Research">Price Index Research</a></li>
+		<li class="heading"><a href="/bls/wages.htm" aria-label="Statistics on Pay & Benefits">Pay &amp; Benefits</a></li>
+		<li><a href="/eci/" aria-label="Employment Cost Index">Employment Cost Index</a></li>
+		<li><a href="/ecec/home.htm" aria-label="Employer Costs for Employee Compensation">Employer Costs for Employee Compensation</a></li>
+						<li><a href="/oes/" aria-label="Wage Data by Occupation">Wage Data by Occupation</a></li>
+		<li><a href="/cps/earnings.htm#demographics" aria-label="Earnings by Demographics">Earnings by Demographics</a></li>
+		<li><a href="/ces/" aria-label="Earnings by Industry">Earnings by Industry</a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Wages">County Wages</a></li>  <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/ebs/" aria-label="Employee Benefits Survey">Benefits</a></li>
+		<li><a href="/mwe/" aria-label="Modeled Wage Estimates">Modeled Wage Estimates</a></li>		
+		<li><a href="/crp/" aria-label="Compensation Research & Program Development">Compensation Research</a></li>
+		<li><a href="/wsp/" aria-label="Strikes & Lockouts">Strikes &amp; Lockouts </a></li>
+		<li><a href="/wrp/" aria-label="Wage Records from Unemployment Insurance">Wage Records from Unemployment Insurance</a></li>
+		<li class="heading"><a href="/ors/" aria-label="Occupational Requirements Survey">Occupational Requirements</a></li>		
+	</ul>
+	<!-- 2nd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/unemployment.htm" aria-label="Statistics on Unemployment">Unemployment</a></li>
+		<li><a href="/cps/" aria-label="National Unemployment Rate">National Unemployment Rate </a></li>
+		<li><a href="/lau/" aria-label="State & Local Unemployment Rates">State &amp; Local Unemployment Rates </a></li>
+		<li><a href="/ers/" aria-label="Unemployment Research">Unemployment Research</a></li>
+		<li class="heading"><a href="/bls/employment.htm" aria-label="Statistics on Employment">Employment</a></li>
+		<li><a href="/ces/" aria-label="National Employment Statistics">National Employment </a></li>
+		<li><a href="/sae/" aria-label="State & Local Employment, Hours, and Earnings">State &amp; Local Employment </a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Employment">County Employment </a></li> <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/cps/" aria-label="Worker Characteristics">Worker Characteristics </a></li>
+		<li><a href="/air/" aria-label="American Indian Report">American Indian Report</a></li>
+		<li><a href="/emp/" aria-label="Employment Projections">Employment Projections </a></li>
+		<li><a href="/jlt/" aria-label="Job Openings & Labor Turnover Survey">Job Openings &amp; Labor Turnover Survey </a></li>
+		<li><a href="/brs/" aria-label="Business Response Survey">Business Response Survey</a></li>
+		<li><a href="/oes/" aria-label="Employment by Occupation">Employment by Occupation </a></li>
+		<li><a href="/nls/" aria-label="Work Experience Over Time">Work Experience Over Time </a></li>
+		<li><a href="/bdm/" aria-label="Business Employment Dynamics">Business Employment Dynamics </a></li>
+		<li><a href="/fdi/" aria-label="Foreign Direct Investment">Foreign Direct Investment </a></li>
+		<li><a href="/ers/" aria-label="Employment Research and Program Development">Employment Research</a></li>
+		<li class="heading"><a href="/iif/" aria-label="Workplace Injuries, Illnesses, and Fatalities">Workplace Injuries</a></li>
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/productivity.htm" aria-label="Productivity Statistics">Productivity</a></li>
+		<li><a href="/productivity/" aria-label="Labor and Total Factor Productivity">Labor and Total Factor Productivity</a></li>
+		<li><a href="/dpr/" aria-label="Productivity Research and Program Development">Productivity Research</a></li>
+		<li class="heading"><a href="/bls/spending.htm" aria-label="Statistics on Spending & Time Use">Spending &amp; Time Use</a></li>
+		<li><a href="/cex/" aria-label="Consumer Expenditures Surveys">Consumer Expenditures </a></li>
+		<li><a href="/tus/" aria-label="How Americans Spend Time Survey">How Americans Spend Time</a></li>			
+		<li class="heading"><a href="/bls/international.htm" aria-label="International Data and Technical Cooperation">International</a></li>
+		<li><a href="/itc/" aria-label="International Technical Cooperation">International Technical Cooperation</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li class="heading"><a href="/regions/" aria-label="Geographic Information">Geographic Information</a></li>
+		<li><a href="/regions/northeast/" aria-label="Northeast (Boston-New York) Information Office">Northeast (Boston-New York)</a></li>
+		<li><a href="/regions/mid-atlantic/" aria-label="Mid-Atlantic (Philadelphia) Information Office">Mid-Atlantic (Philadelphia)</a></li>
+		<li><a href="/regions/southeast/" aria-label="Southeast (Atlanta) Information Office">Southeast (Atlanta)</a></li>
+		<li><a href="/regions/midwest/" aria-label="Midwest (Chicago) Information Office">Midwest (Chicago)</a></li>
+		<li><a href="/regions/southwest/" aria-label="Southwest (Dallas) Information Office">Southwest (Dallas)</a></li>
+		<li><a href="/regions/mountain-plains/" aria-label="Mountain-Plains (Kansas City) Information Office">Mountain-Plains (Kansas City)</a></li>
+		<li><a href="/regions/west/" aria-label="West (San Francisco) Information Office">West (San Francisco)</a></li>
+	</ul>
+</div>
+<!-- **************************************End SUBJECT AREAS ******************************************** --> 
+	</div>	
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/data/" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Tools <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown3"><!-- ******************************************** Begin DATA TOOLS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-data">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/tools.htm" aria-label="Data Retrieval Tools Databases, Tables & Calculators by Subject">Data Retrieval Tools</a></li>
+		<li><a href="https://data.bls.gov/cgi-bin/surveymost?bls" aria-label="BLS Popular Series Top Picks">BLS Popular Series</a></li>
+		<li><a href="https://data.bls.gov/cgi-bin/srgate" aria-label="Series Report">Series Report</a></li>
+		<li><a href="/data/home.htm" aria-label="Top Picks, One Screen, Multi-Screen, and Maps" >Top Picks, One Screen, Multi-Screen, and Maps</a></li>
+		<li><a href="https://beta.bls.gov/dataQuery/search" aria-label="Data Finder">Data Finder</a></li>
+		<li><a href="/developers/home.htm" aria-label="Public Data API Programming Interface">Public Data API</a></li>
+
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/apps.htm" aria-label="Charts and Applications">Charts and Applications</a></li>
+		<li><a href="/charts/home.htm" aria-label="Charts for Economic News Releases">Charts for Economic News Releases</a></li>	
+		<li><a href="/data/inflation_calculator.htm" aria-label="CPI Inflation Calculator">CPI Inflation Calculator</a></li>	
+		<li><a href="https://data.bls.gov/iirc/" aria-label="Injury and Illness Calculator">Injury and Illness Calculator</a></li>		
+		<li><a href="https://data.bls.gov/apps/compensation-comparison-matrix/home.htm" aria-label="Pay Measure Comparison">Pay Measure Comparison</a></li>
+		<li><a href="https://data.bls.gov/apps/demographic-comparison-matrix/home.htm" aria-label="Demographic Data Sources">Demographic Data Sources</a></li>
+		<li><a href="https://data.bls.gov/apps/covid-dashboard/home.htm" aria-label="COVID-19 Economic Trends">COVID-19 Economic Trends</a></li>
+		<li><a href="https://data.bls.gov/apps/industry-productivity-viewer/home.htm" aria-label="Industry Productivity Viewer" >Industry Productivity Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/data_views/data_views.htm#tab=Tables" aria-label="Employment and Wages Data Viewer">Employment and Wages Data Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/bls_naics/bls_naics_app.htm" aria-label="Industry Finder from the Quarterly Census of Employment and Wages">Industry Finder from the Quarterly Census of Employment and Wages</a></li>
+	
+    </ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+	    <li class="heading"><a href="/data/tables.htm" aria-label="Customized Tables">Customized Tables</a></li>
+		<li><a href="/eag/eag.us.htm" aria-label="U.S. Economy at a Glance">U.S. Economy at a Glance</a></li>
+		<li><a href="/eag/home.htm" aria-label="Regions, States & Areas at a Glance">Regions, States &amp; Areas at a Glance</a></li>
+		<li><a href="/iag/home.htm" aria-label="Industry at a Glance">Industry at a Glance</a></li>			
+		<li><a href="https://download.bls.gov/pub/time.series/" aria-label="Text Files">Text Files</a></li>
+		<li><a href="/data/#historical-tables" aria-label="Historical News Release Tables">News Release Tables</a></li>
 		
+		<li class="heading"><a href="/bls/moredata.htm" aria-label="More Sources of Data">More Sources of Data</a></li>
+		<li><a href="/rda/home.htm" aria-label="Bureau of Labor Statistics Restricted Data Access">Restricted Data Access</a></li>
+		<li><a href="/data/archived.htm" aria-label="Discontinued Databases">Discontinued Databases </a></li>
+		<li><a href="/help/hlpform1.htm" aria-label="Questions & Answers regarding Bureau of Labor Statistics website data retrieval tools">Questions &amp; Answers</a></li>
+		<li><a href="/help/notice.htm" aria-label="Special Notices">Special Notices </a></li>	
+	</ul>
+</div>
+<!-- *********************************************End DATABASES and TOOLS LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/opub/" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><!-- ********************************************** Begin PUBLICATIONS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-pubs">    
+    <ul class="main-nav-submenu-inn"> 
+		<li class="heading"><a href="/opub/" aria-label="Latest Publications">Latest Publications</a></li>
+		<li><a href="/opub/ted/" aria-label="The Economics Daily">The Economics Daily</a></li>
+		<li><a href="/opub/mlr/" aria-label="Monthly Labor Review">Monthly Labor Review</a></li>
+		<li><a href="/opub/btn/" aria-label="Beyond the Numbers">Beyond the Numbers</a></li>
+		<li><a href="/spotlight/" aria-label="Spotlight on Statistics">Spotlight on Statistics</a></li>
+		<li><a href="/opub/reports" aria-label="Bureau of Labor Statistics Reports">Reports</a></li>
+		<li><a href="/blog/" aria-label="Commissioner's Corner">Commissioner's Corner</a></li>
+		<li><a href="/video/" aria-label="Videos">Videos</a></li>
+		<li><a href="/careeroutlook/" aria-label="Career Outlook">Career Outlook</a></li>		
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+		<li><a href="/ooh/" aria-label="Occupational Outlook Handbook">Occupational Outlook Handbook</a></li>
+		<li><a href="/opub/geographic-profile/" aria-label="Geographic Profile">Geographic Profile</a></li>
+		<li><a href="/opub/hom/" aria-label="Handbook of Methods">Handbook of Methods</a></li>
+		<li><a href="/osmr/research-papers/" aria-label="Research Papers - Office of Survey Methods Research">Research Papers</a></li>
+		<li><a href="/opub/copyright-information.htm" aria-label="Copyright Information">Copyright Information</a></li>
+		<li><a href="/opub/opbinfo.htm" aria-label="Contact & Help">Contact &amp; Help </a></li>
+		<li><a href="/opub/update.htm" aria-label="Weekly Update">Weekly Update</a></li>		
+    </ul>
+</div>
+<!-- ***********************************************End PUBLICATIONS LIST ******************************************** --> </div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/bls/newsrels.htm" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economic Releases <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown5"><!-- ********************************************** Begin ECONOMIC RELEASES LIST ****************************************** -->
+<!-- 1st column -->
+
+<div class="main-nav-submenu" id="submenu-news">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#latest-releases" aria-label="Latest Releases">Latest Releases</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#major" aria-label="Major Economic Indicators">Major Economic Indicators</a></li>
+		<li class="heading"><a href="/schedule/news_release/" aria-label="Schedules for news Releases">Schedules for news Releases</a></li>
+		<li><a href="/schedule/" aria-label="Release Calendar By Month">By Month</a></li>
+		<li><a href="/schedule/schedule/by_prog/all_sched.htm" aria-label="Release Calendar By News Release">By News Release</a></li>
+		<li><a href="/schedule/news_release/current_year.asp" aria-label="Release Calendar Current Year">Current Year</a></li>
+		<li><a href="/bls/archived_sched.htm" aria-label="Schedules for Selected Bureau of Labor Statistics Economic News Releases for Prior Years">Prior Years</a></li>
+		<li class="heading"><a href="/bls/news-release/" aria-label="Archived News Releases">Archived News Releases</a></li>
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#OEUS" aria-label="Employment & Unemployment">Employment &amp; Unemployment</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Monthly">Monthly</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Quarterly, annual, and other">Quarterly, annual, and other</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPLC" aria-label="Inflation & Prices"> Inflation &amp; Prices</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OCWC" aria-label="Pay & Benefits & Workplace Injuries">Pay &amp; Benefits &amp; Workplace Injuries</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPT" aria-label="Productivity & Technology">Productivity &amp; Technology</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OEP" aria-label="Employment Projections">Employment Projections</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#NEWS" aria-label="Regional News Releases">Regional News Releases</a></li>
+    </ul>
+</div></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/k12/" id="navbarDropdown6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classroom <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown6"><!-- ********************************************** Begin Students Tab LIST ****************************************** -->
+<div class="main-nav-submenu" id="submenu-students">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/k12/" aria-label="K-12 Student & Teacher Resources">K-12 Student &amp; Teacher Resources</a></li>		
+        <li><a href="/k12/games/" aria-label="Games & Quizzes">Games &amp; Quizzes</a></li>
+		<li><a href="/k12/students/" aria-label="Student's Desk">Student&apos;s Desk</a></li>
+		<li><a href="/k12/teachers/" aria-label="Teacher's Desk">Teacher&apos;s Desk</a></li>
+		<li><a href="/k12/faq.htm" aria-label="Questions & Answers">Questions &amp; Answers</a></li>
+    </ul>
+</div>
+<!-- ***********************************************End Students Tab LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/beta/" id="navbarDropdown7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Beta <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown7"><!-- ***********************************************Start BETA LIST ******************************************** -->
+
+<div class="main-nav-submenu" id="submenu-beta">
+  <ul class="main-nav-submenu-inn">
+    <li class="heading"><a href="/beta/redesigned-news-releases.htm" aria-label="Redesigned News Releases">Redesigned News Releases</a></li>
+  </ul>
+</div>
+<!-- ***********************************************End BETA LIST ******************************************** --></div>
+    </li>
+</ul>
+
+
+  </div>
+</nav>
+</div>
+
+		</div>
+		<div class="clearfloat"></div>
 	</div>
-	</aside>
-	    </div>
-	</section>
+</div>
 
-    <!--Site Footer Start -->
-    <footer class="site-footer site-footer-new dest" role="contentinfo">
-      <div class="inner-wrap">
-        <div class="sf-wrapper-new">
-          <div class="sf-logo-wrapper-new">
-                        <a href="https://www.universalpolymer.com"><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
-<source type="image/webp" data-lazy-srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp" srcset="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E"/>
-<img src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%200%200&#039;%3E%3C/svg%3E" alt="Universal Polymer &amp; Rubber Ltd., Inc." data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg"/>
-</picture>
-<noscript><picture title="Universal Polymer &amp; Rubber Ltd., Inc.">
-<source type="image/webp" srcset="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg.webp"/>
-<img src="https://www.universalpolymer.com/wp-content/uploads/universalpolym-logo.jpg" alt="Universal Polymer &amp; Rubber Ltd., Inc."/>
-</picture>
-</noscript></a>          </div>
-          <div class="sf-links-wrapper-new">
-            <span class="sf-title-new">Capabilities</span>
-            <ul id="menu-footer-nav-capabilities" class="sf-links-new"><li id="menu-item-1639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1639"><a href="https://www.universalpolymer.com/capabilities/die-cutting/">Die Cutting</a></li>
-<li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://www.universalpolymer.com/capabilities/plastic-extrusion/">Plastic Extrusion</a></li>
-<li id="menu-item-1641" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1641"><a href="https://www.universalpolymer.com/capabilities/rubber-extrusion/">Rubber Extrusion</a></li>
-<li id="menu-item-1642" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1642"><a href="https://www.universalpolymer.com/capabilities/rubber-molding/">Rubber Molding Services</a></li>
-</ul>          </div>
-          <div class="sf-links-wrapper-new">
-            <span class="sf-title-new">Markets</span>
-            <ul id="menu-footer-nav-markets" class="sf-links-new"><li id="menu-item-1643" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1643"><a href="https://www.universalpolymer.com/markets/automotive/">Automotive</a></li>
-<li id="menu-item-1644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1644"><a href="https://www.universalpolymer.com/markets/general-industrial/">General Industrial</a></li>
-<li id="menu-item-1645" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1645"><a href="https://www.universalpolymer.com/markets/concrete-pipe-gasket/">Concrete Pipe Gasket</a></li>
-<li id="menu-item-1646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1646"><a href="https://www.universalpolymer.com/markets/epdm-rubber-tarp-strap/">Tarp Strap</a></li>
-</ul>          </div>
-          <div class="sf-links-wrapper-new">
-            <span class="sf-title-new">&nbsp;</span>
-            <ul id="menu-footer-nav-new" class="sf-links-new"><li id="menu-item-1634" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1634"><a href="https://www.universalpolymer.com/blog/">Blog</a></li>
-<li id="menu-item-1635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1635"><a href="https://www.universalpolymer.com/about-us/">About Us</a></li>
-<li id="menu-item-1636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1636"><a href="https://www.universalpolymer.com/careers/">Careers</a></li>
-<li id="menu-item-1637" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1637"><a href="https://www.universalpolymer.com/privacy-policy/">Privacy Policy</a></li>
-<li id="menu-item-1638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1638"><a href="https://www.universalpolymer.com/sitemap/">Sitemap</a></li>
-</ul>          </div>
-          <div class="sf-address-new">
-            <span class="sf-title-new">Universal Polymer &amp; Rubber Ltd., Inc.</span>
-        <p>15730 S. Madison Road, P.O. Box 767 Middlefield, OH 44062  
 
-        <p><span class="sf-ph-wrap"><span>P: <a href="tel:4406321691">440.632.1691</a></span></span></p>
+<!-- MAIN NAV END -->
 
-        <div class="sf-social-nav">
-        <ul class="sf-social-list swap">
-                                            <li> <a  rel="noopener noreferrer"  href="https://www.linkedin.com/company/universal-polymer-&#038;-rubber-ltd-" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off-1.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/linkedin-off-1.svg" alt="" title=""></noscript></a></li>
-                                           <li> <a  rel="noopener noreferrer"  href="https://twitter.com/UPRltd" class="linkedin"  target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" title="" data-lazy-src="https://www.universalpolymer.com/wp-content/uploads/twitter-off-1.svg"><noscript><img src="https://www.universalpolymer.com/wp-content/uploads/twitter-off-1.svg" alt="" title=""></noscript></a></li>
-                                         </ul>
-      </div> 
-      </div>
-      </div>
+<!-- WRAPPER TOP BEGIN -->
+	<div id="wrapper-outer" role="main">
+		<div id="wrapper">
+			<div id="container">
+<!-- WRAPPER TOP END -->
+<!-- SUBDOMAIN TITLE TOP BEGIN -->
+
+<!-- 1COL CMS LAYOUT COL1 BEGIN -->	
+
+<div class="main-content">
+<div id="startcontent" class="hidden"></div>
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColHeadBasic End -->
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/bls_programs.css" />
+
+<div id="programs-banner">
+
+    <div id="program-title">Industries at a Glance</div>
+
+    <div id="social-search-box">
+
+        <div class="article-tools-box social-media">
+
+            <span class="social-media">
+
+                <span>SHARE ON:</span>
+
+                <a href="javascript:void(0);" class="share_facebook"><img alt="share on facebook" src="/images/icons/facebook.png" title="Facebook" /></a>
+
+                <a href="javascript:void(0);" class="share_twitter"><img alt="share on twitter" src="/images/icons/twitter.png" title="Twitter" /></a>
+
+                <a href="javascript:void(0);" class="share_linkedin"><img alt="share on linkedin" src="/images/icons/linkedin.png" title="LinkedIn" /></a>
+
+            </span>
+
+        </div>
+
+        <form method="get" id="search-secondary-nav-form" action="/search/query">
+
+            <input type="hidden" value="https://www.bls.gov/iag" id="search-secondary-nav-category" name="prefix" />
+
+            <label for="search-secondary-nav-query" class="invisible">Search Industries at a Glance</label>
+
+            <input type="text" onclick="this.value=''; this.onclick = null;" value="Search Industries at a Glance" id="search-secondary-nav-query" name="query" />
+
+            <input type="submit" value="Go" id="search-secondary-nav-submit" name="submit" />
+
+        </form>
+
     </div>
-    <div class="sf-small">
-      <p>
-        © 2023 <a href="https://www.universalpolymer.com">Universal Polymer &amp; Rubber Ltd., Inc.</a> All Rights Reserved <span>|</span> Site created by <a href="https://business.thomasnet.com/marketing-services" target="_blank" rel="noopener noreferrer">Thomas Marketing Services</a>
-      </p>
-    </div>      
-    </footer>
-    <!--Site Footer End -->
-		<script type='text/javascript' id='rocket-browser-checker-js-after'>
-"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
-</script>
-<script type='text/javascript' id='rocket-preload-links-js-extra'>
-/* <![CDATA[ */
-var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.universalpolymer.com","onHoverDelay":"100","rateThrottle":"3"};
-/* ]]> */
-</script>
-<script type='text/javascript' id='rocket-preload-links-js-after'>
-(function() {
-"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
-}());
-</script>
-<script data-minify="1" type='text/javascript' src='https://www.universalpolymer.com/wp-content/cache/min/1/ajax/libs/jquery/1.10.2/jquery.min.js?ver=1623823908' id='jquery-js' defer></script>
-<script type='text/javascript' src='https://www.universalpolymer.com/wp-content/themes/Universal%20P%20R-default/js/production.min.js?ver=6.2.2' id='plugins-js' defer></script>
-<script data-minify="1" defer type='text/javascript' src='https://www.universalpolymer.com/wp-content/cache/min/1/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1658890781' id='akismet-frontend-js'></script>
-<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
-if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
-images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
-if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.universalpolymer.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	</div>
-	<!-- Site Wrap End -->
-				<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
-    $(function () {
-      $('.popup-modal').magnificPopup({
-        type: 'inline',
-        preloader: false,
-        focus: '#username',
-        modal: true
-      });
-      $(document).on('click', '.popup-modal-dismiss', function (e) {
-        e.preventDefault();
-        $.magnificPopup.close();
-      });
-    });
-  });</script>
-<!--webtraxs code start-->
- 
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
-         document.write(unescape("%3Cscript src='" + document.location.protocol + "//www.webtraxs.com/trxscript.php' type='text/javascript'%3E%3C/script%3E"));
-      </script>
-      <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
-         _trxid = "universalpolymer";
-         webTraxs();
-      </script><!--webtraxs code end-->	    </body>
+
+    <div class="clearfloat"></div>
+
+
+
+
+
+	<div class="bootstrap standard-width">
+
+        <nav class="navbar navbar-expand-md programsNavBar four">
+
+            <ul class="navbar-nav" role="menu">
+
+                <li class="nav-item" role="none">
+
+                    <a aria-label="Industries at a Glance Home" role="menuitem" class="nav-link home progNav" tab-index="0" href="/iag/home.htm">Industries at a Glance Home</a>
+
+                </li>
+
+                <li class="nav-item dropdown" role="none">
+
+                    <a aria-label="Industries at a Glance Data" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link data progNav" tab-index="0" href="javascript:">Browse Industries</a>
+
+                    <div class="dropdown-menu" role="menu">
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag23.htm">Construction</a>			
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag65.htm">Education and Health services</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag50.htm">Financial Activities</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag51.htm">Information</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag70.htm">Leisure and Hospitality</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag31-33.htm">Manufacturing</a>				
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag10.htm">Natural Resources and Mining</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag81.htm">Other Services (except Public Administration)</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag60.htm">Professional and business services</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag40.htm">Trade, Transportation, and Utilities</a>	
+
+                        <i></i>
+
+                    </div>
+
+                </li>
+
+                <li class="nav-item dropdown" role="none">
+
+                    <a aria-label="About Industries at a Glance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link about progNav" tab-index="0" href="javascript:">Industries at a Glance Indexes</a>
+
+                    <div class="dropdown-menu" role="menu">
+
+                        <a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag_index_alpha.htm">Alphabetical Index</a>
+
+						<a class="dropdown-item" role="menuitem" tab-index="0" href="/iag/tgs/iag_index_naics.htm">Industry Order Index</a>
+
+                        <i></i>
+
+                    </div>
+
+                </li>
+
+                <li class="nav-item" role="none">
+
+                    <a aria-label="Contact Industries at a Glance" role="menuitem" class="nav-link contact progNav" tab-index="0" href="/iag/iag_contacts.htm">Contact Industries at a Glance</a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+	
+
+</div>
+
+<style>
+
+    .main-content #programs-banner #programs-banner-nav>li a {
+
+        padding: 0px;
+
+    }
+
+</style>		
+	
+<div class="iag--tgs">
+			<!-- ****************************************** Begin HEADER ************************************************ --><!-- ****************************************** End HEADER ************************************************** --><!-- ****************************************** Begin CONTENT *********************************************** --><!-- Begin Main Content --><!-- Begin Main Content --><h1>Plastics and Rubber Products Manufacturing: NAICS 326</h1><div class="highlight-box-blue"><h4>On This Page</h4><ul><li><a href="#about">About the Plastics and Rubber Products Manufacturing subsector</a></li><li>BLS Data<ul><li><a href="#workforce">Workforce Statistics</a></li><li><a href="#earnings">Earnings and Hours</a></li><li><a href="#fatalities_injuries_and_illnesses">Fatalities, Injuries, and Illnesses</a></li><li><a href="#prices">Prices</a></li><li><a href="#workplace_trends">Workplace Trends</a></li></ul></li></ul></div><h2>About the Plastics and Rubber Products Manufacturing subsector</h2><p>The plastics and rubber products manufacturing subsector is part of the <a href="iag31-33.htm">manufacturing</a> sector.</p><div class="iag-def"><p>Industries in the Plastics and Rubber Products Manufacturing subsector make goods by processing plastics materials and raw rubber. The core technology employed by establishments in this subsector is that of plastics or rubber product production. Plastics and rubber are combined in the same subsector because plastics are increasingly being used as a substitute for rubber; however the subsector is generally restricted to the production of products made of just one material, either solely plastics or rubber.</p><p class="iag-naics">North American Industry Classification System</p></div><p>The plastics and rubber products manufacturing subsector consists of these industry groups:</p><ul><li>Plastics Product Manufacturing: NAICS 3261</li><li>Rubber Product Manufacturing: NAICS 3262</li></ul><h2>Workforce Statistics</h2><p>This section provides information relating to employment and unemployment in plastics and rubber products manufacturing. While most data are obtained from employer or establishment surveys, information on industry unemployment comes from a national survey of households. The following tables present an overview of the industry including the number of jobs, the unemployment rate of those previously employed in the industry, data for occupations common to the industry, and projections of occupational employment change.</p><h3>Employment and Unemployment</h3>
+<table class="regular" id="iag326emp1">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326emp1.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326emp1.h.1.2">Back<br />data</th>
+	<th class="stubhead" id="iag326emp1.h.1.3">Apr.<br />2023</th>
+	<th class="stubhead" id="iag326emp1.h.1.4">May<br />2023</th>
+	<th class="stubhead" id="iag326emp1.h.1.5">Jun.<br />2023</th>
+	<th class="stubhead" id="iag326emp1.h.1.6">Jul.<br />2023</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326emp1.h.1.1" id="iag326emp1.r.1"><p class="sub0">Employment (in thousands)</p></th>
+				<td colspan="5"/>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326emp1.r.1 iag326emp1.h.1.1" id="iag326emp1.r.1.1"><p class="sub1"><a href="https://www.bls.gov/ces/">Employment, all employees</a>  (seasonally adjusted)</p></th>
+	<td headers="iag326emp1.r.1.1 iag326emp1.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/CES3232600001?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series CES3232600001" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326emp1.r.1.1 iag326emp1.h.1.3"><span class="datavalue">746.1</span></td>
+	<td headers="iag326emp1.r.1.1 iag326emp1.h.1.4"><span class="datavalue">746.1</span></td>
+	<td headers="iag326emp1.r.1.1 iag326emp1.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326emp1.f.p" title="Preliminary">p</a>)</span>745.9</span></td>
+	<td headers="iag326emp1.r.1.1 iag326emp1.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326emp1.f.p" title="Preliminary">p</a>)</span>746.8</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326emp1.r.1 iag326emp1.r.1.1 iag326emp1.h.1.1" id="iag326emp1.r.1.1.1"><p class="sub2"><a href="https://www.bls.gov/ces/">Employment, production and nonsupervisory employees</a>  (seasonally adjusted)</p></th>
+	<td headers="iag326emp1.r.1.1.1 iag326emp1.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/CES3232600006?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series CES3232600006" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326emp1.r.1.1.1 iag326emp1.h.1.3"><span class="datavalue">566.4</span></td>
+	<td headers="iag326emp1.r.1.1.1 iag326emp1.h.1.4"><span class="datavalue">567.9</span></td>
+	<td headers="iag326emp1.r.1.1.1 iag326emp1.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326emp1.f.p" title="Preliminary">p</a>)</span>568.4</span></td>
+	<td headers="iag326emp1.r.1.1.1 iag326emp1.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326emp1.f.p" title="Preliminary">p</a>)</span>569.2</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326emp1.h.1.1" id="iag326emp1.r.2"><p class="sub0">Unemployment</p></th>
+				<td colspan="5"/>
+</tr>
+
+<tr>
+	<th headers="iag326emp1.r.2 iag326emp1.h.1.1" id="iag326emp1.r.2.1"><p class="sub1"><a href="https://www.bls.gov/cps/">Unemployment rate</a></p></th>
+	<td headers="iag326emp1.r.2.1 iag326emp1.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/LNU04034149?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series LNU04034149" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326emp1.r.2.1 iag326emp1.h.1.3"><span class="datavalue">0.1%</span></td>
+	<td headers="iag326emp1.r.2.1 iag326emp1.h.1.4"><span class="datavalue">1.0%</span></td>
+	<td headers="iag326emp1.r.2.1 iag326emp1.h.1.5"><span class="datavalue">1.8%</span></td>
+	<td headers="iag326emp1.r.2.1 iag326emp1.h.1.6"><span class="datavalue">4.1%</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="footnotes">
+<td class="footnotes" colspan="6">
+	<p class="footnotes">
+		<span class="footnotestitle">Footnotes</span><br />
+		<a id="iag326emp1.f.p" name="iag326emp1.f.p">(p) </a>Preliminary<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/ces/" title="A survey of businesses and government agencies that provides detailed industry data on employment, hours, and earnings">Current Employment Statistics</a>, <a href="/cps/" title="A monthly survey of households that provides data on the labor force, employment, and unemployment">Current Population Survey</a></p><h3>Employment by Occupation</h3>
+<table class="regular" id="iag326oesemp">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326oesemp.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326oesemp.h.1.2">Employment, <br />  2022</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.1"><p class="sub0"><a href="https://www.bls.gov/oes/">Extruding and drawing machine setters, operators, and tenders, metal and plastic</a></p></th>
+	<td headers="iag326oesemp.r.1 iag326oesemp.h.1.2"><span class="datavalue">33,140</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.2"><p class="sub0"><a href="https://www.bls.gov/oes/">Extruding, forming, pressing, and compacting machine setters, operators, and tenders</a></p></th>
+	<td headers="iag326oesemp.r.2 iag326oesemp.h.1.2"><span class="datavalue">22,780</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.3"><p class="sub0"><a href="https://www.bls.gov/oes/">First-line supervisors/managers of production and operating workers</a></p></th>
+	<td headers="iag326oesemp.r.3 iag326oesemp.h.1.2"><span class="datavalue">36,510</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.4"><p class="sub0"><a href="https://www.bls.gov/oes/">Inspectors, testers, sorters, samplers, and weighers</a></p></th>
+	<td headers="iag326oesemp.r.4 iag326oesemp.h.1.2"><span class="datavalue">38,120</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.5"><p class="sub0"><a href="https://www.bls.gov/oes/">Molding, coremaking, and casting machine setters, operators, and tenders, metal and plastic</a></p></th>
+	<td headers="iag326oesemp.r.5 iag326oesemp.h.1.2"><span class="datavalue">89,690</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.6"><p class="sub0"><a href="https://www.bls.gov/oes/">Packers and packagers, hand</a></p></th>
+	<td headers="iag326oesemp.r.6 iag326oesemp.h.1.2"><span class="datavalue">22,430</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326oesemp.h.1.1" id="iag326oesemp.r.7"><p class="sub0"><a href="https://www.bls.gov/oes/">Team assemblers</a></p></th>
+	<td headers="iag326oesemp.r.7 iag326oesemp.h.1.2"><span class="datavalue">71,900</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot></tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/oes/" title="Employment and wage estimates for over 800 occupations">Occupational Employment and Wage Statistics</a>)</p><h3>Projections</h3><p>For projected (future) employment estimates, see the <a href="/emp/tables/employment-by-major-industry-sector.htm">National Employment Matrix</a>, which includes employment estimates by industry and occupation for plastics and rubber products manufacturing.</p><p class="iagsource">(Source: <a href="/emp/" title="Labor market information for the Nation as a whole for 10 years in the future">Office of Occupational Statistics and Employment Projections</a>)</p><h2>Earnings and Hours</h2><p>This section presents data on employee earnings and weekly hours. The latest industry averages of hourly earnings and weekly hours are shown. In addition, recent hourly and annual earnings are shown for occupations commonly found in plastics and rubber products manufacturing.</p><h3>Earnings and Hours of All Employees</h3>
+<table class="regular" id="iag326cesehallemp">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326cesehallemp.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326cesehallemp.h.1.2">Back<br />data</th>
+	<th class="stubhead" id="iag326cesehallemp.h.1.3">Apr.<br />2023</th>
+	<th class="stubhead" id="iag326cesehallemp.h.1.4">May<br />2023</th>
+	<th class="stubhead" id="iag326cesehallemp.h.1.5">Jun.<br />2023</th>
+	<th class="stubhead" id="iag326cesehallemp.h.1.6">Jul.<br />2023</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326cesehallemp.h.1.1" id="iag326cesehallemp.r.1"><p class="sub0"><a href="https://www.bls.gov/ces/">Average hourly earnings</a></p></th>
+	<td headers="iag326cesehallemp.r.1 iag326cesehallemp.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/CEU3232600003?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series CEU3232600003" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326cesehallemp.r.1 iag326cesehallemp.h.1.3"><span class="datavalue">$28.98</span></td>
+	<td headers="iag326cesehallemp.r.1 iag326cesehallemp.h.1.4"><span class="datavalue">$28.81</span></td>
+	<td headers="iag326cesehallemp.r.1 iag326cesehallemp.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326cesehallemp.f.p" title="Preliminary">p</a>)</span>$28.88</span></td>
+	<td headers="iag326cesehallemp.r.1 iag326cesehallemp.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326cesehallemp.f.p" title="Preliminary">p</a>)</span>$29.30</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326cesehallemp.h.1.1" id="iag326cesehallemp.r.2"><p class="sub0"><a href="https://www.bls.gov/ces/">Average weekly hours</a></p></th>
+	<td headers="iag326cesehallemp.r.2 iag326cesehallemp.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/CES3232600002?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series CES3232600002" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326cesehallemp.r.2 iag326cesehallemp.h.1.3"><span class="datavalue">40.7</span></td>
+	<td headers="iag326cesehallemp.r.2 iag326cesehallemp.h.1.4"><span class="datavalue">40.4</span></td>
+	<td headers="iag326cesehallemp.r.2 iag326cesehallemp.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326cesehallemp.f.p" title="Preliminary">p</a>)</span>40.6</span></td>
+	<td headers="iag326cesehallemp.r.2 iag326cesehallemp.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326cesehallemp.f.p" title="Preliminary">p</a>)</span>40.4</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="footnotes">
+<td class="footnotes" colspan="6">
+	<p class="footnotes">
+		<span class="footnotestitle">Footnotes</span><br />
+		<a id="iag326cesehallemp.f.p" name="iag326cesehallemp.f.p">(p) </a>Preliminary<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/ces/" title="A survey of businesses and government agencies that provides detailed industry data on employment, hours, and earnings">Current Employment Statistics</a>)</p><h3>Earnings and Hours of Production and Nonsupervisory Employees</h3>
+<table class="regular" id="iag326ceseh">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326ceseh.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326ceseh.h.1.2">Back<br />data</th>
+	<th class="stubhead" id="iag326ceseh.h.1.3">Apr.<br />2023</th>
+	<th class="stubhead" id="iag326ceseh.h.1.4">May<br />2023</th>
+	<th class="stubhead" id="iag326ceseh.h.1.5">Jun.<br />2023</th>
+	<th class="stubhead" id="iag326ceseh.h.1.6">Jul.<br />2023</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326ceseh.h.1.1" id="iag326ceseh.r.1"><p class="sub0"><a href="https://www.bls.gov/ces/">Average hourly earnings</a></p></th>
+	<td headers="iag326ceseh.r.1 iag326ceseh.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/CEU3232600008?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series CEU3232600008" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326ceseh.r.1 iag326ceseh.h.1.3"><span class="datavalue">$23.93</span></td>
+	<td headers="iag326ceseh.r.1 iag326ceseh.h.1.4"><span class="datavalue">$23.76</span></td>
+	<td headers="iag326ceseh.r.1 iag326ceseh.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326ceseh.f.p" title="Preliminary">p</a>)</span>$23.96</span></td>
+	<td headers="iag326ceseh.r.1 iag326ceseh.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326ceseh.f.p" title="Preliminary">p</a>)</span>$24.25</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326ceseh.h.1.1" id="iag326ceseh.r.2"><p class="sub0"><a href="https://www.bls.gov/ces/">Average weekly hours</a></p></th>
+	<td headers="iag326ceseh.r.2 iag326ceseh.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/CES3232600007?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series CES3232600007" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326ceseh.r.2 iag326ceseh.h.1.3"><span class="datavalue">41.4</span></td>
+	<td headers="iag326ceseh.r.2 iag326ceseh.h.1.4"><span class="datavalue">41.4</span></td>
+	<td headers="iag326ceseh.r.2 iag326ceseh.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326ceseh.f.p" title="Preliminary">p</a>)</span>41.5</span></td>
+	<td headers="iag326ceseh.r.2 iag326ceseh.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326ceseh.f.p" title="Preliminary">p</a>)</span>41.2</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="footnotes">
+<td class="footnotes" colspan="6">
+	<p class="footnotes">
+		<span class="footnotestitle">Footnotes</span><br />
+		<a id="iag326ceseh.f.p" name="iag326ceseh.f.p">(p) </a>Preliminary<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/ces/" title="A survey of businesses and government agencies that provides detailed industry data on employment, hours, and earnings">Current Employment Statistics</a>)</p><h3>Earnings by Occupation</h3>
+<table class="regular" id="iag326oesearn">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326oesearn.h.1.1" rowspan="3">Data series</th>
+	<th class="stubhead" colspan="4" id="iag326oesearn.h.1.2">Wages, 2022</th>
+</tr>
+<tr>
+	<th class="stubhead" colspan="2" headers="iag326oesearn.h.1.2" id="iag326oesearn.h.2.2">Hourly</th>
+	<th class="stubhead" colspan="2" headers="iag326oesearn.h.1.2" id="iag326oesearn.h.2.4">Annual</th>
+</tr>
+<tr>
+	<th class="stubhead" headers="iag326oesearn.h.1.2 iag326oesearn.h.2.2" id="iag326oesearn.h.3.2">Median</th>
+	<th class="stubhead" headers="iag326oesearn.h.1.2 iag326oesearn.h.2.2" id="iag326oesearn.h.3.3">Mean</th>
+	<th class="stubhead" headers="iag326oesearn.h.1.2 iag326oesearn.h.2.4" id="iag326oesearn.h.3.4">Median</th>
+	<th class="stubhead" headers="iag326oesearn.h.1.2 iag326oesearn.h.2.4" id="iag326oesearn.h.3.5">Mean</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.1"><p class="sub0"><a href="https://www.bls.gov/oes/">Extruding and drawing machine setters, operators, and tenders, metal and plastic</a></p></th>
+	<td headers="iag326oesearn.r.1 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">18.61</span></td>
+	<td headers="iag326oesearn.r.1 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">19.99</span></td>
+	<td headers="iag326oesearn.r.1 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">38,720</span></td>
+	<td headers="iag326oesearn.r.1 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">41,590</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.2"><p class="sub0"><a href="https://www.bls.gov/oes/">Extruding, forming, pressing, and compacting machine setters, operators, and tenders</a></p></th>
+	<td headers="iag326oesearn.r.2 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">18.43</span></td>
+	<td headers="iag326oesearn.r.2 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">19.43</span></td>
+	<td headers="iag326oesearn.r.2 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">38,330</span></td>
+	<td headers="iag326oesearn.r.2 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">40,410</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.3"><p class="sub0"><a href="https://www.bls.gov/oes/">First-line supervisors/managers of production and operating workers</a></p></th>
+	<td headers="iag326oesearn.r.3 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">29.42</span></td>
+	<td headers="iag326oesearn.r.3 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">30.42</span></td>
+	<td headers="iag326oesearn.r.3 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">61,200</span></td>
+	<td headers="iag326oesearn.r.3 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">63,270</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.4"><p class="sub0"><a href="https://www.bls.gov/oes/">Inspectors, testers, sorters, samplers, and weighers</a></p></th>
+	<td headers="iag326oesearn.r.4 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">18.41</span></td>
+	<td headers="iag326oesearn.r.4 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">19.67</span></td>
+	<td headers="iag326oesearn.r.4 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">38,300</span></td>
+	<td headers="iag326oesearn.r.4 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">40,920</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.5"><p class="sub0"><a href="https://www.bls.gov/oes/">Molding, coremaking, and casting machine setters, operators, and tenders, metal and plastic</a></p></th>
+	<td headers="iag326oesearn.r.5 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">17.45</span></td>
+	<td headers="iag326oesearn.r.5 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">18.40</span></td>
+	<td headers="iag326oesearn.r.5 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">36,300</span></td>
+	<td headers="iag326oesearn.r.5 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">38,280</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.6"><p class="sub0"><a href="https://www.bls.gov/oes/">Packers and packagers, hand</a></p></th>
+	<td headers="iag326oesearn.r.6 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">16.35</span></td>
+	<td headers="iag326oesearn.r.6 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">16.38</span></td>
+	<td headers="iag326oesearn.r.6 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">34,000</span></td>
+	<td headers="iag326oesearn.r.6 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">34,070</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326oesearn.h.1.1" id="iag326oesearn.r.7"><p class="sub0"><a href="https://www.bls.gov/oes/">Team assemblers</a></p></th>
+	<td headers="iag326oesearn.r.7 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.2"><span class="datavalue">17.08</span></td>
+	<td headers="iag326oesearn.r.7 iag326oesearn.h.1.2 iag326oesearn.h.2.2 iag326oesearn.h.3.3"><span class="datavalue">17.62</span></td>
+	<td headers="iag326oesearn.r.7 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.4"><span class="datavalue">35,530</span></td>
+	<td headers="iag326oesearn.r.7 iag326oesearn.h.1.2 iag326oesearn.h.2.4 iag326oesearn.h.3.5"><span class="datavalue">36,640</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot></tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/oes/" title="Employment and wage estimates for over 800 occupations">Occupational Employment and Wage Statistics</a>)</p><h2>Work-related Fatalities, Injuries, and Illnesses</h2><p>This section presents data for the industry on the number of workplace fatalities and the rates of workplace injuries and illnesses per 100 full-time workers in plastics and rubber products manufacturing. An injury or illness is considered to be work-related if an event or exposure in the work environment either caused or contributed to the resulting condition or significantly aggravated a pre-existing condition.</p>
+<table class="regular" id="iag326iifs">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326iifs.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326iifs.h.1.2">2018</th>
+	<th class="stubhead" id="iag326iifs.h.1.3">2019</th>
+	<th class="stubhead" id="iag326iifs.h.1.4">2020</th>
+	<th class="stubhead" id="iag326iifs.h.1.5">2021</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326iifs.h.1.1" id="iag326iifs.r.1"><p class="sub0">Fatalities</p></th>
+				<td colspan="4"/>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326iifs.h.1.1" id="iag326iifs.r.2"><p class="sub0"><a href="https://www.bls.gov/iif">Number of fatalities</a></p></th>
+	<td headers="iag326iifs.r.2 iag326iifs.h.1.2"><span class="datavalue">12</span></td>
+	<td headers="iag326iifs.r.2 iag326iifs.h.1.3"><span class="datavalue">10</span></td>
+	<td headers="iag326iifs.r.2 iag326iifs.h.1.4"><span class="datavalue">16</span></td>
+	<td headers="iag326iifs.r.2 iag326iifs.h.1.5"><span class="datavalue">25</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="endnotes">
+<td class="endnotes" colspan="5">
+	<p class="endnotes">
+		Blank cells indicate no data reported or data that do not meet publication criteria.<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+
+<table class="regular" id="iag326iifs_is">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326iifs_is.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326iifs_is.h.1.2">2021</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326iifs_is.h.1.1" id="iag326iifs_is.r.1"><p class="sub0">Rate of injury and illness cases per 100 full-time workers</p></th>
+				<td colspan="1"/>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326iifs_is.h.1.1" id="iag326iifs_is.r.2"><p class="sub0"><a href="https://www.bls.gov/iif">Total recordable cases</a></p></th>
+	<td headers="iag326iifs_is.r.2 iag326iifs_is.h.1.2"><span class="datavalue">3.4</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326iifs_is.r.2 iag326iifs_is.h.1.1" id="iag326iifs_is.r.2.1"><p class="sub1"><a href="https://www.bls.gov/iif">Cases involving days away from work, job restriction, or transfer</a></p></th>
+	<td headers="iag326iifs_is.r.2.1 iag326iifs_is.h.1.2"><span class="datavalue">2.3</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326iifs_is.r.2 iag326iifs_is.r.2.1 iag326iifs_is.h.1.1" id="iag326iifs_is.r.2.1.1"><p class="sub2"><a href="https://www.bls.gov/iif">Cases involving days away from work</a></p></th>
+	<td headers="iag326iifs_is.r.2.1.1 iag326iifs_is.h.1.2"><span class="datavalue">1.2</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326iifs_is.r.2 iag326iifs_is.r.2.1 iag326iifs_is.h.1.1" id="iag326iifs_is.r.2.1.2"><p class="sub2"><a href="https://www.bls.gov/iif">Cases involving days of job transfer or restriction</a></p></th>
+	<td headers="iag326iifs_is.r.2.1.2 iag326iifs_is.h.1.2"><span class="datavalue">1.1</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="endnotes">
+<td class="endnotes" colspan="2">
+	<p class="endnotes">
+		Blank cells indicate no data reported or data that do not meet publication criteria.<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/iif/" title="Data on illnesses and injuries on the job and data on worker fatalities">Injuries, Illnesses, and Fatalities</a>)</p><h2>Prices</h2><p>This section provides industry-specific pricing information. The producer price index measures the percentage change in prices that domestic producers receive for goods and services. The prices included in the producer price index are from the first commercial transaction. The import price index reflects the percentage change in prices paid to foreign producers for their goods and services within the U.S., while the export price index measures the percentage change in prices received by U.S. producers for goods and services sold outside the U.S.</p>
+<table class="regular" id="iag326prices">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326prices.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326prices.h.1.2">Back<br />data</th>
+	<th class="stubhead" id="iag326prices.h.1.3">Apr.<br />2023</th>
+	<th class="stubhead" id="iag326prices.h.1.4">May<br />2023</th>
+	<th class="stubhead" id="iag326prices.h.1.5">Jun.<br />2023</th>
+	<th class="stubhead" id="iag326prices.h.1.6">Jul.<br />2023</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326prices.h.1.1" id="iag326prices.r.1"><p class="sub0"><a href="https://www.bls.gov/ppi/">Producer price index</a></p></th>
+	<td headers="iag326prices.r.1 iag326prices.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/PCU326---326---?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series PCU326---326---" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326prices.r.1 iag326prices.h.1.3"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>252.690</span></td>
+	<td headers="iag326prices.r.1 iag326prices.h.1.4"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>251.958</span></td>
+	<td headers="iag326prices.r.1 iag326prices.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>251.118</span></td>
+	<td headers="iag326prices.r.1 iag326prices.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>250.731</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326prices.r.1 iag326prices.h.1.1" id="iag326prices.r.1.1"><p class="sub1">Percent change from previous month</p></th>
+	<td headers="iag326prices.r.1.1 iag326prices.h.1.2">&nbsp;</td>
+	<td headers="iag326prices.r.1.1 iag326prices.h.1.3"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>0.0%</span></td>
+	<td headers="iag326prices.r.1.1 iag326prices.h.1.4"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>-0.3%</span></td>
+	<td headers="iag326prices.r.1.1 iag326prices.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>-0.3%</span></td>
+	<td headers="iag326prices.r.1.1 iag326prices.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.p" title="Preliminary">p</a>)</span>-0.2%</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326prices.h.1.1" id="iag326prices.r.2"><p class="sub0"><a href="https://www.bls.gov/mxp/">Import index</a></p></th>
+	<td headers="iag326prices.r.2 iag326prices.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/EIUIZ326?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series EIUIZ326" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326prices.r.2 iag326prices.h.1.3"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>133.5</span></td>
+	<td headers="iag326prices.r.2 iag326prices.h.1.4"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>134.3</span></td>
+	<td headers="iag326prices.r.2 iag326prices.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>134.1</span></td>
+	<td headers="iag326prices.r.2 iag326prices.h.1.6"><span class="datavalue">133.9</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326prices.r.2 iag326prices.h.1.1" id="iag326prices.r.2.1"><p class="sub1">Percent change from previous month</p></th>
+	<td headers="iag326prices.r.2.1 iag326prices.h.1.2">&nbsp;</td>
+	<td headers="iag326prices.r.2.1 iag326prices.h.1.3"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>-0.1%</span></td>
+	<td headers="iag326prices.r.2.1 iag326prices.h.1.4"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>0.6%</span></td>
+	<td headers="iag326prices.r.2.1 iag326prices.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>-0.1%</span></td>
+	<td headers="iag326prices.r.2.1 iag326prices.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>-0.1%</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326prices.h.1.1" id="iag326prices.r.3"><p class="sub0"><a href="https://www.bls.gov/mxp/">Export index</a></p></th>
+	<td headers="iag326prices.r.3 iag326prices.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/EIUIY326?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series EIUIY326" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326prices.r.3 iag326prices.h.1.3"><span class="datavalue">132.9</span></td>
+	<td headers="iag326prices.r.3 iag326prices.h.1.4"><span class="datavalue">133.2</span></td>
+	<td headers="iag326prices.r.3 iag326prices.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>133.3</span></td>
+	<td headers="iag326prices.r.3 iag326prices.h.1.6"><span class="datavalue">133.6</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326prices.r.3 iag326prices.h.1.1" id="iag326prices.r.3.1"><p class="sub1">Percent change from previous month</p></th>
+	<td headers="iag326prices.r.3.1 iag326prices.h.1.2">&nbsp;</td>
+	<td headers="iag326prices.r.3.1 iag326prices.h.1.3"><span class="datavalue">-0.4%</span></td>
+	<td headers="iag326prices.r.3.1 iag326prices.h.1.4"><span class="datavalue">0.2%</span></td>
+	<td headers="iag326prices.r.3.1 iag326prices.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>0.1%</span></td>
+	<td headers="iag326prices.r.3.1 iag326prices.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326prices.f.r" title="Revised">r</a>)</span>0.2%</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="footnotes">
+<td class="footnotes" colspan="6">
+	<p class="footnotes">
+		<span class="footnotestitle">Footnotes</span><br />
+		<a id="iag326prices.f.p" name="iag326prices.f.p">(p) </a>Preliminary<br />
+		<a id="iag326prices.f.r" name="iag326prices.f.r">(r) </a>Revised<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/ppi/" title="Data measuring the average change over time in the selling prices received by domestic producers for their output">Producer Price Indexes</a>, <a href="/mxp/" title="Data on changes in the prices of goods and services traded between the U.S. and the rest of the world">International Price Program</a>)</p><h2>Workplace Trends</h2><p>This section presents data on the number of establishments in plastics and rubber products manufacturing. Also included in this section is information on productivity, presented as the rate of change in output per hour of workers in the industry.</p><h3>Establishments</h3>
+<table class="regular" id="iag326bdmcew">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326bdmcew.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326bdmcew.h.1.2">Back<br />data</th>
+	<th class="stubhead" id="iag326bdmcew.h.1.3">1st quarter<br />2022</th>
+	<th class="stubhead" id="iag326bdmcew.h.1.4">2nd quarter<br />2022</th>
+	<th class="stubhead" id="iag326bdmcew.h.1.5">3rd quarter<br />2022</th>
+	<th class="stubhead" id="iag326bdmcew.h.1.6">4th quarter<br />2022</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326bdmcew.h.1.1" id="iag326bdmcew.r.1"><p class="sub0">Number of establishments</p></th>
+				<td colspan="5"/>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326bdmcew.r.1 iag326bdmcew.h.1.1" id="iag326bdmcew.r.1.1"><p class="sub1"><a href="https://www.bls.gov/cew/">Private industry</a></p></th>
+	<td headers="iag326bdmcew.r.1.1 iag326bdmcew.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/ENUUS000205326?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series ENUUS000205326" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326bdmcew.r.1.1 iag326bdmcew.h.1.3"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>13,801</span></td>
+	<td headers="iag326bdmcew.r.1.1 iag326bdmcew.h.1.4"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>13,880</span></td>
+	<td headers="iag326bdmcew.r.1.1 iag326bdmcew.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>13,995</span></td>
+	<td headers="iag326bdmcew.r.1.1 iag326bdmcew.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>14,059</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326bdmcew.r.1 iag326bdmcew.h.1.1" id="iag326bdmcew.r.1.2"><p class="sub1"><a href="https://www.bls.gov/cew/">Local government</a></p></th>
+	<td headers="iag326bdmcew.r.1.2 iag326bdmcew.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/ENUUS000203326?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series ENUUS000203326" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326bdmcew.r.1.2 iag326bdmcew.h.1.3"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>2</span></td>
+	<td headers="iag326bdmcew.r.1.2 iag326bdmcew.h.1.4"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>2</span></td>
+	<td headers="iag326bdmcew.r.1.2 iag326bdmcew.h.1.5"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>2</span></td>
+	<td headers="iag326bdmcew.r.1.2 iag326bdmcew.h.1.6"><span class="datavalue"><span class="footnoteRefs">(<a href="#iag326bdmcew.f.p" title="Preliminary">p</a>)</span>2</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326bdmcew.r.1 iag326bdmcew.h.1.1" id="iag326bdmcew.r.1.3"><p class="sub1"><a href="https://www.bls.gov/cew/">State government</a></p></th>
+	<td headers="iag326bdmcew.r.1.3 iag326bdmcew.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/ENUUS000202326?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series ENUUS000202326" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326bdmcew.r.1.3 iag326bdmcew.h.1.3">&nbsp;</td>
+	<td headers="iag326bdmcew.r.1.3 iag326bdmcew.h.1.4">&nbsp;</td>
+	<td headers="iag326bdmcew.r.1.3 iag326bdmcew.h.1.5">&nbsp;</td>
+	<td headers="iag326bdmcew.r.1.3 iag326bdmcew.h.1.6">&nbsp;</td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot>
+<tr class="footnotes">
+<td class="footnotes" colspan="6">
+	<p class="footnotes">
+		<span class="footnotestitle">Footnotes</span><br />
+		<a id="iag326bdmcew.f.p" name="iag326bdmcew.f.p">(p) </a>Preliminary<br />
+	</p>
+</td>
+</tr>
+
+</tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/cew/" title="Counts of employment and wages reported by employers, available at the county, MSA, state and national levels by industry">Quarterly Census of Employment and Wages</a>)</p><h3>Productivity</h3>
+<table class="regular" id="iag326lpc">
+
+<caption><span class="tableTitle"></span></caption>
+
+
+<thead>
+<tr>
+	<th class="stubhead" id="iag326lpc.h.1.1">Data series</th>
+	<th class="stubhead" id="iag326lpc.h.1.2">Back<br />data</th>
+	<th class="stubhead" id="iag326lpc.h.1.3">2019</th>
+	<th class="stubhead" id="iag326lpc.h.1.4">2020</th>
+	<th class="stubhead" id="iag326lpc.h.1.5">2021</th>
+	<th class="stubhead" id="iag326lpc.h.1.6">2022</th>
+</tr>
+</thead>
+
+
+<tbody>
+<tr>
+	<th headers="iag326lpc.h.1.1" id="iag326lpc.r.1"><p class="sub0"><a href="https://www.bls.gov/lpc/">Labor productivity index, output per hour</a></p></th>
+	<td headers="iag326lpc.r.1 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___L000000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___L000000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.1 iag326lpc.h.1.3"><span class="datavalue">94.256</span></td>
+	<td headers="iag326lpc.r.1 iag326lpc.h.1.4"><span class="datavalue">93.537</span></td>
+	<td headers="iag326lpc.r.1 iag326lpc.h.1.5"><span class="datavalue">95.086</span></td>
+	<td headers="iag326lpc.r.1 iag326lpc.h.1.6"><span class="datavalue">91.713</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326lpc.r.1 iag326lpc.h.1.1" id="iag326lpc.r.1.1"><p class="sub1"><a href="https://www.bls.gov/lpc/">Percent change from previous year</a></p></th>
+	<td headers="iag326lpc.r.1.1 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___L001000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___L001000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.1.1 iag326lpc.h.1.3"><span class="datavalue">-2.1</span></td>
+	<td headers="iag326lpc.r.1.1 iag326lpc.h.1.4"><span class="datavalue">-0.8</span></td>
+	<td headers="iag326lpc.r.1.1 iag326lpc.h.1.5"><span class="datavalue">1.7</span></td>
+	<td headers="iag326lpc.r.1.1 iag326lpc.h.1.6"><span class="datavalue">-3.5</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326lpc.h.1.1" id="iag326lpc.r.2"><p class="sub0"><a href="https://www.bls.gov/lpc/">Labor index, total labor hours</a></p></th>
+	<td headers="iag326lpc.r.2 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___L010000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___L010000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.2 iag326lpc.h.1.3"><span class="datavalue">113.008</span></td>
+	<td headers="iag326lpc.r.2 iag326lpc.h.1.4"><span class="datavalue">107.001</span></td>
+	<td headers="iag326lpc.r.2 iag326lpc.h.1.5"><span class="datavalue">111.236</span></td>
+	<td headers="iag326lpc.r.2 iag326lpc.h.1.6"><span class="datavalue">115.846</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326lpc.r.2 iag326lpc.h.1.1" id="iag326lpc.r.2.1"><p class="sub1"><a href="https://www.bls.gov/lpc/">Percent change from previous year</a></p></th>
+	<td headers="iag326lpc.r.2.1 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___L011000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___L011000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.2.1 iag326lpc.h.1.3"><span class="datavalue">0.1</span></td>
+	<td headers="iag326lpc.r.2.1 iag326lpc.h.1.4"><span class="datavalue">-5.3</span></td>
+	<td headers="iag326lpc.r.2.1 iag326lpc.h.1.5"><span class="datavalue">4.0</span></td>
+	<td headers="iag326lpc.r.2.1 iag326lpc.h.1.6"><span class="datavalue">4.1</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326lpc.h.1.1" id="iag326lpc.r.3"><p class="sub0"><a href="https://www.bls.gov/lpc/">Output index</a></p></th>
+	<td headers="iag326lpc.r.3 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___T010000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___T010000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.3 iag326lpc.h.1.3"><span class="datavalue">106.517</span></td>
+	<td headers="iag326lpc.r.3 iag326lpc.h.1.4"><span class="datavalue">100.086</span></td>
+	<td headers="iag326lpc.r.3 iag326lpc.h.1.5"><span class="datavalue">105.770</span></td>
+	<td headers="iag326lpc.r.3 iag326lpc.h.1.6"><span class="datavalue">106.246</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326lpc.r.3 iag326lpc.h.1.1" id="iag326lpc.r.3.1"><p class="sub1"><a href="https://www.bls.gov/lpc/">Percent change from previous year</a></p></th>
+	<td headers="iag326lpc.r.3.1 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___T011000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___T011000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.3.1 iag326lpc.h.1.3"><span class="datavalue">-1.9</span></td>
+	<td headers="iag326lpc.r.3.1 iag326lpc.h.1.4"><span class="datavalue">-6.0</span></td>
+	<td headers="iag326lpc.r.3.1 iag326lpc.h.1.5"><span class="datavalue">5.7</span></td>
+	<td headers="iag326lpc.r.3.1 iag326lpc.h.1.6"><span class="datavalue">0.5</span></td>
+</tr>
+
+<tr>
+	<th headers="iag326lpc.h.1.1" id="iag326lpc.r.4"><p class="sub0"><a href="https://www.bls.gov/lpc/">Unit labor costs index</a></p></th>
+	<td headers="iag326lpc.r.4 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___U100000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___U100000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.4 iag326lpc.h.1.3"><span class="datavalue">117.817</span></td>
+	<td headers="iag326lpc.r.4 iag326lpc.h.1.4"><span class="datavalue">126.213</span></td>
+	<td headers="iag326lpc.r.4 iag326lpc.h.1.5"><span class="datavalue">126.820</span></td>
+	<td headers="iag326lpc.r.4 iag326lpc.h.1.6"><span class="datavalue">140.801</span></td>
+</tr>
+
+<tr class="greenbar">
+	<th headers="iag326lpc.r.4 iag326lpc.h.1.1" id="iag326lpc.r.4.1"><p class="sub1"><a href="https://www.bls.gov/lpc/">Percent change from previous year</a></p></th>
+	<td headers="iag326lpc.r.4.1 iag326lpc.h.1.2">
+<div align="center">
+<a href="https://data.bls.gov/timeseries/IPUEN326___U101000000?amp%253bdata_tool=XGtable&output_view=data&include_graphs=true" target="_blank">
+<img alt="Go to web page with historical data for series IPUEN326___U101000000" class="dinosaur" height="16" src="https://www.bls.gov/images/icon_hist.gif" width="20"/></a>
+</div>
+</td>
+	<td headers="iag326lpc.r.4.1 iag326lpc.h.1.3"><span class="datavalue">4.4</span></td>
+	<td headers="iag326lpc.r.4.1 iag326lpc.h.1.4"><span class="datavalue">7.1</span></td>
+	<td headers="iag326lpc.r.4.1 iag326lpc.h.1.5"><span class="datavalue">0.5</span></td>
+	<td headers="iag326lpc.r.4.1 iag326lpc.h.1.6"><span class="datavalue">11.0</span></td>
+</tr>
+
+</tbody>
+
+<!-- table notes --><tfoot></tfoot>
+</table>
+<p class="iagsource">(Source: <a href="/lpc/" title="Measures of output per hour and unit labor costs for U.S. industries">Productivity and Costs</a>)</p><p>Â </p><!-- ************ Begin data extracted date ************ --><p><span class="update"><strong>Data extracted on:</strong>  August 23, 2023</span></p><!-- ************ End data extracted date   ************ --><!-- ****************************************** End CONTENT ************************************************* --><!-- ****************************************** Begin FOOTER ************************************************ --><!-- ****************************************** End FOOTER ************************************************** -->
+		<script>
+		$(".highlight-box-blue a").each(function(){
+			var that = $(this);
+			$("h2").each(function(){
+				if($(this).html().match(new RegExp(that.html().replace(/[.*+?^${}()|[\]\\]/g, '\$&'), 'i'))){
+					$(this).attr("id",that.attr("href").replace("#",""));
+					return false;
+				}
+			})
+		})
+		</script>
+	
+</div>
+<!-- OneColFootBasic Begin -->
+
+<!-- Footer Filename: -->
+
+<!--no_index_start-->
+
+<!-- 1COL CMS BASIC LAYOUT COL1 END -->
+
+
+
+<div class="clearfloat"></div>
+<div class="social-media"><div>Recommend this page using:</div>
+	<div><a href="javascript:void(0);" class="share_facebook"><img alt="share on facebook" src="/images/icons/facebook.png"></a><span><a href="javascript:void(0);" class="share_facebook">Facebook</a></span></div>
+	<div><a href="javascript:void(0);" class="share_twitter"><img alt="share on twitter" src="/images/icons/twitter.png"></a><span><a href="javascript:void(0);" class="share_twitter">Twitter</a></span></div>
+	<div><a href="javascript:void(0);" class="share_linkedin"><img alt="share on linkedin" src="/images/icons/linkedin.png"></a><span><a href="javascript:void(0);" class="share_linkedin">LinkedIn</a></span></div>
+	<!--<div><a href="javascript:void(0);" class="share_googleplus"><img src="/images/icons/google.png"></a><span><a href="javascript:void(0);" class="share_googleplus">Google+</a></span></div>-->
+</div>
+</div> 
+
+
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+
+
+
+<!-- WRAPPER BOTTOM BEGIN -->
+
+
+		
+		
+		</div><!-- close id="wrapper-outer" -->
+	</div><!-- close id="wrapper" -->
+</div><!-- close id="container" -->
+
+	
+
+
+<!-- WRAPPER BOTTOM END -->
+
+
+
+<!-- FOOTER LEFT BEGIN -->
+
+<footer aria-label="global-footer">
+	
+<!-- Footer Nav Menu-->
+<div class="footerNav">
+<ul class="footerNavInner">
+   <li class="footerNavItem"><a href="https://www.bls.gov/">Home</a></li>
+   <li class="footerNavItem"><a href="/bls/proghome.htm">Subjects</a></li>
+   <li class="footerNavItem"><a href="/data/">Data Tools</a></li>
+   <li class="footerNavItem"><a href="/opub/">Publications</a></li>
+   <li class="footerNavItem"><a href="/bls/newsrels.htm">Economic Releases</a></li>
+   <li class="footerNavItem"><a href="/k12/" >Classroom</a></li>
+   <li class="footerNavItem"><a href="/beta/">Beta</a></li>
+</ul>
+</div>
+<!-- Footer Nav Menu-->
+<script>/*<![CDATA[*/(function(){var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;sz.src = '//siteimproveanalytics.com/js/siteanalyze_6032860.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);})();/*]]>*/</script> 
+<div id="footer-primary-wrapper">
+<div class="bootstrap standard-width">
+<div id="footer-container" class="row">
+	<div id="footer-links-container" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	
+	
+<div class="bls-lftside-holder">	
+<div class="bls-logo-footer">
+<img src="/images/bls_emblem_trans.png" class="responsiveImg" alt="U.S. Bureau of Labor Statistics Logo "/><div class="d-none d-md-block clearfloat"><br><br></div>
+
+ </div>
+ <div class="address-contact-footer">
+
+<!-- FOOTER LEFT END -->
+
+
+
+<address class="footer-address"  >  
+<strong  >U.S. Bureau of Labor Statistics</strong>
+<span  >Postal Square Building</span> 
+<span  >2 Massachusetts Avenue NE</span>  
+<span  >Washington, DC 20212-0001</span>
+</address>
+
+
+
+<!-- FOOTER CENTER BEGIN -->
+
+
+
+
+
+<!-- FOOTER CENTER END -->
+
+
+
+<span class="footer-contact">  
+
+<a href="tel:12026915200" class="number" aria-label="Telephone: 1-202-691-5200">
+<span>Telephone:</span><span> 1-202-691-5200 </span>
+
+</a>
+
+<a href="tel:711" class="number" aria-label="If you are deaf, hard of hearing, or have a speech disability, please dial 7-1-1 to access telecommunications relay services">
+<span>Telecommunications Relay Service:</span><span> 7-1-1</span> 
+</a>
+
+<a href="/home.htm" aria-label="www.bls.gov" >www.bls.gov</a>
+<a href="https://data.bls.gov/forms/opb.htm?/iag/tgs/iag326.htm" aria-label="Contact Us">Contact Us</a>
+
+</span>
+		
+
+
+
+<!-- FOOTER RIGHT BEGIN -->
+
+</div> 
+</div>
+</div>
+
+				<div id="quicklinks" class="row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>resources</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli5" role="button" aria-expanded="false" aria-controls="quicklinksli5" aria-label="resources Sub Menu"></a>
+						<div class="collapse" id="quicklinksli5">
+							<ul class="d-sm-block">						
+								<li><a href="https://www.oig.dol.gov/" aria-label="Office of Inspector General (OIG) website">Inspector General (OIG)</a></li>
+								<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>	
+								<li><a href="https://www.dol.gov/grants" aria-label="Department of Labor Grants">Department of Labor Grants</a></li>									
+								<li><a href="/bls/no_fear_act.htm" aria-label="No Fear Act">No Fear Act</a></li>
+								<li><a href="https://www.usa.gov/" aria-label="USA.gov website">USA.gov</a></li>
+								<li><a href="https://www.vote.gov/" aria-label="Register to vote at Vote.gov" title="Public and private decision making about worker rights and benefits depend on you exercising your fundamental right. Register to vote at Vote.gov!">Vote.gov</a></li>						
+							</ul>
+						</div>
+					</div>		
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>about the site</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli6" role="button" aria-expanded="false" aria-controls="quicklinksli6" aria-label="about this site Sub Menu"></a>
+						<div class="collapse" id="quicklinksli6">
+							<ul class="d-sm-block">	
+								<li><a href="/bls/sitemap.htm" aria-label="Sitemap">Sitemap</a></li>						
+								<li><a href="/bls/blsfoia.htm" aria-label="Freedom of Information Act">Freedom of Information Act</a></li>
+								<li><a href="/bls/pss.htm" aria-label="Privacy and Security Statement">Privacy and Security Statement</a></li>
+								<li><a href="/bls/disclaimer.htm" aria-label="Disclaimers">Disclaimers</a></li>
+								<li><a href="/bls/linksite.htm" aria-label="Linking and Copyright Information">Linking and Copyright Info</a></li>	
+								<li><a href="/bls/website-policies.htm" aria-label="Important Website Notices">Important Website Notices</a></li>
+								<li><a href="/help/" aria-label="Help and Tutorials">Help and Tutorials</a></li>
+							</ul>
+						</div>
+					</div>				
+                </div>
+				 
+</div>
+</div>
+</div>
+<div id="footer-secondary-wrapper">
+
+<div class="bootstrap standard-width">
+
+<div>
+<span>Connect With BLS</span>
+  <div class="social-media-icons"> 
+    
+           <a class="social-media-icon" href="http://twitter.com/BLS_gov" title="BLS Twitter" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+              <span class="sr-only">Twitter</span>
+          </a>
+                  
+           <a class="social-media-icon" href="https://www.youtube.com/channel/UCijn3WBpHtx4AvSya7NER9Q" title="BLS Youtube" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-w-18"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+              <span class="sr-only">Youtube</span>
+          </a>
+          <a class="social-media-icon" href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="email" title="Subscribe to BLS E-mail Updates">
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+              <span class="sr-only">Email</span>
+          </a>
+        </div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- FOOTER RIGHT END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColFootBasic End -->
+
+    		
+<!-- PERCUSSION INNER END -->
+
+		</section>
+
+				
+	</body>
 </html>
-<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

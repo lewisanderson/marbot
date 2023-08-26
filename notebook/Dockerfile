@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook
+FROM jupyter/scipy-notebook:2023-08-25
 
 # Set the working directory inside the container
 WORKDIR /app

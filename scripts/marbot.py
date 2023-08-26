@@ -1,5 +1,6 @@
 # Copyright Lewis Anderson 2023
 import concurrent.futures
+import googleapiclient.discovery
 import openai
 import os
 import requests
@@ -8,6 +9,8 @@ import traceback
 from bs4 import BeautifulSoup
 from itertools import islice
 from joblib import Memory
+from googleapiclient.errors import HttpError
+
 
 
 memory = Memory("/app/cachedata", verbose=0)
@@ -17,7 +20,12 @@ def main():
     openai.api_key = os.environ.get("OPENAI_API_KEY")
     modelToUse = "gpt-3.5-turbo"
     # modelToUse = "gpt-4"
-    # loadUrls()
+    googleAPIKey = os.environ.get("GOOGLE_API_KEY")
+    googleCseId = "368102dbb37ea4659"
+
+    allLinks = findLinksForAllIndustries(googleAPIKey, googleCseId, modelToUse)
+
+    loadUrls(allLinks)
 
     filePaths = scanFiles("/app/testdata")
 
@@ -35,190 +43,63 @@ def main():
         industrySummaries[industry] = combinedSummary
 
 
-def loadUrls():
-    fullUrls = {
-        "Equipment": [
-            "https://www.oemoffhighway.com/trends/document/22578646/2022-state-of-the-industry-oem-offhighway",
-            "https://www.oemoffhighway.com/trends/article/22552113/oem-offhighway-state-of-the-industry-2022",
-            ],
-        "Plastic": [
-            "https://www.deskera.com/blog/plastic-manufacturing-key-trends-and-innovations/amp/",
-            "https://www.deskera.com/blog/plastic-manufacturing-critical-issues-and-challenges/amp/",
-            "https://www.fortunebusinessinsights.com/amp/plastics-market-102176",
-            "https://www.kaysun.com/blog/plastics-industry-trends",
-            "https://www.manufacturing.net/operations/article/13057614/the-future-of-plastics-manufacturing-in-the-us",
-            "https://www.syscon-intl.com/plantstar/blog/challenges-facing-plastics-manufacturing?hs_amp=true",
-            "https://www.conairgroup.com/resources/resource/top-5-challenges-in-plastics-processing/",
-            "https://www.cadimensions.com/the-plastics-industrys-biggest-challenges-in-2022/",
-            ],
-        "Bakerybread": [
-            "https://www.snackandbakery.com/articles/98916-state-of-the-industry-2022-bakery-faces-formidable-challenges",
-            "https://www.bakeryandsnacks.com/Article/2021/06/30/The-key-bread-trends-for-2021-and-beyond",
-            "https://www.ibisworld.com/united-states/market-research-reports/bread-production-industry/",
-            "https://www.mordorintelligence.com/industry-reports/bread-market",
-            "https://www.techsciresearch.com/report/united-states-bread-market/12868.html",
-            "https://www.globenewswire.com/en/news-release/2023/04/19/2649704/0/en/Latest-Report-Global-Bread-Market-Size-Share-Worth-USD-291-29-Billion-by-2030-at-a-3-66-CAGR-Custom-Market-Insights-Analysis-Outlook-Leaders-Report-Trends-Forecast-Segmentation-Gro.html",
-            "https://www.futuremarketinsights.com/reports/packaged-bread-market",
-            "https://amfbakery.com/artisan-style-bread-trends-in-2022/",
-            "https://www.aptean.com/en-US/insights/blog/challenges-in-the-bakery-industry",
-            "https://www.foodware365.com/en/industry-challenges/bread-and-bakery-challenges/",
-            "https://americanbakers.org/news/bakery-supply-chain-challenges-infographic",
-            ],
-        "Snacks": [
-            "https://www.ibisworld.com/united-states/market-research-reports/snack-food-production-industry/",
-            "https://www.grandviewresearch.com/industry-analysis/snacks-market",
-            "https://www.anythingresearch.com/industry/Snack-Food-Manufacturing.htm",
-            "https://www.bakingbusiness.com/articles/57274-economist-assesses-challenges-facing-a-strong-snack-industry",
-            "https://foodindustryexecutive.com/2022/12/the-future-manufacturing-workforce-how-one-of-the-worlds-largest-snack-food-companies-is-tackling-todays-labor-challenges/",
-            "https://www.harvestfoodsolutions.com/top-challenges-food-manufacturers-can-expect-to-face-in-2022/",
-            "https://www.profoodworld.com/home/article/13278601/seven-cpg-challenges-for-the-snack-food-industry",
-            "https://www.deskera.com/blog/foods-manufacturing-critical-issues-and-challenges/",
-            "https://www.powderbulksolids.com/food-beverage/3-major-issues-food-manufacturers-will-face-2022",
-            ],
-        "Aircraft": [
-            "https://www.polarismarketresearch.com/industry-analysis/aircraft-manufacturing-market",
-            "https://www.businesswire.com/news/home/20220427005797/en/Global-Aircraft-Manufacturing-Market-2022-to-2030---Share-Size-Trends-and-Industry-Analysis-Report---ResearchAndMarkets.com",
-            "https://www.alliedmarketresearch.com/aircraft-manufacturing-market-A53658",
-            "https://www.statista.com/markets/407/topic/939/aerospace-defense-manufacturing/#overview",
-            "https://straitsresearch.com/report/north-america-aerospace-parts-manufacturing-market",
-            "https://kingsburyuk.com/aerospace-manufacturing-challenges-in-the-early-years/",
-            "https://www.js3global.com/blog/8-challenges-facing-the-aerospace-industry/",
-            "https://www.mckinsey.com/industries/aerospace-and-defense/our-insights/taking-off-scaling-complex-manufacturing-in-the-aerospace-industry",
-            "https://www.mckinsey.com/industries/aerospace-and-defense/our-insights/taking-off-scaling-complex-manufacturing-in-the-aerospace-industry",
-            "https://engmag.in/how-to-overcome-aerospace-manufacturing-challenges/",
-            "https://www.aviationpros.com/engines-components/article/53060096/magnetic-mro-us-aviation-supply-chain-challenges-parts-shortages-rising-costs-labor-resource-crunches",
-            "https://www.aviationpros.com/engines-components/article/53060096/magnetic-mro-us-aviation-supply-chain-challenges-parts-shortages-rising-costs-labor-resource-crunches",
-            ],
-        "Appliance": [
-            "https://www.ibisworld.com/united-states/market-research-reports/major-household-appliance-manufacturing-industry/#:~:text=Major%20Household%20Appliance%20Manufacturing%20in%20the%20US%20industry%20trends%20(2018,climb%20to%208.5%25%20in%202023",
-            "https://www.grandviewresearch.com/industry-analysis/us-household-appliances-market",
-            "https://www.marketresearch.com/Kentley-Insights-v4035/Major-Appliance-Manufacturing-Research-Updated-32768351/",
-            "https://www.mordorintelligence.com/industry-reports/north-america-home-appliances-market-industry",
-            "https://blog.salsita-3d-configurator.com/the-next-five-years-in-the-appliances-and-electronics-manufacturing-industry/",
-            "https://www.servicepower.com/blog/top-5-manufacturing-challenges",
-            "https://mideaph.com/an-in-depth-look-into-the-appliance-manufacturing-industry-trends-challenges-and-opportunities/",
-            ],
-        "Paper": [
-            "https://www.deskera.com/blog/paper-manufacturing-critical-issues-and-challenges/",
-            "https://scitechconnect.elsevier.com/challenges-and-opportunities-for-the-pulp-and-paper/",
-            "https://www.hammondpaper.com/blog/post/challenges-and-opportunities-for-the-paper-and-pulp-industry",
-            "https://www.piworld.com/article/addressing-the-challenges-in-the-paper-supply-chain/",
-            "https://www.youris.com/energy/renewables/refusing-to-fold-can-paper-manufacturers-face-down-energy-challenges-.kl",
-            "https://creative-solution.com/global-paper-shortage-challenges-to-hit-direct-marketers-in-2022/",
-            "https://linchpinseo.com/trends-pulp-and-paper-industry/",
-            "https://www.fortunebusinessinsights.com/north-america-pulp-and-paper-market-106617",
-            "https://www.mckinsey.com/industries/paper-forest-products-and-packaging/our-insights/pulp-paper-and-packaging-in-the-next-decade-transformational-change",
-            "https://www.tstar.com/blog/3-key-trends-in-the-pulp-and-paper-industry",
-            ],
-        "Dairy": [
-            "https://www.dornerconveyors.com/blog/challenges-facing-the-dairy-industry",
-            "https://www.dairyherd.com/news/business/dairy-supply-chain-continues-face-challenges",
-            "https://www.dairyfoods.com/articles/95973-dairy-executives-tackle-todays-hot-button-issues",
-            "https://www.mckinsey.com/industries/agriculture/our-insights/how-dairy-executives-are-navigating-recovery-in-2022",
-            "https://spectrumnews1.com/oh/columbus/news/2021/10/07/ag-report--the-state-of-dairy",
-            "https://www.feedstrategy.com/animal-feed-manufacturing/article/15442933/2022-dairy-outlook-challenges-abound-for-dairy-producers",
-            "https://spectrumlocalnews.com/nys/central-ny/news/2022/09/01/dairy-farmers-face-challenges-of-inflation--supply-chain--and-weather-in-addition-to-representation-of-the-industry",
-            "https://www.foodware365.com/en/industry-challenges/dairy-challenges/",
-            ],
-        "Chemical": [
-            "https://www.americanchemistry.com/chemistry-in-america/news-trends/press-release/2023/new-report-finds-major-supply-chain-problems-continue-to-impact-chemical-manufacturing",
-            "https://scanco.com/6-operational-challenges-in-the-chemical-industry-how-you-can-solve-them/",
-            "https://www.supplychainbrain.com/articles/37029-supply-chain-issues-continue-to-hurt-the-us-chemical-manufacturing-sector",
-            "https://www.orbichem.com/blog/predictions-challenges-for-the-chemical-industry-in-2023",
-            "https://www.parkoursc.com/the-top-5-supply-chain-challenges-of-chemical-manufacturers/",
-            "https://www.nesfircroft.com/resources/blog/challenges-shaping-the-chemicals-industry-in-2023/",
-            "https://www.innovapptive.com/blog/5-challenges-facing-chemical-companies-in-2022-can-mobile-workforce-management-offer-a-solution",
-            "https://www2.deloitte.com/us/en/pages/energy-and-resources/articles/chemical-industry-outlook.html",
-            ],
-        "Professionalequipment": [
-            "https://www.newstreaming.com/5-biggest-challenges-for-original-equipment-manufacturers-in-2021/",
-            "https://www.rdoequipment.com/resources/blogs/3-unexpected-challenges-the-equipment-industry-is-facing-in-2021-and-what-to-do-now",
-            "https://www.designnews.com/automation/ongoing-manufacturing-challenges-uptime-materials-and-workers",
-            "https://www2.deloitte.com/us/en/pages/energy-and-resources/articles/manufacturing-industry-outlook.html",
-            "https://global.hitachi-solutions.com/blog/top-manufacturing-trends/",
-            "https://www.servicepower.com/blog/top-5-manufacturing-challenges",
-            "https://www.aem.org/news/5-equipment-manufacturing-trends-to-watch-in-2022",
-            "https://www.dynaway.com/blog/5-current-challenges-to-overcome-for-the-manufacturing-industry",
-            "https://www.automate.org/industry-insights/manufacturing-challenges-and-solutions-series-labor-shortage",
-            "https://blog.thomasnet.com/top-manufacturing-challenges",
-            "https://www.industryselect.com/blog/key-facts-on-the-us-industrial-machinery-sector",
-            "https://www.weidert.com/blog/key-manufacturing-challenges",
-            "https://www.ibaset.com/six-common-challenges-for-industrial-manufacturers/",
-            "https://www.aem.org/news/5-equipment-manufacturing-trends-to-watch-in-2023",
-            ],
-        "Food": [
-            "https://www.fmi.org/blog/view/fmi-blog/2023/02/28/six-imperative-issues-facing-the-food-industry-in-2023",
-            "https://www.oliverwyman.com/our-expertise/journals/boardroom.html?utm_source=fmi&utm_medium=website&utm_campaign=boardroom-8&utm_content=24-jan-2023",
-            "https://www.deskera.com/blog/foods-manufacturing-critical-issues-and-challenges/",
-            "https://www.harvestfoodsolutions.com/top-challenges-food-manufacturers-can-expect-to-face-in-2022/",
-            "https://www.foodengineeringmag.com/articles/100394-the-state-of-food-manufacturing-in-2022",
-            "https://www.areadevelopment.com/foodprocessing/q4-2022/three-big-challenges-facing-the-food-beverage-industry.shtml",
-            "https://www.foodprocessing.com/power-lunch/article/11288962/food-industry-still-has-post-pandemic-challenges-to-face",
-            "https://savoreat.com/what-are-the-problems-in-the-food-industry-how-to-overcome-them/",
-            "https://www.just-food.com/comment/five-hot-topics-as-us-food-industry-enters-2023/",
-            "https://www.gminsights.com/blogs/challenges-in-food-and-beverage-industry",
-            "https://www.columbusglobal.com/en-gb/blog/food-industry-trends-for-2023",
-            "https://www.crbgroup.com/insights/food-beverage/food-beverage-manufacturing-trends",
-            "https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years",
-            "https://www.foodmanufacturing.com/consumer-trends/blog/22081182/the-top-food-industry-trends-to-expect-in-2022",
-            "https://industrytoday.com/top-2023-food-and-beverage-manufacturing-trends/",
-            ],
-        "Electrical": [
-            "https://katanamrp.com/blog/electronics-manufacturing-process/",
-            "https://www.eptac.com/blog/the-biggest-challenges-currently-facing-the-electronics-manufacturing-industry",
-            "https://www.optiproerp.com/blog/7-challenges-erp-helps-electronics-manufacturers-overcome/",
-            "https://www.macrofab.com/blog/supply-chain-challenges-electronics-companies/",
-            "https://blog.lnsresearch.com/bid/146822/Top-6-Challenges-in-Electronics-Manufacturing",
-            "https://www.evolute.in/challenges-in-electronics-manufacturing/",
-            "https://blog.epectec.com/supply-chain-challenges-on-the-electronics-and-manufacturing-industry",
-            "https://www.meanseng.com/top-5-challenges-faced-by-electronics-manufacturers/",
-            "https://www.myelectric.coop/supply-chain-challenges-continue/",
-            "https://www.smckyems.com/issues-and-challenges-in-the-ems-industry/",
-            "https://www.statista.com/outlook/io/manufacturing/consumer-goods/electrical-equipment/united-states#methodology",
-            "https://www.industryselect.com/blog/key-facts-on-us-electronics-manufacturing",
-            ],
-        "Rubber": [
-            "https://www.applerubber.com/hot-topics-for-engineers/supply-chain-issues-in-the-rubber-sealing-industry/#:~:text=The%20rubber%20industry%20has%20also,quality%20rubber%20seals%20and%20gaskets.",
-            "https://www.applerubber.com/hot-topics-for-engineers/what-to-expect-in-the-rubber-industry-for-2022/",
-            "https://e2btek.com/top-5-challenges-rubber-plastics-manufacturers-solved/",
-            "https://www.ace-laboratories.com/trends-in-rubber-industry/",
-            "https://thedailycpa.com/challenges-and-solutions-for-rubber-injection-molding/",
-            "https://www.rubbernews.com/news/rubber-industry-takes-labor-shortage-better-wages-benefits",
-            "https://rubber-group.com/2022/06/manufacturing-resilience/",
-            "https://www.universalpolymer.com/blog/pros-and-cons-of-reshoring-manufacturing/",
-            "https://www.fortunebusinessinsights.com/industry-reports/rubber-market-101612",
-            ],
-        "Printing": [
-            "https://www.phase3mc.com/thinking/supply-chain-challenges-in-the-print-industry?hs_amp=true",
-            "https://www.conquestgraphics.com/blog/conquest-graphics/2021/09/28/supply-chain-challenges-affecting-the-print-industry",
-            "https://keypointintelligence.com/keypoint-blogs/how-printer-manufacturers-can-weather-supply-chain-challenges?hs_amp=true",
-            "https://www.piworld.com/article/inaugural-live-local-event-reveals-printing-industry-challenges-opportunities/",
-            "https://www.ibisworld.com/united-states/market-research-reports/printing-industry/",
-            "https://cmsmart.net/community/printing-industry-trends",
-            "https://www.tonerbuzz.com/blog/printing-industry-trends/",
-            "https://www.zakeke.com/blog/top-10-printing-industry-trends/amp/",
-            "https://www.whymeridian.com/blog/top-production-print-trends?hs_amp=true",
-            ],
-        "Motorvehicleparts": [
-            "https://abas-erp.com/en/resources/erp-blog/how-are-mid-size-auto-parts-manufacturers-addressing-todays-biggest-challenges",
-            "https://gmb.net/blog/parts-manufacturers-challenges/",
-            "https://www2.deloitte.com/us/en/insights/industry/retail-distribution/consumer-behavior-trends-state-of-the-consumer-tracker/auto-industry-challenges.html",
-            "https://www.newstreaming.com/top-5-supply-chain-challenges-in-the-automotive-industry/amp/",
-            "https://www.blumeglobal.com/learning/automotive-supply-chain/",
-            "https://www.gminsights.com/blogs/top-challenges-in-the-automotive-industry-pre-COVID/amp",
-            "https://www.just-auto.com/features/pressing-issues-for-automotive-supply-chains/#catfish",
-            "https://sheaglobal.com/the-supply-chain-challenges-of-the-automotive-industry/",
-            "https://www.forbes.com/sites/forbesbusinesscouncil/2021/09/22/overcoming-supply-chain-issues-automotive-oems-and-suppliers-must-work-together/amp/",
-            "https://www.globenewswire.com/news-release/2023/03/07/2622226/0/en/Auto-Parts-Manufacturing-Market-Report-2022-2030-Focus-on-Innovation-to-Provide-a-Competitive-Edge.html",
-            "https://www.expertmarketresearch.com/reports/auto-parts-manufacturing-market",
-            ],
-        }
-    # urls = [
-    #     "https://www.deskera.com/blog/plastic-manufacturing-key-trends-and-innovations/amp/",
-    #     "https://www.fortunebusinessinsights.com/amp/plastics-market-102176",
-    #     "https://www.kaysun.com/blog/plastics-industry-trends",
-    #     "https://www.manufacturing.net/operations/article/13057614/the-future-of-plastics-manufacturing-in-the-us"
-    # ]
+def findLinksForAllIndustries(googleAPIKey, googleCseId, modelToUse):
+    industries = [
+        "Aircraft",
+        "Appliance",
+        "Bakery bread",
+        "Chemical",
+        "Dairy",
+        "Electrical",
+        "Equipment",
+        "Food",
+        "Motor vehicle parts",
+        "Paper",
+        "Plastic",
+        "Printing",
+        "Professional equipment",
+        "Rubber",
+        "Snacks",
+    ]
+    allLinks = {}
+    for industry in industries:
+        links = marbot.findLinksForIndustry(industry, googleAPIKey, googleCseId)
+        industryKey = industry.replace(" ", "_")
+        allLinks[industryKey] = links
+    return allLinks
+
+
+def findLinksForIndustry(industry, googleAPIKey, googleCseId):
+    partialSearchTerms = [
+        " manufacturing us challenges",
+        " manufacturing us trends",
+        " manufacturing us industry overview",
+    ]
+    allLinks = []
+    for partialSearch in partialSearchTerms:
+        search = industry + partialSearch
+        theseLinks = googleSearch(search, googleAPIKey, googleCseId)
+        print(f"Got {len(theseLinks)} links for {search}: {theseLinks}")
+        allLinks.extend(theseLinks)
+    allLinks = list(set(allLinks))
+    return allLinks
+
+
+@memory.cache
+def googleSearch(searchTerm, apiKey, cseId, **kwargs):
+    service = googleapiclient.discovery.build("customsearch", "v1", developerKey=apiKey)
+    cse = service.cse()
+    try:
+        result = cse.list(q=searchTerm, cx=cseId, **kwargs).execute()
+    except HttpError as error:
+        print("An error occurred:", error.resp.status)
+        print(error.resp.reason)
+        print(error._get_reason())
+        return []
+    return [item["link"] for item in result["items"]]
+
+
+def loadUrls(fullUrls):
     numSucceeded = 0
     failedUrls = []
     for industry in fullUrls:
@@ -265,7 +146,7 @@ def scanFiles(inputDirectory):
 
 @memory.cache
 def loadAndSummarizePage(filePath, modelToUse):
-    print(f"Loading {filePath}")
+    print(f"Loading {filePath} (v2)")
     humanText = preprocessHtmlFile(filePath)
     maxCharsPerBatch = 4000
     batches = ["".join(x) for x in batched(humanText, maxCharsPerBatch)]
@@ -384,6 +265,7 @@ def summarizePage(summaries, modelToUse):
 
 @memory.cache
 def combinePageSummaries(pageSummaries, modelToUse):
+    print("LEWIS DEBUG v3")
     instructionText = f"""
         Please summarize the following text. You are helping with market research, to help the user better understand the current state and future trends of a particular industry. 
 

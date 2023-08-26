@@ -1,375 +1,1451 @@
 <!DOCTYPE html>
-<html lang="en">
-	
-	<head>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["gov-bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"37b7ccb661",applicationID:"1089704227"};;/*! For license information please see nr-loader-rum-1.238.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>T,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(632),i=n(567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(56);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,block_internal:!0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(385),A=n(818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4,denyList:void 0},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function T(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.238.0",i="PROD",o="CDN"},385:(e,t,n)=>{n.d(t,{IF:()=>c,Nk:()=>u,Tt:()=>a,_A:()=>o,il:()=>r,pL:()=>s,v6:()=>i,w1:()=>d});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=(o?.location,/iPad|iPhone|iPod/.test(navigator.userAgent)),s=a&&"undefined"==typeof SharedWorker,c=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),d=Boolean(r&&window.document.documentMode),u=!!navigator.sendBeacon},711:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},0:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(148),i=n(284),o=n(322),a=n(325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},148:(e,t,n)=>{n.d(t,{A:()=>c,ee:()=>d});var r=n(632),i=n(210),o=n(763);class a{constructor(e){this.contextId=e}}var s=n(117);const c="nr@context:".concat(s.a),d=function e(t,n){var r={},s={},u={},f=!1;try{f=16===n.length&&(0,o.OP)(n).isolatedBacklog}catch(e){}var g={on:h,addEventListener:h,removeEventListener:function(e,t){var n=r[e];if(!n)return;for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)},emit:function(e,n,r,i,o){!1!==o&&(o=!0);if(d.aborted&&!i)return;t&&o&&t.emit(e,n,r);for(var a=p(r),c=v(e),u=c.length,l=0;l<u;l++)c[l].apply(a,n);var f=b()[s[e]];f&&f.push([g,e,n,a]);return a},get:m,listeners:v,context:p,buffer:function(e,t){const n=b();if(t=t||"feature",g.aborted)return;Object.entries(e||{}).forEach((e=>{let[r,i]=e;s[i]=t,t in n||(n[t]=[])}))},abort:l,aborted:!1,isBuffering:function(e){return!!b()[s[e]]},debugId:n,backlog:f?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return g;function p(e){return e&&e instanceof a?e:e?(0,i.X)(e,c,(()=>new a(c))):new a(c)}function h(e,t){r[e]=v(e).concat(t)}function v(e){return r[e]||[]}function m(t){return u[t]=u[t]||e(g,t)}function b(){return g.backlog}}(void 0,"globalEE"),u=(0,r.fP)();function l(){d.aborted=!0,d.backlog={}}u.ee||(u.ee=d)},546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(148).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},117:(e,t,n)=>{n.d(t,{a:()=>r});const r=(0,n(402).Rl)()},402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},56:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(148),i=n(546),o=n(0),a=n(325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(148);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(894),i=n(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},81:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(325).D.pageViewTiming},938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(763),i=n(148);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(325),i=n(763),o=n(546),a=n(148),s=n(894),c=n(0),d=n(960),u=n(385),l=n(50),f=n(81),g=n(632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y);const j=(0,i.P_)(e);A.denyList=[...j.ajax?.deny_list||[],...j.ajax?.block_internal?[y.beacon,y.errorBeacon]:[]],(0,i.sU)(e,A),p();const E=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setApplicationVersion=function(e){if("string"==typeof e||null===e)return b("application.version",e,"setApplicationVersion",!1);(0,l.Z)("Failed to execute setApplicationVersion. Expected <String | null>, but got <".concat(typeof e,">."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(75).then(n.bind(n,438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,E,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),E}},325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>"nr-rum.3709cb75-1.238.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.238.0.PROD:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={50:0,832:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=self["webpackChunk:NRBA-1.238.0.PROD"]=self["webpackChunk:NRBA-1.238.0.PROD"]||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})(),(()=>{var e=i(50);class t{addPageAction(t,n){(0,e.Z)("Call to agent api addPageAction failed. The session trace feature is not currently initialized.")}setPageViewName(t,n){(0,e.Z)("Call to agent api setPageViewName failed. The page view feature is not currently initialized.")}setCustomAttribute(t,n,r){(0,e.Z)("Call to agent api setCustomAttribute failed. The js errors feature is not currently initialized.")}noticeError(t,n){(0,e.Z)("Call to agent api noticeError failed. The js errors feature is not currently initialized.")}setUserId(t){(0,e.Z)("Call to agent api setUserId failed. The js errors feature is not currently initialized.")}setApplicationVersion(t){(0,e.Z)("Call to agent api setApplicationVersion failed. The agent is not currently initialized.")}setErrorHandler(t){(0,e.Z)("Call to agent api setErrorHandler failed. The js errors feature is not currently initialized.")}finished(t){(0,e.Z)("Call to agent api finished failed. The page action feature is not currently initialized.")}addRelease(t,n){(0,e.Z)("Call to agent api addRelease failed. The agent is not currently initialized.")}}var n=i(325),r=i(763);const o=Object.values(n.D);function a(e){const t={};return o.forEach((n=>{t[n]=function(e,t){return!1!==(0,r.Mt)(t,"".concat(e,".enabled"))}(n,e)})),t}var s=i(144);var c=i(546),d=i(385),u=i(0),l=i(938),f=i(960);class g extends l.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,u.R)(e,n)}importAggregator(){let t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=d.il&&!0===(0,r.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let o;this.onAggregateImported=new Promise((e=>{o=e}));const a=async()=>{let r;try{if(n){const{setupAgentSession:e}=await i.e(75).then(i.bind(i,228));r=e(this.agentIdentifier)}}catch(t){(0,e.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",t)}try{if(!this.shouldImportAgg(this.featureName,r))return(0,u.L)(this.agentIdentifier,this.featureName),void o(!1);const{lazyFeatureLoader:e}=await i.e(75).then(i.bind(i,582)),{Aggregate:n}=await e(this.featureName,"aggregate");this.featAggregate=new n(this.agentIdentifier,this.aggregator,t),o(!0)}catch(t){(0,e.Z)("Downloading and initializing ".concat(this.featureName," failed..."),t),this.abortHandler?.(),o(!1)}};d.il?(0,f.b)((()=>a()),!0):a()}shouldImportAgg(e,t){return e!==n.D.sessionReplay||!!r.Yu.MO&&(!1!==(0,r.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!t?.isNew||!!t?.state.sessionReplay))}}var p=i(633),h=i(894);class v extends g{static featureName=p.t9;constructor(e,t){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(e,t,p.t9,i),("undefined"==typeof PerformanceNavigationTiming||d.Tt)&&"undefined"!=typeof PerformanceTiming){const t=(0,r.OP)(e);t[p.Dz]=Math.max(Date.now()-t.offset,0),(0,f.K)((()=>t[p.qw]=Math.max((0,h.z)()-t[p.Dz],0))),(0,f.b)((()=>{const e=(0,h.z)();t[p.OJ]=Math.max(e-t[p.Dz],0),(0,c.p)("timing",["load",e],void 0,n.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var m=i(711),b=i(284);class y extends m.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,n){t[e]=w(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,b.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=w(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=A(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=w(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=x(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=A(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function A(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function x(e){return"object"!=typeof e?[]:(0,b.D)(e,D)}function D(e,t){return t}var j=i(632),E=i(402),T=i(351);var _=i(956),k=i(239),P=i(251);class C extends g{static featureName=P.t;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t,n),d.il&&((0,r.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,_.N)((()=>(0,c.p)("docHidden",[(0,h.z)()],void 0,P.t,this.ee)),!0),(0,k.bP)("pagehide",(()=>(0,c.p)("winPagehide",[(0,h.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(81);class N extends g{static featureName=I.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,n),this.importAggregator()}}new class extends t{constructor(t){let n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);super(),d._A?(this.agentIdentifier=n,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(v),Object.assign(this,(0,s.j)(this.agentIdentifier,t,t.loaderType||"agent")),this.start()):(0,e.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,r.C5)(this.agentIdentifier),init:(0,r.P_)(this.agentIdentifier),loader_config:(0,r.DL)(this.agentIdentifier),runtime:(0,r.OP)(this.agentIdentifier)}}start(){const t="features";try{const r=a(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((e,t)=>n.p[e.featureName]-n.p[t.featureName])),i.forEach((t=>{if(r[t.featureName]||t.featureName===n.D.pageViewEvent){const i=function(e){switch(e){case n.D.ajax:return[n.D.jserrors];case n.D.sessionTrace:return[n.D.ajax,n.D.pageViewEvent];case n.D.sessionReplay:return[n.D.sessionTrace];case n.D.pageViewTiming:return[n.D.pageViewEvent];default:return[]}}(t.featureName);i.every((e=>r[e]))||(0,e.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,T.P)(i),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,j.Qy)(this.agentIdentifier,this.features,t)}catch(n){(0,e.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",n);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,j.fP)();return delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,r.ee?.abort(),delete r.ee?.get(this.agentIdentifier),!1}}addToTrace(t){(0,e.Z)("Call to agent api addToTrace failed. The page action feature is not currently initialized.")}setCurrentRouteName(t){(0,e.Z)("Call to agent api setCurrentRouteName failed. The spa feature is not currently initialized.")}interaction(){(0,e.Z)("Call to agent api interaction failed. The spa feature is not currently initialized.")}}({features:[v,C,N],loaderType:"lite"})})()})();</script>
+<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
+</noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-HEQ0YF2VYL"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag('set', {'cookie_flags': 'SameSite=None;Secure', 'cookie_domain': 'www.nist.gov'});gtag("config", "G-HEQ0YF2VYL", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location","link_attribution":true,"allow_ad_personalization_signals":false});gtag("event", "custom", {"node_title":"Five Trends That Will Impact the Food Industry For Many Years","node_id":"1718441","blog_author":"Matthew Inniger","content_type":"Blog entry"});</script>
+<meta name="description" content="The inability to gather good data has challenged many food manufacturers for decades. But not anymore." />
+<link rel="canonical" href="https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years" />
+<link rel="shortlink" href="https://www.nist.gov/node/1718441" />
+<meta name="citation_title" content="Five Trends That Will Impact the Food Industry For Many Years | NIST" />
+<meta property="og:site_name" content="NIST" />
+<meta property="og:type" content="Article" />
+<meta property="og:url" content="https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years" />
+<meta property="og:title" content="Five Trends That Will Impact the Food Industry For Many Years" />
+<meta property="og:description" content="The inability to gather good data has challenged many food manufacturers for decades. But not anymore." />
+<meta property="og:image" content="https://www.nist.gov/sites/default/files/images/2022/09/23/food-robots-blogFeaturedImage.png" />
+<meta property="og:image:width" content="220" />
+<meta property="og:image:height" content="95" />
+<meta property="article:author" content="Matthew Inniger" />
+<meta property="article:published_time" content="2022-09-23T08:00-04:00" />
+<meta property="article:modified_time" content="2022-09-23T18:04-04:00" />
+<meta name="dcterms.title" content="Five Trends That Will Impact the Food Industry For Many Years" />
+<meta name="dcterms.creator" content="Matthew Inniger" />
+<meta name="dcterms.description" content="The inability to gather good data has challenged many food manufacturers for decades. But not anymore." />
+<meta name="dcterms.publisher" content="Matthew Inniger" />
+<meta name="dcterms.contributor" content="NIST" />
+<meta name="dcterms.date" content="2022-09-23T08:00-04:00" />
+<meta name="dcterms.type" content="text" />
+<meta name="dcterms.format" content="text/html" />
+<meta name="dcterms.identifier" content="https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years" />
+<meta name="dcterms.source" content="NIST" />
+<meta name="dcterms.created" content="2022-09-23T08:00-04:00" />
+<meta name="dcterms.modified" content="2022-09-23T18:04-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The inability to gather good data has challenged many food manufacturers for decades. But not anymore." />
+<meta name="twitter:site" content="NIST" />
+<meta name="twitter:title" content="Five Trends That Will Impact the Food Industry For Many Years" />
+<meta name="twitter:url" content="https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years" />
+<meta name="twitter:image" content="https://www.nist.gov/sites/default/files/images/2022/09/23/food-robots-blogFeaturedImage.png" />
+<meta name="twitter:image:height" content="95" />
+<meta name="twitter:image:width" content="220" />
+<meta name="google-site-verification" content="QMu0ODkER3rN5hLcMLqNVf7e3bkjYsNLTuhqfH48jCA" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="nist_search_modified" class="elastic" content="2022-09-23T18:04:00-04:00" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "headline": "Five Trends That Will Impact the Food Industry For Many Years | NIST",
+            "description": "The inability to gather good data has challenged many food manufacturers for decades. But not anymore.",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True",
+                "url": "https://www.nist.gov/sites/default/files/images/2022/09/23/food-robots-blogFeaturedImage.png",
+                "width": "220",
+                "height": "95"
+            },
+            "datePublished": "2022-09-23T08:00-04:00",
+            "dateModified": "2022-09-23T18:04-04:00"
+        }
+    ]
+}</script>
+<meta name="nist_search_bundle" class="elastic" content="blog" />
+<link rel="icon" href="/themes/custom/nist_www/favicon.ico" type="image/vnd.microsoft.icon" />
 
-<link rel="stylesheet" href="/etc.clientlibs/oliverwymanv2/clientlibs/general-v3/resources/mmc-display-font.css"/>
+    <title>Five Trends That Will Impact the Food Industry For Many Years | NIST</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_ss_5H_6aoid5fhMaRoYBcYF_qqeBVjYf6haEMWfUE4E.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_J7RuJ-PwWY36lMjcmfbU1Uvs509-G5bIcbR2QTQU4K0.css" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_zbjDhj-AmeVwgu9y0DlPwEfp7l-a5BpoK3MpoGmRB6o.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_PV0KmreUx3hVeYI6yGypf71UDz9BSQl1Z5DjiESDh-Y.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_TV_H3Lr1wA8DD-YkKT9w5b5ZRjHyVgmZQFBKcpwCQFk.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_NjDDNWX3gT9AQim3Wat6xpK9XSySncGi6dMPubV7CJQ.css" />
+<link rel="stylesheet" media="screen" href="/sites/default/files/css/css_mCRChb5imR7G-MyyS1tXLG1rucUC8YO_tBpWFFku_M8.css" />
 
+    <script src="/sites/default/files/js/js_VDwaIMNiRtzQn-NZvj1F9loIzJ-i4yEDiruzS8Z6Ejo.js"></script>
 
-
-<script src="//assets.adobedtm.com/3bbf5ae7058c/0ceb31987d88/launch-286208824456.min.js" async></script>
-
-
-
-
-
-
-<!-- Google Tag Manager -->
-
-<!-- End Google Tag Manager -->
-
-
-
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Together, FMI and Oliver Wyman identified and prioritized six imperative issues impacting the food industry now and likely into the near future"/>
-<meta name="author" content="Oliver Wyman"/>
-<meta http-equiv="content-language" content="en"/>
-<meta name="language" content="en"/>
-<meta name="keywords" content="Retail and Consumer Goods"/>
-
-
-<link rel="alternate" href="https://www.oliverwyman.com/our-expertise/journals/boardroom/2023.html" hreflang="x-default"/>
-
-<!-- 
-	placeholder: /content/oliver-wyman/ow-v2/en/our-expertise/journals/boardroom/2023
- -->
-<link rel="canonical" href="https://www.oliverwyman.com/our-expertise/journals/boardroom/2023.html"/>
-
-<title>Boardroom Journal Volume 8</title>
-
-
-<meta property="fb:app_id" content="373202479535707"/>
-<meta property="og:url" content="https://www.oliverwyman.com/our-expertise/journals/boardroom/2023.html"/>
-<meta property="og:title" content="Boardroom Journal Volume 8"/>
-<meta property="og:description" content="Together, FMI and Oliver Wyman identified and prioritized six imperative issues impacting the food industry now and likely into the near future"/>
-<meta property="og:image" content="https://www.oliverwyman.com/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/tiles/boardroom-volume-8-home-570x320.png"/>
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@OliverWyman"/>
-<meta name="twitter:title" content="Boardroom Journal Volume 8"/>
-<meta name="twitter:description" content="Together, FMI and Oliver Wyman identified and prioritized six imperative issues impacting the food industry now and likely into the near future"/>
-<meta name="twitter:image" content="https://www.oliverwyman.com/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/tiles/boardroom-volume-8-home-570x320.png"/>
-
-<meta itemprop="name" content="Boardroom Journal Volume 8"/>
-<meta itemprop="description" content="Together, FMI and Oliver Wyman identified and prioritized six imperative issues impacting the food industry now and likely into the near future"/>
-<meta itemprop="image" content="https://www.oliverwyman.com/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/tiles/boardroom-volume-8-home-570x320.png"/>
-
-<meta name="publish-date" content="2023-01-09"/>
-<meta name="last-modified-date" content="2023-01-17"/>
-
-<meta name="robots" content="noindex"/>
-
-<link rel="shortcut icon" href="/etc/designs/oliverwymanv2/favicon.ico"/>
-
-
+  </head>
+  <body class="node-1718441">
+        <a href="#main-content" class="visually-hidden focusable" data-elastic-exclude>
+      Skip to main content
+    </a>
     
-<link rel="stylesheet" href="/etc.clientlibs/oliverwymanv2/clientlibs/core-components.min.b213bdcbd0b2e8d47a7ae100287a8904.css" type="text/css">
-<script src="/etc.clientlibs/clientlibs/granite/clientlibrarymanager.min.4066faea2c14fde8235ed95b86add70c.js"></script>
-<script>
-  GraniteTiming.stamp('loaded /etc.clientlibs/clientlibs/granite/clientlibrarymanager.min.js');
-</script>
-<script src="/etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.min.c8339545b501e3db3abc37c9a4cc2d6e.js"></script>
-<script>
-  GraniteTiming.stamp('loaded /etc.clientlibs/core/wcm/components/commons/site/clientlibs/container.min.js');
-</script>
-<script src="/etc.clientlibs/oliverwymanv2/clientlibs/core-components.min.80d9a64f68995d86a9ec628d594fc13a.js"></script>
-<script>
-  GraniteTiming.stamp('loaded /etc.clientlibs/oliverwymanv2/clientlibs/core-components.min.js');
-</script>
-
-
-
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
-<!--[if lt IE 9]>
-	<link href="/etc.clientlibs/oliverwymanv2/clientlibs/ie.css" rel="stylesheet" />
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
     
-<script src="/etc.clientlibs/oliverwymanv2/clientlibs/vendor/jquery.min.5919152d418e74b2966d13341cf3778f.js"></script>
-<script>
-  GraniteTiming.stamp('loaded /etc.clientlibs/oliverwymanv2/clientlibs/vendor/jquery.min.js');
-</script>
-
-
-
-
-
-		   
-
-
-
-
-
-
-
-
-
-
-
-	<link href="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/custom.css" rel="stylesheet"/>
-
-	<link href="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/print.css" rel="stylesheet"/>
-
-
-
-
-
-
-<script type="application/ld+json">
- { "@context": "http://schema.org",
- "@type": "Organization",
- "name": "Oliver Wyman",
- "legalName" : "Oliver Wyman",
- "url": "https://www.oliverwyman.com/",
- "logo": "https://www.oliverwyman.com/content/dam/oliver-wyman/global/en/images/designs/logo.png",
- "foundingDate": "1984",
- "founders": [
- {
- "@type": "Person",
- "name": "Alex Oliver"
- },
- {
- "@type": "Person",
- "name": "Bill Wyman"
- } ],
- "address": {
- "@type": "PostalAddress",
- "streetAddress": "1166 Avenue of the Americas",
- "addressLocality": "New York City",
- "addressRegion": "NY",
- "postalCode": "10036",
- "addressCountry": "USA"
- },
- "contactPoint": {
- "@type": "ContactPoint",
- "contactType": "customer support",
- "telephone": "[+212-345-8000]",
- "email": "info-other@oliverwyman.com"
- },
- "sameAs": [ 
- "https://www.facebook.com/oliverwyman",
- "https://twitter.com/OliverWyman",
- "https://plus.google.com/+oliverwyman",
- "https://en.wikipedia.org/wiki/Oliver_Wyman",
- "https://www.linkedin.com/company/2454"
- ]}
-</script>
-
-</head>
-	<body>
-
-
-
-<!-- Google Tag Manager (noscript) -->
-
-<!-- End Google Tag Manager (noscript) -->
-
-
-
-<script>
-  window.jQuery || document.write('<script src="/etc.clientlibs/oliverwymanv2/clientlibs/vendor/jquery.js"><\/script>')
-</script>
-
-<div><div class="custom-widget section">
-
-
-
-
-	<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:100,300,400,600,700,900" rel="stylesheet"/>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js" integrity="sha512-ju6u+4bPX50JQmgU97YOGAXmRMrD9as4LE05PdC3qycsGQmjGlfm041azyB1VfCXpkpt1i9gqXCT6XuxhBJtKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
-</head>
-
-
-<body class="bv8-home">
-
-  <!-- Top fixed nav - logos + dark mode -->
-  <header>
-  </header>
-
-  <div class="just-for-print logos-to-print">
-    <img class="ow-logo" src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/oliver-wyman.png" alt="Oliver Wyman"/>
-    <img class="fmi-logo" src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/fmi_stacked.png" alt="FMI"/>
-  </div>
-
-  <!-- Arrows right|left -->
-  <div class="container-baner-arrows">
-    <div class="container-vol8 container-arrows">
-      <div class="page-arrows">
-        <!-- Arrow Prev -->
-        <a href="#">
-          <div class="arrows prev non-active">
-            <img src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/prev-arrow.png" alt="Arrow icon - previous"/>
+  <!-- nist-index-ignore-start -->
+<section data-elastic-exclude class="usa-banner" aria-label="Official government website">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/libraries/nist-component-library/dist/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner-default">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner-default">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/libraries/nist-component-library/dist/img/icon-dot-gov.svg" role="img" alt="" aria-hidden="true">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Official websites use .gov</strong>
+              <br/>
+              A <strong>.gov</strong> website belongs to an official government organization in the United States.
+            </p>
           </div>
-        </a>
-        <!-- Arrow Next -->
-        <a href="https://www.oliverwyman.com/our-expertise/journals/boardroom/2023/introduction.html">
-          <div class="arrows next">
-            <img src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/next-arrow.png" alt="Arrow icon - next"/>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/libraries/nist-component-library/dist/img/icon-https.svg" role="img" alt="" aria-hidden="true">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>Secure .gov websites use HTTPS</strong>
+              <br/>
+              A <strong>lock</strong> (  <span class="icon-lock">
+    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewbox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description" focusable="false">
+      <title id="banner-lock-title">Lock</title>
+      <desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg>
+  </span>
+) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+            </p>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
+</section>
+<!-- nist-index-ignore-end -->
 
-  <img class="picture-for-print" src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/boardroom-volume-8-cover-feature.jpg"/>
-
-
-  <div class="home-content article-content">
-    <div class="welcome-block container-vol8">
-      <h1>BOARDROOM</h1>
-      <p>Volume 8</p>
-      <a href="/our-expertise/journals/boardroom/2023/introduction.html" class="next">Start reading</a>
-    </div>
-  </div>
-
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content container-vol8"></div>
-  </footer>
-
-  <!-- Bottom fixed menu -->
-  <div class="bottom-menubar">
-    <div class="flex-center full-width">
-      <div class="container-vol8">
-        <div class="bottom-bar-content">
-          <div class="book-menu">
-            <img src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/hamburger.png" alt=""/>
-          </div>
-          <div class="book-menu-mobile">
-            <img src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/hamburger.png" alt=""/>
-          </div>
-          <div class="page-title">
-            <p>Home</p>
-          </div>
     
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-      <!-- Popup menu desktop|tablet -->
-      <div class="popup-menu">
-        <div class="navigation flex-center">
-          <div class="container-vol8 navigation-div">
-            <div class="navigation-text">
-              <a class="tabs-item active" href="#pages">Pages</a>
-              <a class="tabs-item" href="#editions">Editions</a>
-            </div>
-            <a class="popup-menu-close-btn" href=""><img class="" src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/x.png"/></a>
-          </div>
-        </div>
-    
-        <!-- Pages -->
-        <div id="pages" class="flex-center popupmenu-tabs">
-          <div id="popupMenuItems" class="container-vol8 content">
-            <div class="grid-lines-popup">
-              <div class="grid-line"></div>
-              <div class="grid-line"></div>
-              <div class="grid-line"></div>
-              <div class="grid-line grid-line-second-deleted"></div>
-              <div class="grid-line grid-line-first-deleted"></div>
-            </div>
-            <div id="tocMenuDesktopPages" class="toc-menu-desktop-pages">
-
-            </div>
-          </div>
-        </div>
-    
-        <!-- Editions -->
-        <div id ="editions" class="flex-center popupmenu-tabs">
-          <div id="popupMenuItems" class="container-vol8 content">
-            <div class="grid-lines-popup">
-              <div class="grid-line"></div>
-              <div class="grid-line"></div>
-              <div class="grid-line"></div>
-              <div class="grid-line grid-line-second-deleted"></div>
-              <div class="grid-line grid-line-first-deleted"></div>
-            </div>
-            <div class="toc-menu-desktop-editions">
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Popup menu mobile -->
-    <div class="popup-menu-mobile"> 
-      <div class="overlay"></div>
-      <div class="popup-menu-mobile-content">
-        <img class="popup-menu-mobile-close-btn" src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/images/x.png" alt="Icon Close button"/>
-  
-        <div class="popup-menu-mobile-headings">
-          <a class="popup-menu-mobile-title tabs-item-mobile active" href="#pagesMobile">Pages</a>
-          <a class="popup-menu-mobile-title tabs-item-mobile" href="#editionsMobile">Editions</a>
-        </div>
-  
-  
-        <div id="pagesMobile" class="popup-menu-mobile-items">
-         
-        </div>
-
-        <div id="editionsMobile" class="popup-menu-mobile-items">
-        </div>
-      </div>
-    </div>
-
-
-  <script src="popupmenu.js"></script>
-
-  <script>
-
-</script>
-
-</body>
-</html>
-
-</div>
-
+    <div data-elastic-exclude>
+<!-- nist-index-ignore-start -->
+<div class="nist-print-header" style="display:none;">
+  <p class="nist-print-header__url">https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years</p>
+  <img class="nist-print-header__logo" width="289" height="38" src="/libraries/nist-component-library/dist/img/logo/nist_logo_sidestack.svg" alt="National Institute of Standards and Technology" />
 </div>
 
 
-  <script src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/script.js"></script>
+<div class="usa-overlay"></div>
+<header class="usa-header nist-header--www nist-header--minimal" role="banner">
+      <div class="usa-navbar">
+    <div class="usa-logo flex-fill">
+          <a href="/" title="National Institute of Standards and Technology" aria-label="Home">
+      <img src="/libraries/nist-component-library/dist/img/logo/logo.svg" alt="National Institute of Standards and Technology" width="300px" height="80px" />
+    </a>
+      </div>
+    <div class="usa-header__right grid-row flex-auto">
+                          <div class="grid-col-fill nist-header__search-group">
+                  
+<form class="usa-search usa-search--small"
+  accept-charset="UTF-8"
+  action="/search"
+  id="search_form"
+  method="get">
+  <div role="search">
+    <label class="usa-sr-only" for="search-form">Search NIST</label>
+    <input class="usa-input" id="search-form" type="search" name="s" placeholder="Search NIST" required="" maxlength="128">
+    <button class="usa-button" type="submit"><img src="/libraries/nist-component-library/dist/img/usa-icons-bg/search--white.svg" class="usa-search__submit-icon" alt="Search"></button>
+  </div>
+</form>
+              </div>
+              <div class="grid-col-auto padding-left-1">
+          <button class="usa-menu-btn">Menu</button>
+        </div>
+          </div>
+  </div>
 
-  <script src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/popupmenu.js"></script>
-
-  <script src="/content/dam/oliver-wyman/v3/template-scripts/boardroom-vol8/toc.js"></script>
+      
 
 
-
-    
-<script src="/etc.clientlibs/oliverwymanv2/clientlibs/vendor/jqueryui.min.0fa256ca847bb2b40020e6d1672cc3c1.js"></script>
-<script>
-  GraniteTiming.stamp('loaded /etc.clientlibs/oliverwymanv2/clientlibs/vendor/jqueryui.min.js');
-</script>
-
+<nav aria-label="Primary navigation" class="usa-nav">
+  <div class="usa-nav__inner">
+    <button class="usa-nav__close">Close</button>
+    <ul class="usa-nav__primary usa-accordion">
+            <li class="usa-nav__primary-item">
+                <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="primary_menu-1"><span>Topics</span></button>
+        <div id="primary_menu-1" class="usa-nav__submenu usa-megamenu">
+          <div class="grid-row">
+                                                        <div class="tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/topics" class="usa-nav__link">All Topics</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/advanced-communications" class="usa-nav__link">Advanced communications</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/artificial-intelligence" class="usa-nav__link">Artificial intelligence</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/bioscience" class="usa-nav__link">Bioscience</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/buildings-construction" class="usa-nav__link">Buildings and construction</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/chemistry" class="usa-nav__link">Chemistry</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/climate" class="usa-nav__link">Climate</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/cybersecurity" class="usa-nav__link">Cybersecurity</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/electronics" class="usa-nav__link">Electronics</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/energy" class="usa-nav__link">Energy</a>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/environment" class="usa-nav__link">Environment</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/fire" class="usa-nav__link">Fire</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/forensic-science" class="usa-nav__link">Forensic science</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/health" class="usa-nav__link">Health</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/information-technology" class="usa-nav__link">Information technology</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/infrastructure" class="usa-nav__link">Infrastructure</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/manufacturing" class="usa-nav__link">Manufacturing</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/materials" class="usa-nav__link">Materials</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/mathematics-statistics" class="usa-nav__link">Mathematics and statistics</a>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/metrology" class="usa-nav__link">Metrology</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/nanotechnology" class="usa-nav__link">Nanotechnology</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/neutron-research" class="usa-nav__link">Neutron research</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/performance-excellence" class="usa-nav__link">Performance excellence</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/physics" class="usa-nav__link">Physics</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/public-safety" class="usa-nav__link">Public safety</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/resilience" class="usa-nav__link">Resilience</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/standards" class="usa-nav__link">Standards</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/transportation" class="usa-nav__link">Transportation</a>
+                              </li>
+                            </ul>
+            </div>
+          </div>
+        </div>
+              </li>
+            <li class="usa-nav__primary-item">
+                <a class="usa-nav__link" href="/publications">Publications</a>
+              </li>
+            <li class="usa-nav__primary-item">
+                <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="primary_menu-3"><span>Labs &amp; Major Programs</span></button>
+        <div id="primary_menu-3" class="usa-nav__submenu usa-megamenu">
+          <div class="grid-row">
+                                                        <div class="tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/labs-major-programs/laboratories" class="usa-nav__link">Laboratories</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="/ctl" class="usa-nav__link">Communications Technology Laboratory</a>
+                  </li>
+                                  <li>
+                    <a href="/el" class="usa-nav__link">Engineering Laboratory</a>
+                  </li>
+                                  <li>
+                    <a href="/itl" class="usa-nav__link">Information Technology Laboratory</a>
+                  </li>
+                                  <li>
+                    <a href="/mml" class="usa-nav__link">Material Measurement Laboratory</a>
+                  </li>
+                                  <li>
+                    <a href="/pml" class="usa-nav__link">Physical Measurement Laboratory</a>
+                  </li>
+                                </ul>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/labs-major-programs/user-facilities" class="usa-nav__link">User Facilities</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="/ncnr" class="usa-nav__link">NIST Center for Neutron Research</a>
+                  </li>
+                                  <li>
+                    <a href="/cnst" class="usa-nav__link">CNST NanoFab</a>
+                  </li>
+                                </ul>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/labs-major-programs/research-test-beds" class="usa-nav__link">Research Test Beds</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/laboratories/projects-programs" class="usa-nav__link">Research Projects</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/laboratories/tools-instruments" class="usa-nav__link">Tools &amp; Instruments</a>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/labs-major-programs/major-programs" class="usa-nav__link">Major Programs</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="/baldrige" class="usa-nav__link">Baldrige Performance Excellence Program</a>
+                  </li>
+                                  <li>
+                    <a href="/chips" class="usa-nav__link">CHIPS for America Initiative</a>
+                  </li>
+                                  <li>
+                    <a href="/mep" class="usa-nav__link">Manufacturing Extension Partnership (MEP)</a>
+                  </li>
+                                  <li>
+                    <a href="/oam" class="usa-nav__link">Office of Advanced Manufacturing</a>
+                  </li>
+                                  <li>
+                    <a href="/spo" class="usa-nav__link">Special Programs Office</a>
+                  </li>
+                                  <li>
+                    <a href="/tpo" class="usa-nav__link">Technology Partnerships Office</a>
+                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+            </div>
+          </div>
+        </div>
+              </li>
+            <li class="usa-nav__primary-item">
+                <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="primary_menu-4"><span>Services &amp; Resources</span></button>
+        <div id="primary_menu-4" class="usa-nav__submenu usa-megamenu">
+          <div class="grid-row">
+                                                        <div class="tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/services-resources/standards-and-measurements" class="usa-nav__link">Standards and Measurements</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="/calibrations" class="usa-nav__link">Calibration Services</a>
+                  </li>
+                                  <li>
+                    <a href="/nvlap" class="usa-nav__link">Laboratory Accreditation (NVLAP)</a>
+                  </li>
+                                  <li>
+                    <a href="/nist-quality-system" class="usa-nav__link">Quality System</a>
+                  </li>
+                                  <li>
+                    <a href="/srm" class="usa-nav__link">Standard Reference Materials (SRMs)</a>
+                  </li>
+                                  <li>
+                    <a href="/standardsgov" class="usa-nav__link">Standards.gov</a>
+                  </li>
+                                  <li>
+                    <a href="/pml/time-and-frequency-division/time-services" class="usa-nav__link">Time Services</a>
+                  </li>
+                                  <li>
+                    <a href="/pml/owm" class="usa-nav__link">Office of Weights and Measures</a>
+                  </li>
+                                </ul>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/services-resources/software" class="usa-nav__link">Software</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/data" class="usa-nav__link">Data</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="https://webbook.nist.gov/chemistry/" class="usa-nav__link">Chemistry WebBook</a>
+                  </li>
+                                  <li>
+                    <a href="https://nvd.nist.gov/" class="usa-nav__link">National Vulnerability Database</a>
+                  </li>
+                                  <li>
+                    <a href="/pml/productsservices/physical-reference-data" class="usa-nav__link">Physical Reference Data</a>
+                  </li>
+                                  <li>
+                    <a href="/srd" class="usa-nav__link">Standard Reference Data (SRD)</a>
+                  </li>
+                                </ul>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="https://www.nist.gov/shop" class="usa-nav__link">Storefront</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/tpo" class="usa-nav__link">License &amp; Patents</a>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="https://csrc.nist.gov/" class="usa-nav__link">Computer Security Resource Center (CSRC)</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/nist-research-library" class="usa-nav__link">NIST Research Library</a>
+                              </li>
+                            </ul>
+            </div>
+          </div>
+        </div>
+              </li>
+            <li class="usa-nav__primary-item">
+                <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="primary_menu-5"><span>News &amp; Events</span></button>
+        <div id="primary_menu-5" class="usa-nav__submenu usa-megamenu">
+          <div class="grid-row">
+                                                        <div class="tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/news-events/news" class="usa-nav__link">News</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/news-events/events" class="usa-nav__link">Events</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/blogs" class="usa-nav__link">Blogs</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/feature-stories" class="usa-nav__link">Feature Stories</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/awards" class="usa-nav__link">Awards</a>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/video-gallery" class="usa-nav__link">Video Gallery</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/image-gallery" class="usa-nav__link">Image Gallery</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/pao/media-contacts" class="usa-nav__link">Media Contacts</a>
+                              </li>
+                            </ul>
+            </div>
+          </div>
+        </div>
+              </li>
+            <li class="usa-nav__primary-item">
+                <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="primary_menu-6"><span>About NIST</span></button>
+        <div id="primary_menu-6" class="usa-nav__submenu usa-megamenu">
+          <div class="grid-row">
+                                                        <div class="tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/about-nist" class="usa-nav__link">About Us</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/about-nist/contact-us" class="usa-nav__link">Contact Us</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/about-nist/visit" class="usa-nav__link">Visit</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/careers" class="usa-nav__link">Careers</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/director/nist-organization-structure" class="usa-nav__link">Our Organization</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="/director" class="usa-nav__link">Office of the Director</a>
+                  </li>
+                                  <li>
+                    <a href="/director/nist-organization-structure/budget-planning" class="usa-nav__link">Budget &amp; Planning</a>
+                  </li>
+                                </ul>
+                              </li>
+                                                          </ul></div><div class="column-break tablet:grid-col-fill"><ul class="usa-nav__submenu-list">
+                            <li class="usa-nav__submenu-item">
+                <a href="/about-nist/work-nist" class="usa-nav__link">Work with NIST</a>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/history" class="usa-nav__link">History</a>
+                                <ul class="usa-nav__submenu-list">
+                                  <li>
+                    <a href="http://nistdigitalarchives.contentdm.oclc.org/" class="usa-nav__link">NIST Digital Archives</a>
+                  </li>
+                                  <li>
+                    <a href="/nist-museum" class="usa-nav__link">NIST Museum</a>
+                  </li>
+                                  <li>
+                    <a href="/nist-and-nobel" class="usa-nav__link">NIST and the Nobel</a>
+                  </li>
+                                </ul>
+                              </li>
+                                                        <li class="usa-nav__submenu-item">
+                <a href="/education" class="usa-nav__link">Educational Resources</a>
+                              </li>
+                            </ul>
+            </div>
+          </div>
+        </div>
+              </li>
+          </ul>
+  </div>
+</nav>
 
 
 
   
+</header>
+<!-- nist-index-ignore-end -->
+</div>
+  
+  <div class="grid-container">
+    
+<div data-drupal-messages-fallback class="hidden"></div>
+
+
+  </div>
 
 
 
-</body>
+    
+
+<div
+   id="block-nist-www-content" class="nist-block"
+>
+  
+    
+      
+
+
+
+
+
+      
+<section
+       class="nist-page__content usa-section clearfix"
+    >
+
+  <a id="main-content" tabindex="-1"></a>
+
+        <div
+           class="nist-page__region nist-page__region--content-top-full"
+        >
+      
+<div
+   class="nist-block"
+>
+  
+    
+                          <div class="entity-reference">
+
+<div class="nist-blog-header  nist-blog-header--inner">
+    <div class="nist-blog-header__bkgrd">
+   <div class="nist-blog-header__main grid-container">
+    <div class="grid-row">
+     <h2 class="nist-blog-header__title">
+                     <a href="/blogs/manufacturing-innovation-blog">  Manufacturing Innovation Blog
+</a>
+                  </h2>
+     <div class="nist-blog-header__tagline">
+                                 <p class="text">Powered by the <a href="/mep">Manufacturing Extension Partnership</a></p>
+            
+           </div>
+    </div>
+   </div>
+  </div>
+</div>
+</div>
+            
+        
+  </div>
+
+    </div>
+    
+        <div class="grid-container margin-top-4">
+      <div
+               class="nist-page__region nist-page__region--content-top"
+            >
+        
+<div
+   class="nist-block"
+>
+  
+    
+        <h1 class="nist-page__title">Five Trends That Will Impact the Food Industry For Many Years</h1>
+
+        
+  </div>
+
+<div
+   class="font-body-md"
+>
+
+  
+    
+                          <div class="daterange"><time datetime="2022-09-23T12:00:00Z">September 23, 2022</time>
+</div>
+            
+  </div>
+  <div
+   class="nist-block"
+>
+  
+    
+      
+  <span>By: </span>
+<a href="/blogs/manufacturing-innovation-blog/authors/matthew-inniger" hreflang="en">Matthew Inniger</a>
+        
+  </div>
+
+<div
+   class="nist-block"
+>
+  
+    
+      <!-- nist-index-ignore-start -->
+<div data-elastic-exclude class="nist-block nist-social__wrapper">
+ <h2 class="nist-social__title">Share</h2>
+  <div class="social-media-sharing">
+    <div class="nist-social__wrapper--share">
+                      <div>
+                  <a    target="_blank"  rel="noopener"  href="https://www.facebook.com/share.php?u=https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years"
+            title="Facebook" class="nist-social nist-social--facebook-gray">
+            <span>Facebook</span>
+          </a>
+                                        </div>
+                      <div>
+                          <a    target="_blank"  rel="noopener"  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years&amp;source=https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years"
+            title="Linkedin" class="nist-social nist-social--linkedin-gray">
+            <span>Linkedin</span>
+          </a>
+                                </div>
+                      <div>
+                                  <a    target="_blank"  rel="noopener"  href="https://twitter.com/intent/tweet?url=https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years&amp;status=https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years"
+            title="Twitter" class="nist-social nist-social--twitter-gray">
+            <span>Twitter</span>
+          </a>
+                        </div>
+                      <div>
+                                          <a      href="mailto:?subject=NIST.gov&amp;body=Check out this site https://www.nist.gov/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years"
+            title="Email" class="nist-social nist-social--envelope-gray">
+            <span>Email</span>
+          </a>
+                </div>
+          </div>
+  </div>
+</div>
+<!-- nist-index-ignore-end -->
+
+        
+  </div>
+
+      </div>
+    </div>
+    
+  <div class="grid-container margin-top-4">
+    <div class="grid-row grid-gap-6">
+
+                  
+            
+            <div
+               class="nist-page__region nist-page__region--content tablet-lg:grid-col-8"
+            >
+        
+<div
+   class="nist-block"
+>
+  
+    
+      <div class="text-with-summary">
+          <figure class="nist-image">
+        
+    <img src="/sites/default/files/styles/960_x_960_limit/public/images/2022/09/23/food-robots-blogFeaturedImage.png?itok=EfMNwIli" width="763" height="330" alt="Smart robotic farmers concept" loading="lazy" typeof="foaf:Image" />
+
+
+
+
+            <figcaption class="nist-image__caption">
+      <div data-caption-editable="true" class="nist-image__caption-content">
+        
+      </div>
+                    <div class="nist-image__credit">
+          <span class="nist-image__credit-label">Credit:</span>
+          
+  iStock/sarawuth702
+
+        </div>
+          </figcaption>
+  </figure>
+
+  
+  
+  
+      <p>The inability to gather good data has challenged many food manufacturers for decades. But not anymore. As sensor technology has improved, and technology platforms have become more accessible and affordable to small and medium-sized manufacturers, the food industry is poised for transformation. Food companies can now better understand their ingredients, products and operations.</p>
+
+<p>The <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="78e91d60-45db-4d94-8b6a-e44eeb70c5a3" href="/mep/centers/center-innovative-food-technology-cift" title="Center for Innovative Food Technology (CIFT)">Center for Innovative Food Technology (CIFT) </a>and JobsOhio recently commissioned a business intelligence group, TEConomy Partners, to conduct a study on the <a href="https://www.jobsohio.com/industries/food-and-agribusiness/food-agribusiness-whitepapers-form/">current and future state of the food industry</a>. The findings identified five large-scale trends, or themes, that are having a significant impact on the industry, whether you are in craft beer or dairy. The disruptive technologies span the entire value chain and will have impacts for many years. It’s not just high-demand areas such as supply chain and cold storage where innovation is occurring, it’s also happening in traditional unit operations found in legacy manufacturers and product categories.</p>
+
+<p>Let’s look at the five long-term, impactful trends in the food industry.</p>
+
+ 
+  <figure class="align-center nist-image--lightbox nist-image" data-lightbox="https://www.nist.gov/sites/default/files/styles/2800_x_2800_limit/public/images/2022/09/23/food-chart1.png?itok=bYbfBkuG" data-media-id="654526"><img alt="supply chain adaptability flow chart" height="98" loading="lazy" src="/sites/default/files/styles/1400_x_1400_limit/public/images/2022/09/23/food-chart1.png?itok=eNo7xzeM" typeof="foaf:Image" width="864"><figcaption class="nist-image__caption"><div class="nist-image__caption-content" data-caption-editable="true">
+  
+</div>
+                </figcaption></figure><h2>1. Supply Chain Adaptability</h2>
+
+<p>Disruptions in the supply chain have forced food processors to make rapid adjustments, better manage their exposure, and develop new avenues for distribution from suppliers and to customers. But food companies were facing significant challenges in the supply chain prior to the COVID-19 pandemic. This was primarily from the expansion of stock keeping units, or SKUs, as consumers demand more flavors and options.</p>
+
+<p>It is not unusual for a food processor to handle 200 ingredients for 60 SKUs even though a significant portion of their revenue comes from a handful of core products. Higher SKU counts and additional specialty ingredients have added to exposure in the current environment. When an ingredient is not available, the manufacturer faces additional challenges as a substitute ingredient may result in changes ranging from supply storage to processing requirements and even cleaning and traceability policies.</p>
+
+<p>Willingness to invest in this area has led to solutions that allow for rapid adjustments to new supply constraints, real-time location tracking, and alternative input sourcing using artificial intelligence (AI) powered algorithms. In any case, you should be looking at what solutions for adaptable and flexible systems are within your budget and return on investment (ROI) expectations.</p>
+
+ 
+  <figure class="align-center nist-image--lightbox nist-image" data-lightbox="https://www.nist.gov/sites/default/files/styles/2800_x_2800_limit/public/images/2022/09/23/food-chart2.png?itok=XAWKx3ss" data-media-id="654531"><img alt="Digitalization of Food Flow Chart" height="82" loading="lazy" src="/sites/default/files/styles/1400_x_1400_limit/public/images/2022/09/23/food-chart2.png?itok=IYhNnIdb" typeof="foaf:Image" width="864"><figcaption class="nist-image__caption"><div class="nist-image__caption-content" data-caption-editable="true">
+  
+</div>
+                </figcaption></figure><h2>2. Digitalization of Food</h2>
+
+<p>It’s important for even the smallest food manufacturers to become familiar with and invest in digital technologies to be able to meet new industry standards for increased transparency and safety. These changes have been driven not only by compliance concerns, but also by retailers requiring their vendors to be capable of participating in digital supply networks.</p>
+
+<p>The more you invest in ways to measure your raw materials and finished products, the easier it will be to improve your performance. For example, you might be able to optimize shelf life of a product if you can better understand its water content by using accurate, real-time measurement.</p>
+
+<p>The ability to capture data from your operation will also help standardize work and reduce the reliance on key individuals’ tribal knowledge. In this case, that’s not a bad thing. Augmenting human decision making with data-driven science is good for business.</p>
+
+<p>Harnessing big data will also inform food science, such as cold-chain management and associated R&amp;D.</p>
+
+ 
+  <figure class="align-center nist-image--lightbox nist-image" data-lightbox="https://www.nist.gov/sites/default/files/styles/2800_x_2800_limit/public/images/2022/09/23/food-chart3.png?itok=hU0hkbMH" data-media-id="654536"><img alt="Automation, Robotics and Industry 4.0 Flow Chart" height="82" loading="lazy" src="/sites/default/files/styles/1400_x_1400_limit/public/images/2022/09/23/food-chart3.png?itok=tQV1gpWh" typeof="foaf:Image" width="864"><figcaption class="nist-image__caption"><div class="nist-image__caption-content" data-caption-editable="true">
+  
+</div>
+                </figcaption></figure><h2>3. Automation, Robotics and Industry 4.0</h2>
+
+<p>Autonomous systems will have a profound impact on the food industry. In fact, with improvements in sensor performance, AI is being implemented by some food manufacturers. Data acquisition systems are capable of accurately characterizing complex biological ingredients and products, which allows manufacturers to automate processes and derive the same value out of predictive data analysis that other segments have been doing for years.</p>
+
+<p>Many smaller domestic manufacturers have struggled to adopt automation, especially for high-mix, low-volume work. Industry 4.0 requires significant capital investments and new workforce skills in analytics and programming, which are in high demand across all industries. But the benefits of automation are extensive, including:</p>
+
+<ul><li>Enhanced production efficiency.</li>
+	<li>Potential for 24/7 operations.</li>
+	<li>Reduced labor demands.</li>
+	<li>Increased uptime and extended machine lifecycles.</li>
+	<li>Improved quality and repeatability.</li>
+</ul><figure class="align-center nist-image--lightbox nist-image" data-lightbox="https://www.nist.gov/sites/default/files/styles/2800_x_2800_limit/public/images/2022/09/23/food-chart4.png?itok=IbP4ydTB" data-media-id="654541"><img alt="Consumer Empowerment Flow Chart" height="82" loading="lazy" src="/sites/default/files/styles/1400_x_1400_limit/public/images/2022/09/23/food-chart4.png?itok=z-p-1LBL" typeof="foaf:Image" width="864"><figcaption class="nist-image__caption"><div class="nist-image__caption-content" data-caption-editable="true">
+  
+</div>
+                </figcaption></figure><h2>4. Consumer Empowerment</h2>
+
+<p>Consumers who understand their food are demanding more choices that are healthier and processes that are more transparent. They are looking for brands to demonstrate a commitment to reducing their impact on the environment. And they are looking for higher levels of customization and convenience for shopping, purchasing and delivery.</p>
+
+<p>The implications for food companies are many, including:</p>
+
+<ul><li>Providing more avenues for product sales, including direct to consumer.</li>
+	<li>Improving order fulfillment, shipping and packaging.</li>
+	<li>Expanding ways to connect with customers.</li>
+	<li>Increasing customization options and SKUs.</li>
+</ul><p>Savvy brands have increased transparency, both in their products and their environmental impact, and are driving consumer engagement. Tactics include messaging such as:</p>
+
+<ul><li>“Scan this QR code to see how much water it took to make this bottle of salsa, then tell us how you feel about it.”</li>
+	<li>“Use code INFLUENCER10 to get a discount and support your favorite social media personality sponsored by our brand.”</li>
+	<li>“Your meat crate just arrived, click this link to learn more about how we raise our animals and get grilling tips from our resident pitmaster.”</li>
+</ul><p>These touchpoints can have a big impact with customers. Even if you think you are far removed from consumer preferences, such as a flavor house, customer empowerment will trickle down to your operation.</p>
+
+ 
+  <figure class="align-center nist-image--lightbox nist-image" data-lightbox="https://www.nist.gov/sites/default/files/styles/2800_x_2800_limit/public/images/2022/09/23/food-chart5.png?itok=-WKncB2i" data-media-id="654546"><img alt="Resource Optimization (Sustainability) Flow Chart" height="82" loading="lazy" src="/sites/default/files/styles/1400_x_1400_limit/public/images/2022/09/23/food-chart5.png?itok=vB6VD3CW" typeof="foaf:Image" width="864"><figcaption class="nist-image__caption"><div class="nist-image__caption-content" data-caption-editable="true">
+  
+</div>
+                </figcaption></figure><h2>5. Resource Optimization (Sustainability)</h2>
+
+<p>The food industry is likely to face increases in regulations pertaining to emissions, resource use and waste. The good news is that advanced technologies are enabling resources to be managed more efficiently.</p>
+
+<p>Many food companies can make significant improvements in this area by learning how to quantify their waste streams and measure improvements. For instance, there’s a big difference between a goal of “use more recycled resin in our HDPE tubs” and “increasing the recycled resin in our tubs from 10% to 20% will reduce the net carbon footprint of our product by 15% and only lose 3% in rigidity.”</p>
+
+<p>The companies that are most successful in optimizing their resources conduct resource-use audits, whether internal or external, to pick out the lowest hanging fruit that can be addressed with minimal costs. For example, do you know how much aluminum or water your company uses? Can any of that be reduced or reused?</p>
+
+<h2>Local MEP Centers Can Help You Transform Your Food Company</h2>
+
+<p>The food industry continues to be a driver of national economic competitiveness that sustains our high quality of life. Food manufacturers face many choices in how to evolve their engineering, food safety and product development. Experts at your <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="6067de30-3d38-4f05-8986-575a1ad1c005" href="/mep/centers" title="Connect with Your Local MEP Center">local MEP Center</a> can help you address the disruptive technologies that are transforming the food industry.</p>
+  
+  </div>
+        
+  </div>
+  <div
+   class="nist-block"
+>
+  
+    
+      <div class="nist-tags">
+<a href="/manufacturing-innovation-blog-categories/food-industry" hreflang="en">Food Industry</a>, <a href="/manufacturing-innovation-blog-categories/mep-national-network" hreflang="en">MEP National Network</a> and <a href="/manufacturing-innovation-blog-categories/technology" hreflang="en">Technology</a></div>
+
+        
+  </div>
+
+<div
+   class="nist-block"
+>
+  
+  <h2
+       class="nist-block__title"
+      >About the author</h2>
+      
+                  <div class="nist-field nist-field--label-hidden entity-reference">
+          <div class="nist-field__items">
+                              <div class="nist-field__item">
+
+<article
+       role="article" about="/blogs/manufacturing-innovation-blog/authors/matthew-inniger" class="nist-teaser"
+    >
+        <div class="nist-teaser__image">
+                                        <div class="entity-reference">  <a href="/blogs/manufacturing-innovation-blog/authors/matthew-inniger" hreflang="en"><img loading="lazy" src="/sites/default/files/styles/thumbnail/public/images/2021/11/08/matt-inniger-headshot.png?itok=OUYKPEvV" width="100" height="100" alt="matt inniger" typeof="foaf:Image" />
+
+</a>
+</div>
+            
+          </div>
+    <div class="nist-teaser__content-wrapper">
+    <header>
+              <h3 class="nist-teaser__title"><a href="/blogs/manufacturing-innovation-blog/authors/matthew-inniger"><span>Matthew Inniger</span>
+</a></h3>
+                              
+    </header>
+    <div class="nist-teaser__content">
+                          <div class="text-with-summary">  <p>Matt has been with CIFT, which is part of Ohio MEP, for three years, and in that time has worked with hundreds of companies providing various engineering solutions needed to fit unique situations. He...</p>
+
+</div>
+            
+    </div>
+  </div>
+</article>
+</div>
+                        </div>
+    </div>
+  
+        
+  </div>
+
+<div
+   class="views-element-container nist-block"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Related posts</h2>
+      
+      <div><div class="js-view-dom-id-8acf7aa8440c9ba923133d11262a547524d26b468ff644144eb3691a0c7216e4">
+  
+  
+  
+
+  
+  
+  
+
+    <div>
+
+<article
+       role="article" about="/blogs/manufacturing-innovation-blog/manufacturing-day-changing-peoples-perceptions" class="nist-teaser"
+    >
+        <div class="nist-teaser__image">
+                                        <div class="entity-reference">  <a href="/blogs/manufacturing-innovation-blog/manufacturing-day-changing-peoples-perceptions" hreflang="en"><img loading="lazy" src="/sites/default/files/styles/thumbnail/public/images/2023/08/23/mfg-day-blogFeaturedImage.png?itok=o5JyPODg" width="100" height="43" alt="Students in a manufacturing facility" typeof="foaf:Image" />
+
+</a>
+</div>
+            
+          </div>
+    <div class="nist-teaser__content-wrapper">
+    <header>
+              <h3 class="nist-teaser__title"><a href="/blogs/manufacturing-innovation-blog/manufacturing-day-changing-peoples-perceptions"><span>Manufacturing Day: Changing People’s Perceptions</span>
+</a></h3>
+                        <div class="nist-teaser__date">
+                            <div class="daterange"><time datetime="2023-08-15T12:00:00Z">August 15, 2023</time>
+</div>
+            
+      </div>
+                  
+    </header>
+    <div class="nist-teaser__content">
+                          <div class="text-with-summary">  Manufacturing Day, or MFG Day, has grown to mean many things since it was officially proclaimed in 2012 . Some celebrate on the first Friday in October with an
+
+</div>
+            
+    </div>
+  </div>
+</article>
+</div>
+  <div>
+
+<article
+       role="article" about="/blogs/manufacturing-innovation-blog/adrianne-kroll-be-open-opportunities-take-you-new-directions" class="nist-teaser"
+    >
+        <div class="nist-teaser__image">
+                                        <div class="entity-reference">  <a href="/blogs/manufacturing-innovation-blog/adrianne-kroll-be-open-opportunities-take-you-new-directions" hreflang="en"><img loading="lazy" src="/sites/default/files/styles/thumbnail/public/images/2023/08/22/Screen%20Shot%202023-08-22%20at%2010.53.50%20AM.png?itok=0ZuGGdJK" width="100" height="43" alt="Adrianne Kroll" typeof="foaf:Image" />
+
+</a>
+</div>
+            
+          </div>
+    <div class="nist-teaser__content-wrapper">
+    <header>
+              <h3 class="nist-teaser__title"><a href="/blogs/manufacturing-innovation-blog/adrianne-kroll-be-open-opportunities-take-you-new-directions"><span>Adrianne Kroll: Be Open to Opportunities That Take You in New Directions</span>
+</a></h3>
+                        <div class="nist-teaser__date">
+                            <div class="daterange"><time datetime="2023-08-09T12:00:00Z">August 9, 2023</time>
+</div>
+            
+      </div>
+                  
+    </header>
+    <div class="nist-teaser__content">
+                          <div class="text-with-summary">  This blog is part of a series to celebrate and share the stories of Black American manufacturing leaders. Adrianne Kroll says she kind of stumbled into
+
+</div>
+            
+    </div>
+  </div>
+</article>
+</div>
+  <div>
+
+<article
+       role="article" about="/blogs/manufacturing-innovation-blog/creativity-was-just-bursting-recapping-fireworks-2023" class="nist-teaser"
+    >
+        <div class="nist-teaser__image">
+                                        <div class="entity-reference">  <a href="/blogs/manufacturing-innovation-blog/creativity-was-just-bursting-recapping-fireworks-2023" hreflang="en"><img loading="lazy" src="/sites/default/files/styles/thumbnail/public/images/2023/08/21/fireworks-conference-header.png?itok=VryiXg0T" width="100" height="31" alt="Fireworks – The MEP National Workforce Conference" typeof="foaf:Image" />
+
+</a>
+</div>
+            
+          </div>
+    <div class="nist-teaser__content-wrapper">
+    <header>
+              <h3 class="nist-teaser__title"><a href="/blogs/manufacturing-innovation-blog/creativity-was-just-bursting-recapping-fireworks-2023"><span>“The Creativity was Just Bursting!” – Recapping FireWorks 2023</span>
+</a></h3>
+                        <div class="nist-teaser__date">
+                            <div class="daterange"><time datetime="2023-07-31T12:00:00Z">July 31, 2023</time>
+</div>
+            
+      </div>
+                  
+    </header>
+    <div class="nist-teaser__content">
+                          <div class="text-with-summary">  When America Works started and I was charged with creating the MEP National Network’s first-ever workforce conference, I set for myself one simple goal: create
+
+</div>
+            
+    </div>
+  </div>
+</article>
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+        
+  </div>
+
+
+  <div
+   class="nist-block no-print"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Comments</h2>
+      
+      <section>
+  
+  
+
+      <h2>Add new comment</h2>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_h5db7_5E6JMms7UCu-io8CVqOAEq48XxgxVWxs4m4kY.css" />
+<form class="comment-comment-node-blog-form comment-form usa-form antibot" novalidate="novalidate" data-drupal-selector="comment-form" data-action="/comment/reply/node/1718441/comment_node_blog" action="/antibot" method="post" id="comment-form" accept-charset="UTF-8">
+  <noscript>
+  <div class="antibot-no-js antibot-message antibot-message-warning">You must have JavaScript enabled to use this form.</div>
+</noscript>
+<div class="tablet:grid-col-3 form-item js-form-item form-type-textfield js-form-type-textfield form-item-name js-form-item-name">
+      <label for="edit-name" class="usa-label">
+          Your name
+    </label>
+  
+  
+  <input data-drupal-default-value="Anonymous" data-drupal-selector="edit-name" type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text usa-input" />
+
+  
+  
+  </div>
+<input autocomplete="off" data-drupal-selector="form-k4qb4yqqe4ndwq6p6pg-lqmbnajhsivfc4e75zsvshk" type="hidden" name="form_build_id" value="form-k4qB4yQQe4NDWQ6p6PG_lqMbnajHSiVFC4E75ZsvShk" class="usa-input" /><input data-drupal-selector="edit-comment-comment-node-blog-form" type="hidden" name="form_id" value="comment_comment_node_blog_form" class="usa-input" /><input data-drupal-selector="edit-antibot-key" type="hidden" name="antibot_key" value="" class="usa-input" /><div class="field--type-text-long field--name-comment-body field--widget-text-textarea js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-wrapper" id="edit-comment-body-wrapper">      <div class="js-text-format-wrapper js-form-item form-item">
+  <div class="form-item js-form-item form-type-textarea js-form-type-textarea form-item-comment-body-0-value js-form-item-comment-body-0-value">
+      <label for="edit-comment-body-0-value" class="usa-label js-form-required form-required">
+          Comment
+    <span class="usa-label--required"> <span class="usa-sr-only">Required</span>*</span></label>
+  
+  
+  <div class="form-textarea-wrapper">
+  <textarea class="js-text-full text-full form-textarea required usa-textarea resize-vertical" data-entity_embed-host-entity-langcode="en" data-media-embed-host-entity-langcode="en" data-drupal-selector="edit-comment-body-0-value" id="edit-comment-body-0-value" name="comment_body[0][value]" rows="5" cols="60" placeholder="" required="required" aria-required="true"></textarea>
+</div>
+
+
+  
+  
+  </div>
+<div class="js-filter-wrapper filter-wrapper hidden js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format" id="edit-comment-body-0-format"><div class="js-filter-guidelines filter-guidelines js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format-guidelines" id="edit-comment-body-0-format-guidelines"><div data-drupal-format-id="plain_text">
+  <h4>Plain text</h4>
+  
+  
+    
+          <ul>
+              <li>No HTML tags allowed.</li>
+              <li>Web page addresses and email addresses turn into links automatically.</li>
+              <li>Lines and paragraphs break automatically.</li>
+            </ul>
+    
+    
+  
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+
+                    <fieldset  data-drupal-selector="edit-captcha" class="captcha captcha-type-challenge--image">
+          <legend class="captcha__title js-form-required form-required">
+            CAPTCHA
+          </legend>
+                  <div class="captcha__element">
+            <input data-drupal-selector="edit-captcha-sid" type="hidden" name="captcha_sid" value="390590526" class="usa-input" /><input data-drupal-selector="edit-captcha-token" type="hidden" name="captcha_token" value="HpZjOjTbDq0ElV9u8f395U126ghLEzvxDDCW6j_BfCQ" class="usa-input" /><div class="captcha__image-wrapper js-form-wrapper form-wrapper" data-drupal-selector="edit-captcha-image-wrapper" id="edit-captcha-image-wrapper"><img data-drupal-selector="edit-captcha-image" src="/image-captcha-generate/390590526/1692998961" width="180" height="60" alt="Image CAPTCHA" title="Image CAPTCHA" loading="lazy" typeof="foaf:Image" />
+</div>
+<div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-captcha-response js-form-item-captcha-response">
+      <label for="edit-captcha-response" class="usa-label js-form-required form-required">
+          What code is in the image?
+    <span class="usa-label--required"> <span class="usa-sr-only">Required</span>*</span></label>
+  
+  
+  <input autocomplete="off" data-drupal-selector="edit-captcha-response" aria-describedby="edit-captcha-response--description" type="text" id="edit-captcha-response" name="captcha_response" value="" size="15" maxlength="128" class="form-text required usa-input" required="required" aria-required="true" />
+
+  
+  
+      <div id="edit-captcha-response--description" class="description help-block">
+      Enter the characters shown in the image.
+    </div>
+  </div>
+
+          </div>
+                      <div class="captcha__description description">This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</div>
+                          </fieldset>
+            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Save" class="button button--primary js-form-submit form-submit usa-button" /></div>
+
+  <div class="comments__disclaimer padding-top-2">
+    <em>Please be respectful when posting comments. We will post all comments without editing as long as they are appropriate for a public, family friendly website, are on topic and do not contain profanity, personal attacks, misleading or false information/accusations or promote specific commercial products, services or organizations. Comments that violate our comment policy or include links to non-government organizations/web pages will not be posted.</em>
+  </div>
+</form>
+
+  
+</section>
+
+        
+  </div>
+
+
+      </div>
+      
+            <aside class="nist-page__region nist-page__region--sidebar-second tablet-lg:grid-col-4">
+
+                                  <div>
+            
+<div
+   class="nist-block"
+>
+  
+    
+      
+            <div>
+                              <div about="/blogs/manufacturing-innovation-blog">
+  
+
+      
+<div
+   class="views-exposed-form usa-form filters nist-block" novalidate="novalidate" data-drupal-selector="views-exposed-form-search-blog-mep-blog-search-page"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Search</h2>
+      
+      <form action="/blogs/manufacturing-innovation-blog/search" method="get" id="views-exposed-form-search-blog-mep-blog-search-page" accept-charset="UTF-8" class="usa-form">
+  <div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-k js-form-item-k form-no-label">
+  
+  
+  <input placeholder="Search this blog" data-drupal-selector="edit-k" type="text" id="edit-k" name="k" value="" size="30" maxlength="128" class="form-text usa-input" />
+
+  
+  
+      <div id="edit-k--description" class="description help-block">
+      Put exact phrase in quotes (e.g., "advanced manufacturing")
+    </div>
+  </div>
+<div class="grid-col-12 form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input data-drupal-selector="edit-submit-search-blog" type="submit" id="edit-submit-search-blog" value="Search" class="button js-form-submit form-submit usa-button" /></div>
+
+
+</form>
+
+        
+  </div>
+<div
+   class="nist-block no-print"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Email alerts</h2>
+      
+                          <div class="text-long"><p>Subscribe to free e-mail alerts from the Manufacturing Innovation blog by entering your e-mail address in the box below.</p>
+<form action="https://public.govdelivery.com/accounts/USNIST/subscribers/qualify" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;">
+  <input type="hidden" name="authenticity_token" value="pigWp0a6Cnq5XnlXFVYO3NGBKwevLvWQFtk255AXXEF67n7RBZKpMrU0cU3WuS9bmRkC0d2RDKIsb4z8yjq9MA==">
+  <input type="hidden" name="topic_id" id="topic_id" value="USNIST_163">
+  <div class="grid-row grid-gap-1">
+    <div class="tablet:grid-col-8">
+      <label class="usa-sr-only" for="email">Enter Email Address</label>
+      <input class="usa-input" type="text" name="email" id="email" title="email">
+    </div>
+    <div class="tablet:grid-col-4">
+      <input type="submit" name="commit" value="Sign Up" class="usa-button margin-top-1">
+    </div>
+  </div>
+</form></div>
+            
+        
+  </div>
+<div
+   class="nist-block no-print"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Stay connected</h2>
+      
+      
+
+<div><a href="https://www.facebook.com/NISTMEP" class="nist-social nist-social--facebook" title="Facebook" ><span>Facebook</span></a><a href="https://www.linkedin.com/groups/Manufacturing-Extension-Partnership-4215296?home" class="nist-social nist-social--linkedin" title="LinkedIn" ><span>LinkedIn</span></a><a href="https://www.twitter.com/#!/NIST_MEP" class="nist-social nist-social--twitter" title="Twitter" ><span>Twitter</span></a><a href="https://www.youtube.com/playlist?list=PL606B28E0476D5EFC&amp;feature=plcp" class="nist-social nist-social--youtube" title="Youtube" ><span>Youtube</span></a><a href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?topic_id=USNIST_163" class="nist-social nist-social--envelope" title="GovDelivery" ><span>GovDelivery</span></a></div>
+        
+  </div>
+<div
+   class="views-element-container nist-block no-print"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Categories</h2>
+      
+      <div><div class="js-view-dom-id-5af3c7945d3dd2cd84c781d86eb6c40ebfa0b2607b32913e943bb40b2d89af6e">
+  
+  
+  
+
+  
+  
+  
+
+  
+<div>
+    <select class="usa-select ViewsJumpMenu js-viewsJumpMenu" title="-- Choose --" id="blog-categories-block-3-jump-menu">
+    <option>-- Choose --</option>
+      <option data-url="/manufacturing-innovation-blog-categories/advanced-manufacturing/3d-printing">3D Printing</option>
+      <option data-url="/manufacturing-innovation-blog-categories/advanced-manufacturing">Advanced Manufacturing</option>
+      <option data-url="/manufacturing-innovation-blog-categories/business">Business</option>
+      <option data-url="/manufacturing-innovation-blog-categories/innovation/commercialization">Commercialization</option>
+      <option data-url="/manufacturing-innovation-blog-categories/continuous-improvement">Continuous Improvement</option>
+      <option data-url="/manufacturing-innovation-blog-categories/cybersecurity">Cybersecurity</option>
+      <option data-url="/manufacturing-innovation-blog-categories/data-and-trends">Data and Trends</option>
+      <option data-url="/manufacturing-innovation-blog-categories/export">Export</option>
+      <option data-url="/manufacturing-innovation-blog-categories/finance">Finance</option>
+      <option data-url="/manufacturing-innovation-blog-categories/food-industry">Food Industry</option>
+      <option data-url="/manufacturing-innovation-blog-categories/foreign-investments">Foreign Investments</option>
+      <option data-url="/manufacturing-innovation-blog-categories/growth">Growth</option>
+      <option data-url="/manufacturing-innovation-blog-categories/happy-holidays">Happy Holidays</option>
+      <option data-url="/manufacturing-innovation-blog-categories/innovation">Innovation</option>
+      <option data-url="/manufacturing-innovation-blog-categories/made-america">Made in America</option>
+      <option data-url="/manufacturing-innovation-blog-categories/makers">Makers</option>
+      <option data-url="/manufacturing-innovation-blog-categories/manufacturing-day">Manufacturing Day</option>
+      <option data-url="/manufacturing-innovation-blog-categories/marketing-manufacturers">Marketing for Manufacturers</option>
+      <option data-url="/manufacturing-innovation-blog-categories/advanced-manufacturing/medical-devices">Medical Devices</option>
+      <option data-url="/manufacturing-innovation-blog-categories/mep-national-network">MEP National Network</option>
+      <option data-url="/manufacturing-innovation-blog-categories/quality-management-systems">Quality Management Systems</option>
+      <option data-url="/manufacturing-innovation-blog-categories/reshoring">Reshoring</option>
+      <option data-url="/manufacturing-innovation-blog-categories/smart-manufacturing">Smart Manufacturing</option>
+      <option data-url="/manufacturing-innovation-blog-categories/us-manufacturing/stem">STEM</option>
+      <option data-url="/manufacturing-innovation-blog-categories/supply-chain">Supply Chain</option>
+      <option data-url="/manufacturing-innovation-blog-categories/sustainability">Sustainability</option>
+      <option data-url="/manufacturing-innovation-blog-categories/technology">Technology</option>
+      <option data-url="/manufacturing-innovation-blog-categories/technology-driven-market-intelligence">Technology Driven Market Intelligence</option>
+      <option data-url="/manufacturing-innovation-blog-categories/technology-scouting">Technology Scouting</option>
+      <option data-url="/manufacturing-innovation-blog-categories/trending">Trending</option>
+      <option data-url="/manufacturing-innovation-blog-categories/us-manufacturing">U.S. Manufacturing</option>
+      <option data-url="/manufacturing-innovation-blog-categories/uncategorized">Uncategorized</option>
+      <option data-url="/manufacturing-innovation-blog-categories/workforce">Workforce</option>
+      <option data-url="/manufacturing-innovation-blog-categories/sustainability/workplace-safety">Workplace Safety</option>
+    </select>
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+        
+  </div>
+
+<div
+   class="nist-block"
+>
+  
+  <h2
+       class="nist-block__title"
+      >About this blog</h2>
+      
+                          <div class="text-long"><p>Manufacturing Innovation, the blog of the <a href="https://www.nist.gov/mep">Manufacturing Extension Partnership (MEP)</a>, is a resource for manufacturers, industry experts and the public on key U.S. manufacturing topics. There are articles for those looking to dive into new strategies emerging in manufacturing as well as useful information on tools and opportunities for manufacturers.</p>
+
+<p>The views presented here are those of the author and do not necessarily represent the views or policies of NIST.</p>
+
+<p>If you have any questions about our blog, please contact us at <span class="spamspan"><span class="u">mfg</span> [at] <span class="d">nist.gov</span></span>.</p></div>
+            
+        
+  </div>
+<div
+   class="nist-block no-print"
+>
+  
+  <h2
+       class="nist-block__title"
+      >Blogroll</h2>
+      
+                          <div class="text-long"><ul class="add-list-reset">
+<li><a href="https://www.cmtc.com/blog" target="_blank">CMTC Manufacturing Blog</a></li>
+<li><a href="https://www.dvirc.org/insights/" target="_blank">DVIRC Blog</a></li>
+<li><a href="https://blog.imec.org/" target="_blank">IMEC Blog</a></li>
+<li><a href="https://impactwashington.org/manufacturing-blog/" target="_blank">Impact Washington</a></li>
+<li><a href="https://www.industrialmarketer.com/" target="_blank">Industrial Strength Marketing Blog</a></li>
+<li><a href="https://www.njmep.org/blog/" target="_blank">Made In New Jersey Blog</a></li> 
+<li><a href="https://www.manufacturingsuccess.org/blog" target="_blank">Manufacturing Success Blog – MAGNET</a></li>
+<li><a href="https://massmep.org/blog/" target="_blank">MassMEP Blog</a></li>
+<li><a href="http://www.mepsupplychain.org/blog/" target="_blank">MEP Supply Chain Blog</a></li> 
+<li><a href="http://mepol.org/blog" target="_blank">MEPoL Blog</a></li>
+<li><a href="https://www.missourienterprise.org/blog" target="_blank">Missouri Enterprise Blog</a></li>
+<li><a href="https://www.the-center.org/Blog" target="_blank">MMTC Blog</a></li>
+<li><a href="http://www.montana.edu/mmec/news/blog.html" target="_blank">MMEC (Montana) Blog</a></li>
+<li><a href="https://www.ncmep.org/blog/" target="_blank">NCMEP Blog</a></li>
+<li><a href="https://polarismep.org/blog/" target="_blank">Polaris MEP</a></li>
+<li><a href="https://www.omep.org/your-resources/blog/" target="_blank">OMEP Blog</a></li>
+<li><a href="https://www.commerce.gov/news/blog" target="_blank">The Commerce Blog</a></li>
+<li><a href="https://www.connstep.org/blog/" target="_blank">The CONNSTEP Blog</a></li>
+<li><a href="https://info.rodongroup.com/" target="_blank">The Rodon Blog</a></li>
+<li><a href="https://texasleansixsigma.com/blogs/" target="_blank">TMAC Blog</a></li>
+<li><a href="https://www.vmec.org/resources/blog/" target="_blank">VMEC Blog</a></li>
+<li><a href="https://www.wmep.org/blog/" target="_blank">WMEP Blog</a></li>
+</ul></div>
+            
+        
+  </div>
+
+  
+</div>
+
+            </div>
+      
+        
+  </div>
+
+          </div>
+              </aside>
+      
+    </div>
+  </div>
+
+    
+    <div class="grid-container">
+
+    
+  </div>
+  
+</section>
+
+
+        
+  </div>
+
+
+  
+    <div data-elastic-exclude>
+<!-- nist-index-ignore-start -->
+
+<footer class="nist-footer padding-bottom-4">
+
+  
+    <div class="grid-container nist-footer__info">
+      <div class="grid-row">
+        <div class="tablet:grid-col-6">
+          <div class="nist-footer__logo">
+            <a href="/" title="National Institute of Standards and Technology" rel="home">
+              <img class="nist-footer__logo-img" src="/libraries/nist-component-library/dist/img/logo/NIST-Logo-Brand-White.svg" alt="National Institute of Standards and Technology logo" width="300px" height="42px" />
+            </a>
+          </div>
+          <div class="nist-footer__contact">
+            <h3 class="nist-footer__contact-heading">HEADQUARTERS</h3>
+            <address>
+              100 Bureau Drive<br>
+              Gaithersburg, MD 20899<br>
+              <a href="tel:301-975-2000">301-975-2000</a>
+            </address>
+            <p>
+              <a href="mailto:do-webmaster@nist.gov">Webmaster</a> | <a href="https://www.nist.gov/about-nist/contact-us">Contact Us</a> | <a href="https://www.nist.gov/visit">Our Other Offices</a>
+            </p>
+          </div>
+        </div>
+        <div class="tablet:grid-col-6">
+          <div class="nist-footer__social-links">
+            
+<a class="nist-social nist-social--twitter-white" href=" https://twitter.com/NIST">
+  <span>Twitter</span>
+</a>
+            
+<a class="nist-social nist-social--facebook-white" href=" https://www.facebook.com/NIST">
+  <span>Facebook</span>
+</a>
+            
+<a class="nist-social nist-social--linkedin-white" href=" https://www.linkedin.com/company/nist">
+  <span>LinkedIn</span>
+</a>
+            
+<a class="nist-social nist-social--instagram-white" href=" https://www.instagram.com/nist/">
+  <span>Instagram</span>
+</a>
+            
+<a class="nist-social nist-social--youtube-white" href=" https://www.youtube.com/NIST">
+  <span>YouTube</span>
+</a>
+            
+<a class="nist-social nist-social--giphy-white" href=" https://giphy.com/nist">
+  <span>Giphy</span>
+</a>
+            
+<a class="nist-social nist-social--rss-white" href=" https://www.nist.gov/news-events/nist-rss-feeds">
+  <span>RSS Feed</span>
+</a>
+            
+<a class="nist-social nist-social--envelope-white" href=" https://public.govdelivery.com/accounts/USNIST/subscriber/new">
+  <span>Mailing List</span>
+</a>
+          </div>
+                              <div class="nist-footer__feedback">
+            How are we doing? <a class="usa-button" rel="nofollow" href="/form/nist-gov-feedback?destination=/blogs/manufacturing-innovation-blog/five-trends-will-impact-food-industry-many-years" title="Provide feedback">Feedback</a>
+          </div>
+                  </div>
+      </div>
+    </div>
+
+  
+  <div class="grid-container">
+    <div class="nist-footer__nav" role="navigation">
+      <ul>
+                              <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/privacy">Privacy Program</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability Disclosure</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/office-director/freedom-information-act">FOIA</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/summary-report-scientific-integrity">Scientific Integrity</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.nist.gov/nist-information-quality-standards">Information Quality Standards</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://www.commerce.gov/">Commerce.gov</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="http://www.science.gov/">Science.gov</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="http://www.usa.gov/">USA.gov</a>
+            </li>
+                      <li class="nist-footer__menu-item">
+              <a href="https://vote.gov/">Vote.gov</a>
+            </li>
+                        </ul>
+    </div>
+  </div>
+
+    
+</footer>
+<!-- nist-index-ignore-end -->
+</div>
+  
+  </div>
+
+    
+    
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1718441","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"back_to_top":{"back_to_top_button_trigger":100,"back_to_top_prevent_on_mobile":false,"back_to_top_prevent_in_admin":true,"back_to_top_button_type":"image","back_to_top_button_text":"Back to top"},"google_analytics":{"account":"G-HEQ0YF2VYL","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|bsh|c|csv|doc(x|m)?|dot(x|m)?|dw(fx|g|gd)|dxf|eps|epub|exe|f(90)|flv|gif|gz|gzip|hqx|jar|jpe?g|js|m1v|mp(2|3|4|e?g)|mobi|mov(ie)?|msi|msp|pdf|phps|pl|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|rfa|rtf|rvt|sch|sea|sit|swf|tar|tgz|tif|txt|txz|wav|wma|wmv|wpd|wrl|xls(x|m|b)?|xlt(x|m)|xlam|xml|xsd|z|zip"},"nist_search":{"clickTracking":"search-report-click","isDebug":false,"clickTrackEnabled":true,"message":"NIST Search in debug mode. Check the browsers network inspector for Click Track reporting results..."},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"\\.gov\\\/|\\.mil\\\/|\\manufacturingusa\\.com\\\/","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":true,"extAlertText":"Thank you for visiting NIST. We hope your visit was informative. We have provided a link to this site because it has information that may be of interest to our users. NIST does not necessarily endorse the views expressed or the facts presented on this site. Further, NIST does not endorse any commercial products that may be advertised or available on this site. Click OK to be directed to your link.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"viewsJumpMenu":{"blog-categories-block-3-jump-menu":{"new_window":false}},"ajaxTrustedUrl":{"\/blogs\/manufacturing-innovation-blog\/search":true,"\/comment\/reply\/node\/1718441\/comment_node_blog":true},"user":{"uid":0,"permissionsHash":"582eea317b4636ab5a0dffc8c6a006df3d6901ea5610498a0bbefc925ea1da0f"},"antibot":{"forms":{"comment-form":{"id":"comment-form","key":"XDytyE7gAWRG1VSJ5XfNCdeIU0-NupWAiBNUrPHes38"}}}}</script>
+<script src="/sites/default/files/js/js_vUzvThvSSVoHTSCkBCQkydhdsfaK1XKjKqS_Be_Zm8E.js"></script>
+<script src="https://siteimproveanalytics.com/js/siteanalyze_6017546.js" async></script>
+<script src="/sites/default/files/js/js_-xFhvc96WhhK9js9XHOL5uLr6nuVsVr1urdN2xEKKKg.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"gov-bam.nr-data.net","licenseKey":"37b7ccb661","applicationID":"1089704227","transactionName":"YFxUN0sADEdYVkBaClkWdwBNCA1aFnFGRhVWVWoNVgUHaHpaWkcXWFVaBks9LFtdUGJaAEB6WQ1NEw1YVVBGHltBUFMU","queueTime":5,"applicationTime":834,"atts":"TBtXQQMaH0k=","errorBeacon":"gov-bam.nr-data.net","agent":""}</script></body>
 </html>
